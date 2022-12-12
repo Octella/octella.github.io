@@ -1,0 +1,1507 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>Get goals report - DATA API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab28b872.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#getting-a-list-of-achieved-goals" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="DATA API" class="md-header-nav__button md-logo" aria-label="DATA API">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            DATA API
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Get goals report
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DATA API" class="md-nav__button md-logo" aria-label="DATA API">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DATA API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../changelog/" class="md-nav__link">
+      Changelog
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." class="md-nav__link">
+      General Information
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../account/" class="md-nav__link">
+      Account
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../vn/" class="md-nav__link">
+      Virtual Numbers
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../sip/" class="md-nav__link">
+      SIP-lines
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../scenarios/" class="md-nav__link">
+      Scenarios
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../user_media/" class="md-nav__link">
+      Media
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../campaigns/" class="md-nav__link">
+      Ad Campaigns
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../sites/" class="md-nav__link">
+      Sites
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../reports/" class="md-nav__link">
+      Reports
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../tags/" class="md-nav__link">
+      Tags
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../employees/" class="md-nav__link">
+      Employees
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../contacts/" class="md-nav__link">
+      Contacts
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../schedules/" class="md-nav__link">
+      Schedules
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../campaign_daily_stat/" class="md-nav__link">
+      Ad Campaigns Daily Reports
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../customers/" class="md-nav__link">
+      Agents’ Customers
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../communications/" class="md-nav__link">
+      Communications
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../persons/" class="md-nav__link">
+      Persons
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-a-list-of-achieved-goals" class="md-nav__link">
+    Getting a list of achieved goals
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting a list of achieved goals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters-of-a-request" class="md-nav__link">
+    Parameters of a request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters-of-a-reply" class="md-nav__link">
+    Parameters of a reply
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-request-structure" class="md-nav__link">
+    JSON request structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-reply-structure" class="md-nav__link">
+    JSON reply structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-of-returning-errors" class="md-nav__link">
+    List of returning errors
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Get goals report</h1>
+                
+                <p><a name="_get_goals_report"></a></p>
+<h2 id="getting-a-list-of-achieved-goals">Getting a list of achieved goals</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Method</th>
+<th align="left"><code>get.goals_report</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Description</td>
+<td align="left">Getting a list of achieved goals</td>
+</tr>
+<tr>
+<td align="left">Who has access</td>
+<td align="left">Partner, Customer</td>
+</tr>
+</tbody>
+</table>
+<h3 id="parameters-of-a-request">Parameters of a request</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Title</th>
+<th align="left">Type</th>
+<th align="center">Required</th>
+<th align="left">Valid value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>access_token</code></td>
+<td align="left">string</td>
+<td align="center">yes</td>
+<td align="left"></td>
+<td align="left">Authentication session key</td>
+</tr>
+<tr>
+<td align="left"><code>user_id</code></td>
+<td align="left">number</td>
+<td align="center">no</td>
+<td align="left"></td>
+<td align="left">Unique user ID of agent's customer who makes request <blockquote>Is required for agent</blockquote> To get a list of customer users, use the method <a href="../Partners/#get_customer_user">"get.customer_users"</a></td>
+</tr>
+<tr>
+<td align="left"><code>limit</code></td>
+<td align="left">number</td>
+<td align="center">no</td>
+<td align="left"></td>
+<td align="left">Returning entries count. Refer to <a href="index.md#_paging">"Paging"</a></td>
+</tr>
+<tr>
+<td align="left"><code>offset</code></td>
+<td align="left">number</td>
+<td align="center">no</td>
+<td align="left"></td>
+<td align="left">Offset that defines from which number to return the entries <code>"limit"</code>. Default value is "0". Refer to <a href="index.md#_paging">"Paging"</a></td>
+</tr>
+<tr>
+<td align="left"><code>filter</code></td>
+<td align="left">object</td>
+<td align="center">no</td>
+<td align="left"></td>
+<td align="left">Refer to <a href="index.md#_filters">"Filters"</a></td>
+</tr>
+<tr>
+<td align="left"><code>fields</code></td>
+<td align="left">array</td>
+<td align="center">no</td>
+<td align="left"></td>
+<td align="left">Refer to <a href="index.md#_views">"Viewing returning data"</a></td>
+</tr>
+<tr>
+<td align="left"><code>sort</code></td>
+<td align="left">array</td>
+<td align="center">no</td>
+<td align="left"></td>
+<td align="left">Refer to <a href="index.md#_sort">"Data sorting"</a></td>
+</tr>
+<tr>
+<td align="left"><code>date_from</code></td>
+<td align="left">iso8601</td>
+<td align="center">yes</td>
+<td align="left">YYYY-MM-DD hh:mm:ss</td>
+<td align="left">Sampling start date</td>
+</tr>
+<tr>
+<td align="left"><code>date_till</code></td>
+<td align="left">iso8601</td>
+<td align="center">yes</td>
+<td align="left">YYYY-MM-DD hh:mm:ss</td>
+<td align="left">Sampling end date</td>
+</tr>
+</tbody>
+</table>
+<h3 id="parameters-of-a-reply">Parameters of a reply</h3>
+<table>
+    <tbody>
+        <tr>
+            <th>Title</th>
+            <th>Type</th>
+            <th>Valid values</th>
+            <th>Filtering</th>
+            <th>Sorting</th>
+            <th>Default reply</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><code>id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Goal unique ID</td>
+        </tr>
+        <tr>
+            <td><code>date_time</code></td>
+            <td>iso8601</td>
+            <td>YYYY-MM-DD hh:mm:ss</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Time and date when goal was achived</td>
+        </tr>
+        <tr>
+            <td><code>name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>Goal name</td>
+        </tr>
+        <tr>
+            <td><code>type</code></td>
+            <td>enum</td>
+            <td>
+                <ul>
+                    <li>track_event</li>
+                    <li>time_on_page</li>
+                    <li>octella</li>
+                    <li>segment</li>
+                    <li>ppc_goal</li>
+                    <li>click</li>
+                    <li>link</li>
+                    <li>scroll</li>
+                    <li>time_on_site</li>
+                </ul>
+            </td>
+            <td>yes</td>
+            <td></td>
+            <td>yes</td>
+            <td>Goal type
+                <ul>
+                    <li>track_event - User</li>
+                    <li>time_on_page - Time on page</li>
+                    <li>octella - In Octella</li>
+                    <li>segment - Segment entry</li>
+                    <li>ppc_goal - </li>
+                    <li>click - Click to object</li>
+                    <li>link - Click a link</li>
+                    <li>scroll - Scroll actions</li>
+                    <li>time_on_site - Time on website</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><code>ext_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td>yes</td>
+            <td>ID of an integrated target in the outside system</td>
+        </tr>
+        <tr>
+            <td><code>source</code></td>
+            <td>enum</td>
+            <td>
+                <ul>
+                    <li>yandex.metrika</li>
+                    <li>google.analytics</li>
+                    <li>octella</li>
+                </ul>
+            </td>
+            <td>yes</td>
+            <td></td>
+            <td>yes</td>
+            <td>Name of the system where the goal was set</td>
+        </tr>
+        <tr>
+            <td><code>communication_number</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>Communication number. Calculated in
+within a person.</td>
+        </tr>
+        <tr>
+            <td><code>communication_page_url</code></td>
+            <td>string</td>
+            <td></td>
+            <td>no</td>
+            <td>no</td>
+            <td>no</td>
+            <td>
+                The URL of the page where a visitor was at the time of the call, or the page of the last visitor interaction before the call.
+            </td>
+        </tr>
+        <tr>
+            <td><code>communication_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td>yes</td>
+            <td>Communication unique ID</td>
+        </tr>
+        <tr>
+            <td><code>communication_type</code></td>
+            <td>enum</td>
+            <td><code>goal</code></td>
+            <td>yes</td>
+            <td></td>
+            <td>yes</td>
+            <td>Communication type</td>
+        </tr>
+        <tr>
+            <td><code>ua_client_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Unique ID in Universal Analytics</td>
+        </tr>
+        <tr>
+            <td><code>ym_client_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Unique user ID in Yandex.Metrika</td>
+        </tr>
+        <tr>
+            <td><code>sale_date</code></td>
+            <td>iso8601</td>
+            <td>YYYY-MM-DD hh:mm:ss</td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>Sale date</td>
+        </tr>
+        <tr>
+            <td><code>sale_cost</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>Sale cost</td>
+        </tr>
+        <tr>
+            <td><code>search_query</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Search query</td>
+        </tr>
+        <tr>
+            <td><code>search_engine</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Search engine name</td>
+        </tr>
+        <tr>
+            <td><code>referrer_domain</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Domain referrer</td>
+        </tr>
+        <tr>
+            <td><code>referrer</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Referrer</td>
+        </tr>
+        <tr>
+            <td><code>entrance_page</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Entrance page</td>
+        </tr>
+        <tr>
+            <td><code>gclid</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Google Click Identifier</td>
+        </tr>
+        <tr>
+            <td><code>yclid</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Yandex Click Identifier</td>
+        </tr>
+        <tr>
+            <td><code>ymclid</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Yandex Market Click Identifier</td>
+        </tr>
+        <tr>
+            <td><code>ef_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>
+Used to mark up links in
+contextual management system AdLense</td>
+        </tr>
+        <tr>
+            <td><code>channel</code></td>
+            <td>enum</td>
+            <td>
+                <ul>
+                    <li><code>display</code></li>
+                    <li><code>paid</code></li>
+                    <li><code>affiliate</code></li>
+                    <li><code>messenger</code></li>
+                    <li><code>social</code></li>
+                    <li><code>email</code></li>
+                    <li><code>organic</code></li>
+                    <li><code>internal</code></li>
+                    <li><code>recommendation</code></li>
+                    <li><code>cashed</code></li>
+                    <li><code>referral</code></li>
+                    <li><code>direct</code></li>
+                </ul>
+            </td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Channel</td>
+        </tr>
+        <tr>
+            <td colspan="7">Used tags</td>
+        </tr>
+        <tr>
+            <td><code>tags</code></td>
+            <td>array</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Tags, refer to the method <code>"get.tags"</code></td>
+        </tr>
+        <tr>
+            <td><code>tag_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Tag unique ID</td>
+        </tr>
+        <tr>
+            <td><code>tag_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Tag name</td>
+        </tr>
+        <tr>
+            <td><code>tag_type</code></td>
+            <td>enum</td>
+            <td><code>auto</code>, <code>manual</code></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Tag type</td>
+        </tr>
+        <tr>
+            <td><code>tag_change_time</code></td>
+            <td>iso8601</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Time when a tag was used</td>
+        </tr>
+        <tr>
+            <td><code>tag_user_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>ID of a user, who used a tag</td>
+        </tr>
+        <tr>
+            <td><code>tag_user_login</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Login of a user, who used a tag</td>
+        </tr>
+        <tr>
+            <td><code>tag_employee_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>ID of an employee, who used a tag</td>
+        </tr>
+        <tr>
+            <td><code>tag_employee_full_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Full name of an employee who used a tag</td>
+        </tr>
+        <tr>
+            <td colspan="7">Website</td>
+        </tr>
+        <tr>
+            <td><code>site_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>Website unique ID</td>
+        </tr>
+        <tr>
+            <td><code>site_domain_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>Website address in the internet. Without protocol - <code>"http://"</code> or <code>"https://"</code></td>
+        </tr>
+        <tr>
+            <td colspan="7">Advertising campaign</td>
+        </tr>
+        <tr>
+            <td><code>campaign_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>Advertising campaign ID</td>
+        </tr>
+        <tr>
+            <td><code>campaign_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>Advertising campaign name</td>
+        </tr>
+        <tr>
+            <td><code>visit_other_campaign</code></td>
+            <td>boolean</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>The flag indicates whether a
+visitor entered by
+other advertising campaigns (within the person)</td>
+        </tr>
+        <tr>
+            <td colspan="7">Information about visitor</td>
+        </tr>
+        <tr>
+            <td><code>visitor_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>Visitor unique ID</td>
+        </tr>
+        <tr>
+            <td><code>person_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Person unique ID</td>
+        </tr>
+        <tr>
+            <td><code>visitor_type</code></td>
+            <td>enum</td>
+            <td>New,
+Returned,
+Not filled in</td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>Visitor type</td>
+        </tr>
+        <tr>
+            <td><code>visitor_session_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>
+                Visitor session unique ID, refer to <code>"get.visitor_sessions_report"</code>
+            </td>
+        </tr>
+        <tr>
+            <td><code>visits_count</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Total visitor count</td>
+        </tr>
+        <tr>
+            <td><code>visitor_first_campaign_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>First advertising campaign ID</td>
+        </tr>
+        <tr>
+            <td><code>visitor_first_campaign_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>First advertising campaign name</td>
+        </tr>
+        <tr>
+            <td><code>visitor_city</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Visitor city</td>
+        </tr>
+        <tr>
+            <td><code>visitor_region</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Visitor region</td>
+        </tr>
+        <tr>
+            <td><code>visitor_country</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Visitor country</td>
+        </tr>
+        <tr>
+            <td><code>visitor_device</code></td>
+            <td>enum</td>
+            <td>
+                <ul>
+                    <li><code>desktop</code></li>
+                    <li><code>mobile</code></li>
+                    <li><code>tablet</code></li>
+                    <li><code>other</code></li>
+                </ul>
+            </td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>User device</td>
+        </tr>
+        <tr>
+            <td colspan="7">Visitor properties</td>
+        </tr>
+        <tr>
+            <td><code>visitor_custom_properties</code></td>
+            <td>array</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>
+                Visitor properties that can be set in the client area or using JavaScript API [method <code>Octella.setProperty(name, value);</code>]
+            </td>
+        </tr>
+        <tr>
+            <td><code>property_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Name of a property that's to be assigned to a visitor</td>
+        </tr>
+        <tr>
+            <td><code>property_value</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Property value</td>
+        </tr>
+        <tr>
+            <td colspan="7">Segments</td>
+        </tr>
+        <tr>
+            <td><code>segments</code></td>
+            <td>array</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Segments</td>
+        </tr>
+        <tr>
+            <td><code>segment_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Segment  unique ID</td>
+        </tr>
+        <tr>
+            <td><code>segment_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Segment name</td>
+        </tr>
+        <tr>
+            <td colspan="7">UTM tag</td>
+        </tr>
+        <tr>
+            <td><code>utm_source</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Campaign source</td>
+        </tr>
+        <tr>
+            <td><code>utm_medium</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Campaign channel</td>
+        </tr>
+        <tr>
+            <td><code>utm_term</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Campaign key word</td>
+        </tr>
+        <tr>
+            <td><code>utm_content</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Campaign content</td>
+        </tr>
+        <tr>
+            <td><code>utm_campaign</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Campaign name</td>
+        </tr>
+        <tr>
+            <td colspan="7">OS tag</td>
+        </tr>
+        <tr>
+            <td><code>openstat_ad</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Ad ID</td>
+        </tr>
+        <tr>
+            <td><code>openstat_campaign</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Advertising campaign ID</td>
+        </tr>
+        <tr>
+            <td><code>openstat_service</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Service provider ID</td>
+        </tr>
+        <tr>
+            <td><code>openstat_source</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>ID of a site, a section, a page, or place on the page where an ad was shown</td>
+        </tr>
+        <tr>
+            <td colspan="7">Communication attributes</td>
+        </tr>
+        <tr>
+            <td><code>attributes</code></td>
+            <td>array</td>
+            <td>
+                <ul>
+                    <li><code>first</code> - First quality</li>
+                    <li><code>through</code> - Through first quality</li>
+                    <li><code>primary</code> - Primary</li>
+                    <li><code>secondary</code> - Secondary</li>
+                    <li><code>lost</code> - Lost</li>
+                    <li><code>target</code> - Target</li>
+                    <li><code>off-target</code> - Off target</li>
+                    <li><code>quality</code> - Quality</li>
+                    <li><code>rest</code> - Recurring target communications (communications, happened during a second communication, set for a website in Octella client area).</li>
+                </ul>
+            </td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>
+                Communication attributes
+            </td>
+        </tr>
+        <tr>
+            <td colspan="7">Expanded UTM tags</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_source</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Expanded utm_source</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_medium</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Expanded utm_medium</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_term</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Expanded utm_term</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_content</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Expanded utm_content</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_campaign</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Expanded utm_campaign</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_referrer</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Expanded utm_referrer</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_expid</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Expanded utm_expid</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="json-request-structure">JSON request structure</h3>
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;,
+  &quot;id&quot;:&quot;number&quot;,
+  &quot;method&quot;:&quot;get.goals_report&quot;,
+  &quot;params&quot;:{
+    &quot;access_token&quot;:&quot;string&quot;,
+    &quot;user_id&quot;:&quot;number&quot;,
+    &quot;offset&quot;:&quot;number&quot;,
+    &quot;limit&quot;:&quot;number&quot;,
+    &quot;date_from&quot;:&quot;iso8601&quot;,
+    &quot;date_till&quot;:&quot;iso8601&quot;,
+    &quot;filter&quot;:{
+
+    },
+    &quot;sort&quot;:[
+      {
+        &quot;field&quot;:&quot;string&quot;,
+        &quot;order&quot;:&quot;string&quot;
+      }
+    ],
+    &quot;fields&quot;:[
+      &quot;string&quot;
+    ]
+  }
+}
+</code></pre>
+<h3 id="json-reply-structure">JSON reply structure</h3>
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;,
+  &quot;id&quot;:&quot;number&quot;,
+  &quot;result&quot;:{
+    &quot;metadata&quot;:{
+
+    },
+    &quot;data&quot;:[
+      {
+        &quot;id&quot;:&quot;number&quot;,
+        &quot;date_time&quot;:&quot;iso8601&quot;,
+        &quot;name&quot;:&quot;string&quot;,
+        &quot;type&quot;: &quot;enum&quot;,
+        &quot;ext_id&quot;: &quot;string&quot;,
+        &quot;source&quot;: &quot;enum&quot;,
+        &quot;communication_number&quot;:&quot;number&quot;,
+        &quot;communication_page_url&quot;: &quot;string&quot;,
+        &quot;communication_id&quot;:&quot;number&quot;,
+        &quot;communication_type&quot;:&quot;enum&quot;,
+        &quot;ua_client_id&quot;:&quot;string&quot;,
+        &quot;ym_client_id&quot;: &quot;string&quot;,
+        &quot;sale_date&quot;:&quot;iso8601&quot;,
+        &quot;sale_cost&quot;:&quot;number&quot;,
+        &quot;search_query&quot;:&quot;string&quot;,
+        &quot;search_engine&quot;:&quot;string&quot;,
+        &quot;referrer_domain&quot;:&quot;string&quot;,
+        &quot;referrer&quot;:&quot;string&quot;,
+        &quot;entrance_page&quot;:&quot;string&quot;,
+        &quot;gclid&quot;:&quot;string&quot;,
+        &quot;yclid&quot;:&quot;string&quot;,
+        &quot;ymclid&quot;:&quot;string&quot;,
+        &quot;ef_id&quot;:&quot;string&quot;,
+        &quot;channel&quot;:&quot;enum&quot;,
+        &quot;tags&quot;:[
+          {
+            &quot;tag_id&quot;:&quot;number&quot;,
+            &quot;tag_name&quot;:&quot;string&quot;,
+            &quot;tag_type&quot;:&quot;enum&quot;,
+            &quot;tag_change_time&quot;:&quot;iso8601&quot;,
+            &quot;tag_user_id&quot;:&quot;number&quot;,
+            &quot;tag_user_login&quot;:&quot;string&quot;,
+            &quot;tag_employee_id&quot;:&quot;number&quot;,
+            &quot;tag_employee_full_name&quot;:&quot;string&quot;
+          }
+        ],
+        &quot;site_id&quot;:&quot;number&quot;,
+        &quot;site_domain_name&quot;:&quot;string&quot;,
+        &quot;campaign_id&quot;:&quot;number&quot;,
+        &quot;campaign_name&quot;:&quot;string&quot;,
+        &quot;visit_other_campaign&quot;:&quot;boolean&quot;,
+        &quot;visitor_id&quot;:&quot;number&quot;,
+        &quot;person_id&quot;:&quot;number&quot;,
+        &quot;visitor_type&quot;:&quot;enum&quot;,
+        &quot;visitor_session_id&quot;:&quot;number&quot;,
+        &quot;visits_count&quot;:&quot;number&quot;,
+        &quot;visitor_first_campaign_id&quot;:&quot;number&quot;,
+        &quot;visitor_first_campaign_name&quot;:&quot;string&quot;,
+        &quot;visitor_city&quot;:&quot;string&quot;,
+        &quot;visitor_region&quot;:&quot;string&quot;,
+        &quot;visitor_country&quot;:&quot;string&quot;,
+        &quot;visitor_device&quot;:&quot;enum&quot;,
+        &quot;visitor_custom_properties&quot;:[
+          {
+            &quot;property_name&quot;:&quot;string&quot;,
+            &quot;property_value&quot;:&quot;string&quot;
+          }
+        ],
+        &quot;segments&quot;:[
+          {
+            &quot;segment_id&quot;:&quot;number&quot;,
+            &quot;segment_name&quot;:&quot;string&quot;
+          }
+        ],
+        &quot;utm_source&quot;:&quot;string&quot;,
+        &quot;utm_medium&quot;:&quot;string&quot;,
+        &quot;utm_term&quot;:&quot;string&quot;,
+        &quot;utm_content&quot;:&quot;string&quot;,
+        &quot;utm_campaign&quot;:&quot;string&quot;,
+        &quot;openstat_ad&quot;:&quot;string&quot;,
+        &quot;openstat_campaign&quot;:&quot;string&quot;,
+        &quot;openstat_service&quot;:&quot;string&quot;,
+        &quot;openstat_source&quot;:&quot;string&quot;,
+        &quot;eq_utm_source&quot;: &quot;string&quot;,
+        &quot;eq_utm_medium&quot;: &quot;string&quot;,
+        &quot;eq_utm_term&quot;: &quot;string&quot;,
+        &quot;eq_utm_content&quot;: &quot;string&quot;,
+        &quot;eq_utm_campaign&quot;: &quot;string&quot;,
+        &quot;eq_utm_referrer&quot;: &quot;string&quot;,
+        &quot;eq_utm_expid&quot;: &quot;string&quot;,
+        &quot;attributes&quot;:[
+
+        ]
+      }
+    ]
+  }
+}
+</code></pre>
+<h3 id="list-of-returning-errors">List of returning errors</h3>
+<p>Refer to the section <a href="index.md#_getErrors">"List of errors for the methods with the verb get"</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../../js/init.js"></script>
+      
+    
+  </body>
+</html>

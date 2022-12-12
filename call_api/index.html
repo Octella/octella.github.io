@@ -1,0 +1,1419 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>Call API</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab28b872.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#call-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="." title="Call API" class="md-header-nav__button md-logo" aria-label="Call API">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis md-ellipsis">
+          Call API
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Call API" class="md-nav__button md-logo" aria-label="Call API">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Call API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Call API
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="." class="md-nav__link md-nav__link--active">
+      Call API
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting started
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agreements" class="md-nav__link">
+    Agreements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorizing-ip-address" class="md-nav__link">
+    Authorizing IP address
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call-api-users" class="md-nav__link">
+    Call API users
+  </a>
+  
+    <nav class="md-nav" aria-label="Call API users">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-by-login-and-password" class="md-nav__link">
+    Access by login and password
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-by-key" class="md-nav__link">
+    Access by key
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#statistics-and-reports" class="md-nav__link">
+    Statistics and reports
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-security-settings-for-calls" class="md-nav__link">
+    Managing security settings for calls
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    Components
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-data-format" class="md-nav__link">
+    Return data format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-url-to-access-api" class="md-nav__link">
+    Basic URL to access API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versions" class="md-nav__link">
+    Versions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limits-and-restrictions" class="md-nav__link">
+    Limits and restrictions
+  </a>
+  
+    <nav class="md-nav" aria-label="Limits and restrictions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expanding-limits" class="md-nav__link">
+    Expanding limits
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta-parameters" class="md-nav__link">
+    Meta parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    General
+  </a>
+  
+    <nav class="md-nav" aria-label="General">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fields-common-for-all-methods" class="md-nav__link">
+    Fields common for all methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call-state-diagram" class="md-nav__link">
+    Call state diagram
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#group-of-methods-to-make-calls" class="md-nav__link">
+    Group of methods to make calls
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#group-of-methods-for-call-management" class="md-nav__link">
+    Group of methods for call management
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-messages" class="md-nav__link">
+    Error messages
+  </a>
+  
+    <nav class="md-nav" aria-label="Error messages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-of-an-error" class="md-nav__link">
+    Example of an error
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#groups-of-error-codes" class="md-nav__link">
+    Groups of error codes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-of-errors-common-for-all-methods" class="md-nav__link">
+    List of errors common for all methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting started
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agreements" class="md-nav__link">
+    Agreements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorizing-ip-address" class="md-nav__link">
+    Authorizing IP address
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call-api-users" class="md-nav__link">
+    Call API users
+  </a>
+  
+    <nav class="md-nav" aria-label="Call API users">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-by-login-and-password" class="md-nav__link">
+    Access by login and password
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-by-key" class="md-nav__link">
+    Access by key
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#statistics-and-reports" class="md-nav__link">
+    Statistics and reports
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-security-settings-for-calls" class="md-nav__link">
+    Managing security settings for calls
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    Components
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-data-format" class="md-nav__link">
+    Return data format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-url-to-access-api" class="md-nav__link">
+    Basic URL to access API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versions" class="md-nav__link">
+    Versions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limits-and-restrictions" class="md-nav__link">
+    Limits and restrictions
+  </a>
+  
+    <nav class="md-nav" aria-label="Limits and restrictions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expanding-limits" class="md-nav__link">
+    Expanding limits
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta-parameters" class="md-nav__link">
+    Meta parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    General
+  </a>
+  
+    <nav class="md-nav" aria-label="General">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fields-common-for-all-methods" class="md-nav__link">
+    Fields common for all methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call-state-diagram" class="md-nav__link">
+    Call state diagram
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#group-of-methods-to-make-calls" class="md-nav__link">
+    Group of methods to make calls
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#group-of-methods-for-call-management" class="md-nav__link">
+    Group of methods for call management
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-messages" class="md-nav__link">
+    Error messages
+  </a>
+  
+    <nav class="md-nav" aria-label="Error messages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-of-an-error" class="md-nav__link">
+    Example of an error
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#groups-of-error-codes" class="md-nav__link">
+    Groups of error codes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-of-errors-common-for-all-methods" class="md-nav__link">
+    List of errors common for all methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="call-api">Call API</h1>
+<h2 id="getting-started">Getting started</h2>
+<h3 id="introduction">Introduction</h3>
+<p>Current document describes Call API, which allows you to make calls and manage them.</p>
+<blockquote>
+<p>You can also manage calls received via virtual PBX. To do so you need a unique ID for your call session. You can get it from the REST API notification server.</p>
+</blockquote>
+<p>API is based on JSON-RPC 2.0 specification and does not support team operation.</p>
+<p>In case of a request to API, HTTP/1.1 with SSL/TLS connection protection is used as a transport protocol. In this case the following requirements should be met:</p>
+<ul>
+<li>Title <code>Content-Type</code> has to be <code>application/json; charset=UTF-8</code></li>
+<li>Title <code>Content-Length</code> has to have correct message length, as required by HTTP/1.1 specification. </li>
+</ul>
+<h3 id="agreements">Agreements</h3>
+<p>The following agreements are accepted:</p>
+<ul>
+<li>Blank fields always return with a  <code>null</code> value. In case of a rail an empty rail is returned, in case of an object an empty object returns;</li>
+<li>All the fields related to time and date are transferred as according to ISO 8601 in the following format <code>YYYY-MM-DDT hh:mm:ssZ</code>;</li>
+<li>Requests to API are always made using POST method;</li>
+<li>All the settings in requests/replies, in the JSON data structure and in the names of the methods are entitled in the Snake Case style - with words separated by underscores;</li>
+<li>The data returns only in JSON format as according to FC 7159 specification;</li>
+<li>Data encoding UTF-8;</li>
+</ul>
+<p><a name="whitelist"></a></p>
+<h3 id="authorizing-ip-address">Authorizing IP address</h3>
+<p>By default access to API is denied for everyone. To enable inquiries, you need to add the host IP address used to make an inquiry to the whitelist. 
+This can be done in your client area "Administrator -&gt; Account -&gt; Rules and safety regulations", tab "API".</p>
+<h3 id="call-api-users">Call API users</h3>
+<p>You can choose a new set of authorization rules in a form of a check box <code>Access to Call API</code>. Go to your client area "Account" -&gt; "User administration" and enable <code>Call API Basic set</code> component.</p>
+<blockquote>
+<p>This can only be done by the administrator.</p>
+</blockquote>
+<h4 id="access-by-login-and-password">Access by login and password</h4>
+<p>Authentication by login and password. Reply contains a key to access Call API</p>
+<blockquote>
+<p>Default duration of a session is 1 hour.</p>
+</blockquote>
+<h4 id="access-by-key">Access by key</h4>
+<p>To enable access by key you need to go to your user settings and tick a box "Access by key". Be careful: you can see and copy the key only at the moment when it's generated. After you have saved the settings the key is only available in the application's code or another place where you're storing it.</p>
+<blockquote>
+<p>Depending on your settings keys can be temporary or permanent.</p>
+</blockquote>
+<h3 id="statistics-and-reports">Statistics and reports</h3>
+<p>You can access all requests to API in your client area "Reports" -&gt; "Tech Log" -&gt; "Requests to API". This excludes requests with errors:</p>
+<ul>
+<li>If a JSON or a request structure error returns - mnemonics "parse_error" or "invalid_request";</li>
+<li>If an error with the call for a non-existent method returns - mnemonics "method_not_found";</li>
+<li>If an authentication error returns - "access_token_blocked", "access_token_invalid", "access_token_expired", "auth_error";</li>
+<li>If an error that involves a request from an non-authorized IP returns - mnemonics "ip_not_whitelisted".</li>
+</ul>
+<p>You can find detailed information about any call in "Reports" -&gt; "Inquiries" -&gt; "Calls" using filtering "Call session ID".</p>
+<blockquote>
+<p>In case there is no "Call session ID" option in your filters, you need to add it to the available report's columns.</p>
+</blockquote>
+<h3 id="managing-security-settings-for-calls">Managing security settings for calls</h3>
+<p>You can manage security settings for your calls (mobile, national, international) in your client area "Account" -&gt; "Security rules and settings" -&gt; "API".</p>
+<blockquote>
+<p>By default international calls are not permitted. Other call types are allowed.</p>
+</blockquote>
+<p>Permissions for calls are categorized by Call API components (refer to Components).</p>
+<h3 id="components">Components</h3>
+<table>
+<thead>
+<tr>
+<th>Title for client</th>
+<th>List of methods</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Call API Basic set</td>
+<td>start.employee_call, start.vnumber_call, start.simple_call, login.user, logout.user, release.call</td>
+<td>Basic set for Call API</td>
+</tr>
+<tr>
+<td>Call API Call management</td>
+<td>hold.call, unhold.call, make.call, disconnect.leg, tag.call, record.call, add.coach, list.calls, send.dtmf, block.contact, restore.talk, transfer.talk, list.talk_options, call.talk_option</td>
+<td>A set that allows you to manage calls.</td>
+</tr>
+<tr>
+<td>Call API Informer calls</td>
+<td>start.informer_call</td>
+<td>A set that allows you to call clients and play a TTS or another preset media file. As your informer message is complete the call ends automatically</td>
+</tr>
+<tr>
+<td>Call API Call scenario</td>
+<td>start.scenario_call</td>
+<td>A set that allows you to call clients using a virtual number and a set of scenarios.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-data-format">Return data format</h3>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>MIME Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JSON</td>
+<td>application/json</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>By default JSON format is used. Accept title is ignored. </p>
+</blockquote>
+<h3 id="basic-url-to-access-api">Basic URL to access API</h3>
+<p>Basic URI to access API:</p>
+<pre><code>https://callapi.octella.com/&lt;version&gt;
+</code></pre>
+<p>where</p>
+<p><code>&lt;version&gt;</code> is an API version (refer to Versions)</p>
+<h3 id="versions">Versions</h3>
+<p>Call API supports versioning. A version is specified in a basic URL as vX.Y, where X is a number of a major version, and Y is a number of a minor version.</p>
+<blockquote>
+<p>Versions should be spelled using a dot, such as 4.0</p>
+<p>If a new version is released, the previous one is considered outdated. Therefore if you send a request to an old version of API in meta parameters (refer to Meta parameters) the parameter <code>current_version_depricated</code> with value <code>true</code> will be returned. This means that within the next couple of months the old version may become unavailable.</p>
+</blockquote>
+<p>Example:</p>
+<pre><code>https://callapi.octella.com/v4.0 \b https://callapi.octella.com/v4.0
+</code></pre>
+<blockquote>
+<p>Maximum number of supported versions is 2<br />
+Support period for old versions is 2 months</p>
+</blockquote>
+<h3 id="limits-and-restrictions">Limits and restrictions</h3>
+<p>Limits are based on points system, i.e. each method has a value measured in points.</p>
+<blockquote>
+<p>Points are marked off only in case of a successful request, i.e. the request is marked as successful in a request report. A request is considered successful if the <code>result</code> is returned with a status <code>success</code> = <code>true</code> or with a call session ID.</p>
+<p>Limits are tied to a component <code>Call API Basic set</code> (refer to Components) and are recognized depending on a method's value in points.</p>
+<p>Data about limits returns in every reply in meta parameters (refer to Meta parameters), except when the limits are not recognized;</p>
+<ul>
+<li>If JSON or request structure errors return - mnemonics "parse_error" or "invalid_request";</li>
+<li>If an error involving call to an non-existent method returns - mnemonics "method_not_found";</li>
+<li>If an authentication error returns - "access_token_blocked", "access_token_invalid", "access_token_expired", "auth_error";</li>
+<li>If an error that involves a request from an non-authorized IP returns - mnemonics "ip_not_whitelisted".</li>
+</ul>
+</blockquote>
+<p>Data about limits returns in meta parameters (refer to Meta parameters).</p>
+<h4 id="expanding-limits">Expanding limits</h4>
+<p>You can manage limits in your client area "Account" -&gt; "Rates and options".</p>
+<p>Limits titles:</p>
+<ul>
+<li>Call API points per minute;</li>
+<li>Call API points per day;</li>
+<li>TTS message length.</li>
+</ul>
+<blockquote>
+<p>If you don't have any limits in your client area, you may have restrictions in your service plan. In this case you need to contact your personal manager or technical support.</p>
+</blockquote>
+<h3 id="meta-parameters">Meta parameters</h3>
+<blockquote>
+<p>They return as a reply to a call for a method. They can be found both in a successful request or in a request with an error.</p>
+<p>Parameter <code>api_version</code> returns only for versions that are <code>deprecated</code>.</p>
+</blockquote>
+<p>Description of parameters</p>
+<table>
+<thead>
+<tr>
+<th>Parameter title</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>day_limit</code></td>
+<td>Current limit points per day</td>
+</tr>
+<tr>
+<td><code>day_remaining</code></td>
+<td>Points left till daily limit</td>
+</tr>
+<tr>
+<td><code>day_reset</code></td>
+<td>Seconds till daily limit is reset</td>
+</tr>
+<tr>
+<td><code>minute_limit</code></td>
+<td>Current limit point per minute</td>
+</tr>
+<tr>
+<td><code>minute_remaining</code></td>
+<td>Points till minute limit</td>
+</tr>
+<tr>
+<td><code>minute_reset</code></td>
+<td>Seconds till minute limit is reset</td>
+</tr>
+<tr>
+<td><code>current_version_depricated</code></td>
+<td>Indication that an old version may become unavailable within 2 months</td>
+</tr>
+<tr>
+<td><code>current_version</code></td>
+<td>Current version</td>
+</tr>
+<tr>
+<td><code>latest_version</code></td>
+<td>Latest version</td>
+</tr>
+</tbody>
+</table>
+<p>JSON structure</p>
+<pre><code class="language-json">&quot;metadata&quot;: {
+  &quot;api_version&quot;: {
+    &quot;current_version_depricated&quot;: &quot;boolean&quot;,
+    &quot;current_version&quot;: &quot;string&quot;,
+    &quot;latest_version&quot;: &quot;string&quot;
+  },
+  &quot;limits&quot;: {
+    &quot;day_limit&quot;: &quot;number&quot;,
+    &quot;day_remaining&quot;: &quot;number&quot;,
+    &quot;day_reset&quot;: &quot;number&quot;,
+    &quot;minute_limit&quot;: &quot;number&quot;,
+    &quot;minute_remaining&quot;: &quot;number&quot;,
+    &quot;minute_reset&quot;: &quot;number&quot;
+  }
+}
+</code></pre>
+<h2 id="general">General</h2>
+<h3 id="fields-common-for-all-methods">Fields common for all methods</h3>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Type</th>
+<th>Required</th>
+<th>Valid value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>string or number</td>
+<td>yes</td>
+<td></td>
+<td>Request to API unique ID. <blockquote>Is not communicated in notifications. Is featured only in the the <code>Request ID</code> parameter of Statistics and reports </blockquote></td>
+</tr>
+<tr>
+<td>method</td>
+<td>string</td>
+<td>yes</td>
+<td></td>
+<td>Called in method  (refer to Methods list)</td>
+</tr>
+<tr>
+<td>jsonrpc</td>
+<td>string</td>
+<td>yes</td>
+<td>2.0</td>
+<td>JSON-RPC specification number</td>
+</tr>
+<tr>
+<td>params</td>
+<td>object</td>
+<td>yes</td>
+<td></td>
+<td>Contains a request's to API body. The body changes depending on a method.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="diagram"></a></p>
+<h3 id="call-state-diagram">Call state diagram</h3>
+<p><a href="#"><img alt="" src="images/state-diagram-call-copy.jpg" /></a></p>
+<h2 id="authentication">Authentication</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="authentication/login_user/">"login.user"</a></td>
+<td>Login</td>
+</tr>
+<tr>
+<td><a href="authentication/logout_user/">"logout.user"</a></td>
+<td>Logout</td>
+</tr>
+</tbody>
+</table>
+<h2 id="group-of-methods-to-make-calls">Group of methods to make calls</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="create_call/start_employee_call/">"start_employee_call"</a></td>
+<td>The method implements a direct call to an employee and does not use any scenario.</td>
+</tr>
+<tr>
+<td><a href="create_call/start_scenario_call/">"start.scenario_call"</a></td>
+<td>Method allows you to make calls according to a customized acenario. To use the method you only need a virtual phone number and N scenario.</td>
+</tr>
+<tr>
+<td><a href="create_call/start_vnumber_call/">"start.vnumber_call"</a></td>
+<td>Call to a virtual number.</td>
+</tr>
+<tr>
+<td><a href="create_call/start_informer_call/">"start.informer_call"</a></td>
+<td>Informer call with an option to play a media file for a subscriber or transmit a text message. After the message is played, the call ends automatically.</td>
+</tr>
+<tr>
+<td><a href="create_call/start_simple_call/">"start.simple_call"</a></td>
+<td>Call to any number except own virtual numbers. This is not a call from an employee to any number.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="group-of-methods-for-call-management">Group of methods for call management</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="manage_call/make_call/">"make.call"</a></td>
+<td>Make call for transfer or consulting.</td>
+</tr>
+<tr>
+<td><a href="manage_call/transfer_talk/">"transfer.talk"</a></td>
+<td>Method allows transferring calls to another employee or to an external number (Refer to "Diagram of call statuses").</td>
+</tr>
+<tr>
+<td><a href="manage_call/restore_talk/">"restore.talk"</a></td>
+<td>This method allows you to restore a conversation after a subscriber consulted another employee (refer to section "Diagram of call statuses").</td>
+</tr>
+<tr>
+<td><a href="manage_call/hold_call/">"hold.call"</a></td>
+<td>Holding call.</td>
+</tr>
+<tr>
+<td><a href="manage_call/unhold_call/">"unhold.call"</a></td>
+<td>Unholding call.</td>
+</tr>
+<tr>
+<td><a href="manage_call/tag_call/">"tag.call"</a></td>
+<td>Tagging an active call.</td>
+</tr>
+<tr>
+<td><a href="manage_call/disconnect_leg/">"disconnect.leg"</a></td>
+<td>Method allows you to disconnect various legs of a call. You can access ID for each leg via the list.calls method or a notification server.</td>
+</tr>
+<tr>
+<td><a href="manage_call/add_coach/">"add.coach"</a></td>
+<td>Adding a coach to a call.</td>
+</tr>
+<tr>
+<td><a href="manage_call/record_call/">"record.call"</a></td>
+<td>Managing call recording. You can not switch off the recording of a call set via your client area.</td>
+</tr>
+<tr>
+<td><a href="manage_call/block_contact/">"block.contact"</a></td>
+<td>Block a contact during call.</td>
+</tr>
+<tr>
+<td><a href="manage_call/call_talk_option/">"call.talk_option"</a></td>
+<td>Calling talk option set in the client area of your virtual PBX.</td>
+</tr>
+<tr>
+<td><a href="manage_call/send_dtmf/">"send.dtmf"</a></td>
+<td>Sending DTMF by an employee. The method is used when client side has IVR and it requires for you to choose a menu option.</td>
+</tr>
+<tr>
+<td><a href="manage_call/list_talk_options/">"list.talk_options"</a></td>
+<td>Receiving a list of talk options set in the client area of your virtual PBX.</td>
+</tr>
+<tr>
+<td><a href="manage_call/list_calls/">"list.calls"</a></td>
+<td>Receiving a list of active calls and their participants.</td>
+</tr>
+<tr>
+<td><a href="manage_call/release_call/">"release.call"</a></td>
+<td>Releasing a call.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="error-messages">Error messages</h2>
+<table>
+    <tbody>
+        <tr>
+            <th colspan="3">Title</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Valid value</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td colspan="3">error</td>
+            <td>object</td>
+            <td>yes</td>
+            <td></td>
+            <td>Object with error contents</td>
+        </tr>
+        <tr>
+            <td width="15"></td>
+            <td colspan="2">code</td>
+            <td>number</td>
+            <td>Yes</td>
+            <td></td>
+            <td>Code of error (refer to Group of error codes)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="2">message</td>
+            <td>string</td>
+            <td>yes</td>
+            <td></td>
+            <td>Error message (refer to List of errors common for all methods)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="2">data</td>
+            <td>object</td>
+            <td>yes</td>
+            <td></td>
+            <td>Object with error details</td>
+        </tr>
+        <tr>
+            <td width="15"></td>
+            <td width="15"></td>
+            <td>mnemonic</td>
+            <td>string</td>
+            <td>yes</td>
+            <td></td>
+            <td>Unique text code of an error (refer to List of errors common for all methods. There is also errors that are specific for certain methods)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>field</td>
+            <td>string</td>
+            <td>no</td>
+            <td></td>
+            <td>
+                <p>Name of the parameter, associated with error</p>
+                <blockquote>
+                    <p> Embedded parameters are displayed devided by a "dot": <code>.</code></p>
+                    <p>For example: <code>employee.phone_number</code></p>
+                </blockquote>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>value</td>
+            <td>string</td>
+            <td>no</td>
+            <td></td>
+            <td>
+                <p>Contains information transmitted by a client without any changes</p>
+                <blockquote> In some cases it may be absent. For example, when a required parameter is not filled in.</blockquote>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>params</td>
+            <td>object</td>
+            <td>no</td>
+            <td></td>
+            <td>Map of parameters' substitutions for a template with a text about an error. I.e. Contains value that can be changed in dynamics, such as limits, TTS message length. Value from this parameter can be used in error messages in the interface above Call API (operator's workspace).</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>extended_helper</td>
+            <td>string</td>
+            <td>no</td>
+            <td></td>
+            <td>Link to a page with more information about error and possible silutions</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="example-of-an-error">Example of an error</h3>
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: null,
+  &quot;error&quot;: {
+    &quot;code&quot;: -32602,
+    &quot;message&quot;: &quot;Data supplied is of wrong type&quot;,
+    &quot;data&quot;: {
+      &quot;mnemonic&quot;: &quot;data_type_error&quot;,
+      &quot;field&quot;: &quot;contact&quot;,
+      &quot;value&quot;: &quot;number&quot;,
+      &quot;params&quot;: {
+        &quot;object&quot;: null
+      },
+      &quot;extended_helper&quot;: null
+    }
+  }
+}
+</code></pre>
+<h3 id="groups-of-error-codes">Groups of error codes</h3>
+<table>
+<thead>
+<tr>
+<th>Code of error</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-32700</td>
+<td>Errors related to JSON validation</td>
+</tr>
+<tr>
+<td>-32600</td>
+<td>Errors related to validating parameters of a request - <code>id</code>, <code>jsonrpc</code></td>
+</tr>
+<tr>
+<td>-32601</td>
+<td>Errors related to methods</td>
+</tr>
+<tr>
+<td>-32602</td>
+<td>Errors related to validating parameters in a called methods</td>
+</tr>
+<tr>
+<td>-32603</td>
+<td>Internal errors of JSON RPC server <blockquote>In case an error occurs, you need to enquire with technical support, and transmit a request that caused error, as well as the time of the request.</blockquote></td>
+</tr>
+<tr>
+<td>-32001</td>
+<td>Authentication errors and errors with keys</td>
+</tr>
+<tr>
+<td>-32002</td>
+<td>Errors related to: security rules prohibit calls in given direction (refer to Security rules) and blacklist.</td>
+</tr>
+<tr>
+<td>-32003</td>
+<td>Errors with access right - ip address is not in the whitelist, a user does not have access right</td>
+</tr>
+<tr>
+<td>-32004</td>
+<td>Errors related to wrong order of called methods</td>
+</tr>
+<tr>
+<td>-32007</td>
+<td>Errors related to virtual number</td>
+</tr>
+<tr>
+<td>-32008</td>
+<td>Errors related to components</td>
+</tr>
+<tr>
+<td>-32009</td>
+<td>Errors related to an account. <blockquote>In case an error occurs, you need to enquire with technical support, and transmit a request that caused error, as well as the time of the request.</blockquote></td>
+</tr>
+<tr>
+<td>-32029</td>
+<td>Errors related to limits</td>
+</tr>
+<tr>
+<td>-32099</td>
+<td>Errors related to support of various JSON RPC 2.0 specifications - Group operations, Notifications</td>
+</tr>
+</tbody>
+</table>
+<h3 id="list-of-errors-common-for-all-methods">List of errors common for all methods</h3>
+<table>
+<thead>
+<tr>
+<th>Text of message</th>
+<th>Code</th>
+<th>Mnemonics</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Invalid Request The JSON sent is not a valid Request object</td>
+<td>-32600</td>
+<td><code>invalid_request</code></td>
+<td>Errors related to validating parameters of a request  - <code>id</code>, <code>jsonrpc</code></td>
+</tr>
+<tr>
+<td>Access token has been expired</td>
+<td>-32001</td>
+<td><code>access_token_expired</code></td>
+<td>Applies only to a permanent token. If a token expires, the error returns</td>
+</tr>
+<tr>
+<td>Access token has been blocked</td>
+<td>-32001</td>
+<td><code>access_token_blocked</code></td>
+<td>If a permanent token is blocked, the error returns</td>
+</tr>
+<tr>
+<td>Access token is invalid</td>
+<td>-32001</td>
+<td><code>access_token_invalid</code></td>
+<td>The error returns if a permanent/temporary token is not found or a permanent token's lifespan is up</td>
+</tr>
+<tr>
+<td>Limit per {limit_type} has been exceeded. Value of current limit per {limit_type} is {limit_max_value}</td>
+<td>-32029</td>
+<td><code>limit_exceeded</code></td>
+<td>Limits of service plan are exceeded (refer to Limits and regulations)</td>
+</tr>
+<tr>
+<td>Component {component_name} has been disabled</td>
+<td>-32008</td>
+<td><code>component_disabled</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Your IP {ip} is not whitelisted</td>
+<td>-32003</td>
+<td><code>ip_not_whitelisted</code></td>
+<td>IP address of a request is not in the whitelist (refer to client area "Account" -&gt; "Call API" tab "IP addresses"</td>
+</tr>
+<tr>
+<td>Login or password is wrong</td>
+<td>-32001</td>
+<td><code>auth_error</code></td>
+<td>Incorrect login or password</td>
+</tr>
+<tr>
+<td>Your account has been disabled, contact the support service</td>
+<td>-32009</td>
+<td><code>account_inactive</code></td>
+<td>Account blocked. <blockquote>In case an error occurs, you should enquire with technical support, and transmit a request that caused error, as well as the time of the request.</blockquote></td>
+</tr>
+<tr>
+<td>Call session not found</td>
+<td>-32602</td>
+<td><code>call_session_not_found</code></td>
+<td>Session ID not found</td>
+</tr>
+<tr>
+<td>Internal error, contact the support service</td>
+<td>-32603</td>
+<td><code>internal_error</code></td>
+<td><blockquote>In case an error occurs, you should enquire with technical support, and transmit a request that caused error, as well as the time of the request.</blockquote></td>
+</tr>
+<tr>
+<td>Data supplied is of wrong type</td>
+<td>-32602</td>
+<td><code>data_type_error</code></td>
+<td>For example, if we are waiting <code>string</code> but receiving <code>int</code></td>
+</tr>
+<tr>
+<td>The method does not exist / is not available</td>
+<td>-32601</td>
+<td><code>method_not_found</code></td>
+<td>Called method is not included in the specification (refer to List of methods)</td>
+</tr>
+<tr>
+<td>Permission denied</td>
+<td>-32003</td>
+<td><code>forbidden</code></td>
+<td>No access rights or access to method or API, or any action is forbidden</td>
+</tr>
+<tr>
+<td>Invalid JSON was received by the server.</td>
+<td>-32700</td>
+<td><code>parse_error</code></td>
+<td>Invalid JSON</td>
+</tr>
+<tr>
+<td>Batch operations not supported</td>
+<td>-32099</td>
+<td><code>batch_opreations_not_supported</code></td>
+<td>Batch operations are not supported (refer to JSON-RPC 2.0)</td>
+</tr>
+<tr>
+<td>Notifications not supported</td>
+<td>-32099</td>
+<td><code>notifications_not_supported</code></td>
+<td>Notifications are not supported (refer to JSON-RPC 2.0)</td>
+</tr>
+<tr>
+<td>The required parameter has been missed</td>
+<td>-32602</td>
+<td><code>required_parameter_missed</code></td>
+<td>The required parameter has been missed</td>
+</tr>
+<tr>
+<td>Invalid parameter value</td>
+<td>-32602</td>
+<td><code>invalid_parameter_value</code></td>
+<td>Returns in all cases when incorrect value of a parameter has been transmitted, or it doesn't comply with required format of input</td>
+</tr>
+<tr>
+<td>Unexpected method parameter(s)</td>
+<td>-32602</td>
+<td><code>unexpected_parameters</code></td>
+<td>If  parameters that are not mentioned in JSON method structure have been given in <code>params</code></td>
+</tr>
+</tbody>
+</table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: ".",
+          features: [],
+          search: Object.assign({
+            worker: "assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="js/init.js"></script>
+      
+    
+  </body>
+</html>

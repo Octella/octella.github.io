@@ -1,0 +1,1196 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>Uploading calls and conversations - DATA API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab28b872.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#parameters-of-a-request" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="DATA API" class="md-header-nav__button md-logo" aria-label="DATA API">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            DATA API
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Uploading calls and conversations
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DATA API" class="md-nav__button md-logo" aria-label="DATA API">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DATA API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../changelog/" class="md-nav__link">
+      Changelog
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." class="md-nav__link">
+      General Information
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../account/" class="md-nav__link">
+      Account
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../vn/" class="md-nav__link">
+      Virtual Numbers
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../sip/" class="md-nav__link">
+      SIP-lines
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../scenarios/" class="md-nav__link">
+      Scenarios
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../user_media/" class="md-nav__link">
+      Media
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../campaigns/" class="md-nav__link">
+      Ad Campaigns
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../sites/" class="md-nav__link">
+      Sites
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../reports/" class="md-nav__link">
+      Reports
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../tags/" class="md-nav__link">
+      Tags
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../employees/" class="md-nav__link">
+      Employees
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../contacts/" class="md-nav__link">
+      Contacts
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../schedules/" class="md-nav__link">
+      Schedules
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../report/campaign_daily_stat/" class="md-nav__link">
+      Ad Campaigns Daily Reports
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../customers/" class="md-nav__link">
+      Agents’ Customers
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../communications/" class="md-nav__link">
+      Communications
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../persons/" class="md-nav__link">
+      Persons
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parameters-of-a-request" class="md-nav__link">
+    Parameters of a request
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters-of-a-reply" class="md-nav__link">
+    Parameters of a reply
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters-of-a-notification-about-processing-status" class="md-nav__link">
+    Parameters of a notification about processing status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements-to-wav-files-for-voice-analysis" class="md-nav__link">
+    Requirements to wav files for voice analysis
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Uploading calls and conversations</h1>
+                
+                <nav>
+<a href="../../Sites">Uploading calls and conversations </a> >
+Uploading conversations
+</nav>
+
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Components necessary to work with the method</td>
+<td align="left">"Data API for settings", "Uploading calls from an outside system"</td>
+</tr>
+<tr>
+<td align="left">Components required to work with files in the format wav</td>
+<td align="left">"Voice analysis of calls"</td>
+</tr>
+<tr>
+<td align="left">Weight of the method</td>
+<td align="left">5 points</td>
+</tr>
+<tr>
+<td align="left">Maximum number of calls per request</td>
+<td align="left">500</td>
+</tr>
+<tr>
+<td align="left">Maximum JSON size</td>
+<td align="left">512 K</td>
+</tr>
+<tr>
+<td align="left">IP address of a server, you need to have access to in order to upload files</td>
+<td align="left">195.211.120.37</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="left">Method</th>
+<th align="left"><code>upload.calls</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Description</td>
+<td align="left">Uploading calls and conversations for voice or end-to-end analysis</td>
+</tr>
+<tr>
+<td align="left">Who has access</td>
+<td align="left">Agent, Customer</td>
+</tr>
+</tbody>
+</table>
+<h3 id="parameters-of-a-request">Parameters of a request</h3>
+<table>
+   <tr>
+      <th>Title</th>
+      <th>Type</th>
+      <th>Required</th>
+      <th>Valid value</th>
+      <th>Description</th>
+   </tr>
+   <tr>
+      <td><code>access_token</code></td>
+      <td>string</td>
+      <td>yes</td>
+      <td></td>
+      <td>Authentication session key</td>
+   </tr>
+   <tr>
+      <td><code>user_id</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td> Unique user ID of a customer or an agent who makes request. 
+           <blockquote>Is mandatory for an agent</blockquote> To get a list of customer users you need to use the method  <a href="../../Partners/#get_customer_user">"get.customer_users"</a>
+      </td>
+   </tr>
+   <tr>
+      <td><code>ext_id</code></td>
+      <td>string</td>
+      <td>yes</td>
+      <td></td>
+      <td>Unique ID of a call in your system. <blockquote>Duplicates are dropped out as calls are uploaded into a data base</blockquote>
+      </td>
+   </tr>
+   <tr>
+      <td><code>direction</code></td>
+      <td>enum</td>
+      <td>no</td>
+      <td>
+        <li>in - incoming call</li>
+        <li>out - outgoing call</li>
+      </td>
+      <td>Direction of a call
+      <blockquote>Default value is 'in'</blockquote>
+      </td>
+   </tr>
+   <tr>
+      <td><code>calling_phone_number</code></td>
+      <td>string</td>
+      <td>yes</td>
+      <td>
+        E164
+      </td>
+      <td>Caller's phone number</td>
+   </tr>
+   <tr>
+      <td><code>called_phone_number</code></td>
+      <td>string</td>
+      <td>yes</td>
+      <td>
+        E164
+      </td>
+      <td>A dialed number</td>
+   </tr>
+   <tr>
+      <td><code>start_time</code></td>
+      <td>iso8601</td>
+      <td>yes</td>
+      <td>
+        YYYY-MM-DD hh:mm:ss
+      </td>
+      <td>Date and time of a call session's start
+      <blockquote>Data will be corrected with consideration of a time zone set in your client area.</blockquote>
+      </td>
+   </tr>
+   <tr>
+      <td><code>finish_time</code></td>
+      <td>iso8601</td>
+      <td>yes</td>
+      <td>
+        YYYY-MM-DD hh:mm:ss
+      </td>
+      <td>Completion time of a call session. Can't be earlier than <code>start_time</code>
+      <blockquote>Data will be corrected with consideration of a time zone set in your client area.</blockquote>
+      </td>
+   </tr>
+   <tr>
+      <td><code>is_lost</code></td>
+      <td>boolean</td>
+      <td>yes</td>
+      <td></td>
+      <td>Defines whether a call is lost or successful</td>
+   </tr>
+   <tr>
+      <td><code>is_transfer</code></td>
+      <td>boolean</td>
+      <td>no</td>
+      <td></td>
+      <td>Default value is `false`. Defines whether transfer occured or not
+      <blockquote>Order for employees communications is set in the parameters wav_records and mp3_records</blockquote>
+      </td>
+   </tr>
+   <tr>
+      <td><code>wait_duration</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td>Waiting time for a subscriber before he or she talks to an employee. Value is in seconds.</td>
+   </tr>
+   <tr>
+      <td><code>talk_duration</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td>Conversation time - a time period from the first call of a subsriber to termination of a call with the last employee. Value is in seconds</td>
+   </tr>
+   <tr>
+      <td><code>visitor_session_id</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td>Unique ID of a visitor session from Octella. The parameter is required if you need to analyze an advertising campaign.</td>
+   </tr>
+   <tr>
+      <td><code>campaign_id</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td>Unique ID of an advertising campaign in Octella.
+      <blockquote>Parameter should be ignored, if the parameter visitor_session_id is filled in</blockquote></td>
+   </tr>
+   <tr>
+      <td><code>site_id</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td>Unique website ID in Octella <blockquote>Parameter should be ignored if the parameter visitor_session_id is filled in or the parameter called_phone_number belongs to another website.</blockquote></td>
+   </tr>
+   <tr>
+      <td><code>comment</code></td>
+      <td>string</td>
+      <td>no</td>
+      <td></td>
+      <td>Comment to a call. Can contain name of a service or a form that generated a call.</td>
+   </tr>
+   <tr>
+      <td colspan = 5>Notification about call processing</td>
+   </tr>
+      <tr>
+      <td><code>callback</code></td>
+      <td>object</td>
+      <td>no</td>
+      <td></td>
+      <td>Notification about call processing
+      <blockquote>JSON notification format</blockquote>
+      </td>
+   </tr>
+   </tr>
+      <tr>
+      <td><code>url</code></td>
+      <td>string</td>
+      <td>yes</td>
+      <td></td>
+      <td>http/https address a notification about successful call processing will be sent to.
+      </td>
+   </tr>
+   </tr>
+      <tr>
+      <td><code>events</code></td>
+      <td>array</td>
+      <td>yes</td>
+      <td>
+        <li>processed - call is successfully processed</li>
+        <li>in_process - call is in progress</li>
+        <li>error - call processing error</li>
+      </td>
+      <td>What notifications about call processing you should get
+      </td>
+   </tr>
+   <tr>
+      <td colspan = 5>Call tags</td>
+   </tr>
+   <tr>
+      <td><code>tags</code></td>
+      <td>array</td>
+      <td>no</td>
+      <td></td>
+      <td>Call tags</td>
+   </tr>
+   <tr>
+      <td><code>tag_id</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td>Unique call tag ID in Octella</td>
+   </tr>
+   <tr>
+      <td><code>tag_name</code></td>
+      <td>string</td>
+      <td>yes</td>
+      <td></td>
+      <td>Tag name. <blockquote>You can search tags by their name in the system. If you don't find the one you need, you can create it and use it for a call. If you succesfully found it, just use it for a call. Search is case sensitive.  To apply the tag "Sales" use the method <a href="../../Tags/">"set.tag_sales"</a> This should be ignored if the <code>tag_id</code></blockquote> is filled in</td>
+   </tr>
+   <tr>
+      <td colspan = 5>Conversation files for voice analysis</td>
+   </tr>
+   <tr>
+      <td><code>wav_records</code></td>
+      <td>array</td>
+      <td>no</td>
+      <td></td>
+      <td>Conversation files for voice analysis
+      <blockquote>You can transmit them only if the component "Voice analysis of calls" is active.
+      Wav files automatically convert to mp3 records that you can listen to in your client area.
+      </blockquote>
+      </td>
+   </tr>
+   <tr>
+      <td><code>employee_id</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td>Unique ID of an employee in Octella</td>
+   </tr>
+   <tr>
+      <td><code>employee_name</code></td>
+      <td>string</td>
+      <td>yes</td>
+      <td></td>
+      <td>Name of an employee (full name) <blockquote>You can search for an employee in the system by his or hers full name. If you don't find them you can create them and connect them to a call. Search is not case sensitive. This should be ignored if <code>employee_id</code> is filled in</blockquote></td>
+   </tr>
+   <tr>
+      <td><code>employee_channel</code></td>
+      <td>enum</td>
+      <td>yes</td>
+      <td>
+        <li>left</li> - left channel
+        <li>right</li> - right channel
+        </td>
+      <td>Defines which channel an employee use.
+      <blockquote>Values are only left or right</blockquote>
+      </td>
+   </tr>
+   <tr>
+      <td><code>record_url</code></td>
+      <td>string</td>
+      <td>yes</td>
+      <td></td>
+      <td>Address you can go to to download conversation files. Wait for https only.</td>
+   </tr>
+    <tr>
+      <td colspan = 5>You can listen to conversation files in your client area</td>
+   </tr>
+   <tr>
+      <td><code>mp3_records</code></td>
+      <td>array</td>
+      <td>no</td>
+      <td></td>
+      <td>You can listen to conversation files in your client area.
+      <blockquote>It's forbidden to transmit them if the parameter wav_records is filled in</blockquote>
+      </td>
+   </tr>
+   <tr>
+      <td><code>employee_name</code></td>
+      <td>string</td>
+      <td>no</td>
+      <td></td>
+      <td>Employee's full name, <blockquote>You can search for an employee in the system by his or hers full name. If you don't find them you can create them and connect them to a call. Search is not case sensitive. This should be ignored if <code>employee_id</code> is filled in</blockquote></td>
+   </tr>
+   <tr>
+      <td><code>employee_id</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td>Employee's unique ID in the Octella system</td>
+   </tr>
+   <tr>
+      <td><code>record_url</code></td>
+      <td>string</td>
+      <td>yes</code></td>
+      <td></td>
+      <td>Address you can go to to download conversation files.</td>
+   </tr>
+</table>
+
+<h3 id="parameters-of-a-reply">Parameters of a reply</h3>
+<table>
+   <tr>
+      <th>Title</th>
+      <th>Type</th>
+      <th>Required</th>
+      <th>Description</th>
+   </tr>
+</table>
+
+<h3 id="parameters-of-a-notification-about-processing-status">Parameters of a notification about processing status</h3>
+<table>
+   <tr>
+      <th>Title</th>
+      <th>Type</th>
+      <th>Required</th>
+      <th>Valid value</th>
+      <th>Description</th>
+   </tr>
+   <tr>
+      <td><code>status</code></td>
+      <td>enum</td>
+      <td>yes</td>
+      <td>
+      <li>processed - processed</li>
+      <li>in_process - in process</li>
+      <li>error - processing error</li>
+      </td>
+      <td>Processing error of an uploaded file</td>
+   </tr>
+   <tr>
+      <td><code>ext_id</code></td>
+      <td>string</td>
+      <td>yes</td>
+      <td></td>
+      <td>Unique call ID in your system</td>
+   </tr>
+   <tr>
+      <td><code>call_session_id</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td>Unique ID of a call session in Octella (refer to the method <code>get.calls_report</code>)</td>
+   </tr>
+   <tr>
+      <td><code>timestamp</code></td>
+      <td>number</td>
+      <td>yes</td>
+      <td></td>
+      <td>Time zone for event generation is UTC GMT+00:00</td>
+   </tr>
+   <tr>
+      <td><code>error_message</code></td>
+      <td>string</td>
+      <td>no</td>
+      <td></td>
+      <td>Error message. Should be filled in, if the parameter status has value "error"</td>
+   </tr>
+   <tr>
+      <td><code>error_code</code></td>
+      <td>enum</td>
+      <td>no</td>
+      <td></td>
+      <td>Error mnemonics. Should be filled in, if the parameter status has value "error"</td>
+   </tr>
+</table>
+
+<h3 id="requirements-to-wav-files-for-voice-analysis">Requirements to wav files for voice analysis</h3>
+<li>Call recording in stereo mode with two audio channels: employee's voice in one of the channels, customer's voice in the other.
+<li>PCM-16 bit
+<li>Sampling rate: 8000 hz
+<li>Frequency range not worse than 330-3400 hz;
+<li>Signal-to-noise ratio at frequency range 330-3400 hz: not less than 15 dB;
+<li>Minimum duration of a voice signal is 16 seconds;
+<li>File size not more than 50Mb</li>
+
+### Requirements to a service, that will distribute conversations recordings when they are uploaded via given URL
+- Reply to a request for uploading wav files should have title Content-Type: audio/wav
+- Reply to a request for uploading mp3 files should have title Content-Type: audio/mpeg
+
+### JSON request structure
+
+
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: &quot;number&quot;,
+  &quot;method&quot;: &quot;upload.calls&quot;,
+  &quot;params&quot;: {
+    &quot;access_token&quot;: &quot;string&quot;,
+    &quot;user_id&quot;: &quot;number&quot;,
+    &quot;calls&quot;: [
+      {
+        &quot;callback&quot;: {
+          &quot;url&quot;: &quot;string&quot;,
+          &quot;events&quot;: [
+
+          ]
+        },
+        &quot;ext_id&quot;: &quot;string&quot;,
+        &quot;direction&quot;: &quot;enum&quot;,
+        &quot;calling_phone_number&quot;: &quot;string&quot;,
+        &quot;called_phone_number&quot;: &quot;string&quot;,
+        &quot;start_time&quot;: &quot;iso8601&quot;,
+        &quot;finish_time&quot;: &quot;iso8601&quot;,
+        &quot;is_lost&quot;: &quot;boolean&quot;,
+        &quot;is_transfer&quot;: &quot;boolean&quot;,
+        &quot;visitor_session_id&quot;: &quot;number&quot;,
+        &quot;site_id&quot;: &quot;number&quot;,
+        &quot;campaign_id&quot;: &quot;number&quot;,
+        &quot;wait_duration&quot;: &quot;number&quot;,
+        &quot;talk_duration&quot;: &quot;number&quot;,
+        &quot;comment&quot;: &quot;string&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;tag_id&quot;: &quot;number&quot;,
+            &quot;tag_name&quot;: &quot;string&quot;
+          }
+        ],
+        &quot;wav_records&quot;: [
+          {
+            &quot;employee_channel&quot;: &quot;enum&quot;,
+            &quot;employee_name&quot;: &quot;string&quot;,
+            &quot;employee_id&quot;: &quot;number&quot;,
+            &quot;record_url&quot;: &quot;string&quot;
+          }
+        ],
+        &quot;mp3_records&quot;: [
+          {
+            &quot;employee_name&quot;: &quot;string&quot;,
+            &quot;employee_id&quot;: &quot;number&quot;,
+            &quot;record_url&quot;: &quot;string&quot;
+          }
+        ]
+      }
+    ]
+  }
+}
+</code></pre>
+
+
+### JSON reply structure
+<blockquote>You get a reply as soon as the system saves calls for further processing. As processing is finished, a web-hook with processing status will be ready.</blockquote>
+
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: &quot;number&quot;,
+  &quot;result&quot;: {
+  &quot;data&quot;: {
+      &quot;success&quot;: &quot;true&quot;
+    }
+  }
+}
+</code></pre>
+
+
+### JSON structure about processing status
+
+<pre><code class="language-json">{
+  &quot;ext_id&quot;: &quot;string&quot;,
+  &quot;call_session_id&quot;: &quot;number&quot;,
+  &quot;status&quot;: &quot;enum&quot;,
+  &quot;timestamp&quot;: &quot;number&quot;,
+  &quot;error_message&quot;: &quot;string&quot;,
+  &quot;error_code&quot;: &quot;enum&quot;
+}
+</code></pre>
+
+
+
+### Example for a voice analysis, uploading a subscriber's call with several employees in one wav-file
+Customer uploads a call that includes a transfer and conversations with various employees.
+
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: &quot;number&quot;,
+  &quot;method&quot;: &quot;upload.calls&quot;,
+  &quot;params&quot;: {
+    &quot;access_token&quot;: &quot;string&quot;,
+    &quot;calls&quot;: [
+      {
+        &quot;ext_id&quot;: &quot;test1&quot;,
+        &quot;direction&quot;: &quot;in&quot;,
+        &quot;calling_phone_number&quot;: &quot;89262444397&quot;,
+        &quot;called_phone_number&quot;: &quot;84955140576&quot;,
+        &quot;start_time&quot;: &quot;2019-07-01 12:00:00&quot;,
+        &quot;finish_time&quot;: &quot;2019-07-01 12:00:30&quot;,
+        &quot;is_lost&quot;: false,
+        &quot;is_transfer&quot;: true,
+        &quot;wait_duration&quot;: 10,
+        &quot;talk_duration&quot;: 20,
+        &quot;tags&quot;: [
+          {
+            &quot;tag_name&quot;: &quot;Targer&quot;
+          },
+          {
+            &quot;tag_name&quot;: &quot;Test&quot;
+          }
+        ],
+        &quot;wav_records&quot;: [
+          {
+            &quot;employee_channel&quot;: &quot;left&quot;,
+            &quot;employee_name&quot;: &quot;Ivan Vasil'yevich&quot;,
+            &quot;record_url&quot;: &quot;https://test.ru/shhgad-adjjsdf-ytrh&quot;
+          },
+          {
+            &quot;employee_channel&quot;: &quot;right&quot;,
+            &quot;employee_name&quot;: &quot;Alexander Vasil'yevich&quot;,
+            &quot;record_url&quot;: &quot;https://test.ru/shhgad-adjjsdf&quot;
+          }
+        ]
+      }
+    ]
+  }
+}
+</code></pre>
+
+
+### Example for a voice analysis, uploading a subscriber's call with an employee in one wav-file
+Customer uploads a call that has a conversation between a subscriber and an employee.
+
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: &quot;number&quot;,
+  &quot;method&quot;: &quot;upload.calls&quot;,
+  &quot;params&quot;: {
+    &quot;access_token&quot;: &quot;string&quot;,
+    &quot;calls&quot;: [
+      {
+        &quot;ext_id&quot;: &quot;test1&quot;,
+        &quot;direction&quot;: &quot;in&quot;,
+        &quot;calling_phone_number&quot;: &quot;89262444397&quot;,
+        &quot;called_phone_number&quot;: &quot;84955140576&quot;,
+        &quot;start_time&quot;: &quot;2019-07-01 12:00:00&quot;,
+        &quot;finish_time&quot;: &quot;2019-07-01 12:00:30&quot;,
+        &quot;is_lost&quot;: false,
+        &quot;wait_duration&quot;: 10,
+        &quot;talk_duration&quot;: 20,
+        &quot;tags&quot;: [
+          {
+            &quot;tag_name&quot;: &quot;Target&quot;
+          },
+          {
+            &quot;tag_name&quot;: &quot;Test&quot;
+          }
+        ],
+        &quot;wav_records&quot;: [
+          {
+            &quot;employee_channel&quot;: &quot;left&quot;,
+            &quot;employee_name&quot;: &quot;Ivan Vasil'yevich&quot;,
+            &quot;record_url&quot;: &quot;https://test.ru/shhgad-adjjsdf-xxxx&quot;
+          }
+        ]
+      }
+    ]
+  }
+}
+</code></pre>
+
+
+### Example of end-to-end analysis, uploading calls from an outside call tracking service
+
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: &quot;number&quot;,
+  &quot;method&quot;: &quot;upload.calls&quot;,
+  &quot;params&quot;: {
+    &quot;access_token&quot;: &quot;string&quot;,
+    &quot;calls&quot;: [
+      {
+        &quot;ext_id&quot;: &quot;test1&quot;,
+        &quot;direction&quot;: &quot;in&quot;,
+        &quot;calling_phone_number&quot;: &quot;89262444397&quot;,
+        &quot;called_phone_number&quot;: &quot;84955140576&quot;,
+        &quot;start_time&quot;: &quot;2019-07-01 12:00:00&quot;,
+        &quot;finish_time&quot;: &quot;2019-07-01 12:00:30&quot;,
+        &quot;is_lost&quot;: false,
+        &quot;campaign_id&quot;: 435,
+        &quot;site_id&quot;: 24,
+        &quot;tags&quot;: [
+          {
+            &quot;tag_name&quot;: &quot;Target&quot;
+          },
+          {
+            &quot;tag_name&quot;: &quot;Test&quot;
+          }
+        ],
+        &quot;mp3_records&quot;: [
+          {
+            &quot;record_url&quot;: &quot;https://test.ru/shhgad-adjjsdf-xxxx&quot;
+          }
+        ]
+      }
+    ]
+  }
+}
+</code></pre>
+
+
+### Example of end-to-end analysis, uploading calls from a callback form
+
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: &quot;number&quot;,
+  &quot;method&quot;: &quot;upload.calls&quot;,
+  &quot;params&quot;: {
+    &quot;access_token&quot;: &quot;string&quot;,
+    &quot;calls&quot;: [
+      {
+        &quot;ext_id&quot;: &quot;test1&quot;,
+        &quot;direction&quot;: &quot;in&quot;,
+        &quot;calling_phone_number&quot;: &quot;89262444397&quot;,
+        &quot;called_phone_number&quot;: &quot;84955140576&quot;,
+        &quot;start_time&quot;: &quot;2019-07-01 12:00:00&quot;,
+        &quot;finish_time&quot;: &quot;2019-07-01 12:00:30&quot;,
+        &quot;is_lost&quot;: false,
+        &quot;visitor_session_id&quot;: 435,
+        &quot;tags&quot;: [
+          {
+            &quot;tag_name&quot;: &quot;Target&quot;
+          },
+          {
+            &quot;tag_name&quot;: &quot;Test&quot;
+          }
+        ],
+        &quot;mp3_records&quot;: [
+          {
+            &quot;record_url&quot;: &quot;https://test.ru/shhgad-adjjsdf-xxxx&quot;
+          }
+        ]
+      }
+    ]
+  }
+}
+</code></pre>
+
+
+### Example of a notification about call processing status
+
+<pre><code class="language-json">{
+  &quot;ext_id&quot;: &quot;test1&quot;,
+  &quot;call_session_id&quot;: &quot;1564545&quot;,
+  &quot;status&quot;: &quot;processed&quot;,
+  &quot;timestamp&quot;: &quot;1562156217&quot;
+}
+</code></pre>
+
+
+### List of returning errors
+
+| Parameter                         | Value                                                                                                                                          |
+| :-------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------- |
+| max_file_size_download_error      | Exceeded maximum file size. at the moment - 50 MB.                                                                                             |
+| decode_error                      | Could not open a conversation file, don't have first bytes in mp3 - ID3 and wav - RIFF files or an error occurred during the decoding process. |
+| wav_min_duration_processing_error | Downloaded wav file is shorter than 16 seconds.                                                                                                |
+| wav_channels_processing_error     | Downloaded wav file does not have 2 channels.                                                                                                  |
+| wav_processing_error              | Error in wav file processing or in decoding a file with the needed parameters.                                                                 |
+| connection_download_error         | Error while connecting a server. Bad connection.                                                                                               |
+| http_status_download_error        | Server from which you download a file responded at 200.                                                                                        |
+| http_content_type_download_error  | Content-Type does not comply with the specification.                                                                                           |
+| timeout_download_error            | File has been downloading for too long or connection with server took too much time. Maximum time is 30 seconds                                |
+
+Refer to ["List of errors for methods with the verb create"](../index.md#_changeErrors)
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../../js/init.js"></script>
+      
+    
+  </body>
+</html>
