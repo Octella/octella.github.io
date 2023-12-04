@@ -1,0 +1,934 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>Changelog - DATA API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab28b872.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2019-11-14" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="DATA API" class="md-header-nav__button md-logo" aria-label="DATA API">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            DATA API
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Changelog
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="DATA API" class="md-nav__button md-logo" aria-label="DATA API">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DATA API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Changelog
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Changelog
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#2019-11-14" class="md-nav__link">
+    2019-11-14
+  </a>
+  
+    <nav class="md-nav" aria-label="2019-11-14">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added-to-upload-communications" class="md-nav__link">
+    Added to "Upload communications"
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#209-2019-10-03" class="md-nav__link">
+    [2.0.9] - 2019-10-03
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.9] - 2019-10-03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#208-2019-01-10" class="md-nav__link">
+    [2.0.8] - 2019-01-10
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.8] - 2019-01-10">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_1" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#207-2018-11-29" class="md-nav__link">
+    [2.0.7] - 2018-11-29
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.7] - 2018-11-29">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_2" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#206-2018-08-10" class="md-nav__link">
+    [2.0.6] - 2018-08-10
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.6] - 2018-08-10">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_3" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#205-2018-07-12" class="md-nav__link">
+    [2.0.5] - 2018-07-12
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.5] - 2018-07-12">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_4" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#204-2018-02-15" class="md-nav__link">
+    [2.0.4] - 2018-02-15
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.4] - 2018-02-15">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_5" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#203-2018-02-07" class="md-nav__link">
+    [2.0.3] - 2018-02-07
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.3] - 2018-02-07">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_6" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#202-2018-01-29" class="md-nav__link">
+    [2.0.2] - 2018-01-29
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.2] - 2018-01-29">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_7" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      General Information
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../account/" class="md-nav__link">
+      Account
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../vn/" class="md-nav__link">
+      Virtual Numbers
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../sip/" class="md-nav__link">
+      SIP-lines
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../scenarios/" class="md-nav__link">
+      Scenarios
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../user_media/" class="md-nav__link">
+      Media
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../campaigns/" class="md-nav__link">
+      Ad Campaigns
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../sites/" class="md-nav__link">
+      Sites
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../reports/" class="md-nav__link">
+      Reports
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../tags/" class="md-nav__link">
+      Tags
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../employees/" class="md-nav__link">
+      Employees
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../contacts/" class="md-nav__link">
+      Contacts
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../schedules/" class="md-nav__link">
+      Schedules
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../report/campaign_daily_stat/" class="md-nav__link">
+      Ad Campaigns Daily Reports
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../customers/" class="md-nav__link">
+      Agents’ Customers
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../communications/" class="md-nav__link">
+      Communications
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../persons/" class="md-nav__link">
+      Persons
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#2019-11-14" class="md-nav__link">
+    2019-11-14
+  </a>
+  
+    <nav class="md-nav" aria-label="2019-11-14">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added-to-upload-communications" class="md-nav__link">
+    Added to "Upload communications"
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#209-2019-10-03" class="md-nav__link">
+    [2.0.9] - 2019-10-03
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.9] - 2019-10-03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#208-2019-01-10" class="md-nav__link">
+    [2.0.8] - 2019-01-10
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.8] - 2019-01-10">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_1" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#207-2018-11-29" class="md-nav__link">
+    [2.0.7] - 2018-11-29
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.7] - 2018-11-29">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_2" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#206-2018-08-10" class="md-nav__link">
+    [2.0.6] - 2018-08-10
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.6] - 2018-08-10">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_3" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#205-2018-07-12" class="md-nav__link">
+    [2.0.5] - 2018-07-12
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.5] - 2018-07-12">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_4" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#204-2018-02-15" class="md-nav__link">
+    [2.0.4] - 2018-02-15
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.4] - 2018-02-15">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_5" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#203-2018-02-07" class="md-nav__link">
+    [2.0.3] - 2018-02-07
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.3] - 2018-02-07">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_6" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#202-2018-01-29" class="md-nav__link">
+    [2.0.2] - 2018-01-29
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.2] - 2018-01-29">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_7" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Changelog</h1>
+                
+                <h2 id="2019-11-14">2019-11-14</h2>
+<h3 id="added-to-upload-communications">Added to "Upload communications"</h3>
+<ul>
+<li>Upload/delete offline messages <code>upload.offline_messages</code></li>
+<li>Upload/delete chats <code>upload.chats</code></li>
+</ul>
+<h2 id="209-2019-10-03">[2.0.9] - 2019-10-03</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>Getting account <code>get.account</code></li>
+</ul>
+<h2 id="208-2019-01-10">[2.0.8] - 2019-01-10</h2>
+<h3 id="added_1">Added</h3>
+<ul>
+<li>Creating a site <code>create.sites</code></li>
+<li>Deleting a site <code>delete.sites</code></li>
+<li>Updating a site <code>update.sites</code></li>
+</ul>
+<h2 id="207-2018-11-29">[2.0.7] - 2018-11-29</h2>
+<h3 id="added_2">Added</h3>
+<ul>
+<li>Get campaign daily statistics. Method <code>get.campaign_daily_stat</code></li>
+<li>Get a list of available virtual numbers <code>get.available_virtual_numbers"</code></li>
+<li>Enable virtual number <code>enable.virtual_numbers</code></li>
+<li>Disable virtual number <code>disable.virtual_numbers</code></li>
+<li>Added the parameter <code>include_ongoing_calls</code> "Include ongoing calls" for the method get.calls_report</li>
+</ul>
+<h2 id="206-2018-08-10">[2.0.6] - 2018-08-10</h2>
+<h3 id="added_3">Added</h3>
+<ul>
+<li>Added to methods <code>create.employees</code>, <code>get.employees</code>, <code>update.employees</code> are parameters to manage employees statuses and calling permissions: <code>status</code>, <code>allowed_in_call_types</code>, <code>allowed_out_call_types</code>;</li>
+<li>Parameter <code>calls_available</code> will be deleted from the methods <code>create.employees</code>, <code>get.employees</code>, <code>update.employees</code> in 2 months. It is not recommended to use this parameter.</li>
+</ul>
+<h2 id="205-2018-07-12">[2.0.5] - 2018-07-12</h2>
+<h3 id="added_4">Added</h3>
+<ul>
+<li>Added the parameter: time to process lost calls "lost_call_processing_duration" to the method <code>get.calls_report</code>;</li>
+<li>Added a new method to get a list of scenarios <code>get.scenarios</code>;</li>
+<li>Added a new method to get media files - system, user <code>get.media_files</code>.</li>
+</ul>
+<h2 id="204-2018-02-15">[2.0.4] - 2018-02-15</h2>
+<h3 id="added_5">Added</h3>
+<ul>
+<li>Added an option to get a list of sites. Method <code>get.sites</code>;</li>
+<li>Added an option to get a list of site numbers blocks. Method <code>get.site_blocks</code>;</li>
+<li>The maximum length of extension numbers is now 5 symbols for the method Creating an employee and a group of employees;</li>
+<li>Added an option to manage SIP-lines. Methods <code>get.sip_lines</code>, <code>create.sip_lines</code>, <code>update.sip_lines</code>, <code>delete.sip_lines</code>, <code>update.sip_line_password</code>.</li>
+</ul>
+<h2 id="203-2018-02-07">[2.0.3] - 2018-02-07</h2>
+<h3 id="added_6">Added</h3>
+<ul>
+<li>Added an option to get a list of active virtual numbers. Method <code>get.virtual_numbers</code>;</li>
+<li>Added information about integrated goals to the method <code>get.goals_report</code>. Parameters <code>type</code>, <code>source</code>, <code>ext_id</code>;</li>
+<li>Added a region of a subscriber's number to the method <code>get.calls_report</code>. Parameter <code>cpn_region_id</code>, <code>cpn_region_name</code>;</li>
+<li>Added information about a group within which a call was made to the method <code>get.call_legs_report</code>. Parameters <code>group_id</code>, <code>group_name</code>, <code>action_id</code>, <code>action_name</code>.</li>
+</ul>
+<h2 id="202-2018-01-29">[2.0.2] - 2018-01-29</h2>
+<h3 id="added_7">Added</h3>
+<ul>
+<li>Methods to manage advertising campaigns - creating, deleting, getting, updating;</li>
+<li>Added information about integrated campaigns to the method "Managing reports -&gt; get.visitor_sessions_report". Parameter <code>integrated_campaign_data</code>;</li>
+<li>Expanded valid value of the parameter <code>finish_reason</code> in the method <code>get.calls_report</code>.</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+        
+          <a href=".." class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                General Information
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../js/init.js"></script>
+      
+    
+  </body>
+</html>

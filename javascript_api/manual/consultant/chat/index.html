@@ -1,0 +1,1245 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>Chat - </title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab28b872.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chat" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="" class="md-header-nav__button md-logo" aria-label="">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Chat
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="" class="md-nav__button md-logo" aria-label="">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." class="md-nav__link">
+      JS API Reference
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Widget API Reference
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Widget API Reference" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Widget API Reference
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Chat
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Chat
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#viewcontroller" class="md-nav__link">
+    ViewController
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#createwidget" class="md-nav__link">
+    CreateWidget
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method" class="md-nav__link">
+    Method
+  </a>
+  
+    <nav class="md-nav" aria-label="Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#startchat" class="md-nav__link">
+    startChat()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closechat" class="md-nav__link">
+    closeChat()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ischatavailable" class="md-nav__link">
+    isChatAvailable()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sendchatbymailmail-string" class="md-nav__link">
+    sendChatByMail(mail: string)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sendchatmessagemessage-string" class="md-nav__link">
+    sendChatMessage(message: string)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setoperatorratingmark-number" class="md-nav__link">
+    setOperatorRating(mark: number)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hashistory" class="md-nav__link">
+    hasHistory()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gethistory" class="md-nav__link">
+    getHistory()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getoperatorvcard" class="md-nav__link">
+    getOperatorVcard()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getvisitorcard" class="md-nav__link">
+    getVisitorCard()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setvisitorcardvcard" class="md-nav__link">
+    setVisitorCard(vcard)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inviteaccept" class="md-nav__link">
+    inviteAccept()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invitereject" class="md-nav__link">
+    inviteReject()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sendfileinput" class="md-nav__link">
+    sendFile(input)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isreadyforfiletransfer" class="md-nav__link">
+    isReadyForFileTransfer()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrequiredinfo" class="md-nav__link">
+    getRequiredInfo()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getstate" class="md-nav__link">
+    getState()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chattypingtext-string" class="md-nav__link">
+    chatTyping(text: string)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    Events
+  </a>
+  
+    <nav class="md-nav" aria-label="Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operatorjoined" class="md-nav__link">
+    operatorjoined
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operatorleave" class="md-nav__link">
+    operatorleave
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sendmessage" class="md-nav__link">
+    sendmessage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#showchatretentionaction" class="md-nav__link">
+    showchatretentionaction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chatavailabilitychange" class="md-nav__link">
+    chatavailabilitychange
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invite" class="md-nav__link">
+    invite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#startchat_1" class="md-nav__link">
+    startchat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closechat_1" class="md-nav__link">
+    closechat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inviteaccept_1" class="md-nav__link">
+    inviteaccept
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invitereject_1" class="md-nav__link">
+    invitereject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setrating" class="md-nav__link">
+    setrating
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sendchatbymail" class="md-nav__link">
+    sendchatbymail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ratingchange" class="md-nav__link">
+    ratingchange
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#statechange" class="md-nav__link">
+    statechange
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chattyping" class="md-nav__link">
+    chattyping
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../offline_message/" class="md-nav__link">
+      Inquiry
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sitephone/" class="md-nav__link">
+      Sitephone
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lead/offline_message_generator/" class="md-nav__link">
+      Offline Message Generator
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lead/call_generator/" class="md-nav__link">
+      Call Generator
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lead/personal_form/" class="md-nav__link">
+      Personal Form
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../code/" class="md-nav__link">
+      Code
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../handbk/widget.md" class="md-nav__link">
+      Widget
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../handbk/create_widget.md" class="md-nav__link">
+      ViewController
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tpls/" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../plugins/form.md" class="md-nav__link">
+      Plugins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../events/" class="md-nav__link">
+      Events
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../examples/" class="md-nav__link">
+      Widget API examples
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#viewcontroller" class="md-nav__link">
+    ViewController
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#createwidget" class="md-nav__link">
+    CreateWidget
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method" class="md-nav__link">
+    Method
+  </a>
+  
+    <nav class="md-nav" aria-label="Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#startchat" class="md-nav__link">
+    startChat()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closechat" class="md-nav__link">
+    closeChat()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ischatavailable" class="md-nav__link">
+    isChatAvailable()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sendchatbymailmail-string" class="md-nav__link">
+    sendChatByMail(mail: string)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sendchatmessagemessage-string" class="md-nav__link">
+    sendChatMessage(message: string)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setoperatorratingmark-number" class="md-nav__link">
+    setOperatorRating(mark: number)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hashistory" class="md-nav__link">
+    hasHistory()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gethistory" class="md-nav__link">
+    getHistory()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getoperatorvcard" class="md-nav__link">
+    getOperatorVcard()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getvisitorcard" class="md-nav__link">
+    getVisitorCard()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setvisitorcardvcard" class="md-nav__link">
+    setVisitorCard(vcard)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inviteaccept" class="md-nav__link">
+    inviteAccept()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invitereject" class="md-nav__link">
+    inviteReject()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sendfileinput" class="md-nav__link">
+    sendFile(input)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isreadyforfiletransfer" class="md-nav__link">
+    isReadyForFileTransfer()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrequiredinfo" class="md-nav__link">
+    getRequiredInfo()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getstate" class="md-nav__link">
+    getState()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chattypingtext-string" class="md-nav__link">
+    chatTyping(text: string)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    Events
+  </a>
+  
+    <nav class="md-nav" aria-label="Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operatorjoined" class="md-nav__link">
+    operatorjoined
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operatorleave" class="md-nav__link">
+    operatorleave
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sendmessage" class="md-nav__link">
+    sendmessage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#showchatretentionaction" class="md-nav__link">
+    showchatretentionaction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chatavailabilitychange" class="md-nav__link">
+    chatavailabilitychange
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invite" class="md-nav__link">
+    invite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#startchat_1" class="md-nav__link">
+    startchat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closechat_1" class="md-nav__link">
+    closechat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inviteaccept_1" class="md-nav__link">
+    inviteaccept
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invitereject_1" class="md-nav__link">
+    invitereject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setrating" class="md-nav__link">
+    setrating
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sendchatbymail" class="md-nav__link">
+    sendchatbymail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ratingchange" class="md-nav__link">
+    ratingchange
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#statechange" class="md-nav__link">
+    statechange
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chattyping" class="md-nav__link">
+    chattyping
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="chat">Chat</h1>
+<h2 id="viewcontroller">ViewController</h2>
+<p>For a consultant to work, you need to register a ViewController with the name <code>consultant</code>.</p>
+<p><strong>Important: ViewController is registered once for all the online consultant forms</strong></p>
+<h2 id="createwidget">CreateWidget</h2>
+<p>To create a chat widget, you need to call the method <code>Octella.UI.createWidget()</code> with the following parameters:</p>
+<ul>
+<li><code>widgetName</code> = 'consultant_chat'</li>
+</ul>
+<h2 id="example">Example</h2>
+<pre><code>Octella.UI.registerViewController('consultant', function (settings, tpls) {
+    ...
+    var chat = Octella.UI.createWidget('consultant_chat', {
+        settings: settings,
+        template: tpls['chat'],
+        ...
+        });
+        ...
+    chat.render();
+});
+</code></pre>
+<h2 id="method">Method</h2>
+<h3 id="startchat">startChat()</h3>
+<p>Chat initiation by a visitor. At this moment, a visitor will get the "Waiting" status.</p>
+<pre><code>chat.on('show', function(){
+    chat.startChat();
+});
+</code></pre>
+<p>When the form is opened, the show event is activated and the startChat () method is called.</p>
+<h3 id="closechat">closeChat()</h3>
+<p>The completion of the chat initiated by a visitor. The visitor will get the "On site" status.</p>
+<pre><code>chat.on('beforehide', function(){
+    chat.closeChat();
+});
+</code></pre>
+<p>Before the form is hidden, the closeChat() method is called. </p>
+<h3 id="ischatavailable">isChatAvailable()</h3>
+<p>Checks if there's an operator with the status "online" in the current chat.
+Returns <code>true</code> or <code>false</code>.</p>
+<h3 id="sendchatbymailmail-string">sendChatByMail(mail: string)</h3>
+<p>Sends correspondence history to an e-mail.</p>
+<h3 id="sendchatmessagemessage-string">sendChatMessage(message: string)</h3>
+<p>Sends a message from a website visitor.</p>
+<h3 id="setoperatorratingmark-number">setOperatorRating(mark: number)</h3>
+<p>The method saves the <code>mark</code>, that a visitor gave to an operator in the current chat.</p>
+<h3 id="hashistory">hasHistory()</h3>
+<p>Checks for message history. Returns <code>true</code> or <code>false</code>.</p>
+<pre><code>if (chat.hasHistory() {
+    var history = chat.getHistory();
+}
+</code></pre>
+<p>Check for message history. If it exists, then we request it.</p>
+<h3 id="gethistory">getHistory()</h3>
+<p>Request message history. Up to 20 messages per request. Returns a bulk of messages or <code>false</code>, if there are no messages. </p>
+<pre><code>if (chat.hasHistory() {
+    var history = chat.getHistory();
+}
+</code></pre>
+<h3 id="getoperatorvcard">getOperatorVcard()</h3>
+<p>The method returns an object containing information about the operator of the current chat. Object contains the following fields:</p>
+<ul>
+<li>name - operator name</li>
+<li>position - operator position</li>
+<li>avatar - link to operator’s photo</li>
+</ul>
+<h3 id="getvisitorcard">getVisitorCard()</h3>
+<p>The method returns an object containing information about a visitor. An object may contain the following fields:</p>
+<ul>
+<li>name - visitor name</li>
+<li>email - an bulk containing up to five e-mails specified earlier by a customer</li>
+<li>phone - an bulk containing up to five phone numbers specified earlier by a customer</li>
+</ul>
+<h3 id="setvisitorcardvcard">setVisitorCard(vcard)</h3>
+<p>The method stores information about the visitor. The <code>vcard</code> object may contain the following fields:</p>
+<ul>
+<li>name - visitor name</li>
+<li>email - visitor e-mail</li>
+<li>phone - visitor phone number</li>
+</ul>
+<h3 id="inviteaccept">inviteAccept()</h3>
+<p>Invitation to chat accepted.</p>
+<h3 id="invitereject">inviteReject()</h3>
+<p>Invitation to chat rejected.</p>
+<h3 id="sendfileinput">sendFile(input)</h3>
+<p>Sending files to chat.</p>
+<h3 id="isreadyforfiletransfer">isReadyForFileTransfer()</h3>
+<p>Method that will return <code>true</code> when you can send a file.</p>
+<h3 id="getrequiredinfo">getRequiredInfo()</h3>
+<p>The method returns a bulk of visitor’s card fields names that must be requested the next time the personal data form is shown.</p>
+<h3 id="getstate">getState()</h3>
+<p>The method returns the current status of a visitor.</p>
+<p>Valid values:</p>
+<ul>
+<li>available - visitor on the website not interacting with widgets.</li>
+<li>invite - visitor received an invitation to a chat.</li>
+<li>chat - visitor in talking to chat operator.</li>
+<li>lead - the form of the lead generator is displayed.</li>
+</ul>
+<h3 id="chattypingtext-string">chatTyping(text: string)</h3>
+<p>The method sends <code>text</code> to the RMO as a message typed by the visitor.</p>
+<h2 id="events">Events</h2>
+<h3 id="operatorjoined">operatorjoined</h3>
+<p>The event occurs when an operator joins the chat.</p>
+<p><strong>operatorjoined event features:</strong></p>
+<p>Object, containing the following fields:</p>
+<ul>
+<li>name - operator name.</li>
+<li>position - operator position.</li>
+<li>avatar - link to operator’s photo.</li>
+</ul>
+<h3 id="operatorleave">operatorleave</h3>
+<p>The event occurs when an operator leaves the chat.</p>
+<p><strong><code>operatorleave</code> event properties</strong>
+Fields similar to <code>operatorjoined</code> event, containing null.</p>
+<h3 id="sendmessage">sendmessage</h3>
+<p>The event is triggered when receiving a chat message. It can be a message from the chat operator, system message or message from the customer sent from the other website page.</p>
+<p><strong>sendmessage event features:</strong>
+Object, containing the following fields:</p>
+<ul>
+<li>text - message text.</li>
+<li>date - Unixtime message sending time.</li>
+<li>source - message sender. Possible values: <code>Operator</code>,<code>Visitor</code>, <code>System</code>.</li>
+<li>from - operator name if the message was sent by an operator. In other cases, the value of <code>from</code> is equal to <code>source</code>.</li>
+<li>chat_id - id of a chat, a message belongs to.</li>
+<li>message_id - message unique id.</li>
+<li>uid - temporary id, used to synchronize sent and received messages.</li>
+</ul>
+<h3 id="showchatretentionaction">showchatretentionaction</h3>
+<p>An event occurs when you need to show an alternative communication button in the chat.</p>
+<p><strong>showchatretentionaction event features:</strong>
+Object, containing the field:</p>
+<ul>
+<li>alternate_communication_way - alternative communication mnemonics.</li>
+</ul>
+<p>Mnemonics possible values:</p>
+<ul>
+<li>offline_message - application form.</li>
+<li>sitephone - call form.</li>
+<li>chat - group choice form.</li>
+</ul>
+<h3 id="chatavailabilitychange">chatavailabilitychange</h3>
+<p>The event occurs in the following situations:</p>
+<ul>
+<li>There are no PMO operators online, in this case the value <code>false</code> returns in the event.</li>
+<li>There is at least one operator online, in this case the value <code>true</code> returns.</li>
+</ul>
+<h3 id="invite">invite</h3>
+<p>The event occurs when an operator invites a visitor to the chat, or when the auto-invite function is activated.</p>
+<p><strong>invite event features:</strong></p>
+<ul>
+<li>invite_message - the message to be displayed when inviting.</li>
+</ul>
+<h3 id="startchat_1">startchat</h3>
+<p>Event occurs in response to the command chat.startChat()</p>
+<h3 id="closechat_1">closechat</h3>
+<p>Event occurs in response to the command chat.closeChat()</p>
+<h3 id="inviteaccept_1">inviteaccept</h3>
+<p>Event occurs in response to the command chat.inviteAccept()</p>
+<h3 id="invitereject_1">invitereject</h3>
+<p>Event occurs in response to the command chat.inviteReject()</p>
+<h3 id="setrating">setrating</h3>
+<p>Event occurs in response to the command chat.setOperatorRating()</p>
+<h3 id="sendchatbymail">sendchatbymail</h3>
+<p>Event occurs in response to the command chat.sendChatByMail()</p>
+<h3 id="ratingchange">ratingchange</h3>
+<p>The event occurs when operator's rating is changed.</p>
+<p><strong>ratingchange event features:</strong>
+The number corresponding to the operator’s rating in the current chat, or <code>null</code> if no rating exists.</p>
+<h3 id="statechange">statechange</h3>
+<p>The event occurs when website visitor status changes.</p>
+<p><strong>statechange event features:</strong>
+mnemonics corresponding to the visitor's new status. Possible values:</p>
+<ul>
+<li>available - visitor on the website not interacting with widgets.</li>
+<li>invite - visitor received an invitation to a chat.</li>
+<li>chat - visitor in talking to chat operator.</li>
+<li>lead - the form of the lead generator is displayed.</li>
+</ul>
+<h3 id="chattyping">chattyping</h3>
+<p>Event occurs when an operator types a message.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../.." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                JS API Reference
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../offline_message/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Inquiry
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../../../js/init.js"></script>
+      
+    
+  </body>
+</html>

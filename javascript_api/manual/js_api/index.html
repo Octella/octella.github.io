@@ -1,0 +1,1287 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>Js api - </title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab28b872.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#working-with-events" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="" class="md-header-nav__button md-logo" aria-label="">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Js api
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="" class="md-nav__button md-logo" aria-label="">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." class="md-nav__link">
+      JS API Reference
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Widget API Reference
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Widget API Reference" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Widget API Reference
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../consultant/chat/" class="md-nav__link">
+      Chat
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../consultant/offline_message/" class="md-nav__link">
+      Inquiry
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sitephone/" class="md-nav__link">
+      Sitephone
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lead/offline_message_generator/" class="md-nav__link">
+      Offline Message Generator
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lead/call_generator/" class="md-nav__link">
+      Call Generator
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lead/personal_form/" class="md-nav__link">
+      Personal Form
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../code/" class="md-nav__link">
+      Code
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../handbk/widget.md" class="md-nav__link">
+      Widget
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../handbk/create_widget.md" class="md-nav__link">
+      ViewController
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tpls/" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../plugins/form.md" class="md-nav__link">
+      Plugins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../events/" class="md-nav__link">
+      Events
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../examples/" class="md-nav__link">
+      Widget API examples
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-events" class="md-nav__link">
+    Working with events
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sending-user-events" class="md-nav__link">
+    Sending user events
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-banners" class="md-nav__link">
+    Working with banners
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with banners">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#checking-operators-who-are-online" class="md-nav__link">
+    Checking operators who are online
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-form" class="md-nav__link">
+    Application form
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#an-example-of-using-an-alternative-method-to-send-user-applications" class="md-nav__link">
+    An example of using an alternative method to send user applications
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sitephone-form" class="md-nav__link">
+    Sitephone form
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chat-form" class="md-nav__link">
+    Chat form
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-characteristics" class="md-nav__link">
+    Working with characteristics
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with characteristics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-characteristics-to-visitors" class="md-nav__link">
+    Adding characteristics to visitors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checking-whether-or-not-visitor-has-a-characteristic" class="md-nav__link">
+    Checking whether or not visitor has a characteristic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-visitor-characteristics-values" class="md-nav__link">
+    Getting visitor characteristics values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-visitor-characteristics" class="md-nav__link">
+    Deleting visitor characteristics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#number-substitution" class="md-nav__link">
+    Number substitution
+  </a>
+  
+    <nav class="md-nav" aria-label="Number substitution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#number-substitution-in-dynamic-blocks" class="md-nav__link">
+    Number substitution in dynamic blocks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-number-substitution" class="md-nav__link">
+    Managing number substitution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-numbers-given-to-a-visitor" class="md-nav__link">
+    Getting numbers, given to a visitor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-a-list-of-dynamic-tracking-numbers-reserved-for-a-visitor" class="md-nav__link">
+    Getting a list of dynamic tracking numbers reserved for a visitor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Js api</h1>
+                
+                <p>Users can use JavaScript API to solve the following problems:</p>
+<p>To implement additional features on a website:</p>
+<ul>
+<li>
+<p>open forms to communicate with online consultant (chat, application) from any place on the website.
+Getting more information about website visitors;</p>
+</li>
+<li>
+<p>opening a form and requesting a call back through the sitephone;</p>
+</li>
+<li>
+<p>assigning characteristics (for example, a visitor who opened personal area is assigned the characteristic “active customer”, the one who opened the tariffs - “potential”, etc.).</p>
+</li>
+</ul>
+<p>Getting additional data in reports:</p>
+<ul>
+<li>
+<p>any user's website event data (reading an article, checking pricing, entering personal account, etc.);</p>
+</li>
+<li>
+<p>information from any customer's form.</p>
+</li>
+</ul>
+<h2 id="working-with-events">Working with events</h2>
+<h3 id="sending-user-events">Sending user events</h3>
+<p>To send user event, use the following method:</p>
+<pre><code>Octella.trackEvent(category, action, name, value);
+</code></pre>
+<p>Parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>category</td>
+<td>text</td>
+<td>category, required parameter</td>
+</tr>
+<tr>
+<td>action</td>
+<td>text</td>
+<td>action, required parameter</td>
+</tr>
+<tr>
+<td>name</td>
+<td>text</td>
+<td>name, optional parameter</td>
+</tr>
+<tr>
+<td>value</td>
+<td>text</td>
+<td>value, optional parameter</td>
+</tr>
+</tbody>
+</table>
+<p>Example of usage:</p>
+<pre><code>Octella.trackEvent('Offer', 'DownloadBook', 'CallTrackingBook', 'value');
+</code></pre>
+<p><strong>Receiving visitor ID</strong></p>
+<p>To receive visitor ID, use the following method:</p>
+<pre><code>Octella.getVisitorId();
+</code></pre>
+<h2 id="working-with-banners">Working with banners</h2>
+<h3 id="checking-operators-who-are-online">Checking operators who are online</h3>
+<p>To check for operators who are online, use the method:</p>
+<pre><code>Octella.getOperatorStatus();
+</code></pre>
+<p>Method returns <code>true</code>, if there's at least one operator online, otherwise it returns <code>false</code>.</p>
+<h3 id="application-form">Application form</h3>
+<p>To open application form, use the method:</p>
+<pre><code>Octella.openSiteRequestPanel();
+</code></pre>
+<p><strong>User application form</strong></p>
+<p>The data obtained when using a user application form on the website can be sent using the following method:</p>
+<pre><code>Octella.addOfflineRequest(req, callback);
+</code></pre>
+<p>You can use this method only if you send the form in a way that does not reload the page! For other cases, there is an alternative method. </p>
+<p>Parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>req</td>
+<td><code>{"name": myName, "email": myEmail, "phone": myPhone, "message": myMessage, "is_sale": mySale, "sale_cost": myCost}</code></td>
+<td>Parameters description: <code>myName</code> - text type - visitor name, <code>myEmail</code> - text type - visitor email, <code>myPhone</code> - text type - visitor phone number, <code>myMessage</code> - text type - application text and other information, for which there is no separate field, <code>mySale</code> - <code>true</code> - if it's a sale; <code>false</code> - if it's not a sale (by default), <code>myCost</code> - sale cost. If you need to send sale cost, you must transfer the value <code>true</code> in the parameter <code>is_sale</code>.</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>"success": &lt;Boolean&gt;, "result": {"code": &lt;String&gt;}}</code></td>
+<td></td>
+</tr>
+<tr>
+<td>A feature of an argument, that will be called after the server sends the result of saving the form. Optional parameter.</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<ol>
+<li>Regular application:</li>
+</ol>
+<pre><code>Octella.addOfflineRequest({
+  name: 'Dmitry',
+  email: 'dmitry@octella.com',
+  phone: '79123456789',
+  message: 'Application text...'
+});
+</code></pre>
+<ol>
+<li>Application, lead to a sale:</li>
+</ol>
+<pre><code>Octella.addOfflineRequest({
+  name: 'Dmitry',
+  email: 'dmitry@octella.com',
+  phone: '79123456789',
+  message: 'Online order...',
+  is_sale: true,
+  sale_cost: '9999'
+});
+</code></pre>
+<ol>
+<li>Example of using the parameter callback:</li>
+</ol>
+<pre><code>Octella.addOfflineRequest({&quot;name&quot;: &quot;My Name Is&quot;}, function(o) {console.log(o);});
+</code></pre>
+<p>after you successfully save an application, the result will be displayed in the browser console:</p>
+<pre><code>Object {success: true, result: null}
+</code></pre>
+<p><strong>Alternative way to send user applications</strong></p>
+<ol>
+<li>Before sending an application, you need to get the authentication data of the widget using the method JS API <code>Octella.getCredentials()</code>. Method returns the object:</li>
+</ol>
+<pre><code>{
+  &quot;site_key&quot;: &quot;VcB4qqpO1WPSopO670cAbXwAH9Ryaw75&quot;,
+  &quot;visitor_id&quot;: 17258569,
+  &quot;hit_id&quot;: 546833568748,
+  &quot;session_id&quot;: 255544855,
+  &quot;consultant_server_url&quot;: &quot;https://server.octella.com/&quot; // URL base
+}
+</code></pre>
+<ol>
+<li>
+<p>Transfer the received data along with the rest data from the form.</p>
+</li>
+<li>
+<p>To add application make an HTTP-request to a server in the application server processor.</p>
+</li>
+</ol>
+<p>The base part of the URL cannot be hard-coded. It must be taken from the data of paragraph 1. It is subject to change.</p>
+<pre><code>POST https://server.octella.com/api/add_offline_message/
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Form Data //data formatted for clarity
+site_key=VcB4qqpO1WPSopO670cAbXwAH9Ryaw75
+&amp;visitor_id=17258569
+&amp;hit_id=546833568748
+&amp;session_id=255544855
+&amp;name=John Smith
+&amp;email=no@email.adr
+&amp;phone=+79251234567
+&amp;text=Hello, world!
+&amp;is_sale=true
+&amp;sale_cost=10000
+</code></pre>
+<p>A success "application added" flag will be sent in the reply (<code>application/json</code>):</p>
+<pre><code>{
+  &quot;success&quot;: true
+}
+</code></pre>
+<h3 id="an-example-of-using-an-alternative-method-to-send-user-applications">An example of using an alternative method to send user applications</h3>
+<p><strong>Example with page reload</strong></p>
+<p>We will assume that the embed code is already installed on the website, the jQuery library is connected and there is a feedback form. The simplest form of the feedback code would look like this:</p>
+<pre><code>&lt;form id='myform' action=&quot;/send.php&quot; method=&quot;POST&quot;&gt;
+    &lt;input type=&quot;text&quot; name='name' value='' placeholder=&quot;Enter name&quot; /&gt;&lt;br&gt;
+    &lt;input type=&quot;text&quot; name='phone' value='' placeholder=&quot;Enter phone number&quot; /&gt;&lt;br&gt;
+    &lt;input type=&quot;text&quot; name='email' value='' placeholder=&quot;Enter e-mail&quot; /&gt;&lt;br&gt;
+    &lt;textarea name=&quot;text&quot;&gt;&lt;/textarea&gt;&lt;br&gt;
+    &lt;input type='submit' /&gt;
+&lt;/form&gt;
+</code></pre>
+<p>In order to send an application, the form code needs to be finalized: add service fields and a processor to the "Send" button:</p>
+<pre><code>&lt;form id='myform' action=&quot;/send.php&quot; method=&quot;POST&quot;&gt;
+    &lt;input type=&quot;text&quot; name='name' value='' placeholder=&quot;Enter name&quot; /&gt;&lt;br&gt;
+    &lt;input type=&quot;text&quot; name='phone' value='' placeholder=&quot;Enter phone number&quot; /&gt;&lt;br&gt;
+    &lt;input type=&quot;text&quot; name='email' value='' placeholder=&quot;Enter e-mail&quot; /&gt;&lt;br&gt;
+    &lt;textarea name=&quot;text&quot;&gt;&lt;/textarea&gt;&lt;br&gt;
+    &lt;input type='button' value='Send' onclick=&quot;formSubmit()&quot;/&gt;
+    &lt;input type=&quot;hidden&quot; name='site_key'/&gt;
+    &lt;input type=&quot;hidden&quot; name='visitor_id'/&gt;
+    &lt;input type=&quot;hidden&quot; name='hit_id'/&gt;
+    &lt;input type=&quot;hidden&quot; name='session_id'/&gt;
+    &lt;input type=&quot;hidden&quot; name='consultant_server_url'/&gt;
+&lt;/form&gt;
+</code></pre>
+<p>In the page code or in a separate JS-file, you need to write the feature <code>formSubmit()</code>, which will be called every time you click the "Send" button:</p>
+<pre><code>function formSubmit() {
+    var credentials = Octella.getCredentials();
+    for (field in credentials) {
+        if (credentials.hasOwnProperty(field)){
+            $('[name='+field+']').val(credentials[field]);
+        }
+    }
+    $('#myform').submit();
+}
+</code></pre>
+<p>This code receives service information, saves it in invisible service fields of the form and sends the form to the server.</p>
+<p>Next, you need to modify the code that is responsible for processing the application on the server. In our case, this code is in the send.php file:</p>
+<pre><code>&lt;? /* Here is the default code associated with processing the request on the server side. For example, sending letters, or saving to a database. */ ?&gt;
+&lt;?
+    $url = $_POST['consultant_server_url'].'api/add_offline_message/';
+          $data = array(
+            'site_key' =&gt; $_POST['site_key'], //The unchanged value from the site_key service field
+            'visitor_id' =&gt; $_POST['visitor_id'], //The unchanged value from the visitor_id service field
+            'hit_id' =&gt; $_POST['hit_id'], //The unchanged value from the hit_id service field
+            'session_id' =&gt; $_POST['session_id'], //The unchanged value from the session_id service field
+            'name' =&gt; $_POST['name'], //Customer name
+            'email' =&gt; $_POST['email'], //E-mail
+            'phone' =&gt; $_POST['phone'], //Phone number
+            'text' =&gt; $_POST['text'], //Application text
+            'is_sale' =&gt; true, //true, if it's a sale
+            'sale_cost' =&gt; 10000 //Sale cost. If you need to send the sale cost, then is_sale must be true );
+    /* If all the fields in the html-markup of the form are called as Octella requires, you can write &quot;$data = $_POST&quot;.
+    Otherwise, additional conversions are required. */
+    $options = array( 'http' =&gt;
+        array(
+            'header' =&gt; &quot;Content-type: application/x-www-form-urlencoded; charset=UTF-8&quot;,
+            'method' =&gt; &quot;POST&quot;,
+            'content' =&gt; http_build_query($data)
+        )
+    );
+    print $options['http']['content'];
+    $context = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
+    $resultArray = json_decode($result, true);
+
+    if ($result === false or $resultArray['success' === false]) {
+        /* There may be actions in case sending of an application fails. */
+    }
+?&gt;
+</code></pre>
+<p><strong>Example with AJAX-request</strong></p>
+<p>HTML-markup of a simple form:</p>
+<pre><code>&lt;form id='myform2'&gt;
+    &lt;input type=&quot;text&quot; name='name' value='' placeholder=&quot;Enter name&quot; /&gt;&lt;br&gt;
+    &lt;input type=&quot;text&quot; name='phone' value='' placeholder=&quot;Enter phone number&quot; /&gt;&lt;br&gt;
+    &lt;input type=&quot;text&quot; name='email' value='' placeholder=&quot;Enter e-mail&quot; /&gt;&lt;br&gt;
+    &lt;textarea name=&quot;text&quot;&gt;&lt;/textarea&gt;&lt;br&gt;
+    &lt;input type='button' value='Send' onclick=&quot;sendAjaxSubmit()&quot;/&gt;
+&lt;/form&gt;
+</code></pre>
+<p>AJAX-request sending JS-code: </p>
+<pre><code>function sendAjaxSubmit() {
+    /* This can be a check of the required filled in fields, validation of the phone number and other checks. */
+     $.ajax({
+         url: 'sendAjax.php',
+         method: 'POST',
+         data: $('#myform2').serialize(),
+         complete: function(response) {
+             if (response.readyState === 4 &amp;&amp; response.status === 200) {
+                alert(response.responseText);
+             }
+         },
+     })
+}
+</code></pre>
+<p>Processing the received request PHP-code:</p>
+<pre><code>&lt;?
+    /* Code for processing incoming data, saving to the database or sending an application by email. */
+    $success = true; /* The variable defines whether or not the application was saved. */
+    if ($success) {
+        print 'Application successfully saved';
+    } else {
+        print 'An unexpected error has occurred';
+    }
+?&gt;
+</code></pre>
+<p>In order to send an application, in case of sending an application with an AJAX request, you do not need to modify the HTML-form. It is necessary to modify the JS code so that service information is received before sending the request:</p>
+<pre><code>function sendAjaxSubmit() {
+    /* Here you can check the required filled in fields, validate the phone number and make other checks. */
+    $.ajax({
+        url: '/sendAjax.php',
+        method: 'POST',
+        data: $('#myform2').serialize(),
+        complete: function(response) {
+            if (response.readyState === 4 &amp;&amp; response.status === 200) {
+                alert(response.responseText);
+            }
+        },
+        beforeSend: function(jqXHR, settings) {
+            var credentials = Octella.getCredentials();
+            settings.data += '&amp;' + $.param(credentials);
+        }
+    })
+}
+</code></pre>
+<p>The code needs to be executed on the server. In this case, it is in a sendAjax.php file:</p>
+<pre><code>&lt;?
+    /* Here is the default code associated with processing an application on the server side. For example, sending letters, or saving to a database. */
+?&gt;
+&lt;?
+    $success = true; /* Check that everything is done correctly. */
+    if ($success) {
+        $url = $_POST['consultant_server_url'].'api/add_offline_message/';
+        $data = array(
+            'site_key' =&gt; $_POST['site_key'], //Unchanged value from the service field site_key
+            'visitor_id' =&gt; $_POST['visitor_id'], //Unchanged value from the service field visitor_id
+            'hit_id' =&gt; $_POST['hit_id'], //Unchanged value from the service field hit_id
+            'session_id' =&gt; $_POST['session_id'], //Unchanged value from the service field session_id
+            'name' =&gt; $_POST['name'], //Customer name
+            'email' =&gt; $_POST['email'], //E-mail
+            'phone' =&gt; $_POST['phone'], //Phone number
+            'text' =&gt; $_POST['text'], //Application text
+            'is_sale' =&gt; true, //true, if it's a sale
+            'sale_cost' =&gt; 10000 //Sale cost. If you need to transfer a sale cost, then is_sale must equal true
+        );
+        /* If all the fields in the html-markup of the form are called as Octella requires, you can write &quot;$data = $_POST&quot;.
+    Otherwise, additional conversions are required. */
+        $options = array(
+            'http' =&gt; array(
+                'header' =&gt; &quot;Content-type: application/x-www-form-urlencoded; charset=UTF-8&quot;,
+                'method' =&gt; &quot;POST&quot;,
+                'content' =&gt; http_build_query($data)
+            )
+        );
+        $context = stream_context_create($options);
+        $result = file_get_contents($url, false, $context);
+        $resultArray = json_decode($result, true);
+        if ($result === false or $resultArray['success' === false]) {
+            /* Processing the case if sending of an application failed. */
+        } else {
+            print 'Application successfully saved.';
+        }
+    } else {
+        print 'An unexpected error has occurred';
+    }
+?&gt;
+</code></pre>
+<h3 id="sitephone-form">Sitephone form</h3>
+<p>To open our standard sitephone form, use the method:</p>
+<pre><code>OctellaWidget.openSitePhonePanel();
+</code></pre>
+<p><strong>Captcha for sitephone forms</strong></p>
+<pre><code>Octella.Captcha.get_captcha(callback);
+</code></pre>
+<p>Parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback</td>
+<td><code>{key: myKey, url: myURL}</code></td>
+<td>Returning reply: <code>myKey</code>- captcha key, <code>myURL</code> - picture address.</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<pre><code>Octella.Captcha.get_captcha(function(resp){console.log(resp)});
+</code></pre>
+<p><strong>Sitephone user form</strong></p>
+<p>In addition to standard widgets, you can use any form you want for call backs on the site.</p>
+<p>To do so, you need to embed the callback method call into your form using the JS API:</p>
+<pre><code>OctellaWidget.sitePhoneCall({captcha_key: &lt;captcha ID&gt;, captcha_value: &lt;captcha value&gt;, phone:&lt;phone number&gt;, delayed_call_time:&lt;call time&gt;, group_id:&lt;group id&gt;}, callback);
+</code></pre>
+<p>Parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>captcha_key</td>
+<td>text</td>
+<td>Captcha ID. Required, if captcha is switched on in the callback settings.</td>
+</tr>
+<tr>
+<td>captcha_value</td>
+<td>text</td>
+<td>Captcha value (what a visitor entered in the form): take myURL result from the method <code>Captcha.get_captcha()</code>, click a link, see 4 figures. Required, if captcha is switched on in the callback settings.</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>text</td>
+<td>Visitor phone number. Required.</td>
+</tr>
+<tr>
+<td>delayed_call_time</td>
+<td>text</td>
+<td>UTC call time in milliseconds.</td>
+</tr>
+<tr>
+<td>group_id</td>
+<td>text</td>
+<td>Employees group ID, where a call will be directed to.</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>{"success": &lt;Boolean&gt;, "result":{status: &lt;Integer&gt;, code: &lt;String&gt;}}</code></td>
+<td>Returning reply, optional (but advised).  If it's not specified, the feature will work similarly to a call from the standard sitephone form and will display a pop-up notification with the result. Parameters: <code>success:</code> <code>true</code> - successful, <code>false</code> - failed; <code>result</code> - call results: <code>status</code> - call status.</td>
+</tr>
+</tbody>
+</table>
+<p>Possible statuses:</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>successful, call sent to platform</td>
+</tr>
+<tr>
+<td>1</td>
+<td>captcha is incorrect</td>
+</tr>
+<tr>
+<td>2</td>
+<td>callback processing scenario is not specified</td>
+</tr>
+<tr>
+<td>3</td>
+<td>platform error</td>
+</tr>
+<tr>
+<td>4</td>
+<td>limit of calls per minute has been exceeded (up to 10 calls)</td>
+</tr>
+</tbody>
+</table>
+<p>Example of usage:</p>
+<pre><code>OctellaWidget.sitePhoneCall({captcha_key: 'jwgtGYZDYTA...4pBEWRx', captcha_value: '8315', phone:'79101234567', delayed_call_time: 1508927547000 , group_id: '16587'}, function(resp){console.log(resp)});
+</code></pre>
+<h3 id="chat-form">Chat form</h3>
+<p>When the following method is called, if there are operators online, a chat form opens:</p>
+<pre><code>Octella.openChatWindow();
+</code></pre>
+<p>If no operators are online, the application form opens.</p>
+<h2 id="working-with-characteristics">Working with characteristics</h2>
+<h3 id="adding-characteristics-to-visitors">Adding characteristics to visitors</h3>
+<p>The following method is used to assign a characteristic or its value:</p>
+<pre><code>Octella.setProperty(name, value);
+</code></pre>
+<p>Parameter:</p>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>text</td>
+<td>Name of a characteristic, that should be assigned to a visitor</td>
+</tr>
+<tr>
+<td>value</td>
+<td>text</td>
+<td>Characteristic value (optional parameter)</td>
+</tr>
+</tbody>
+</table>
+<p>Examples:</p>
+<p>The "visitor type" characteristic with the "potential" value is set as follows:</p>
+<pre><code>Octella.setProperty('Visitor type', 'Potential');
+</code></pre>
+<p>The "active client" characteristic (without value) is set as follows:</p>
+<pre><code>Octella.setProperty('Active customer');
+</code></pre>
+<h3 id="checking-whether-or-not-visitor-has-a-characteristic">Checking whether or not visitor has a characteristic</h3>
+<p>To check whether or not visitor has a characteristic, use the method:</p>
+<pre><code>Octella.hasProperty(name, callback);
+</code></pre>
+<p>Parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>text</td>
+<td>Name of a characteristic, that should be assigned to a visitor</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>{"success": &lt;Boolean&gt;,"result": &lt;Boolean&gt;,}</code></td>
+<td>Returning reply. success: <code>true</code> - method successfully processed, <code>false</code> - error; <code>result:</code> <code>true</code> - value <code>name</code> assigned <code>false</code> - feature <code>name</code> not assigned</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<pre><code>Octella.hasProperty('Active customer', callback);
+Octella.hasProperty('Active customer', function(resp){console.log(resp)});
+</code></pre>
+<h3 id="getting-visitor-characteristics-values">Getting visitor characteristics values</h3>
+<p>To get visitor characteristics values use the following method:</p>
+<pre><code>Octella.getProperty(name, callback);
+</code></pre>
+<p>Parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>text</td>
+<td>Title of a feature to be assigned to a visitor</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>{"success": &lt;Boolean&gt;,"result": &lt;Boolean&gt;,}</code></td>
+<td>Returning reply. success: <code>true</code> - method successfully processed, <code>false</code> - error; <code>result:</code> <code>true</code> - value <code>name</code>, <code>false</code> - the name feature not assigned</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<pre><code>Octella.getProperty('Customer type', callback);
+Octella.getProperty('Current customer', function(resp){console.log(resp)});
+</code></pre>
+<h3 id="deleting-visitor-characteristics">Deleting visitor characteristics</h3>
+<p>To delete visitor characteristic, assigned to a visitor, use the following method:</p>
+<pre><code>Octella.deleteProperty(name);
+</code></pre>
+<p>Parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>text</td>
+<td>Title of a feature, that's to be deleted</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<pre><code>Octella.deleteProperty('visitor type');
+</code></pre>
+<h2 id="number-substitution">Number substitution</h2>
+<h3 id="number-substitution-in-dynamic-blocks">Number substitution in dynamic blocks</h3>
+<p>In order to enable number substitution in dynamically added blocks, an additional line must be added to the insert code:</p>
+<pre><code>__cs.push([&quot;setDynamicalReplacement&quot;, true]);
+</code></pre>
+<p>or</p>
+<pre><code>Octella.push([&quot;setDynamicalReplacement&quot;, true]);
+</code></pre>
+<h3 id="managing-number-substitution">Managing number substitution</h3>
+<p>When a number substitution is necessary only under certain conditions, for example, only for visitors from Moscow, you need to redefine the feature that controls the number substitution, <code>window .__ cs_onReplacePhones (phones)</code>. It works as follows:</p>
+<ul>
+<li>
+<p>if it returns <code>true</code>, the substitution will be performed as if the feature had not been redefined,</p>
+</li>
+<li>
+<p>if it returns <code>false</code>, the substitution will not be performed.</p>
+</li>
+</ul>
+<p>The function is created at the time of the service code initialization and by default has the form:</p>
+<pre><code>window.__cs_onReplacePhones = function(phones) {return true;};
+</code></pre>
+<p>If you do not need to manage the substitution, then you do not need to redefine the feature.</p>
+<p>If numbers need to be substituted only under certain conditions, then this feature must be redefined by adding necessary conditions into the body</p>
+<p>This feature allows you to not only manage the substitution, but also perform it yourself. To do this, the phones bulk is passed to the feature:</p>
+<pre><code>[
+  {
+    id: &quot;#octella_phone&quot;, // ID
+    img: &quot;/path/to/image&quot;, // image address (if image substitution is used)
+    text: &quot;+7 (495) 926-86-86&quot;, // number formatted according to user settings
+    raw: &quot;74959268686&quot; // number without formatting
+  },
+  ...
+]
+</code></pre>
+<h3 id="getting-numbers-given-to-a-visitor">Getting numbers, given to a visitor</h3>
+<p>If a customer needs to get a list of all the numbers issued to a website visitor, you can use the following feature:</p>
+<pre><code>Octella.getPhones();
+</code></pre>
+<p>The reply will return a bulk of objects similar to the phones list in <code>__cs_onReplacePhones</code>.</p>
+<p>Example:</p>
+<pre><code>[
+  {
+    id: '#octella_phone', // element ID
+    img: null || 'path/to/img', // image address (if image substitution is used)
+    text: null || '+7(495)999-99-99', // formatted number
+    raw: '74959999999' // number without formatting
+  },
+  ...
+]
+</code></pre>
+<p>Parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Substituted ID type</th>
+<th>Example of ID field return value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>#octella_phone</td>
+</tr>
+<tr>
+<td>class</td>
+<td>.octella_phone</td>
+</tr>
+<tr>
+<td>name</td>
+<td>[name=octella_phone]</td>
+</tr>
+<tr>
+<td>number</td>
+<td>number=XXXXXXXXXXX</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getting-a-list-of-dynamic-tracking-numbers-reserved-for-a-visitor">Getting a list of dynamic tracking numbers reserved for a visitor</h3>
+<p>If a customer needs to get a list of dynamic tracking numbers reserved for a visitor, you can use the following feature:</p>
+<pre><code>Octella.getDTPhones();
+</code></pre>
+<p>This feature will return <code>null</code> in the case no dynamic tracking numbers are reserved for a visitor.</p>
+<p>If there are several reserved numbers, then a bulk of objects will return, similar to the phones list in <code>__cs_onReplacePhones</code>.</p>
+<p>Example:</p>
+<pre><code>[
+  {
+    id: '#octella_phone', // element ID
+    img: null || 'path/to/img', // image address (if image substitution is used)
+    text: null || '+7(495)999-99-99', // formatted number
+    raw: '74959999999' // number without formatting
+  },
+  ...
+]
+</code></pre>
+<p>Parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Substituted ID type</th>
+<th>Example of ID field return value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>#octella_phone</td>
+</tr>
+<tr>
+<td>class</td>
+<td>.octella_phone</td>
+</tr>
+<tr>
+<td>name</td>
+<td>[name=octella_phone]</td>
+</tr>
+</tbody>
+</table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../../js/init.js"></script>
+      
+    
+  </body>
+</html>

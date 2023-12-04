@@ -1,0 +1,966 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>Getting a list of websites - DATA API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab28b872.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#parameters-of-a-request" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="DATA API" class="md-header-nav__button md-logo" aria-label="DATA API">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            DATA API
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Getting a list of websites
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DATA API" class="md-nav__button md-logo" aria-label="DATA API">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DATA API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../changelog/" class="md-nav__link">
+      Changelog
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." class="md-nav__link">
+      General Information
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../account/" class="md-nav__link">
+      Account
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../vn/" class="md-nav__link">
+      Virtual Numbers
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../sip/" class="md-nav__link">
+      SIP-lines
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../scenarios/" class="md-nav__link">
+      Scenarios
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../user_media/" class="md-nav__link">
+      Media
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../campaigns/" class="md-nav__link">
+      Ad Campaigns
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../sites/" class="md-nav__link">
+      Sites
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../reports/" class="md-nav__link">
+      Reports
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../tags/" class="md-nav__link">
+      Tags
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../employees/" class="md-nav__link">
+      Employees
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../contacts/" class="md-nav__link">
+      Contacts
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../schedules/" class="md-nav__link">
+      Schedules
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../report/campaign_daily_stat/" class="md-nav__link">
+      Ad Campaigns Daily Reports
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../customers/" class="md-nav__link">
+      Agents’ Customers
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../communications/" class="md-nav__link">
+      Communications
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../persons/" class="md-nav__link">
+      Persons
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parameters-of-a-request" class="md-nav__link">
+    Parameters of a request
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters-of-a-reply" class="md-nav__link">
+    Parameters of a reply
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-request-structure" class="md-nav__link">
+    JSON request structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-reply-structure" class="md-nav__link">
+    JSON reply structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-returning-errors" class="md-nav__link">
+    List of returning errors
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Getting a list of websites</h1>
+                
+                <nav>
+<a href="../../Sites">Websites </a> >
+Getting a list of websites
+</nav>
+
+<table>
+<thead>
+<tr>
+<th align="left">Method</th>
+<th align="left"><code>get.sites</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Description</td>
+<td align="left">Getting a list of websites</td>
+</tr>
+<tr>
+<td align="left">Who has access</td>
+<td align="left">Agent, Customer</td>
+</tr>
+</tbody>
+</table>
+<h3 id="parameters-of-a-request">Parameters of a request</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Title</th>
+<th align="left">Type</th>
+<th align="center">Required</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>access_token</code></td>
+<td align="left">string</td>
+<td align="center">yes</td>
+<td align="left">Authentication session key</td>
+</tr>
+<tr>
+<td align="left"><code>user_id</code></td>
+<td align="left">number</td>
+<td align="center">no</td>
+<td align="left">the ID of an agent's customer user who makes request <blockquote>Is required for agent</blockquote> To access a list of customer users, use the method <a href="../../customer/get_customers/#get_customer_user">"get.customer_users"</a></td>
+</tr>
+<tr>
+<td align="left"><code>limit</code></td>
+<td align="left">number</td>
+<td align="center">no</td>
+<td align="left">Returning entries count. Refer to <a href="../..#_paging">"Paging"</a></td>
+</tr>
+<tr>
+<td align="left"><code>offset</code></td>
+<td align="left">number</td>
+<td align="center">no</td>
+<td align="left">Offset that defines from which number to return the entries <code>"limit"</code>. Default value is "0". Refer to <a href="../..#_paging">"Paging"</a></td>
+</tr>
+<tr>
+<td align="left"><code>filter</code></td>
+<td align="left">object</td>
+<td align="center">no</td>
+<td align="left">Refer to <a href="../..#_filters">"Filters"</a></td>
+</tr>
+<tr>
+<td align="left"><code>fields</code></td>
+<td align="left">array</td>
+<td align="center">no</td>
+<td align="left">Refer to <a href="../..#_views">"Viewing returning data"</a></td>
+</tr>
+<tr>
+<td align="left"><code>sort</code></td>
+<td align="left">array</td>
+<td align="center">no</td>
+<td align="left">Refer to <a href="../..#_sort">"Data sorting"</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="parameters-of-a-reply">Parameters of a reply</h3>
+<table>
+    <tbody>
+        <tr>
+            <th>Title</th>
+            <th>Type</th>
+            <th>Valid values</th>
+            <th>Filtering</th>
+            <th>Sorting</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><code>id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td>Website unique ID</td>
+        </tr>
+        <tr>
+            <td><code>domain_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td>Website address on the internet. Whithout protocol - "http://" or "https://".</td>
+        </tr>
+        <tr>
+            <td><code>default_phone_number</code></td>
+            <td>string</td>
+            <td>E164 format</td>
+            <td>yes</td>
+            <td></td>
+            <td>
+            Phone number, calls from the web callback will be transferred to, by default. Also analytics numbers that are used in the advertising campaigns.
+            </td>
+        </tr>
+        <tr>
+            <td><code>default_scenario</code></td>
+            <td>object</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+            Scenario according to which calls to the numbers whithout active settings will be proccessed by default. Default value is none.
+            </td>
+        </tr>
+        <tr>
+            <td><code>scenario_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Scenario unique ID</td>
+        </tr>
+        <tr>
+            <td><code>scenario_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td>Scenario name</td>
+        </tr>
+        <tr>
+            <td><code>site_key</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+            Key for website patch code
+            You need to insert this parameter into a template in place of the parameter `{site_key}`
+            <pre>
+<code>
+            &ltscript type="text/javascript">
+                var __cs = __cs || [];
+                __cs.push(["setCsAccount", "{site_key}"]);
+            &lt/script>
+            &ltscript type="text/javascript" async src="//app.octella.com/static/cs.min.js">&lt/script>
+</code>
+            </pre>
+            </td>
+        </tr>
+        <tr>
+            <td><code>creation_date</code></td>
+            <td>iso8601</td>
+            <td>
+            YYYY-MM-DD hh:mm:ss
+            </td>
+            <td>yes</td>
+            <td></td>
+            <td>Dte when a website was created</td>
+        </tr>
+        <tr>
+            <td><code>target_call_min_duration</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td>Default value is "30". Minimal duration of a call. After it's up the call is considered targeted. Value is in seconds.</td>
+        </tr>
+        <tr>
+            <td><code>track_subdomains</code></td>
+            <td>boolean</td>
+            <td>
+            false, true
+            </td>
+            <td>yes</td>
+            <td></td>
+            <td>Default value is "true".
+            Gathering statistics from all the subdomains (statistics from a "www" subdomain, related to the website's main domain, is always gathered, whether or not a flag is set).
+            </td>
+        </tr>
+        <tr>
+            <td><code>cookie_lifetime</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td>Default value is "90". Lifespan of a "cookie". Value is in days.</td>
+        </tr>
+        <tr>
+            <td><code>campaign_lifetime</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td>Default value is "90". Lifespan of an advertising campaign. Value is in days.</td>
+        </tr>
+        <tr>
+            <td><code>sales_enabled</code></td>
+            <td>boolean</td>
+            <td>false, true</td>
+            <td>yes</td>
+            <td></td>
+            <td>Default value is "false". Whether or not sales are taken into account</td>
+        </tr>
+        <tr>
+            <td><code>second_communication_period</code></td>
+            <td>number</td>
+            <td>1, 3, 7, 30</td>
+            <td>yes</td>
+            <td></td>
+            <td>Deafault value is "1". Time period for a return period. Value is in days.</td>
+        </tr>
+<tr>
+            <td><code>services_enabled</code></td>
+            <td>boolean</td>
+            <td>false, true</td>
+            <td>yes</td>
+            <td></td>
+            <td>Default value is "true". A way to disable a service for a particular website. When a service is disabled, only website statistics are gathered. All the services (call tracking, live support) are swithed off and not working.
+            </td>
+        </tr>
+        <tr>
+             <td> <code>replacement_dynamical_block_enabled</code></td>
+             <td>boolean</td>
+             <td></td>
+             <td>false, true</td>
+             <td></td>
+             <td>Replace numbers in dynamically uploaded blocks. (Default value is False)</td>
+        </tr>
+        <tr>
+       <td><code>widget_link</code></td>
+       <td>object</td>
+       <td>no</td>
+       <td></td>
+             <td></td>
+       <td>As you activate this option, a link appears in the request forms, chats and questionnaire details queries. When a visitor click it, he or she will be redirected to a specified URL.</td>
+    </tr>
+    <tr>
+       <td><code>enabled</code></td>
+       <td>boolean</td>
+       <td></td>
+       <td></td>
+             <td></td>
+       <td>Link in widgets</td>
+    </tr>
+    <tr>
+       <td><code>text</code></td>
+       <td>string</td>
+       <td></td>
+       <td></td>
+             <td></td>
+       <td>Text of a link (up to 100 symbols)</td>
+    </tr>
+    <tr>
+       <td><code>url</code></td>
+       <td>string</td>
+       <td></td>
+       <td></td>
+             <td></td>
+       <td>URL</td>
+    </tr>
+        <tr>
+            <td><code>industry_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Website's industry unique ID</td>
+        </tr>
+        <tr>
+            <td><code>industry_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Website's industry name</td>
+        </tr>
+        <tr>
+            <td colspan="6">Show visitor's ID on a website</td>
+        </tr>
+        <tr>
+            <td><code>show_visitor_id</code></td>
+            <td>object</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>When you display a visitor's ID on your website or when you ask a visitor's ID during a call, you can tie data about the visit up with the call. This way you can get comprehensive data about your callers
+            (for example, which search queries led them).
+            </td>
+        </tr>
+        <tr>
+            <td><code>enabled</code></td>
+            <td>boolean</td>
+            <td>false, true</td>
+            <td></td>
+            <td></td>
+            <td>Default value is "false". Enabling visitors to be displayed on a website. </td>
+        </tr>
+        <tr>
+            <td><code>element_id_value</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+            For a visitor's ID to be displayed on a website, you need to specify the ID of the website's HTML element in this field.
+            You also need to add a container with this ID on the pages where you placed the visitor's ID
+            (for example, <code>&ltdiv id="octellaID">&lt/div></code>).
+            </td>
+        </tr>
+        <tr>
+            <td><code>message</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+            Defines a text, that will be displayed next to a visitor's phone number on a website.
+            </td>
+        </tr>
+        <tr>
+            <td><code>length_visitor_id</code></td>
+            <td>string</td>
+            <td>from 1 to 20</td>
+            <td></td>
+            <td></td>
+            <td>
+            Default value is 6. Visitor's ID digit count.
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">List of website's numbers blocks</td>
+        </tr>
+        <tr>
+            <td><code>site_blocks</code></td>
+            <td>array</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td>IDs blocks bulk. one block is created for a website by default.</td>
+        </tr>
+        <tr>
+            <td><code>site_block_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Block unique ID
+            </td>
+        </tr>
+        <tr>
+            <td><code>site_block_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Block name</td>
+        </tr>
+        <tr>
+            <td colspan="6">Connected intergrations</td>
+        </tr>
+        <tr>
+            <td><code>connected_integrations</code></td>
+            <td>array</td>
+            <td>
+                <ul>
+                <li>yandex.direct</li>
+                <li>google.adwords</li>
+                <li>yandex.metrika</li>
+                <li>google.analytics</li>
+                </ul>
+            </td>
+            <td></td>
+            <td></td>
+            <td>Integrations connected on the website level</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="json-request-structure">JSON request structure</h3>
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;,
+  &quot;id&quot;:&quot;number&quot;,
+  &quot;method&quot;:&quot;get.sites&quot;,
+  &quot;params&quot;:{
+    &quot;access_token&quot;:&quot;string&quot;,
+    &quot;user_id&quot;:&quot;number&quot;,
+    &quot;offset&quot;:&quot;number&quot;,
+    &quot;limit&quot;:&quot;number&quot;,
+    &quot;filter&quot;:{
+
+    },
+    &quot;sort&quot;:[
+      {
+        &quot;field&quot;:&quot;string&quot;,
+        &quot;order&quot;:&quot;string&quot;
+      }
+    ],
+    &quot;fields&quot;:[
+      &quot;string&quot;
+    ]
+  }
+}
+</code></pre>
+<h3 id="json-reply-structure">JSON reply structure</h3>
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: &quot;number&quot;,
+  &quot;result&quot;: {
+    &quot;meta_data&quot;: {},
+    &quot;data&quot;: [
+      {
+        &quot;id&quot;: &quot;number&quot;,
+        &quot;domain_name&quot;: &quot;string&quot;,
+        &quot;default_phone_number&quot;: &quot;string&quot;,
+        &quot;default_scenario&quot;: {
+          &quot;scenario_id&quot;: &quot;number&quot;,
+          &quot;scenario_name&quot;: &quot;string&quot;
+        },
+        &quot;site_key&quot;: &quot;string&quot;,
+        &quot;industry_id&quot;: &quot;number&quot;,
+        &quot;industry_name&quot;: &quot;string&quot;,
+        &quot;target_call_min_duration&quot;: &quot;number&quot;,
+        &quot;track_subdomains&quot;: &quot;boolean&quot;,
+        &quot;cookie_lifetime&quot;: &quot;number&quot;,
+        &quot;campaign_lifetime&quot;: &quot;number&quot;,
+        &quot;sales_enabled&quot;: &quot;boolean&quot;,
+        &quot;second_communication_period&quot;: &quot;number&quot;,
+        &quot;services_enabled&quot;: &quot;boolean&quot;,
+        &quot;replacement_dynamical_block_enabled&quot;: &quot;boolean&quot;,
+        &quot;widget_link&quot;: {
+          &quot;enabled&quot;: &quot;boolean&quot;,
+          &quot;text&quot;: &quot;string&quot;,
+          &quot;url&quot;: &quot;string&quot;
+        },
+        &quot;show_visitor_id&quot;: {
+          &quot;enabled&quot;: &quot;boolean&quot;,
+          &quot;element_id_value&quot;: &quot;string&quot;,
+          &quot;message&quot;: &quot;string&quot;,
+          &quot;length_visitor_id&quot;: &quot;number&quot;
+        },
+        &quot;site_blocks&quot;: [
+          {
+            &quot;site_block_id&quot;: &quot;number&quot;,
+            &quot;site_block_name&quot;: &quot;string&quot;
+          }
+        ],
+        &quot;connected_integrations&quot;: []
+      }
+    ]
+  }
+}
+</code></pre>
+<h3 id="list-of-returning-errors">List of returning errors</h3>
+<p>Refer to <a href="../..#_getErrors">"List of errors for the methods with the verb get"</a></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../../js/init.js"></script>
+      
+    
+  </body>
+</html>

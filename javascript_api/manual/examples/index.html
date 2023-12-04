@@ -1,0 +1,838 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>Widget API examples - </title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab28b872.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#applying-your-own-styles-and-templates-through-applywidgetoptions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="" class="md-header-nav__button md-logo" aria-label="">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Widget API examples
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="" class="md-nav__button md-logo" aria-label="">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." class="md-nav__link">
+      JS API Reference
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Widget API Reference
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Widget API Reference" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Widget API Reference
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../consultant/chat/" class="md-nav__link">
+      Chat
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../consultant/offline_message/" class="md-nav__link">
+      Inquiry
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sitephone/" class="md-nav__link">
+      Sitephone
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lead/offline_message_generator/" class="md-nav__link">
+      Offline Message Generator
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lead/call_generator/" class="md-nav__link">
+      Call Generator
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lead/personal_form/" class="md-nav__link">
+      Personal Form
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../code/" class="md-nav__link">
+      Code
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../handbk/widget.md" class="md-nav__link">
+      Widget
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../handbk/create_widget.md" class="md-nav__link">
+      ViewController
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tpls/" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../plugins/form.md" class="md-nav__link">
+      Plugins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../events/" class="md-nav__link">
+      Events
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Widget API examples
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Widget API examples
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#applying-your-own-styles-and-templates-through-applywidgetoptions" class="md-nav__link">
+    Applying your own styles and templates through applyWidgetOptions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-checkbox-to-link-to-a-personal-agreement-on-the-example-of-an-application-generator" class="md-nav__link">
+    Adding a checkbox to link to a personal agreement on the example of an application generator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-octella-widget-to-change-widget" class="md-nav__link">
+    Using .octella-widget to change widget
+  </a>
+  
+    <nav class="md-nav" aria-label="Using .octella-widget to change widget">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-styles-to-a-page-by-connecting-a-css-file" class="md-nav__link">
+    Adding styles to a page by connecting a *.css file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-styles-to-a-page-using-the-tag-stylestyle" class="md-nav__link">
+    Add styles to a page using the tag &lt;style&gt;&lt;/style&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples-of-using-octella-widget-with-the-tag-stylestyle" class="md-nav__link">
+    Examples of using .octella-widget with the tag &lt;style&gt;&lt;/style&gt;
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples of using .octella-widget with the tag &lt;style&gt;&lt;/style&gt;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hiding-widget-on-a-page" class="md-nav__link">
+    Hiding widget on a page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-of-position-consultant-sitephone" class="md-nav__link">
+    Change of position consultant / sitephone:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-the-position-of-the-lead-generator" class="md-nav__link">
+    Change the position of the lead generator:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calling-website-visitor-after-sending-an-application-through-the-lead-generator" class="md-nav__link">
+    Calling website visitor after sending an application through the lead generator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sending-an-application-after-requesting-a-call-through-the-lead-generator" class="md-nav__link">
+    Sending an application after requesting a call through the lead generator
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#applying-your-own-styles-and-templates-through-applywidgetoptions" class="md-nav__link">
+    Applying your own styles and templates through applyWidgetOptions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-checkbox-to-link-to-a-personal-agreement-on-the-example-of-an-application-generator" class="md-nav__link">
+    Adding a checkbox to link to a personal agreement on the example of an application generator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-octella-widget-to-change-widget" class="md-nav__link">
+    Using .octella-widget to change widget
+  </a>
+  
+    <nav class="md-nav" aria-label="Using .octella-widget to change widget">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-styles-to-a-page-by-connecting-a-css-file" class="md-nav__link">
+    Adding styles to a page by connecting a *.css file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-styles-to-a-page-using-the-tag-stylestyle" class="md-nav__link">
+    Add styles to a page using the tag &lt;style&gt;&lt;/style&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples-of-using-octella-widget-with-the-tag-stylestyle" class="md-nav__link">
+    Examples of using .octella-widget with the tag &lt;style&gt;&lt;/style&gt;
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples of using .octella-widget with the tag &lt;style&gt;&lt;/style&gt;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hiding-widget-on-a-page" class="md-nav__link">
+    Hiding widget on a page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-of-position-consultant-sitephone" class="md-nav__link">
+    Change of position consultant / sitephone:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-the-position-of-the-lead-generator" class="md-nav__link">
+    Change the position of the lead generator:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calling-website-visitor-after-sending-an-application-through-the-lead-generator" class="md-nav__link">
+    Calling website visitor after sending an application through the lead generator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sending-an-application-after-requesting-a-call-through-the-lead-generator" class="md-nav__link">
+    Sending an application after requesting a call through the lead generator
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Widget API examples</h1>
+                
+                <h2 id="applying-your-own-styles-and-templates-through-applywidgetoptions">Applying your own styles and templates through <code>applyWidgetOptions</code></h2>
+<p>To apply your own styles and templates you need to add links that lead to them into the insert code. You can do so by using the structure <code>__cs.push(['applyWidgetsOptions', {...}])</code>.  In the method, specify the links to the components (js, css, templates) of the widgets, the type of device and the name of the widget.</p>
+<p>Type of device:</p>
+<ul>
+<li>desktop</li>
+<li>mobile</li>
+</ul>
+<p>List of widget names:</p>
+<ul>
+<li>personal_form</li>
+<li>call_generator</li>
+<li>offline_message_generator</li>
+<li>sitephone</li>
+<li>consultant</li>
+</ul>
+<p>An example of using custom js, css and tpls for a desktop call generator.</p>
+<pre><code>&lt;head&gt;
+    &lt;script&gt;
+        var __cs = __cs || [];
+        ...
+        __cs.push([“applyWidgetsOptions”, {
+            // name of the widget, to which we apply customization
+“call_generator”: {
+                // type of device, to which we apply customization
+desktop: {
+                    js: “//app.octella.com/widget/js/lead/desktop/call_generator.min.js”,  //customized JS-file
+                    css: “//app.octella.com/widget/css/lead/desktop/lead_call_generator_desktop.css”,  //customized CSS-file
+                    tpls: {
+                        &quot;call_generator&quot;: “//app.octella.com/widget/html/lead/desktop/call_generator.html” //customized widget template
+                    }
+                }
+            }
+        }]);
+    &lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot; async src=&quot;//app.octella.com/static/cs.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+</code></pre>
+<p>Customization is applied to all widgets matching the specified name.
+For example, you have several forms of a call generator configured and you want to change their appearance. 
+After you specify widget's name <code>call_generator</code> in the structure, changes will be applied to all the forms of a call generator.</p>
+<h2 id="adding-a-checkbox-to-link-to-a-personal-agreement-on-the-example-of-an-application-generator">Adding a checkbox to link to a personal agreement on the example of an application generator</h2>
+<p>To add a checkbox to an application generator, you need to add the method <code>beforeViewControllerRun</code> in the structure <code>applyWidgetsOptions</code>, and change the features <code>is_personal_info_enabled</code> and <code>personal_info_tex’</code> in the object <code>settings</code>. By default <code>‘is_personal_info_enabled’ = false</code>, <code>‘personal_info_text’ = "I agree with the processing of personal data"</code>.</p>
+<pre><code>__cs.push(['applyWidgetsOptions', {
+    'offline_message_generator': {
+        desktop: {
+            beforeViewControllerRun: function (settings, tpls) {
+                settings['is_personal_info_enabled'] = true;
+                settings['personal_info_text'] = 'I agree with the processing of personal data';
+                return {settings: settings, tpls: tpls}; // for further correct operation of the widget you need to return the objects ‘settings’ and ‘tpls’
+            }
+        }
+    }
+});
+</code></pre>
+<p>The resulting structure is added to the Octella insert code on the website.
+If you try to send an application when the checkbox is removed, the checkbox will turn red and the application will not be sent until the checkbox is selected. </p>
+<h2 id="using-octella-widget-to-change-widget">Using <code>.octella-widget</code> to change widget</h2>
+<p>Consider the use of <code>.octella-widget</code> on the example of how to change the position of the widget / hide the widget on the page.
+<code>.octella-widget</code> - the base class of all widgets, is an indicator that elements with this class belong to the widget. By default, the class is empty and does not contain a style declaration block.</p>
+<h3 id="adding-styles-to-a-page-by-connecting-a-css-file">Adding styles to a page by connecting a <code>*.css</code> file</h3>
+<p>To add styles to a page, you can add them to a file with extension <code>*.css</code>, for example <code>style.css</code> and then connect then through <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>, where <code>href</code> is a link that leads to the <code>style.css</code> file.</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        ...
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        ...
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="add-styles-to-a-page-using-the-tag-stylestyle">Add styles to a page using the tag <code>&lt;style&gt;&lt;/style&gt;</code></h3>
+<p>To add styles to a page using the tag <code>&lt;style&gt;&lt;/style&gt;</code>, just define this tag in your html file, and set style rules inside this tag.</p>
+<h3 id="examples-of-using-octella-widget-with-the-tag-stylestyle">Examples of using <code>.octella-widget</code> with the tag <code>&lt;style&gt;&lt;/style&gt;</code></h3>
+<h4 id="hiding-widget-on-a-page">Hiding widget on a page</h4>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        ...
+        &lt;style&gt;
+            .octella-widget {
+                display: none;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        ...
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h4 id="change-of-position-consultant-sitephone">Change of position consultant / sitephone:</h4>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        ...
+        &lt;style&gt;
+            .octella-widget {
+                justify-content: flex-start | center | flex-end; // widget vertical position on top | in the middle | on the bottom
+                left: 0; // widget position on the left
+                right: 0; // widget position on the right
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        ...
+    &lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+<h4 id="change-the-position-of-the-lead-generator">Change the position of the lead generator:</h4>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        ...
+        &lt;style&gt;
+                 .octella-widget {
+                    align-items: flex-start | center | flex-end; // widget vertical position on top | in the middle | on the bottom 
+                    justify-content: flex-start | center | flex-end; // widget horizontal position on the left| in the center | on the right
+}
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        ...
+    &lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+<h2 id="calling-website-visitor-after-sending-an-application-through-the-lead-generator">Calling website visitor after sending an application through the lead generator</h2>
+<p>Consider using the method <code>OctellaWidget.sitephoneCall()</code> with the lead generator form for making calls after sending applications.</p>
+<p>You need to add the method <code>afterViewControllerRun</code> into the structure <code>applyWidgetsOptions</code>, subscribe to the event <code>leadsubmit</code>, inside of which we will call the method <code>OctellaWidget.sitePhoneCall</code> with data from the application generator form.</p>
+<pre><code>__cs.push(['applyWidgetsOptions', {
+    // name of the widget, to which we apply customization
+'offline_message_generator': {
+        // type of device, to which we apply customization
+desktop: {
+            afterViewControllerRun: function () {
+                var offline_message_generator = Octella.UI.getWidget('offline_message_generator'); // getting the application generator's widget object
+                offline_message_generator.on('leadsubmit', function(request) {
+                    var values = offline_message_generator.getValues(), // getting values ​​of all fields of the application generator
+                        phone = values['phone'];
+
+                    phone &amp;&amp; OctellaWidget.sitePhoneCall({phone: phone}); // calling OctellaWidget.sitePhoneCall
+                });
+            }
+        }
+    }
+});
+</code></pre>
+<p>The resulting structure is added to the Octella insert code on the site.
+As we use the method <code>OctellaWidget.sitephoneCall()</code> to make a call, the call will be processed according to the sitephone settings.
+The “Sitephone” component must be connected and configured.</p>
+<h2 id="sending-an-application-after-requesting-a-call-through-the-lead-generator">Sending an application after requesting a call through the lead generator</h2>
+<p>Consider using the method <code>Octella.addOfflineRequest()</code> with the lead generator form to send an application after requesting a call.
+You need to add the method <code>afterViewControllerRun</code> into the structure <code>applyWidgetsOptions</code>, subscribe to the event <code>leadsubmit</code>, inside of which we will trigger the event <code>Octella.addOfflineRequest</code> with data received from the call generator form.</p>
+<pre><code>__cs.push(['applyWidgetsOptions', {
+    // name of the widget, to which we apply customization
+'offline_message_generator': {
+        // type of device, to which we apply customization
+desktop: {
+            afterViewControllerRun: function () {
+                var call_generator = Octella.UI.getWidget('call_generator'); // getting the application generator's widget object
+                call_generator.on('leadsubmit', function(request) {
+                    var values = call_generator.getValues(), // getting values ​​of all fields of the application generator
+                        phone = values['phone'];
+
+                    phone &amp;&amp; Octella.addOfflineRequest({phone: phone}); // call Octella.addOfflineRequest
+                });
+            }
+        }
+    }
+});
+</code></pre>
+<p>The resulting structure is added to the Octella insert code on the site.
+To use the method <code>Octella.addOfflineRequest()</code> the “Consultant” component must be connected.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../events/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Events
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../../js/init.js"></script>
+      
+    
+  </body>
+</html>
