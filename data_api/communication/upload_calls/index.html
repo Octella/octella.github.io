@@ -1,0 +1,1383 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Uploads calls and call recordings for speech analytics or end-to-end analytics - DATA API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#request-parameters" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DATA API" class="md-header__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DATA API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Uploads calls and call recordings for speech analytics or end-to-end analytics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DATA API" class="md-nav__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DATA API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        General Information
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/" class="md-nav__link">
+        Permissions and Components
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../account/get_account/" class="md-nav__link">
+        Account
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vn/" class="md-nav__link">
+        Virtual Numbers and Rules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sip/" class="md-nav__link">
+        SIP Lines
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scenario/get_scenarios/" class="md-nav__link">
+        Scenarios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user_media/get_media_files/" class="md-nav__link">
+        Media Files
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaigns/" class="md-nav__link">
+        Ad Campaigns
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/" class="md-nav__link">
+        Sources
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../auto_calls/" class="md-nav__link">
+        Outbound Calls
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sales_funnel_and_deals/" class="md-nav__link">
+        Sales Funnels and Deals
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sites/" class="md-nav__link">
+        Sites
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/" class="md-nav__link">
+        Reports
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../employees/" class="md-nav__link">
+        Employees
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contacts/" class="md-nav__link">
+        Contacts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blacklist/" class="md-nav__link">
+        Blacklist
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schedules/" class="md-nav__link">
+        Schedules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../partners/" class="md-nav__link">
+        Agents' Customers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../communications/" class="md-nav__link">
+        Communications
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../persons/" class="md-nav__link">
+        Person / Visitor
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#request-parameters" class="md-nav__link">
+    Request parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-parameters" class="md-nav__link">
+    Response parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processing-status-notifications" class="md-nav__link">
+    Processing status notifications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wav-file-requirements-for-speech-analytics" class="md-nav__link">
+    WAV file requirements for speech analytics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements-for-the-recording-download-endpoint" class="md-nav__link">
+    Requirements for the recording download endpoint
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-request" class="md-nav__link">
+    Example request
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-response" class="md-nav__link">
+    Example response
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processing-status-notification-format" class="md-nav__link">
+    Processing status notification format
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#speech-analytics-example-uploading-a-transferred-call-with-multiple-employees" class="md-nav__link">
+    Speech analytics example: uploading a transferred call with multiple employees
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#speech-analytics-example-uploading-a-call-with-one-employee" class="md-nav__link">
+    Speech analytics example: uploading a call with one employee
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#end-to-end-analytics-example-uploading-calls-from-a-third-party-call-tracking-platform" class="md-nav__link">
+    End-to-end analytics example: uploading calls from a third-party call-tracking platform
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#end-to-end-analytics-example-uploading-calls-from-a-callback-form" class="md-nav__link">
+    End-to-end analytics example: uploading calls from a callback form
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#call-processing-status-notification-example" class="md-nav__link">
+    Call-processing status notification example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#possible-errors" class="md-nav__link">
+    Possible errors
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Uploads calls and call recordings for speech analytics or end-to-end analytics</h1>
+                
+                <nav>
+<a href="../../communications">Communications</a> >
+Uploads calls and call recordings for speech analytics or end-to-end analytics
+</nav>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;"><code>upload.calls</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Description</td>
+<td style="text-align: left;">Uploads calls and call recordings for speech analytics or end-to-end analytics</td>
+</tr>
+<tr>
+<td style="text-align: left;">Available to</td>
+<td style="text-align: left;">Agent, Client</td>
+</tr>
+<tr>
+<td style="text-align: left;">Required components</td>
+<td style="text-align: left;">"Data API for Configuration" and "Upload Calls from an External System"</td>
+</tr>
+<tr>
+<td style="text-align: left;">Required component for WAV recordings</td>
+<td style="text-align: left;">"Speech Call Analytics"</td>
+</tr>
+<tr>
+<td style="text-align: left;">Method weight</td>
+<td style="text-align: left;">5 points</td>
+</tr>
+<tr>
+<td style="text-align: left;">Maximum calls per request</td>
+<td style="text-align: left;">50</td>
+</tr>
+<tr>
+<td style="text-align: left;">Maximum JSON size</td>
+<td style="text-align: left;">512 KB</td>
+</tr>
+<tr>
+<td style="text-align: left;">Server IP address to allowlist for file downloads</td>
+<td style="text-align: left;">195.211.122.249</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-parameters">Request parameters</h3>
+<table>
+   <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Required</th>
+      <th>Valid values</th>
+      <th>Description</th>
+   </tr>
+   <tr>
+      <td><code>access_token</code></td>
+      <td>string</td>
+      <td>yes</td>
+      <td></td>
+      <td>Access token used to authenticate the request.</td>
+   </tr>
+   <tr>
+      <td><code>user_id</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td> Unique ID of the client user on whose behalf the agent is making the request. Required for agents. To retrieve a list of client users, use the <a href="../../partner/get_customer_users"><code>get.customer_users</code></a> method.
+      </td>
+   </tr>
+   <tr>
+      <td><code>calls</code></td>
+      <td>array</td>
+      <td>yes</td>
+      <td></td>
+      <td>Calls to upload. Maximum: 50.</td>
+   </tr>
+   <tr>
+      <td><code>ext_id</code></td>
+      <td>string</td>
+      <td>yes</td>
+      <td></td>
+      <td>Unique call ID in your system. The call is ignored if the same ext_id has already been uploaded successfully or if three previous upload attempts for that ext_id have failed.</td>
+   </tr>
+   <tr>
+      <td><code>direction</code></td>
+      <td>enum</td>
+      <td>no</td>
+      <td>
+        in - inbound; out - outbound
+      </td>
+      <td>Call direction. Default: in.</td>
+   </tr>
+   <tr>
+      <td><code>calling_phone_number</code></td>
+      <td>string</td>
+      <td>yes</td>
+      <td>
+        E.164. May be an empty string for inbound calls.
+      </td>
+      <td>Caller phone number.</td>
+   </tr>
+   <tr>
+      <td><code>called_phone_number</code></td>
+      <td>string</td>
+      <td>yes</td>
+      <td>
+        E.164. May be an empty string for outbound calls.
+      </td>
+      <td>Called phone number.</td>
+   </tr>
+   <tr>
+      <td><code>start_time</code></td>
+      <td>iso8601</td>
+      <td>yes</td>
+      <td>
+        YYYY-MM-DD hh:mm:ss
+      </td>
+      <td>Date and time when the call session started.</td>
+   </tr>
+   <tr>
+      <td><code>finish_time</code></td>
+      <td>iso8601</td>
+      <td>yes</td>
+      <td>
+        YYYY-MM-DD hh:mm:ss
+      </td>
+      <td>Date and time when the call session ended. Must not be earlier than start_time.</td>
+   </tr>
+   <tr>
+      <td><code>is_lost</code></td><td>boolean</td>
+      <td>yes</td>
+      <td></td>
+      <td>Indicates whether the call was lost.</td>
+   </tr>
+   <tr>
+      <td><code>is_transfer</code></td>
+      <td>boolean</td>
+      <td>no</td>
+      <td></td>
+      <td>Indicates whether the call was transferred. Default: false. For transferred calls, the order of employees is determined by the order of entries in wav_records or mp3_records.</td>
+   </tr>
+   <tr>
+      <td><code>wait_duration</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td>Time, in seconds, from the start of the call until the first employee answers.</td>
+   </tr>
+   <tr>
+      <td><code>talk_duration</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td>Total conversation duration, in seconds, from the first employee connection until the conversation with the last employee ends.</td>
+   </tr>
+   <tr>
+      <td><code>visitor_session_id</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td>CallGear visitor session ID. Specify this parameter to associate the call with advertising attribution data.</td>
+   </tr>
+   <tr>
+      <td><code>campaign_id</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td>CallGear advertising campaign ID. Ignored when visitor_session_id is provided.</td>
+   </tr>
+           <tr>
+            <td><code>source_id</code></td>
+            <td>number</td>
+            <td>no</td>
+            <td></td>
+            <td>CallGear traffic source ID.</td>
+        </tr>
+   <tr>
+      <td><code>site_id</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td>CallGear site ID. Ignored when visitor_session_id is provided or when called_phone_number belongs to a different site.</td>
+   </tr>
+   <tr>
+      <td><code>comment</code></td>
+      <td>string</td>
+      <td>no</td>
+      <td></td>
+      <td>Comment associated with the call. For example, the name of the service or form that generated the call.</td>
+   </tr>
+   <tr>
+      <td colspan = 5>Call-processing notifications</td>
+   </tr>
+      <tr>
+      <td><code>callback</code></td>
+      <td>object</td>
+      <td>no</td>
+      <td></td>
+      <td>Callback settings for call-processing status notifications.</td>
+   </tr>
+
+      <tr>
+      <td><code>url</code></td>
+      <td>string</td>
+      <td>yes</td>
+      <td></td>
+      <td>HTTP or HTTPS URL to which call-processing notifications are sent.</td>
+   </tr>
+
+      <tr>
+      <td><code>events</code></td>
+      <td>array</td>
+      <td>yes</td>
+      <td>
+        processed - processing completed; in_process - processing in progress; error - processing failed
+      </td>
+      <td>Processing events that trigger a notification.</td>
+   </tr>
+   <tr>
+      <td colspan = 5>Call tags</td>
+   </tr><tr>
+      <td><code>tags</code></td>
+      <td>array</td>
+      <td>no</td>
+      <td></td>
+      <td>Call tags</td>
+   </tr>
+   <tr>
+      <td><code>tag_id</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td>Unique tag identifier in the CallGear system</td>
+   </tr>
+           <tr>
+            <td><code>tag_name</code></td>
+            <td>string</td>
+            <td>yes</td>
+            <td></td>
+            <td>Tag name. CallGear searches for an exact, case-sensitive match. If no matching tag exists, it creates one and assigns it to the call. Ignored when tag_id is provided. To assign the Sale tag, use <a href="../../tag/set_tag_sales"><code>set.tag_sales</code></a>.</td>
+        </tr>
+   <tr>
+      <td colspan = 5>WAV recordings for speech analytics</td>
+   </tr>
+   <tr>
+      <td><code>wav_records</code></td>
+      <td>array</td>
+      <td>no</td>
+      <td></td>
+      <td>WAV call recordings for speech analytics. Available only when the Speech Call Analytics component is enabled. CallGear automatically creates MP3 versions for playback in the client account.</td>
+   </tr>
+   <tr>
+      <td><code>employee_id</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td>Unique employee identifier in the CallGear system</td>
+   </tr>
+           <tr>
+            <td><code>employee_name</code></td>
+            <td>string</td>
+            <td>yes</td>
+            <td></td>
+            <td>Employee full name. CallGear performs a case-insensitive search by full name. If no matching employee exists, it creates one and associates it with the call. Ignored when employee_id is provided.</td>
+        </tr>
+   <tr>
+      <td><code>employee_channel</code></td>
+      <td>enum</td>
+      <td>yes</td>
+      <td>
+        left - left channel; right - right channel
+        </td>
+      <td>Audio channel containing the employee's speech.</td>
+   </tr>
+   <tr>
+      <td><code>record_url</code></td>
+      <td>string</td>
+      <td>yes</td>
+      <td></td>
+      <td>HTTPS URL from which CallGear can download the recording.</td>
+   </tr>
+    <tr>
+      <td colspan = 5>MP3 recordings for playback</td>
+   </tr>
+   <tr>
+      <td><code>mp3_records</code></td>
+      <td>array</td>
+      <td>no</td>
+      <td></td>
+      <td>MP3 recordings for playback in the client account. Cannot be provided together with wav_records.</td>
+   </tr>
+           <tr>
+            <td><code>employee_name</code></td>
+            <td>string</td>
+            <td>no</td>
+            <td></td>
+            <td>Employee full name. CallGear performs a case-insensitive search by full name. If no matching employee exists, it creates one and associates it with the call. Ignored when employee_id is provided.</td>
+        </tr>
+   <tr>
+      <td><code>employee_id</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td><td>Unique employee identifier in the CallGear system</td>
+   </tr>
+   <tr>
+      <td><code>record_url</code></td>
+      <td>string</td>
+      <td>yes</td>
+      <td></td>
+      <td>URL from which CallGear can download the recording.</td>
+   </tr>
+</table>
+
+<h3 id="response-parameters">Response parameters</h3>
+<p>The response is returned as soon as the calls have been queued for processing. After processing, CallGear sends a webhook containing the processing status. See "Processing status notifications" below.</p>
+<h3 id="processing-status-notifications">Processing status notifications</h3>
+<table>
+   <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Required</th>
+      <th>Valid values</th>
+      <th>Description</th>
+   </tr>
+   <tr>
+      <td><code>status</code></td>
+      <td>enum</td>
+      <td>yes</td>
+      <td>
+      processed - processing completed; in_process - processing in progress; error - processing failed
+      </td>
+      <td>Processing status of the uploaded call.</td>
+   </tr>
+   <tr>
+      <td><code>ext_id</code></td>
+      <td>string</td>
+      <td>yes</td>
+      <td></td>
+      <td>Unique call ID in your system.</td>
+   </tr>
+   <tr>
+      <td><code>call_session_id</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td>CallGear call session ID. See <a href="../../report/get_calls_report"><code>get.calls_report</code></a>.</td>
+   </tr>
+   <tr>
+      <td><code>timestamp</code></td>
+      <td>number</td>
+      <td>yes</td>
+      <td></td>
+      <td>Unix timestamp for the event, in UTC.</td>
+   </tr>
+   <tr>
+      <td><code>error_message</code></td>
+      <td>string</td>
+      <td>no</td>
+      <td></td>
+      <td>Error message. Returned when status is error.</td>
+   </tr>
+   <tr>
+      <td><code>error_code</code></td>
+      <td>enum</td>
+      <td>no</td>
+      <td></td>
+      <td>Error mnemonic. Returned when status is error.</td>
+   </tr>
+</table>
+
+<h3 id="wav-file-requirements-for-speech-analytics">WAV file requirements for speech analytics</h3>
+<ul>
+<li>
+<p>Record calls in stereo, with the employee on one audio channel and the customer on the other.</p>
+</li>
+<li>
+<p>16-bit PCM.</p>
+</li>
+<li>
+<p>Sample rate: 8,000 Hz.</p>
+</li>
+<li>
+<p>Frequency response: at least 330-3,400 Hz.</p>
+</li>
+<li>
+<p>Signal-to-noise ratio across 330-3,400 Hz: at least 15 dB.</p>
+</li>
+<li>
+<p>Minimum speech duration: 16 seconds.</p>
+</li>
+<li>
+<p>Maximum file size: 50 MB.</p>
+</li>
+</ul>
+<h3 id="requirements-for-the-recording-download-endpoint">Requirements for the recording download endpoint</h3>
+<ul>
+<li>
+<p>WAV downloads must return the Content-Type: audio/wav header.</p>
+</li>
+<li>
+<p>MP3 downloads must return the Content-Type: audio/mpeg header.</p>
+</li>
+</ul>
+<h3 id="example-request">Example request</h3>
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: &quot;number&quot;,
+  &quot;method&quot;: &quot;upload.calls&quot;,
+  &quot;params&quot;: {
+    &quot;access_token&quot;: &quot;string&quot;,
+    &quot;user_id&quot;: &quot;number&quot;,
+    &quot;calls&quot;: [
+      {
+        &quot;callback&quot;: {
+          &quot;url&quot;: &quot;string&quot;,
+          &quot;events&quot;: [
+          ]
+        },
+        &quot;ext_id&quot;: &quot;string&quot;,
+        &quot;direction&quot;: &quot;enum&quot;,
+        &quot;calling_phone_number&quot;: &quot;string&quot;,
+        &quot;called_phone_number&quot;: &quot;string&quot;,
+        &quot;start_time&quot;: &quot;iso8601&quot;,
+        &quot;finish_time&quot;: &quot;iso8601&quot;,
+        &quot;is_lost&quot;: &quot;boolean&quot;,
+        &quot;is_transfer&quot;: &quot;boolean&quot;,
+        &quot;visitor_session_id&quot;: &quot;number&quot;,
+        &quot;site_id&quot;: &quot;number&quot;,
+        &quot;campaign_id&quot;: &quot;number&quot;,
+        &quot;source_id&quot;: &quot;number&quot;,
+        &quot;wait_duration&quot;: &quot;number&quot;,
+        &quot;talk_duration&quot;: &quot;number&quot;,
+        &quot;comment&quot;: &quot;string&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;tag_id&quot;: &quot;number&quot;,
+            &quot;tag_name&quot;: &quot;string&quot;
+          }
+        ],
+        &quot;wav_records&quot;: [
+          {
+            &quot;employee_channel&quot;: &quot;enum&quot;,
+            &quot;employee_name&quot;: &quot;string&quot;,
+            &quot;employee_id&quot;: &quot;number&quot;,
+            &quot;record_url&quot;: &quot;string&quot;
+          }
+        ],
+        &quot;mp3_records&quot;: [
+          {
+            &quot;employee_name&quot;: &quot;string&quot;,
+            &quot;employee_id&quot;: &quot;number&quot;,
+            &quot;record_url&quot;: &quot;string&quot;
+          }
+        ]
+      }
+    ]
+  }
+}
+</code></pre>
+<h3 id="example-response">Example response</h3>
+<p>The response is returned as soon as the calls have been queued for processing. After processing, CallGear sends a webhook containing the processing status.</p>
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: &quot;number&quot;,
+  &quot;result&quot;: {
+    &quot;data&quot;: {
+      &quot;success&quot;: true
+    }
+  }
+}
+</code></pre>
+<h3 id="processing-status-notification-format">Processing status notification format</h3>
+<pre><code class="language-json">{
+  &quot;ext_id&quot;: &quot;string&quot;,
+  &quot;call_session_id&quot;: &quot;number&quot;,
+  &quot;status&quot;: &quot;enum&quot;,
+  &quot;timestamp&quot;: &quot;number&quot;,
+  &quot;error_message&quot;: &quot;string&quot;,
+  &quot;error_code&quot;: &quot;enum&quot;
+}
+</code></pre>
+<h3 id="speech-analytics-example-uploading-a-transferred-call-with-multiple-employees">Speech analytics example: uploading a transferred call with multiple employees</h3>
+<p>This example uploads a transferred call in which the customer spoke with multiple employees.</p>
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: &quot;number&quot;,
+  &quot;method&quot;: &quot;upload.calls&quot;,
+  &quot;params&quot;: {
+    &quot;access_token&quot;: &quot;string&quot;,
+    &quot;calls&quot;: [
+      {
+        &quot;ext_id&quot;: &quot;test1&quot;,
+        &quot;direction&quot;: &quot;in&quot;,
+        &quot;calling_phone_number&quot;: &quot;89262444397&quot;,
+        &quot;called_phone_number&quot;: &quot;84955140576&quot;,
+        &quot;start_time&quot;: &quot;2019-07-01 12:00:00&quot;,
+        &quot;finish_time&quot;: &quot;2019-07-01 12:00:30&quot;,
+        &quot;is_lost&quot;: false,
+        &quot;is_transfer&quot;: true,
+        &quot;wait_duration&quot;: 10,
+        &quot;talk_duration&quot;: 20,
+        &quot;tags&quot;: [
+          {
+            &quot;tag_name&quot;: &quot;Qualified&quot;
+          },
+          {
+            &quot;tag_name&quot;: &quot;Test&quot;
+          }
+        ],
+        &quot;wav_records&quot;: [
+          {
+            &quot;employee_channel&quot;: &quot;left&quot;,
+            &quot;employee_name&quot;: &quot;John Smith&quot;,
+            &quot;record_url&quot;: &quot;https://test.ae/shhgad-adjjsdf-ytrh&quot;
+          },
+          {
+            &quot;employee_channel&quot;: &quot;right&quot;,
+            &quot;employee_name&quot;: &quot;Alex Johnson&quot;,
+            &quot;record_url&quot;: &quot;https://test.ae/shhgad-adjjsdf&quot;
+          }
+        ]
+      }
+    ]
+  }
+}
+</code></pre>
+<h3 id="speech-analytics-example-uploading-a-call-with-one-employee">Speech analytics example: uploading a call with one employee</h3>
+<p>This example uploads a call in which the customer spoke with one employee.</p>
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: &quot;number&quot;,
+  &quot;method&quot;: &quot;upload.calls&quot;,
+  &quot;params&quot;: {
+    &quot;access_token&quot;: &quot;string&quot;,
+    &quot;calls&quot;: [
+      {
+        &quot;ext_id&quot;: &quot;test1&quot;,
+        &quot;direction&quot;: &quot;in&quot;,
+        &quot;calling_phone_number&quot;: &quot;89262444397&quot;,
+        &quot;called_phone_number&quot;: &quot;84955140576&quot;,
+        &quot;start_time&quot;: &quot;2019-07-01 12:00:00&quot;,
+        &quot;finish_time&quot;: &quot;2019-07-01 12:00:30&quot;,
+        &quot;is_lost&quot;: false,
+        &quot;wait_duration&quot;: 10,
+        &quot;talk_duration&quot;: 20,
+        &quot;tags&quot;: [
+          {
+            &quot;tag_name&quot;: &quot;Qualified&quot;
+          },
+          {
+            &quot;tag_name&quot;: &quot;Test&quot;
+          }
+        ],
+        &quot;wav_records&quot;: [
+          {
+            &quot;employee_channel&quot;: &quot;left&quot;,
+            &quot;employee_name&quot;: &quot;John Smith&quot;,
+            &quot;record_url&quot;: &quot;https://test.ae/shhgad-adjjsdf-xxxx&quot;
+          }
+        ]
+      }
+    ]
+  }
+}
+</code></pre>
+<h3 id="end-to-end-analytics-example-uploading-calls-from-a-third-party-call-tracking-platform">End-to-end analytics example: uploading calls from a third-party call-tracking platform</h3>
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: &quot;number&quot;,
+  &quot;method&quot;: &quot;upload.calls&quot;,
+  &quot;params&quot;: {
+    &quot;access_token&quot;: &quot;string&quot;,
+    &quot;calls&quot;: [
+      {
+        &quot;ext_id&quot;: &quot;test1&quot;,
+        &quot;direction&quot;: &quot;in&quot;,
+        &quot;calling_phone_number&quot;: &quot;89262444397&quot;,
+        &quot;called_phone_number&quot;: &quot;84955140576&quot;,
+        &quot;start_time&quot;: &quot;2019-07-01 12:00:00&quot;,
+        &quot;finish_time&quot;: &quot;2019-07-01 12:00:30&quot;,
+        &quot;is_lost&quot;: false,
+        &quot;campaign_id&quot;: 435,
+        &quot;source_id&quot;: -1,
+        &quot;site_id&quot;: 24,
+        &quot;tags&quot;: [
+          {
+            &quot;tag_name&quot;: &quot;Qualified&quot;
+          },
+          {
+            &quot;tag_name&quot;: &quot;Test&quot;
+          }
+        ],
+        &quot;mp3_records&quot;: [
+          {
+            &quot;record_url&quot;: &quot;https://test.ae/shhgad-adjjsdf-xxxx&quot;
+          }
+        ]
+      }
+    ]
+  }
+}
+</code></pre>
+<h3 id="end-to-end-analytics-example-uploading-calls-from-a-callback-form">End-to-end analytics example: uploading calls from a callback form</h3>
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: &quot;number&quot;,
+  &quot;method&quot;: &quot;upload.calls&quot;,
+  &quot;params&quot;: {
+    &quot;access_token&quot;: &quot;string&quot;,
+    &quot;calls&quot;: [
+      {
+        &quot;ext_id&quot;: &quot;test1&quot;,
+        &quot;direction&quot;: &quot;in&quot;,
+        &quot;calling_phone_number&quot;: &quot;89262444397&quot;,
+        &quot;called_phone_number&quot;: &quot;84955140576&quot;,
+        &quot;start_time&quot;: &quot;2019-07-01 12:00:00&quot;,
+        &quot;finish_time&quot;: &quot;2019-07-01 12:00:30&quot;,
+        &quot;is_lost&quot;: false,
+        &quot;visitor_session_id&quot;: 435,
+        &quot;tags&quot;: [
+          {
+            &quot;tag_name&quot;: &quot;Qualified&quot;
+          },
+          {
+            &quot;tag_name&quot;: &quot;Test&quot;
+          }
+        ],
+        &quot;mp3_records&quot;: [
+          {
+            &quot;record_url&quot;: &quot;https://test.ae/shhgad-adjjsdf-xxxx&quot;
+          }
+        ]
+      }
+    ]
+  }
+}
+</code></pre>
+<h3 id="call-processing-status-notification-example">Call-processing status notification example</h3>
+<pre><code class="language-json">{
+  &quot;ext_id&quot;: &quot;test1&quot;,
+  &quot;call_session_id&quot;: &quot;1564545&quot;,
+  &quot;status&quot;: &quot;processed&quot;,
+  &quot;timestamp&quot;: &quot;1562156217&quot;
+}
+</code></pre>
+<h3 id="possible-errors">Possible errors</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Error mnemonics</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>max_file_size_download_error</code></td>
+<td style="text-align: left;">The file exceeds the maximum size of 50 MB.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>decode_error</code></td>
+<td style="text-align: left;">The recording could not be opened. The file may be missing the expected MP3 ID3 header or WAV RIFF header, or decoding may have failed.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>wav_min_duration_processing_error</code></td>
+<td style="text-align: left;">The uploaded WAV file is shorter than 16 seconds.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>wav_channels_processing_error</code></td>
+<td style="text-align: left;">The uploaded WAV file does not contain two audio channels.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>wav_processing_error</code></td>
+<td style="text-align: left;">The WAV file could not be converted to the required audio format.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>connection_download_error</code></td>
+<td style="text-align: left;">CallGear could not connect to the download server because of a network error.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>http_status_download_error</code></td>
+<td style="text-align: left;">The download server returned an HTTP status other than 200.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>http_content_type_download_error</code></td>
+<td style="text-align: left;">The returned Content-Type header is not supported.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>timeout_download_error</code></td>
+<td style="text-align: left;">The connection or download timed out. The maximum allowed time is 30 seconds.</td>
+</tr>
+</tbody>
+</table>
+<p>See the <a href="../..#_changeErrors">"Errors for create methods"</a> section.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../../js/init.js"></script>
+      
+    
+  </body>
+</html>

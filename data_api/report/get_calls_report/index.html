@@ -1,0 +1,2506 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Retrieves call session data. - DATA API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#retrieves-call-session-data" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DATA API" class="md-header__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DATA API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Retrieves call session data.
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DATA API" class="md-nav__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DATA API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        General Information
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/" class="md-nav__link">
+        Permissions and Components
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../account/get_account/" class="md-nav__link">
+        Account
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vn/" class="md-nav__link">
+        Virtual Numbers and Rules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sip/" class="md-nav__link">
+        SIP Lines
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scenario/get_scenarios/" class="md-nav__link">
+        Scenarios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user_media/get_media_files/" class="md-nav__link">
+        Media Files
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaigns/" class="md-nav__link">
+        Ad Campaigns
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/" class="md-nav__link">
+        Sources
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../auto_calls/" class="md-nav__link">
+        Outbound Calls
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sales_funnel_and_deals/" class="md-nav__link">
+        Sales Funnels and Deals
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sites/" class="md-nav__link">
+        Sites
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/" class="md-nav__link">
+        Reports
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../employees/" class="md-nav__link">
+        Employees
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contacts/" class="md-nav__link">
+        Contacts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blacklist/" class="md-nav__link">
+        Blacklist
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schedules/" class="md-nav__link">
+        Schedules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../partners/" class="md-nav__link">
+        Agents' Customers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../communications/" class="md-nav__link">
+        Communications
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../persons/" class="md-nav__link">
+        Person / Visitor
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#retrieves-call-session-data" class="md-nav__link">
+    Retrieves call session data.
+  </a>
+  
+    <nav class="md-nav" aria-label="Retrieves call session data.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters" class="md-nav__link">
+    Request parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters" class="md-nav__link">
+    Response parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call-session-completion-reasons" class="md-nav__link">
+    Call session completion reasons
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-request" class="md-nav__link">
+    Example request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-response" class="md-nav__link">
+    Example response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#possible-errors" class="md-nav__link">
+    Possible errors
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Retrieves call session data.</h1>
+                
+                <nav>
+<a href="../../reports">Reports</a> >
+Retrieves call session data.
+</nav>
+
+<h2 id="retrieves-call-session-data">Retrieves call session data.</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;"><code>get.calls_report</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Description</td>
+<td style="text-align: left;">Retrieves call session data.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Who has access</td>
+<td style="text-align: left;">Partners and clients</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-parameters">Request parameters</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: center;">Required</th>
+<th style="text-align: left;">Valid values</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>access_token</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Authentication session key</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>user_id</code></td>
+<td style="text-align: left;">number</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Unique user identifier of the agent client on behalf of which the request is made (Is required for the agent) To obtain a list of client users, you must use the method "<a href="../../partner/get_customer_users/">"get.customer_users"</a>"</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>limit</code></td>
+<td style="text-align: left;">number</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Number of records returned. See section "Paging"</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>offset</code></td>
+<td style="text-align: left;">number</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Shift determines from which record number to return <code>"limit"</code> records. Default is "0". See section "Paging"</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>filter</code></td>
+<td style="text-align: left;">object</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">See section "Filtering Criteria"</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sort</code></td>
+<td style="text-align: left;">array</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">See section "Sorting data"</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>date_from</code></td>
+<td style="text-align: left;">iso8601</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: left;">YYYY-MM-DD hh:mm:ss</td>
+<td style="text-align: left;">Start date and time of the reporting period.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>date_till</code></td>
+<td style="text-align: left;">iso8601</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: left;">YYYY-MM-DD hh:mm:ss</td>
+<td style="text-align: left;">End date and time of the reporting period.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>include_ongoing_calls</code></td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Enable ongoing calls</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-parameters">Response parameters</h3>
+<table>
+    <tbody>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Valid values</th>
+            <th>Filtering</th>
+            <th>Sorting</th>
+            <th>Default response</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><code>id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td>yes</td>
+            <td>Unique call session identifier</td>
+        </tr>
+        <tr>
+            <td><code>start_time</code></td>
+            <td>iso8601</td>
+            <td>YYYY-MM-DD hh:mm:ss</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>Date and time when the call session started</td>
+        </tr>
+        <tr>
+            <td><code>finish_time</code></td>
+            <td>iso8601</td>
+            <td>YYYY-MM-DD hh:mm:ss</td>
+            <td></td>
+            <td></td>
+            <td>yes</td>
+            <td>Call session end time</td>
+        </tr>
+        <tr>
+            <td><code>finish_reason</code></td>
+            <td>enum</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>
+                Reason for ending the call session. A list of possible causes is provided below
+            </td>
+        </tr>
+        <tr>
+            <td><code>direction</code></td>
+            <td>enum</td>
+            <td>
+                <code>in</code> - Incoming; <code>out</code> - Outgoing
+            </td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>Call session direction</td>
+        </tr>
+        <tr>
+            <td><code>cpn_region_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td><td>yes</td>
+            <td>Unique ID of the caller's region.</td>
+        </tr>
+        <tr>
+            <td><code>cpn_region_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>Name of the caller's region.</td>
+        </tr>
+        <tr>
+            <td><code>cpn_country_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>Name of the caller's country.</td>
+        </tr>
+        <tr>
+            <td><code>cpn_country_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>Unique ID of the caller's country.</td>
+        </tr>
+        <tr>
+            <td><code>properties</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Callback forms may have a field with a comment (text). If the user leaves a comment (text) when generating a call back, it will be displayed in this field.</td>
+        </tr>
+        <tr>
+            <td colspan="7">Script Operations</td>
+        </tr>
+        <tr>
+            <td><code>scenario_operations</code></td>
+            <td>array</td>
+            <td>
+
+            </td>
+            <td>yes</td>
+            <td>no</td>
+            <td>no</td>
+            <td>List of all operations for all scenarios involved in call processing.</td>
+        </tr>
+        <tr>
+            <td><code>id</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        <td>Unique scenario operation ID.</td>
+        </tr>
+        <tr>
+            <td><code>name</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Script operation name</td>
+        </tr><tr>
+            <td><code>source</code></td>
+            <td>enum</td>
+            <td>
+        <code>callapi - Call API Basic set callapi_management_call - Call API Call management callapi_informer_call - Call API Information call callapi_scenario_call - Call API Call script va - VATS call call_tracking - Analytics dynamic_call_tracking - Dynamic call tracking faxout - Fax sip - Outgoing from SIP sitephone - Sitephone lead - Lead Generator retailcrm - Call from retailCRM amocrm - Call from amoCRM bitrix - Call from Bitrix24 auto_back_call_by_lost_call - Auto call back for missed calls sip_trunk - Call from SIP trunk facebook_ads - Calls from Social Network Ads auto_back_call_by_offline_message - Automatic call back for requests private_number - Verification call to add a client number from your CallGear account auto_out_calls - Outgoing call ivr_informer - Information from IVR upload_calls - Call from an external system progressive_call - Progressive simple_dt - Simple dynamic call tracking preserved_calls - Saved redirect amocrm_extended_integration - Auto call back from CRM zoho - Zoho mytarget_ads - Calls from myTarget Ads pipedrive - Pipedrive hubspot - HubSpotsmartis - Calls from Smarties partner_integration - Affiliate integration vk_ads - Calls from VK Ads omni_widget - Omnichannel widget</code>
+            </td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>Call source</td>
+        </tr>
+        <tr>
+            <td><code>is_lost</code></td>
+            <td>boolean</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>Indicates whether the call was missed.</td>
+        </tr>
+        <tr>
+            <td><code>communication_number</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>For a VATS session, the VATS is always empty, this is now the ideology of the service</td>
+        </tr>
+        <tr>
+            <td><code>communication_page_url</code></td>
+            <td>string</td>
+            <td></td>
+            <td>no</td>
+            <td>no</td>
+            <td>no</td>
+            <td>
+                The URL of the page the visitor was on at the time of the call or the page of the visitor's last interaction before the call.
+            </td>
+        </tr>
+        <tr>
+            <td><code>contact_phone_number</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td>yes</td>
+            <td>For inbound calls, the contact number that placed the call. For outbound calls, the contact number that was called.</td>
+        </tr>
+        <tr>
+            <td><code>communication_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td>yes</td>
+            <td>Unique communication ID.</td>
+        </tr>
+        <tr>
+            <td><code>communication_type</code></td>
+            <td>enum</td>
+            <td><code>call</code></td>
+            <td></td>
+            <td></td>
+            <td>yes</td>
+            <td>Communication type.</td>
+        </tr>
+        <tr>
+            <td><code>wait_duration</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td>yes</td>
+            <td>Time, in seconds, from the start of the call until the first employee answers.</td>
+        </tr>
+        <tr>
+            <td><code>total_wait_duration</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td>yes</td>
+            <td>Total time, in seconds, during which the caller was not speaking with an employee.</td>
+        </tr>
+        <tr>
+            <td><code>lost_call_processing_duration</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>Duration of processing a missed call. It is counted from the moment of a missed conversation to the first successful one. Value in seconds</td>
+        </tr>
+        <tr>
+            <td><code>talk_duration</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td>yes</td>
+        <td>Time, in seconds, from the start of the first conversation until post-call processing begins.</td>
+        </tr>
+        <tr>
+            <td><code>clean_talk_duration</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td>yes</td>
+        <td>Total time, in seconds, during which the caller and an employee were speaking.</td>
+        </tr>
+        <tr>
+            <td><code>total_duration</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td>yes</td>
+            <td>Call duration, value in seconds</td>
+        </tr>
+        <tr>
+            <td><code>postprocess_duration</code></td>
+            <td>number</td>
+            <td></td><td>yes</td>
+            <td></td>
+            <td></td>
+        <td>Duration of post-call processing, value in seconds</td>
+        </tr>
+        <tr>
+            <td><code>call_records</code></td>
+            <td>array</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>yes</td>
+            <td>
+            ID used to access the call recording. Open the following URL in a browser: https://app.callgear.com/system/media/talk/{communication_id}/{recording_link_id}/
+            </td>
+        </tr>
+        <tr>
+            <td><code>wav_call_records</code></td>
+            <td>array</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>yes</td>
+            <td>
+            ID used to access the WAV call recording. Open the following URL in a browser: https://app.callgear.com/system/media/wav/{communication_id}/{wav_recording_link_id}/
+            </td>
+        </tr>
+        <tr>
+            <td><code>full_record_file_link</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>yes</td>
+            <td>
+            Link to the complete call recording: https://media.callgear.com/{communication_id}/{recording_link_id}
+            </td>
+        </tr>
+        <tr>
+            <td><code>voice_mail_records</code></td>
+            <td>array</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+            ID used to access the voicemail recording. Open the following URL in a browser: https://app.callgear.com/system/media/voice_mail/{communication_id}/{voice_message_link_id}/
+            </td>
+        </tr>
+        <tr>
+            <td><code>virtual_phone_number</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>Virtual number</td>
+        </tr>
+        <tr>
+            <td><code>ua_client_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Unique identifier in Universal Analytics</td>
+        </tr>
+        <tr>
+            <td><code>ym_client_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Unique Yandex.Metrica user identifier</td>
+        </tr>
+        <tr>
+            <td><code>sale_date</code></td>
+            <td>iso8601</td>
+            <td>YYYY-MM-DD hh:mm:ss</td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>Trade date</td>
+        </tr>
+        <tr>
+            <td><code>sale_cost</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>Transaction amount</td>
+        </tr>
+        <tr>
+            <td><code>is_transfer</code></td>
+            <td>boolean</td>
+            <td><code>true</code>, <code>false</code></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>Was there a transfer during the call session</td>
+        </tr>
+        <tr>
+            <td><code>search_query</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Search query</td>
+        </tr>
+        <tr>
+            <td><code>search_engine</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Search engine name</td>
+        </tr>
+        <tr>
+            <td><code>referrer_domain</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Referrer domain</td>
+        </tr>
+        <tr>
+            <td><code>referrer</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Transition source</td>
+        </tr>
+        <tr><td><code>entrance_page</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Login page</td>
+        </tr>
+        <tr>
+            <td><code>gclid</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Google Click Identifier</td>
+        </tr>
+        <tr>
+            <td><code>yclid</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Yandex Click Identifier</td>
+        </tr>
+        <tr>
+            <td><code>ymclid</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Yandex Market Click Identifier</td>
+        </tr>
+        <tr>
+            <td><code>ef_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Used to mark up links in the AdLense system</td>
+        </tr>
+        <tr>
+            <td><code>channel</code></td>
+            <td>enum</td>
+            <td>
+            <code>display</code> <code>paid</code> <code>affiliate</code> <code>messenger</code> <code>social</code> <code>email</code> <code>organic</code> <code>internal</code> <code>recommendation</code> <code>cashed</code> <code>referral</code> <code>direct</code>
+            </td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Channel.</td>
+        </tr>
+        <tr>
+            <td colspan="7">Added tags</td>
+        </tr>
+        <tr>
+            <td><code>tags</code></td>
+            <td>array</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+        <td>Tags, see method <code>"<a href="../../tag/get_tags"><code>get.tags</code></a>"</code></td>
+        </tr>
+        <tr>
+            <td><code>tag_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Tag name</td>
+        </tr>
+        <tr>
+            <td><code>tag_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Unique tag identifier</td>
+        </tr>
+        <tr>
+            <td><code>tag_change_time</code></td>
+            <td>iso8601</td>
+            <td>YYYY-MM-DD hh:mm:ss</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Tag insertion time</td>
+        </tr>
+        <tr>
+            <td><code>tag_type</code></td>
+            <td>enum</td>
+            <td><code>auto</code>, <code>manual</code></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Tag type</td>
+        </tr>
+        <tr>
+            <td><code>tag_user_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        <td>Unique ID of the user who added the tag.</td>
+        </tr>
+        <tr>
+            <td><code>tag_user_login</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Login of the user who added the tag</td>
+        </tr>
+        <tr>
+            <td><code>tag_employee_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        <td>Unique ID of the employee who added the tag.</td></tr>
+        <tr>
+            <td><code>tag_employee_full_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Full name of the employee who added the tag</td>
+        </tr>
+        <tr>
+            <td colspan="7">Employees who participated in the call</td>
+        </tr>
+        <tr>
+            <td><code>employees</code></td>
+            <td>array</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Employees who participated in the call</td>
+        </tr>
+        <tr>
+            <td><code>employee_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Unique employee identifier</td>
+        </tr>
+        <tr>
+            <td><code>employee_full_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        <td>Employee full name.</td>
+        </tr>
+        <tr>
+            <td><code>is_answered</code></td>
+            <td>boolean</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        <td>Indicates whether the employee answered the call.</td>
+        </tr>
+        <tr>
+            <td><code>is_talked</code></td>
+            <td>boolean</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        <td>Indicates whether the employee participated in the conversation.</td>
+        </tr>
+        <tr>
+            <td colspan="7">Last employee to respond</td>
+        </tr>
+        <tr>
+            <td><code>last_answered_employee_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+        <td>Unique ID of the last employee who answered the call.</td>
+        </tr>
+        <tr>
+            <td><code>last_answered_employee_full_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Full name of the last employee who answered the phone</td>
+        </tr>
+        <tr>
+            <td><code>last_answered_employee_rating</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+        <td>Rating the caller assigned to the last employee who spoke.</td>
+        </tr>
+        <tr>
+            <td colspan="7">First employee to respond</td>
+        </tr>
+        <tr>
+            <td><code>first_answered_employee_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+        <td>Unique ID of the first employee who answered the call.</td>
+        </tr>
+        <tr>
+            <td><code>first_answered_employee_full_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+        <td>Full name of the first employee who answered the call.</td>
+        </tr>
+        <tr>
+            <td colspan="7">Last employee who spoke</td>
+        </tr>
+        <tr>
+            <td><code>last_talked_employee_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+        <td>Unique ID of the last employee who spoke.</td>
+        </tr>
+        <tr>
+            <td><code>last_talked_employee_full_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Full name of the last employee who spoke</td>
+        </tr>
+        <tr>
+            <td colspan="7">First employee to talk</td>
+        </tr><tr>
+            <td><code>first_talked_employee_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+        <td>Unique ID of the first employee who spoke.</td>
+        </tr>
+        <tr>
+            <td><code>first_talked_employee_full_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Full name of the first employee who spoke</td>
+        </tr>
+        <tr>
+            <td colspan="7">Operator</td>
+        </tr>
+        <tr>
+            <td><code>operator_phone_number</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Number of the operator who answered the call</td>
+        </tr>
+        <tr>
+            <td colspan="7">Script</td>
+        </tr>
+        <tr>
+            <td><code>scenario_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Name of the scenario according to which the call processing began</td>
+        </tr>
+        <tr>
+            <td><code>scenario_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+        <td>Unique ID of the scenario that initially processed the call.</td>
+        </tr>
+        <tr>
+            <td colspan="7">Website</td>
+        </tr>
+        <tr>
+            <td><code>site_domain_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Site address on the Internet. Without specifying the protocol - <code>"http://"</code> or <code>"https://"</code></td>
+        </tr>
+        <tr>
+            <td><code>site_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>Unique site identifier</td>
+        </tr>
+        <tr>
+            <td colspan="7">Advertising campaign</td>
+        </tr>
+        <tr>
+            <td><code>campaign_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Advertising campaign name</td>
+        </tr>
+        <tr>
+            <td><code>campaign_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+        <td>Unique advertising campaign ID.</td>
+        </tr>
+        <tr>
+            <td><code>visit_other_campaign</code></td>
+            <td>boolean</td>
+            <td><code>true</code>, <code>false</code></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>The flag shows whether the visitor (within the person) visited other advertising campaigns</td>
+        </tr>
+        <tr>
+            <td><code>auto_call_campaign_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>Name of outbound call campaign"</td>
+        </tr>
+        <tr>
+            <td colspan="7">Visitor information</td>
+        </tr>
+        <tr>
+            <td><code>visitor_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>Unique visitor identifier</td>
+        </tr>
+        <tr>
+            <td><code>person_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Unique person identifier</td>
+        </tr>
+        <tr>
+            <td><code>visitor_type</code></td>
+            <td>enum</td>
+            <td>New, Returned, Empty</td><td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>Visitor type</td>
+        </tr>
+        <tr>
+            <td><code>visitor_session_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Unique visitor session identifier</td>
+        </tr>
+        <tr>
+            <td><code>visits_count</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Total number of visits by the visitor</td>
+        </tr>
+        <tr>
+            <td><code>visitor_first_campaign_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+        <td>Unique ID of the visitor's first advertising campaign.</td>
+        </tr>
+        <tr>
+            <td><code>visitor_first_campaign_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Name of the first advertising campaign</td>
+        </tr>
+        <tr>
+            <td><code>visitor_city</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Visitor city</td>
+        </tr>
+        <tr>
+            <td><code>visitor_region</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Visitor region</td>
+        </tr>
+        <tr>
+            <td><code>visitor_country</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Visitor country</td>
+        </tr>
+        <tr>
+            <td><code>visitor_device</code></td>
+            <td>enum</td>
+            <td>
+            <code>desktop</code> <code>mobile</code> <code>tablet</code> <code>other</code>
+            </td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>User device</td>
+        </tr>
+        <tr>
+            <td colspan="7">Visitor properties</td>
+        </tr>
+        <tr>
+            <td><code>visitor_custom_properties</code></td>
+            <td>array</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>
+                Visitor properties that can be set using the JavaScript API [<code>Comagic.setProperty</code> method]
+            </td>
+        </tr>
+        <tr>
+            <td><code>property_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Name of the property to be assigned</td>
+        </tr>
+        <tr>
+            <td><code>property_value</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Property value</td>
+        </tr>
+        <tr>
+            <td colspan="7">Segments</td>
+        </tr>
+        <tr>
+            <td><code>segments</code></td>
+            <td>array</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Segments</td>
+        </tr>
+        <tr>
+            <td><code>segment_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Unique segment identifier</td>
+        </tr>
+        <tr>
+            <td><code>segment_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Segment name</td>
+        </tr>
+        <tr>
+            <td>Call API</td>
+        </tr>
+        <tr>
+            <td><code>call_api_request_id</code></td>
+            <td>number</td><td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>
+            Unique Call API request ID.
+            </td>
+        </tr>
+        <tr>
+            <td><code>call_api_external_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>
+                A unique identifier that can be a call event with an external system.
+            </td>
+        </tr>
+        <tr>
+            <td colspan="7">Contact from address book</td>
+        </tr>
+        <tr>
+            <td><code>contact_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Unique contact identifier</td>
+        </tr>
+        <tr>
+            <td><code>contact_full_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Last name First name Middle name of contact</td>
+        </tr>
+        <tr>
+            <td colspan="7">UTM tags</td>
+        </tr>
+        <tr>
+            <td><code>utm_source</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Campaign source</td>
+        </tr>
+        <tr>
+            <td><code>utm_medium</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Campaign Channel</td>
+        </tr>
+        <tr>
+            <td><code>utm_term</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Campaign keyword</td>
+        </tr>
+        <tr>
+            <td><code>utm_content</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Campaign content</td>
+        </tr>
+        <tr>
+            <td><code>utm_campaign</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Campaign name</td>
+        </tr>
+        <tr>
+            <td colspan="7">OS tags</td>
+        </tr>
+        <tr>
+            <td><code>openstat_ad</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Ad ID</td>
+        </tr>
+        <tr>
+            <td><code>openstat_campaign</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Advertising campaign ID</td>
+        </tr>
+        <tr>
+            <td><code>openstat_service</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Identifier of the service providing the service</td>
+        </tr>
+        <tr>
+            <td><code>openstat_source</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>
+                ID of the site, section, page, the corresponding advertisement was shown
+            </td>
+        </tr>
+        <tr>
+            <td colspan="7">Hit attributes</td>
+        </tr>
+        <tr>
+            <td><code>attributes</code></td>
+            <td>array</td>
+            <td>
+            <code>first</code> - First quality <code>through</code> - End-to-end first quality <code>primary</code> - Primary <code>secondary</code> - Secondary <code>lost</code> - Lost<code>target</code> - Target <code>off-target</code> - Not targeted <code>quality</code> - Quality <code>rest</code> - target repeated requests (requests made during the period of repeated requests configured for the site in the CallGear account).
+            </td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Hit attributes</td>
+        </tr>
+        <tr>
+            <td colspan="7">Extended UTM tags</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_source</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Extended utm_source</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_medium</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Extended utm_medium</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_term</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Extended utm_term</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_content</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Extended utm_content</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_campaign</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Extended utm_campaign</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_referrer</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Extended utm_referrer</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_expid</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Extended utm_expid</td>
+        </tr>
+            <tr>
+    <td colspan="7">Source information</td>
+    </tr>
+    <tr>
+      <td><code>source_id</code></td>
+      <td>number</td>
+      <td></td>
+      <td>yes</td>
+      <td>yes</td>
+      <td></td>
+      <td>Source ID (detailed).</td>
+    </tr>
+    <tr>
+      <td><code>source_name</code></td>
+      <td>string</td>
+      <td></td>
+      <td>yes</td>
+      <td>yes</td>
+      <td></td>
+      <td>Source (detailed). Source name</td>
+    </tr>
+    <tr>
+      <td><code>source_new</code></td>
+      <td>string</td>
+      <td></td>
+      <td>yes</td>
+      <td>yes</td>
+      <td></td>
+      <td>Source(new). Source group</td>
+    </tr>
+    <tr>
+      <td><code>channel_new</code></td>
+      <td>string</td>
+      <td></td>
+      <td>yes</td>
+      <td>yes</td>
+      <td></td>
+      <td>Channel(new). Source channel name</td>
+    </tr>
+    <tr>
+      <td><code>channel_code</code></td>
+      <td>string</td>
+      <td></td>
+      <td>yes</td>
+      <td>yes</td>
+      <td></td>
+      <td>Channel mnemonic</td>
+    </tr>
+
+
+        <tr>
+            <td><code>ext_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>A unique call identifier in your system.</td>
+        </tr>
+    </tbody>
+
+</table>
+
+<h3 id="call-session-completion-reasons">Call session completion reasons</h3>
+<table>
+<thead>
+<tr>
+<th>Mnemonics</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>numb_not_exists</code></td>
+<td>Virtual number not found</td>
+</tr>
+<tr>
+<td><code>incorrect_input</code></td>
+<td>Invalid input</td>
+</tr>
+<tr>
+<td><code>numb_is_inactive</code></td>
+<td>Virtual number is not active</td>
+</tr>
+<tr>
+<td>Sitephone_is_not_configured</td>
+<td>WebSitephone is not configured</td>
+</tr>
+<tr>
+<td><code>app_is_inactive</code></td>
+<td>Client deactivated</td>
+</tr>
+<tr>
+<td><code>numa_in_black_list</code></td>
+<td>Blacklisted caller</td>
+</tr>
+<tr>
+<td><code>no_active_scenario</code></td>
+<td>No active script found</td>
+</tr>
+<tr>
+<td><code>simple_forwarding_is_not_configured</code></td>
+<td>Analytics: simple redirection is not configured</td>
+</tr>
+<tr>
+<td><code>site_not_exists</code></td>
+<td>Site not found</td>
+</tr>
+<tr>
+<td><code>call_generator_is_not_configured</code></td>
+<td>The lead generator is not configured</td>
+</tr>
+<tr>
+<td><code>add_cdr_timeout</code></td>
+<td>Not defined</td>
+</tr>
+<tr>
+<td><code>success_finish</code></td>
+<td>Not defined</td>
+</tr>
+<tr>
+<td><code>api_permission_denied</code></td>
+<td>Access to Call API is denied</td>
+</tr>
+<tr>
+<td><code>api_ip_now_allowed</code></td>
+<td>IP address not on the allowed list</td>
+</tr>
+<tr>
+<td><code>component_is_inactive</code></td>
+<td>Component not active</td>
+</tr>
+<tr>
+<td><code>employees_not_exists</code></td>
+<td>Employee not found</td>
+</tr>
+<tr>
+<td><code>not_enough_money</code></td>
+<td>Insufficient funds</td>
+</tr>
+<tr>
+<td><code>platform_not_found</code></td>
+<td>Contact Technical Support</td>
+</tr>
+<tr>
+<td><code>internal_error</code></td>
+<td>Contact Technical Support</td>
+</tr>
+<tr>
+<td><code>incorrect_config</code></td>
+<td>Invalid configuration</td>
+</tr>
+<tr>
+<td><code>communication_unavailable</code></td>
+<td>Unavailable connection type</td>
+</tr>
+<tr>
+<td><code>caller_disconnects</code></td>
+<td>The caller disconnected.</td>
+</tr>
+<tr>
+<td><code>no_operation</code></td>
+<td>No operation to process</td>
+</tr>
+<tr>
+<td><code>transfer_disconnects</code></td>
+<td>Disabling an employee during a transfer</td>
+</tr>
+<tr>
+<td><code>scenario_disconnects</code></td>
+<td>Disabling an employee when running a script</td>
+</tr>
+<tr>
+<td><code>fax_session_done</code></td>
+<td>Fax received</td>
+</tr>
+<tr>
+<td><code>no_resources</code></td>
+<td>Client limit has been reached</td>
+</tr>
+<tr>
+<td><code>another_operator_answer</code></td>
+<td>We reached another employee</td>
+</tr>
+<tr>
+<td><code>caller_busy</code></td>
+<td>The caller is busy.</td>
+</tr>
+<tr>
+<td><code>caller_not_responsive</code></td>
+<td>The caller did not answer.</td>
+</tr>
+<tr>
+<td><code>caller_number_problems</code></td>
+<td>There is a problem with the caller's phone number. Contact technical support.</td>
+</tr>
+<tr>
+<td><code>operator_answer</code></td>
+<td>We reached an employee</td>
+</tr>
+<tr>
+<td><code>locked_numb</code></td>
+<td>Calls to this number are prohibited by security settings</td>
+</tr>
+<tr>
+<td><code>call_not_allowed_on_tp</code></td>
+<td>The call is prohibited according to the tariff plan</td>
+</tr>
+<tr>
+<td><code>account_not_found</code></td>
+<td>CallGear account not found.</td>
+</tr>
+<tr>
+<td><code>contract_not_found</code></td>
+<td>Contract not found</td>
+</tr>
+<tr>
+<td><code>operator_busy</code></td>
+<td>Employee is busy</td>
+</tr>
+<tr>
+<td><code>operator_not_responsive</code></td>
+<td>Employee not responding</td>
+</tr>
+<tr>
+<td><code>operator_disconnects</code></td>
+<td>The employee disconnected</td>
+</tr>
+<tr>
+<td><code>operator_number_problems</code></td>
+<td>Problems with the employee's phone number. Contact technical support.</td>
+</tr>
+<tr>
+<td><code>timeout</code></td>
+<td>The call time has expired</td>
+</tr>
+<tr>
+<td><code>operator_channels_busy</code></td>
+<td>Out of available lines at the forwarding number</td>
+</tr>
+<tr>
+<td><code>locked_phone</code></td>
+<td>Network problems</td>
+</tr>
+<tr>
+<td><code>max_in_call_reached</code></td>
+<td>Line limit for incoming calls reached</td>
+</tr>
+<tr>
+<td><code>max_out_call_reached</code></td>
+<td>Line limit for outgoing calls reached</td>
+</tr>
+<tr>
+<td><code>employee_busy</code></td>
+<td>Employee talking on another call</td>
+</tr>
+<tr>
+<td><code>employee_busy_after_call</code></td>
+<td>Employee busy after calling</td>
+</tr>
+<tr>
+<td><code>sip_offline</code></td>
+<td>SIP line is not registered</td>
+</tr>
+<tr>
+<td><code>employee_inactive</code></td>
+<td>Employee inactive</td>
+</tr>
+<tr>
+<td><code>employee_inactive_by_schedule</code></td>
+<td>Employee is inactive according to schedule</td>
+</tr>
+<tr>
+<td><code>employee_phone_inactive</code></td>
+<td>Employee number is inactive</td>
+</tr>
+<tr>
+<td><code>employee_phone_inactive_by_schedule</code></td>
+<td>Employee number is inactive according to schedule</td>
+</tr>
+<tr>
+<td><code>action_interval_exceeded</code></td>
+<td>The interval specified for the operation has been exceeded</td>
+</tr>
+<tr>
+<td><code>group_phone_inactive</code></td>
+<td>Group number unavailable</td>
+</tr>
+<tr>
+<td><code>no_operator_confirmation</code></td>
+<td>The employee did not confirm the call</td>
+</tr>
+<tr>
+<td><code>max_transition_count_exceeded</code></td>
+<td>The maximum number of transitions for script operations has been reached</td>
+</tr>
+<tr>
+<td><code>disconnect_before_call_processing</code></td>
+<td>Disconnect before call processing</td>
+</tr>
+<tr>
+<td><code>no_success_caller_call</code></td>
+<td>The caller could not be reached.</td>
+</tr>
+<tr>
+<td><code>no_success_operator_call</code></td>
+<td>Didn't get through to the employee</td>
+</tr>
+<tr>
+<td><code>group_inactive_by_schedule</code></td>
+<td>Group of employees is inactive according to schedule</td>
+</tr>
+<tr>
+<td><code>net_lock</code></td>
+<td>The operator's network is blocked</td>
+</tr>
+<tr>
+<td><code>fmc_is_disabled</code></td>
+<td>FMC service disabled</td>
+</tr>
+<tr>
+<td><code>fmc_is_locked</code></td>
+<td>FMC line blocked</td>
+</tr>
+<tr>
+<td><code>processing_method_not_found</code></td>
+<td>Processing method not found</td>
+</tr>
+<tr>
+<td><code>employee_without_phones</code></td>
+<td>The employee has no numbers</td>
+</tr>
+<tr>
+<td><code>group_without_phones</code></td>
+<td>There are no numbers in the employee group</td>
+</tr>
+<tr>
+<td><code>no_operator_cdr_found</code></td>
+<td>No employee calls found</td>
+</tr>
+<tr>
+<td><code>in_call_not_allowed</code></td>
+<td>Incoming calls are prohibited</td>
+</tr>
+<tr>
+<td><code>phone_protocol_not_allowed_by_status</code></td>
+<td>Calls from this type of number are prohibited by status</td>
+</tr>
+<tr>
+<td><code>employee_status_break</code></td>
+<td>Employee in "Break" status</td>
+</tr>
+<tr>
+<td><code>employee_status_do_not_disturb</code></td>
+<td>Employee in "Do Not Disturb" status</td>
+</tr>
+<tr>
+<td><code>employee_status_not_at_work</code></td>
+<td>Employee with "Out of Office" status</td>
+</tr>
+<tr>
+<td><code>sip_trunk_is_locked</code></td>
+<td>SIP trunk blocked</td>
+</tr>
+<tr>
+<td><code>numa_in_spam_list</code></td>
+<td>Spam call</td>
+</tr>
+<tr>
+<td><code>numa_dnd_interval</code></td>
+<td>Called recently</td>
+</tr>
+<tr>
+<td><code>limit_exceeded</code></td>
+<td>Financial limit reached</td>
+</tr>
+<tr>
+<td><code>no_money</code></td>
+<td>Insufficient funds</td>
+</tr>
+<tr>
+<td><code>out_call_not_allowed</code></td>
+<td>Outgoing calls are prohibited</td>
+</tr>
+<tr>
+<td><code>out_call_not_allowed_by_status</code></td>
+<td>Outgoing calls are prohibited by status</td>
+</tr>
+<tr>
+<td><code>external_call_not_allowed</code></td>
+<td>External calls are prohibited</td>
+</tr>
+<tr>
+<td><code>external_call_not_allowed_by_status</code></td>
+<td>External calls are prohibited by status</td>
+</tr>
+<tr>
+<td><code>internal_call_not_allowed</code></td>
+<td>Internal calls are prohibited</td>
+</tr>
+<tr>
+<td><code>internal_call_not_allowed_by_status</code></td>
+<td>Internal calls are prohibited by status</td>
+</tr>
+<tr>
+<td><code>call_enqueued</code></td>
+<td>Call queued</td>
+</tr>
+<tr>
+<td><code>employee_status_auto_out_call</code></td>
+<td>Employee in the status "Outgoing call"</td>
+</tr>
+<tr>
+<td><code>employee_status_available</code></td>
+<td>Employee with "Available" status</td>
+</tr>
+<tr>
+<td><code>too_many_identical_incoming_calls</code></td>
+<td>Too many identical incoming calls</td>
+</tr>
+<tr>
+<td><code>employee_auto_status_do_not_disturb</code></td>
+<td>Employee in automatic Do Not Disturb status</td>
+</tr>
+<tr>
+<td><code>auto_out_calls_not_allowed_by_status</code></td>
+<td>Outgoing calling is prohibited by status</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-request">Example request</h3>
+<pre><code class="language-json">{
+&quot;jsonrpc&quot;:&quot;2.0&quot;,
+&quot;id&quot;:&quot;number&quot;,
+&quot;method&quot;:&quot;get.calls_report&quot;,
+&quot;params&quot;:{
+&quot;access_token&quot;:&quot;string&quot;,
+&quot;user_id&quot;:&quot;number&quot;,
+&quot;offset&quot;:&quot;number&quot;,
+&quot;limit&quot;:&quot;number&quot;,
+&quot;date_from&quot;:&quot;string&quot;,
+&quot;date_till&quot;:&quot;string&quot;,
+&quot;filter&quot;:{
+},
+&quot;sort&quot;:[
+{
+&quot;field&quot;:&quot;string&quot;,
+&quot;order&quot;:&quot;string&quot;
+}
+],
+&quot;fields&quot;:[
+&quot;string&quot;
+]
+
+}
+}
+</code></pre>
+<h3 id="example-response">Example response</h3>
+<pre><code class="language-json">{
+&quot;jsonrpc&quot;: &quot;2.0&quot;,
+&quot;id&quot;: &quot;number&quot;,
+&quot;result&quot;: {
+&quot;metadata&quot;: {
+
+},
+&quot;data&quot;: [
+{
+&quot;id&quot;: &quot;number&quot;,
+&quot;start_time&quot;: &quot;iso8601&quot;,
+&quot;finish_time&quot;: &quot;iso8601&quot;,
+&quot;virtual_phone_number&quot;: &quot;string&quot;,
+&quot;is_transfer&quot;: &quot;boolean&quot;,
+&quot;finish_reason&quot;: &quot;enum&quot;,
+&quot;direction&quot;: &quot;enum&quot;,
+&quot;source&quot;: &quot;enum&quot;,
+&quot;communication_number&quot;: &quot;number&quot;,
+&quot;communication_page_url&quot;: &quot;string&quot;,
+&quot;communication_id&quot;: &quot;number&quot;,
+&quot;communication_type&quot;: &quot;enum&quot;,
+&quot;is_lost&quot;: &quot;boolean&quot;,
+&quot;cpn_region_id&quot;: &quot;number&quot;,
+&quot;cpn_region_name&quot;: &quot;string&quot;,
+&quot;cpn_country_name&quot;: &quot;string&quot;,
+&quot;cpn_country_id&quot;: &quot;string&quot;,
+&quot;wait_duration&quot;: &quot;number&quot;,
+&quot;total_wait_duration&quot;: &quot;number&quot;,
+&quot;lost_call_processing_duration&quot;:&quot;number&quot;,
+&quot;talk_duration&quot;: &quot;number&quot;,
+&quot;clean_talk_duration&quot;: &quot;number&quot;,
+&quot;total_duration&quot;: &quot;number&quot;,
+&quot;postprocess_duration&quot;: &quot;number&quot;,
+&quot;ua_client_id&quot;: &quot;string&quot;,
+&quot;ym_client_id&quot;: &quot;string&quot;,
+&quot;sale_date&quot;: &quot;iso8601&quot;,
+&quot;sale_cost&quot;: &quot;number&quot;,
+&quot;search_query&quot;: &quot;string&quot;,
+&quot;search_engine&quot;: &quot;string&quot;,
+&quot;referrer_domain&quot;: &quot;string&quot;,
+&quot;referrer&quot;: &quot;string&quot;,
+&quot;entrance_page&quot;: &quot;string&quot;,
+&quot;gclid&quot;: &quot;string&quot;,
+&quot;yclid&quot;: &quot;string&quot;,
+&quot;ymclid&quot;: &quot;string&quot;,
+&quot;ef_id&quot;: &quot;string&quot;,
+&quot;channel&quot;: &quot;enum&quot;,
+&quot;site_id&quot;: &quot;number&quot;,
+&quot;site_domain_name&quot;: &quot;string&quot;,
+&quot;campaign_id&quot;: &quot;number&quot;,
+&quot;campaign_name&quot;: &quot;string&quot;,
+&quot;auto_call_campaign_name&quot;: &quot;string&quot;,
+&quot;visit_other_campaign&quot;: &quot;boolean&quot;,
+&quot;visitor_id&quot;: &quot;number&quot;,
+&quot;person_id&quot;: &quot;number&quot;,
+&quot;visitor_type&quot;: &quot;enum&quot;,
+&quot;visitor_session_id&quot;: &quot;number&quot;,
+&quot;visits_count&quot;: &quot;number&quot;,
+&quot;visitor_first_campaign_id&quot;: &quot;number&quot;,
+&quot;visitor_first_campaign_name&quot;: &quot;string&quot;,
+&quot;visitor_city&quot;: &quot;string&quot;,
+&quot;visitor_region&quot;: &quot;string&quot;,
+&quot;visitor_country&quot;: &quot;string&quot;,
+&quot;visitor_device&quot;: &quot;enum&quot;,
+&quot;last_answered_employee_id&quot;: &quot;number&quot;,
+&quot;last_answered_employee_full_name&quot;: &quot;string&quot;,
+&quot;last_answered_employee_rating&quot;: &quot;number&quot;,
+&quot;first_answered_employee_id&quot;: &quot;number&quot;,
+&quot;first_answered_employee_full_name&quot;: &quot;string&quot;,
+&quot;scenario_id&quot;: &quot;number&quot;,
+&quot;scenario_name&quot;: &quot;string&quot;,
+&quot;call_api_external_id&quot;: &quot;string&quot;,
+&quot;call_api_request_id&quot;: &quot;number&quot;,
+&quot;contact_phone_number&quot;: &quot;string&quot;,
+&quot;contact_full_name&quot;: &quot;string&quot;,
+&quot;contact_id&quot;: &quot;number&quot;,
+&quot;utm_source&quot;: &quot;string&quot;,
+&quot;utm_medium&quot;: &quot;string&quot;,
+&quot;utm_term&quot;: &quot;string&quot;,
+&quot;utm_content&quot;: &quot;string&quot;,
+&quot;utm_campaign&quot;: &quot;string&quot;,
+&quot;openstat_ad&quot;: &quot;string&quot;,
+&quot;openstat_campaign&quot;: &quot;string&quot;,
+&quot;openstat_service&quot;: &quot;string&quot;,
+&quot;openstat_source&quot;: &quot;string&quot;,
+&quot;eq_utm_source&quot;: &quot;string&quot;,
+&quot;eq_utm_medium&quot;: &quot;string&quot;,
+&quot;eq_utm_term&quot;: &quot;string&quot;,
+&quot;eq_utm_content&quot;: &quot;string&quot;,
+&quot;eq_utm_campaign&quot;: &quot;string&quot;,
+&quot;eq_utm_referrer&quot;: &quot;string&quot;,
+&quot;eq_utm_expid&quot;: &quot;string&quot;,
+&quot;attributes&quot;: [
+
+],
+&quot;call_records&quot;: [
+
+],
+&quot;voice_mail_records&quot;: [
+
+],
+&quot;tags&quot;: [
+{
+&quot;tag_id&quot;: &quot;number&quot;,
+&quot;tag_name&quot;: &quot;string&quot;,
+&quot;tag_type&quot;: &quot;enum&quot;,
+&quot;tag_change_time&quot;: &quot;iso8601&quot;,
+&quot;tag_user_id&quot;: &quot;number&quot;,
+&quot;tag_user_login&quot;: &quot;string&quot;,
+&quot;tag_employee_id&quot;: &quot;number&quot;,
+&quot;tag_employee_full_name&quot;: &quot;string&quot;
+}
+],
+&quot;visitor_custom_properties&quot;: [
+{
+&quot;property_name&quot;: &quot;string&quot;,
+&quot;property_value&quot;: &quot;string&quot;
+}
+],
+&quot;segments&quot;: [
+{
+&quot;segment_id&quot;: &quot;number&quot;,
+&quot;segment_name&quot;: &quot;string&quot;
+}
+],
+&quot;employees&quot;: [
+{
+&quot;employee_id&quot;: &quot;number&quot;,
+&quot;employee_full_name&quot;: &quot;string&quot;,
+&quot;is_answered&quot;: &quot;boolean&quot;
+}
+],
+&quot;operator_phone_number&quot;: &quot;string&quot;,
+&quot;scenario_operations&quot;: [
+{
+&quot;name&quot;: &quot;string&quot;,
+&quot;id&quot;: &quot;number&quot;
+}
+],
+&quot;source_id&quot;: &quot;number&quot;,
+&quot;source_name&quot;: &quot;string&quot;,
+&quot;source_new&quot;: &quot;string&quot;,
+&quot;channel_new&quot;: &quot;string&quot;,
+&quot;channel_code&quot;: &quot;string&quot;,
+&quot;ext_id&quot;: &quot;string&quot;,
+&quot;properties&quot;: &quot;string&quot;
+}
+]
+}
+}
+</code></pre>
+<h3 id="possible-errors">Possible errors</h3>
+<p>See the <a href="../..#_getErrors">"Errors for get methods"</a> section.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../../js/init.js"></script>
+      
+    
+  </body>
+</html>

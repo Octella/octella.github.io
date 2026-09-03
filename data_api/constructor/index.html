@@ -1,0 +1,1274 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>List of available methods - DATA API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#list-of-available-methods" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="DATA API" class="md-header__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DATA API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              List of available methods
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="DATA API" class="md-nav__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DATA API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        General Information
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/" class="md-nav__link">
+        Permissions and Components
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../account/get_account/" class="md-nav__link">
+        Account
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vn/" class="md-nav__link">
+        Virtual Numbers and Rules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sip/" class="md-nav__link">
+        SIP Lines
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scenario/get_scenarios/" class="md-nav__link">
+        Scenarios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_media/get_media_files/" class="md-nav__link">
+        Media Files
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../campaigns/" class="md-nav__link">
+        Ad Campaigns
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sources/" class="md-nav__link">
+        Sources
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../auto_calls/" class="md-nav__link">
+        Outbound Calls
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sales_funnel_and_deals/" class="md-nav__link">
+        Sales Funnels and Deals
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sites/" class="md-nav__link">
+        Sites
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/" class="md-nav__link">
+        Reports
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../employees/" class="md-nav__link">
+        Employees
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contacts/" class="md-nav__link">
+        Contacts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blacklist/" class="md-nav__link">
+        Blacklist
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schedules/" class="md-nav__link">
+        Schedules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../partners/" class="md-nav__link">
+        Agents' Customers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../communications/" class="md-nav__link">
+        Communications
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../persons/" class="md-nav__link">
+        Person / Visitor
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-account-information" class="md-nav__link">
+    Getting account information
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-reports" class="md-nav__link">
+    User reports
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report-status" class="md-nav__link">
+    Report status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#receiving-data" class="md-nav__link">
+    Receiving data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uploading-reports" class="md-nav__link">
+    Uploading reports
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-calendar" class="md-nav__link">
+    Global calendar
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report-groups-and-types" class="md-nav__link">
+    Report groups and types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filters" class="md-nav__link">
+    Filters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measurements" class="md-nav__link">
+    Measurements
+  </a>
+  
+    <nav class="md-nav" aria-label="Measurements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-measurements-method-description" class="md-nav__link">
+    Custom measurements| Method | Description |
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metrics" class="md-nav__link">
+    Metrics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#columns" class="md-nav__link">
+    Columns
+  </a>
+  
+    <nav class="md-nav" aria-label="Columns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-columns-based-on-metric" class="md-nav__link">
+    Custom columns based on metric
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-columns-based-on-formula" class="md-nav__link">
+    Custom columns based on formula
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-filters" class="md-nav__link">
+    Custom filters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tags" class="md-nav__link">
+    Tags
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goals" class="md-nav__link">
+    Goals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charts" class="md-nav__link">
+    Charts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    Sources
+  </a>
+  
+    <nav class="md-nav" aria-label="Sources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-groups" class="md-nav__link">
+    Source groups
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source-channels" class="md-nav__link">
+    Source channels
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#call-decryption" class="md-nav__link">
+    Call decryption
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loading-statistics-from-external-systems" class="md-nav__link">
+    Loading statistics from external systems
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caching" class="md-nav__link">
+    Caching
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="list-of-available-methods">List of available methods</h1>
+<h2 id="getting-account-information">Getting account information</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../account_new/getobj_account/">"getobj.account"</a></td>
+<td>Getting account information</td>
+</tr>
+</tbody>
+</table>
+<h2 id="user-reports">User reports</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../report_new/common/get_reports_list/">"get.reports_list"</a></td>
+<td>Retrieving all user reports</td>
+</tr>
+<tr>
+<td><a href="../report_new/common/create_report/">"create.report"</a></td>
+<td>Create a user report</td>
+</tr>
+<tr>
+<td><a href="../report_new/common/update_report/">"update.report"</a></td>
+<td>Editing a User Report</td>
+</tr>
+<tr>
+<td><a href="../report_new/common/delete_report/">"delete.report"</a></td>
+<td>Delete a user report</td>
+</tr>
+</tbody>
+</table>
+<h2 id="report-status">Report status</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../report_new/common/getobj_report_state/">"getobj.report_state"</a></td>
+<td>Getting the current report status</td>
+</tr>
+<tr>
+<td><a href="../report_new/common/set_report_state/">"set.report_state"</a></td>
+<td>Change report status</td>
+</tr>
+<tr>
+<td><a href="../report_new/sharing/create_shared_report_settings/">"create.shared_report_settings"</a></td>
+<td>Create current shared report settings</td>
+</tr>
+</tbody>
+</table>
+<h2 id="receiving-data">Receiving data</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../report_new/aggregated/getobj_report_table/">"getobj.report_table"</a></td>
+<td>Getting table data in a user report</td>
+</tr>
+<tr>
+<td><a href="../report_new/aggregated/getobj_report_total/">"getobj.report_total"</a></td>
+<td>Getting the resulting data in a user report</td>
+</tr>
+<tr>
+<td><a href="../report_new/transfer/getobj_report_transfer/">"getobj.report_transfer"</a></td>
+<td>Method for moving from an aggregated report to a flat report</td>
+</tr>
+<tr>
+<td><a href="../report_new/flat/get_communications/">"get.communications"</a></td>
+<td>Getting a list of all requests</td>
+</tr>
+<tr>
+<td><a href="../report_new/flat/get_deals/">"get.deals"</a></td>
+<td>Getting a list of all transactions</td>
+</tr>
+<tr>
+<td><a href="../report_new/flat/get_visits/">"get.visits"</a></td>
+<td>Getting a list of all visits in the last 30 minutes</td>
+</tr>
+<tr>
+<td><a href="../report_new/flat/get_chats/">"get.chats"</a></td>
+<td>Getting a list of chats</td>
+</tr>
+</tbody>
+</table>
+<h2 id="uploading-reports">Uploading reports</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../report_new/report_generator/create_report_generator_task/">"create.report_generator_task"</a></td>
+<td>Creating a task to upload a report as a file</td>
+</tr>
+<tr>
+<td><a href="../report_new/report_generator/get_report_generator_tasks/">"get.report_generator_tasks"</a></td>
+<td>Obtaining a list of tasks for uploading reports with a file</td>
+</tr>
+</tbody>
+</table>
+<h2 id="global-calendar">Global calendar</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../report_new/Calendar/getobj_report_global_calendar/">"get.report_global_calendars"</a></td>
+<td>Retrieving a user's global calendars</td>
+</tr>
+<tr>
+<td><a href="../report_new/Calendar/update_report_global_calendar/">"update.report_global_calendar"</a></td>
+<td>Editing the global calendar</td>
+</tr>
+</tbody>
+</table>
+<h2 id="report-groups-and-types">Report groups and types</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../report_new/common/get_report_groups/">"get.report_groups"</a></td>
+<td>Retrieving report groups</td>
+</tr>
+<tr>
+<td><a href="../report_new/common/get_report_types/">"get.report_types"</a></td>
+<td>Getting report types</td>
+</tr>
+</tbody>
+</table>
+<h2 id="filters">Filters</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../report_new/filter/get_report_filters/">"get.report_filters"</a></td>
+<td>Getting a list of possible filtering conditions for a report</td>
+</tr>
+<tr>
+<td><a href="../report_new/filter/get_report_rapid_filters/">"get.report_rapid_filters"</a></td>
+<td>Getting a list of possible quick filter conditions for a report</td>
+</tr>
+</tbody>
+</table>
+<h2 id="measurements">Measurements</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../report_new/dimension/getobj_dimensions_tree/">"getobj.dimensions_tree"</a></td>
+<td>Getting dimension nesting</td>
+</tr>
+</tbody>
+</table>
+<h4 id="custom-measurements-method-description">Custom measurements| Method | Description |</h4>
+<p>| ----------------------------------------------------------------------- | -------------------------------------------------------------- |
+| <a href="../report_new/dimension/getobj_custom_dimension/">"getobj.custom_dimension"</a> | Getting a Custom Dimension Setup |
+| <a href="../report_new/dimension/create_custom_dimension/">"create.custom_dimension"</a> | Create a custom dimension |
+| <a href="../report_new/dimension/update_custom_dimension/">"update.custom_dimension"</a> | Editing a Custom Dimension |
+| <a href="../report_new/dimension/delete_custom_dimension/">"delete.custom_dimension"</a> | Delete a custom dimension |
+| <a href="../report_new/dimension/get_custom_dimension_templates/">"get.custom_dimension_templates"</a> | Retrieving Templates for Creating a Custom Dimension |
+| <a href="../report_new/dimension/get_report_entities/">"get.report_entities"</a> | Getting a list of available data types for use in custom nestings |</p>
+<h2 id="metrics">Metrics</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../report_new/column/get_metrics/">"get.metrics"</a></td>
+<td>Getting a list of metrics</td>
+</tr>
+<tr>
+<td><a href="../report_new/filter/get_metric_filters/">"get.metric_filters"</a></td>
+<td>Getting a list of available filtering conditions for a metric</td>
+</tr>
+</tbody>
+</table>
+<h2 id="columns">Columns</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../report_new/column/getobj_columns_tree/">"getobj.columns_tree"</a></td>
+<td>Getting column nesting</td>
+</tr>
+<tr>
+<td><a href="../report_new/column/delete_custom_column/">"delete.custom_column"</a></td>
+<td>Removing a custom column</td>
+</tr>
+<tr>
+<td><a href="../report_new/transfer/get_column_transfer_reports_list/">"get.column_transfer_reports_list"</a></td>
+<td>Getting a possible list of reports to navigate by column</td>
+</tr>
+</tbody>
+</table>
+<h4 id="custom-columns-based-on-metric">Custom columns based on metric</h4>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../report_new/column/getobj_custom_metric_column/">"getobj.custom_metric_column"</a></td>
+<td>Retrieving a custom column setting based on a metric</td>
+</tr>
+<tr>
+<td><a href="../report_new/column/update_custom_metric_column/">"update.custom_metric_column"</a></td>
+<td>Edit a custom column based on a metric</td>
+</tr>
+</tbody>
+</table>
+<h4 id="custom-columns-based-on-formula">Custom columns based on formula</h4>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../report_new/column/getobj_custom_formula_column/">"getobj.custom_formula_column"</a></td>
+<td>Retrieving a custom column setting based on a formula</td>
+</tr>
+<tr>
+<td><a href="../report_new/column/create_custom_formula_column/">"create.custom_formula_column"</a></td>
+<td>Create a custom column based on a formula</td>
+</tr>
+<tr>
+<td><a href="../report_new/column/update_custom_formula_column/">"update.custom_formula_column"</a></td>
+<td>Editing a custom column based on a formula</td>
+</tr>
+</tbody>
+</table>
+<h4 id="custom-filters">Custom filters</h4>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../report_new/filter/create_custom_filter/">"create.custom_filter"</a></td>
+<td>Creating a custom filter</td>
+</tr>
+<tr>
+<td><a href="../report_new/filter/delete_custom_filter/">"delete.custom_filter"</a></td>
+<td>Removing a custom filter</td>
+</tr>
+<tr>
+<td><a href="../report_new/filter/get_custom_filters/">"get.custom_filters"</a></td>
+<td>Getting a list of custom filters</td>
+</tr>
+</tbody>
+</table>
+<h4 id="tags">Tags</h4>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../tag/get_tags/">"get.tags"</a></td>
+<td>Getting a list of tags</td>
+</tr>
+<tr>
+<td><a href="../tag/update_tags_communication/">"update.tags_communication"</a></td>
+<td>Updating tags on the appeal</td>
+</tr>
+</tbody>
+</table>
+<h2 id="goals">Goals</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../report_new/aggregated/getobj_goals_tree/">"getobj.goals_tree"</a></td>
+<td>Getting goal nesting</td>
+</tr>
+</tbody>
+</table>
+<h2 id="charts">Charts</h2>
+<p>| Method | Description || ----------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| <a href="../report_new/linechart/getobj_report_linechart/">"getobj.report_linechart"</a> | Receiving data aggregated by time and additional dimension |
+| <a href="../report_new/linechart/getobj_report_linechart_total/">"getobj.report_linechart_total"</a> | Receiving data aggregated by time in total |
+| <a href="../report_new/linechart/get_linechart_note_groups/">"get.linechart_note_groups"</a> | Retrieving a list of grouped notes for display in a line graph of Advertising Analysis reports |
+| <a href="../report_new/linechart/create_linechart_note/">"create.linechart_note"</a> | Creating a custom note on a chart |
+| <a href="../report_new/linechart/delete_linechart_note/">"delete.linechart_note"</a> | Deleting a custom note |</p>
+<h2 id="sources">Sources</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../source/source/get_sources/">"get.sources"</a></td>
+<td>Getting a list of Sources</td>
+</tr>
+<tr>
+<td><a href="../source/source/get_source_filters/">"get.source_filters"</a></td>
+<td>Getting a list of filters for creating source conditions</td>
+</tr>
+<tr>
+<td><a href="../source/source/getobj_source/">"getobj.source"</a></td>
+<td>Getting Source Settings</td>
+</tr>
+<tr>
+<td><a href="../source/source/create_source/">"create.source"</a></td>
+<td>Creation of the Source</td>
+</tr>
+<tr>
+<td><a href="../source/source/update_source/">"update.source"</a></td>
+<td>Editing Source</td>
+</tr>
+<tr>
+<td><a href="../source/source/update_source_state/">"update.source_state"</a></td>
+<td>Change source status</td>
+</tr>
+<tr>
+<td><a href="../source/source/update_source_priority/">"update.priority_sources"</a></td>
+<td>Updating priorities of all Sources</td>
+</tr>
+<tr>
+<td><a href="../source/source/delete_source/">"delete.source"</a></td>
+<td>Removing a Source</td>
+</tr>
+</tbody>
+</table>
+<h4 id="source-groups">Source groups</h4>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../source/group/get_sources_groups/">"get.sources_groups"</a></td>
+<td>Getting a list of Source groups</td>
+</tr>
+<tr>
+<td><a href="../source/group/delete_source_group/">"delete.source_group"</a></td>
+<td>Delete a Source Group</td>
+</tr>
+<tr>
+<td><a href="../source/group/update_source_group/">"update.source_group"</a></td>
+<td>Editing a Source Group</td>
+</tr>
+<tr>
+<td><a href="../source/group/update_source_group_state/">"update.source_group_state"</a></td>
+<td>Change Source Group Status</td>
+</tr>
+</tbody>
+</table>
+<h4 id="source-channels">Source channels</h4>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../source/channel/get_sources_channels/">"get.sources_channels"</a></td>
+<td>Getting a list of Source channels</td>
+</tr>
+<tr>
+<td><a href="../source/channel/delete_source_channel/">"delete.source_channel"</a></td>
+<td>Deleting a Source Channel</td>
+</tr>
+<tr>
+<td><a href="../source/channel/create_source_channel/">"create.source_channel"</a></td>
+<td>Creating a Source Channel</td>
+</tr>
+<tr>
+<td><a href="../source/channel/update_source_channel/">"update.source_channel"</a></td>
+<td>Editing a Source Channel</td>
+</tr>
+<tr>
+<td><a href="../source/channel/update_source_channel_state/">"update.source_channel_state"</a></td>
+<td>Changing source channel status</td>
+</tr>
+<tr>
+<td><a href="../source/source/upload_source_costs/">"upload.source_costs"</a></td>
+<td>Loading expenses by Source</td>
+</tr>
+</tbody>
+</table>
+<h2 id="call-decryption">Call decryption</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../report_new/flat/getobj_call_session_recognition_info/">"getobj.call_session_recognition_info"</a></td>
+<td>Obtaining information about call session recognition</td>
+</tr>
+<tr>
+<td><a href="../report_new/flat/create_call_session_recognition_task/">"create.call_session_recognition_task"</a></td>
+<td>Creating a task to recognize a call session</td>
+</tr>
+</tbody>
+</table>
+<h2 id="loading-statistics-from-external-systems">Loading statistics from external systems</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../integration/upload_stats/">"upload.stats"</a></td>
+<td>Loading statistics from external systems</td>
+</tr>
+</tbody>
+</table>
+<p><a name="_cache"></a></p>
+<h2 id="caching">Caching</h2>
+<p>If you need to use a method with data not from the cache, specify <code>refresh_cache</code><code>true</code></p>
+<h1 id="list-of-available-methods_1">List of available methods</h1>
+<p>| Method | Description || -------------------------------------------------------------------------------| ------------------------------------------|
+| <a href="../report_new/linechart/getobj_report_linechart/">"getobj.report_linechart"</a> | Receiving data aggregated by time and additional dimension |
+| <a href="../report_new/linechart/getobj_report_linechart_total/">"getobj.report_linechart_total"</a>| Receiving data aggregated by time in total |
+| <a href="../report_new/aggregated/getobj_report_table/">"getobj.report_table"</a> | Getting table data in a user report |
+| <a href="../report_new/aggregated/getobj_report_total/">"getobj.report_total"</a> | Getting the resulting data in a user report |</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../js/init.js"></script>
+      
+    
+  </body>
+</html>

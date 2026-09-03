@@ -1,0 +1,1777 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Retrieves the available filter conditions for sources. - DATA API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#request-parameters" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="DATA API" class="md-header__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DATA API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Retrieves the available filter conditions for sources.
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="DATA API" class="md-nav__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DATA API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        General Information
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/" class="md-nav__link">
+        Permissions and Components
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../account/get_account/" class="md-nav__link">
+        Account
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vn/" class="md-nav__link">
+        Virtual Numbers and Rules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sip/" class="md-nav__link">
+        SIP Lines
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../scenario/get_scenarios/" class="md-nav__link">
+        Scenarios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../user_media/get_media_files/" class="md-nav__link">
+        Media Files
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../campaigns/" class="md-nav__link">
+        Ad Campaigns
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sources/" class="md-nav__link">
+        Sources
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../auto_calls/" class="md-nav__link">
+        Outbound Calls
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sales_funnel_and_deals/" class="md-nav__link">
+        Sales Funnels and Deals
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sites/" class="md-nav__link">
+        Sites
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/" class="md-nav__link">
+        Reports
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../employees/" class="md-nav__link">
+        Employees
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contacts/" class="md-nav__link">
+        Contacts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blacklist/" class="md-nav__link">
+        Blacklist
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../schedules/" class="md-nav__link">
+        Schedules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../partners/" class="md-nav__link">
+        Agents' Customers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../communications/" class="md-nav__link">
+        Communications
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../persons/" class="md-nav__link">
+        Person / Visitor
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#request-parameters" class="md-nav__link">
+    Request parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-parameters" class="md-nav__link">
+    Response parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-request" class="md-nav__link">
+    Example request
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-response" class="md-nav__link">
+    Example response
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#possible-errors" class="md-nav__link">
+    Possible errors
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Retrieves the available filter conditions for sources.</h1>
+                
+                <nav>
+<a href="../../../sources">Sources</a> >
+Retrieves the available filter conditions for sources.
+</nav>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;"><code>get.source_filters</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Description</td>
+<td style="text-align: left;">Retrieves the available filter conditions for sources.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Who has access</td>
+<td style="text-align: left;">Agents and clients</td>
+</tr>
+<tr>
+<td style="text-align: left;">Required components</td>
+<td style="text-align: left;">Data API for configuration</td>
+</tr>
+<tr>
+<td style="text-align: left;">Method weight</td>
+<td style="text-align: left;">1 point</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-parameters">Request parameters</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: center;">Required</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>access_token</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: left;">Access token used to authenticate the request.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>user_id</code></td>
+<td style="text-align: left;">number</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;">Unique ID of the client user on whose behalf the agent is making the request. Required for agents. To retrieve a list of client users, use <a href="../../../partner/get_customer_users/">"get.customer_users"</a>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-parameters">Response parameters</h3>
+<table>
+  <tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Valid values</th>
+      <th>Default response</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td><code>id</code></td>
+      <td>enum</td>
+      <td></td>
+      <td>yes</td>
+      <td>Unique filter field mnemonic.</td>
+    </tr>
+    <tr>
+      <td><code>name</code></td>
+      <td>string</td>
+      <td></td>
+      <td>yes</td>
+      <td>Filter field name.</td>
+    </tr>
+    <tr>
+      <td><code>description</code></td>
+      <td>string</td>
+      <td></td>
+      <td>yes</td>
+      <td>Filter field description.</td>
+    </tr>
+    <tr>
+      <td><code>format</code></td>
+      <td>enum</td>
+      <td></td>
+      <td>yes</td>
+      <td>Filter value format.</td>
+    </tr>
+    <tr>
+      <td colspan="5">Available operators</td>
+    </tr>
+    <tr>
+      <td><code>operators</code></td>
+      <td>array</td>
+      <td></td>
+      <td>yes</td>
+      <td>Operators available for the selected filter field. See the "Filter operators" section.</td>
+    </tr>
+    <tr>
+      <td><code>id</code></td>
+      <td>enum</td>
+      <td></td>
+      <td></td>
+      <td>Filtering operator mnemonic.</td>
+    </tr>
+    <tr>
+      <td><code>name</code></td>
+      <td>string</td>
+      <td></td>
+      <td></td>
+      <td>Filtering operator display name.</td>
+    </tr>
+      <tr>
+      <td><code>is_default</code></td>
+      <td>boolean</td>
+      <td></td>
+      <td></td>
+      <td>Whether this is the default operator for the filter field.</td>
+    </tr>
+    <tr>
+      <td colspan="5">Available values</td>
+    </tr>
+    <tr>
+      <td><code>values</code></td>
+      <td>array</td>
+      <td></td>
+      <td>yes</td>
+      <td>List of allowed values for the selected filter field, or the 10 most common values recorded during the previous seven days.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example-request">Example request</h3>
+<pre><code class="language-json">{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;id&quot;: &quot;number&quot;,
+    &quot;method&quot;: &quot;get.source_filters&quot;,
+    &quot;params&quot;: {
+        &quot;access_token&quot;: &quot;string&quot;,
+        &quot;user_id&quot;: &quot;number&quot;
+    }
+}
+</code></pre>
+<h3 id="example-response">Example response</h3>
+<pre><code class="language-json">{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;id&quot;: &quot;yudakov2022241001&quot;,
+    &quot;result&quot;: {
+        &quot;data&quot;: [
+            {
+                &quot;id&quot;: &quot;referrer&quot;,
+                &quot;name&quot;: &quot;Referrer&quot;,
+                &quot;format&quot;: &quot;text&quot;,
+                &quot;values&quot;: [],
+                &quot;operators&quot;: [
+                    {
+                        &quot;id&quot;: &quot;=&quot;,
+                        &quot;name&quot;: &quot;equals&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;!=&quot;,
+                        &quot;name&quot;: &quot;does not equal&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;ilike&quot;,
+                        &quot;name&quot;: &quot;contains&quot;,
+                        &quot;is_default&quot;: true
+                    },
+                    {
+                        &quot;id&quot;: &quot;not_ilike&quot;,
+                        &quot;name&quot;: &quot;does not contain&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_null&quot;,
+                        &quot;name&quot;: &quot;is empty&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_not_null&quot;,
+                        &quot;name&quot;: &quot;is not empty&quot;,
+                        &quot;is_default&quot;: false
+                    }
+                ],
+                &quot;description&quot;: &quot;Full URL of the referring page.&quot;
+            },
+            {
+                &quot;id&quot;: &quot;referrer_domain&quot;,
+                &quot;name&quot;: &quot;Referrer domain&quot;,
+                &quot;format&quot;: &quot;text&quot;,
+                &quot;values&quot;: [],
+                &quot;operators&quot;: [
+                    {
+                        &quot;id&quot;: &quot;=&quot;,
+                        &quot;name&quot;: &quot;equals&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;!=&quot;,
+                        &quot;name&quot;: &quot;does not equal&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;ilike&quot;,
+                        &quot;name&quot;: &quot;contains&quot;,
+                        &quot;is_default&quot;: true
+                    },
+                    {
+                        &quot;id&quot;: &quot;not_ilike&quot;,
+                        &quot;name&quot;: &quot;does not contain&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_null&quot;,
+                        &quot;name&quot;: &quot;is empty&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_not_null&quot;,
+                        &quot;name&quot;: &quot;is not empty&quot;,
+                        &quot;is_default&quot;: false
+                    }
+                ],
+                &quot;description&quot;: &quot;Domain from which the visitor arrived.&quot;
+            },
+            {
+                &quot;id&quot;: &quot;ad_engine_id&quot;,
+                &quot;name&quot;: &quot;Advertising platform&quot;,
+                &quot;format&quot;: &quot;numeric&quot;,
+                &quot;values&quot;: [],
+                &quot;operators&quot;: [
+                    {
+                        &quot;id&quot;: &quot;=&quot;,
+                        &quot;name&quot;: &quot;equals&quot;,
+                        &quot;is_default&quot;: true
+                    },
+                    {
+                        &quot;id&quot;: &quot;!=&quot;,
+                        &quot;name&quot;: &quot;does not equal&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;&lt;&quot;,
+                        &quot;name&quot;: &quot;less than&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;&lt;=&quot;,
+                        &quot;name&quot;: &quot;less than or equal to&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;&gt;&quot;,
+                        &quot;name&quot;: &quot;greater than&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;&gt;=&quot;,
+                        &quot;name&quot;: &quot;greater than or equal to&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_null&quot;,
+                        &quot;name&quot;: &quot;is empty&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_not_null&quot;,
+                        &quot;name&quot;: &quot;is not empty&quot;,
+                        &quot;is_default&quot;: false
+                    }
+                ],
+                &quot;description&quot;: &quot;Advertising platform, such as Yandex Direct, Google Ads, or social media advertising.&quot;
+            },
+            {
+                &quot;id&quot;: &quot;utm_source&quot;,
+                &quot;name&quot;: &quot;UTM source tag&quot;,
+                &quot;format&quot;: &quot;text_list&quot;,
+                &quot;values&quot;: [
+                    &quot;yandex&quot;,
+                    &quot;newsletter&quot;,
+                    &quot;vk&quot;,
+                    &quot;sendpuls&quot;,
+                    &quot;auto_email&quot;,
+                    &quot;trigger_newsletter&quot;,
+                    &quot;2gis&quot;,
+                    &quot;google&quot;
+                ],
+                &quot;operators&quot;: [
+                    {
+                        &quot;id&quot;: &quot;=&quot;,
+                        &quot;name&quot;: &quot;equals&quot;,
+                        &quot;is_default&quot;: true
+                    },
+                    {
+                        &quot;id&quot;: &quot;!=&quot;,
+                        &quot;name&quot;: &quot;does not equal&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;ilike&quot;,
+                        &quot;name&quot;: &quot;contains&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;not_ilike&quot;,
+                        &quot;name&quot;: &quot;does not contain&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_null&quot;,
+                        &quot;name&quot;: &quot;is empty&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_not_null&quot;,
+                        &quot;name&quot;: &quot;is not empty&quot;,
+                        &quot;is_default&quot;: false
+                    }
+                ],
+                &quot;description&quot;: &quot;Identifies the search engine or traffic source. This parameter is required.\nExample: utm_source=YandexDirect.&quot;
+            },
+            {
+                &quot;id&quot;: &quot;utm_medium&quot;,
+                &quot;name&quot;: &quot;UTM medium tag&quot;,
+                &quot;format&quot;: &quot;text_list&quot;,
+                &quot;values&quot;: [
+                    &quot;cpc&quot;,
+                    &quot;maps&quot;,
+                    &quot;messenger&quot;,
+                    &quot;email&quot;,
+                    &quot;posledovatelno&quot;,
+                    &quot;digital_buff&quot;
+                ],
+                &quot;operators&quot;: [
+                    {
+                        &quot;id&quot;: &quot;=&quot;,
+                        &quot;name&quot;: &quot;equals&quot;,
+                        &quot;is_default&quot;: true
+                    },
+                    {
+                        &quot;id&quot;: &quot;!=&quot;,
+                        &quot;name&quot;: &quot;does not equal&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;ilike&quot;,
+                        &quot;name&quot;: &quot;contains&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;not_ilike&quot;,
+                        &quot;name&quot;: &quot;does not contain&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_null&quot;,
+                        &quot;name&quot;: &quot;is empty&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_not_null&quot;,
+                        &quot;name&quot;: &quot;is not empty&quot;,
+                        &quot;is_default&quot;: false
+                    }
+                ],
+                &quot;description&quot;: &quot;Identifies the marketing medium. For Yandex paid search, use cpc; for email campaigns, use the mailing identifier. This parameter is required.\nExample: utm_medium=cpc.&quot;
+            },
+            {
+                &quot;id&quot;: &quot;utm_term&quot;,
+                &quot;name&quot;: &quot;UTM term tag&quot;,
+                &quot;format&quot;: &quot;text_list&quot;,
+                &quot;values&quot;: [
+                    &quot;---autotargeting&quot;,
+                    &quot;Kistochki nail salon St Petersburg&quot;,
+                    &quot;manicure St Petersburg&quot;,
+                    &quot;Kistochki nail salon&quot;,
+                    &quot;{platform}&quot;,
+                    &quot;Kistochki St Petersburg&quot;,
+                    &quot;St Petersburg manicure&quot;,
+                    &quot;Kistochki salon&quot;,
+                    &quot;nail files&quot;,
+                    &quot;nails St Petersburg&quot;
+                ],
+                &quot;operators&quot;: [
+                    {
+                        &quot;id&quot;: &quot;=&quot;,
+                        &quot;name&quot;: &quot;equals&quot;,
+                        &quot;is_default&quot;: true
+                    },
+                    {
+                        &quot;id&quot;: &quot;!=&quot;,
+                        &quot;name&quot;: &quot;does not equal&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;ilike&quot;,
+                        &quot;name&quot;: &quot;contains&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;not_ilike&quot;,
+                        &quot;name&quot;: &quot;does not contain&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_null&quot;,
+                        &quot;name&quot;: &quot;is empty&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_not_null&quot;,
+                        &quot;name&quot;: &quot;is not empty&quot;,
+                        &quot;is_default&quot;: false
+                    }
+                ],
+                &quot;description&quot;: &quot;Identifies the advertising keyword.\nExample: utm_term=tennis+racket.&quot;
+            },
+            {
+                &quot;id&quot;: &quot;utm_content&quot;,
+                &quot;name&quot;: &quot;UTM content tag&quot;,
+                &quot;format&quot;: &quot;text_list&quot;,
+                &quot;values&quot;: [
+                    &quot;{ad_id}&quot;,
+                    &quot;cid|71744516|gid|4836788670|aid|11800396974|adp|no|dvc|mobile|pid|36817640000|rid||did|36817640000|pos|premium1|adn|search|crid|0|&quot;,
+                    &quot;cid|71744516|gid|4836788670|aid|11800396974|adp|no|dvc|mobile|pid|36817640025|rid||did|36817640025|pos|premium1|adn|search|crid|0|&quot;,
+                    &quot;cid|71744516|gid|4836788670|aid|11800396974|adp|no|dvc|mobile|pid|36817639988|rid||did|36817639988|pos|premium1|adn|search|crid|0|&quot;,
+                    &quot;10504865019&quot;,
+                    &quot;11376110085&quot;,
+                    &quot;cid|70513836|gid|4799066306|aid|12877844056|adp|no|dvc|mobile|pid|35977817006|rid||did|35977817006|pos|none0|adn|context|crid|0|&quot;,
+                    &quot;cid|71744516|gid|4836788670|aid|11800396974|adp|no|dvc|mobile|pid|36817639985|rid||did|36817639985|pos|premium1|adn|search|crid|0|&quot;,
+                    &quot;11376110084&quot;,
+                    &quot;cid|71744516|gid|4836788670|aid|11800396974|adp|no|dvc|desktop|pid|36817640000|rid||did|36817640000|pos|premium1|adn|search|crid|0|&quot;
+                ],
+                &quot;operators&quot;: [
+                    {
+                        &quot;id&quot;: &quot;=&quot;,
+                        &quot;name&quot;: &quot;equals&quot;,
+                        &quot;is_default&quot;: true
+                    },
+                    {
+                        &quot;id&quot;: &quot;!=&quot;,
+                        &quot;name&quot;: &quot;does not equal&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;ilike&quot;,
+                        &quot;name&quot;: &quot;contains&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;not_ilike&quot;,
+                        &quot;name&quot;: &quot;does not contain&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_null&quot;,
+                        &quot;name&quot;: &quot;is empty&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_not_null&quot;,
+                        &quot;name&quot;: &quot;is not empty&quot;,
+                        &quot;is_default&quot;: false
+                    }
+                ],
+                &quot;description&quot;: &quot;Distinguishes ads that link to the same URL and can also be used for A/B testing. Examples: utm_content=logolink or utm_content=textlink.&quot;
+            },
+            {
+                &quot;id&quot;: &quot;utm_campaign&quot;,
+                &quot;name&quot;: &quot;UTM campaign tag&quot;,
+                &quot;format&quot;: &quot;text_list&quot;,
+                &quot;values&quot;: [
+                    &quot;71744516&quot;,
+                    &quot;68838308&quot;,
+                    &quot;priority&quot;,
+                    &quot;zimnii ukhod&quot;,
+                    &quot;70513836&quot;,
+                    &quot;70572718&quot;,
+                    &quot;68965326&quot;,
+                    &quot;vacancy_manikur&quot;,
+                    &quot;{campaign_id}&quot;,
+                    &quot;60162840&quot;
+                ],
+                &quot;operators&quot;: [
+                    {
+                        &quot;id&quot;: &quot;=&quot;,
+                        &quot;name&quot;: &quot;equals&quot;,
+                        &quot;is_default&quot;: true
+                    },
+                    {
+                        &quot;id&quot;: &quot;!=&quot;,
+                        &quot;name&quot;: &quot;does not equal&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;ilike&quot;,
+                        &quot;name&quot;: &quot;contains&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;not_ilike&quot;,
+                        &quot;name&quot;: &quot;does not contain&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_null&quot;,
+                        &quot;name&quot;: &quot;is empty&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_not_null&quot;,
+                        &quot;name&quot;: &quot;is not empty&quot;,
+                        &quot;is_default&quot;: false
+                    }
+                ],
+                &quot;description&quot;: &quot;Identifies a specific product promotion or marketing campaign.\nExample: utm_campaign=summer_sale.&quot;
+            },
+            {
+                &quot;id&quot;: &quot;utm_referrer&quot;,
+                &quot;name&quot;: &quot;UTM referrer tag&quot;,
+                &quot;format&quot;: &quot;text_list&quot;,
+                &quot;values&quot;: [
+                    &quot;http://www.yandex.ru/clck/jsredir?from=yandex.ru;suggest;app-search-touch-android&amp;text=&quot;,
+                    &quot;https%3A%2F%2Fyandex.ru%2Fsearchapp%3Ffrom%3Dalice%26text%3D&quot;,
+                    &quot;http://www.yandex.ru/clck/jsredir?from=yandex.ru;suggest;widget-suggest-sdk-touch&amp;text=&quot;
+                ],
+                &quot;operators&quot;: [
+                    {
+                        &quot;id&quot;: &quot;=&quot;,
+                        &quot;name&quot;: &quot;equals&quot;,
+                        &quot;is_default&quot;: true
+                    },
+                    {
+                        &quot;id&quot;: &quot;!=&quot;,
+                        &quot;name&quot;: &quot;does not equal&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;ilike&quot;,
+                        &quot;name&quot;: &quot;contains&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;not_ilike&quot;,
+                        &quot;name&quot;: &quot;does not contain&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_null&quot;,
+                        &quot;name&quot;: &quot;is empty&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_not_null&quot;,
+                        &quot;name&quot;: &quot;is not empty&quot;,
+                        &quot;is_default&quot;: false
+                    }
+                ],
+                &quot;description&quot;: &quot;Original referrer used for JavaScript redirects or when a visitor moves from an HTTPS site to an HTTP site.&quot;
+            },
+            {
+                &quot;id&quot;: &quot;openstat_service&quot;,
+                &quot;name&quot;: &quot;Openstat service tag&quot;,
+                &quot;format&quot;: &quot;text&quot;,
+                &quot;values&quot;: [],
+                &quot;operators&quot;: [
+                    {
+                        &quot;id&quot;: &quot;=&quot;,
+                        &quot;name&quot;: &quot;equals&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;!=&quot;,
+                        &quot;name&quot;: &quot;does not equal&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;ilike&quot;,
+                        &quot;name&quot;: &quot;contains&quot;,
+                        &quot;is_default&quot;: true
+                    },
+                    {
+                        &quot;id&quot;: &quot;not_ilike&quot;,
+                        &quot;name&quot;: &quot;does not contain&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_null&quot;,
+                        &quot;name&quot;: &quot;is empty&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_not_null&quot;,
+                        &quot;name&quot;: &quot;is not empty&quot;,
+                        &quot;is_default&quot;: false
+                    }
+                ],
+                &quot;description&quot;: &quot;Identifier of the advertising service. This parameter is required.\nExample: source-name=direct.yandex.ru.&quot;
+            },
+            {
+                &quot;id&quot;: &quot;openstat_campaign&quot;,
+                &quot;name&quot;: &quot;Openstat campaign tag&quot;,
+                &quot;format&quot;: &quot;text&quot;,
+                &quot;values&quot;: [],
+                &quot;operators&quot;: [
+                    {
+                        &quot;id&quot;: &quot;=&quot;,
+                        &quot;name&quot;: &quot;equals&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;!=&quot;,
+                        &quot;name&quot;: &quot;does not equal&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;ilike&quot;,
+                        &quot;name&quot;: &quot;contains&quot;,
+                        &quot;is_default&quot;: true
+                    },
+                    {
+                        &quot;id&quot;: &quot;not_ilike&quot;,
+                        &quot;name&quot;: &quot;does not contain&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_null&quot;,
+                        &quot;name&quot;: &quot;is empty&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_not_null&quot;,
+                        &quot;name&quot;: &quot;is not empty&quot;,
+                        &quot;is_default&quot;: false
+                    }
+                ],
+                &quot;description&quot;: &quot;Advertising campaign identifier. Example: showCamp&amp;cid=123456.&quot;
+            },
+            {
+                &quot;id&quot;: &quot;openstat_ad&quot;,
+                &quot;name&quot;: &quot;Openstat ad tag&quot;,
+                &quot;format&quot;: &quot;text&quot;,
+                &quot;values&quot;: [],
+                &quot;operators&quot;: [
+                    {
+                        &quot;id&quot;: &quot;=&quot;,
+                        &quot;name&quot;: &quot;equals&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;!=&quot;,
+                        &quot;name&quot;: &quot;does not equal&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;ilike&quot;,
+                        &quot;name&quot;: &quot;contains&quot;,
+                        &quot;is_default&quot;: true
+                    },
+                    {
+                        &quot;id&quot;: &quot;not_ilike&quot;,
+                        &quot;name&quot;: &quot;does not contain&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_null&quot;,
+                        &quot;name&quot;: &quot;is empty&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_not_null&quot;,
+                        &quot;name&quot;: &quot;is not empty&quot;,
+                        &quot;is_default&quot;: false
+                    }
+                ],
+                &quot;description&quot;: &quot;Advertising creative identifier. This parameter is required.\nExample: Yandex Direct ad ID M-12345678.&quot;
+            },
+            {
+                &quot;id&quot;: &quot;openstat_source&quot;,
+                &quot;name&quot;: &quot;Openstat source tag&quot;,
+                &quot;format&quot;: &quot;text&quot;,
+                &quot;values&quot;: [],
+                &quot;operators&quot;: [
+                    {
+                        &quot;id&quot;: &quot;=&quot;,
+                        &quot;name&quot;: &quot;equals&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;!=&quot;,
+                        &quot;name&quot;: &quot;does not equal&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;ilike&quot;,
+                        &quot;name&quot;: &quot;contains&quot;,
+                        &quot;is_default&quot;: true
+                    },
+                    {
+                        &quot;id&quot;: &quot;not_ilike&quot;,
+                        &quot;name&quot;: &quot;does not contain&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_null&quot;,
+                        &quot;name&quot;: &quot;is empty&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_not_null&quot;,
+                        &quot;name&quot;: &quot;is not empty&quot;,
+                        &quot;is_default&quot;: false
+                    }
+                ],
+                &quot;description&quot;: &quot;Identifier of the site, section, page, or page placement where the ad was displayed.\nExample page URL: www.example.com/features.&quot;
+            },
+            {
+                &quot;id&quot;: &quot;gclid&quot;,
+                &quot;name&quot;: &quot;gclid tag&quot;,
+                &quot;format&quot;: &quot;text&quot;,
+                &quot;values&quot;: [],
+                &quot;operators&quot;: [
+                    {
+                        &quot;id&quot;: &quot;=&quot;,
+                        &quot;name&quot;: &quot;equals&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;!=&quot;,
+                        &quot;name&quot;: &quot;does not equal&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;ilike&quot;,
+                        &quot;name&quot;: &quot;contains&quot;,
+                        &quot;is_default&quot;: true
+                    },
+                    {
+                        &quot;id&quot;: &quot;not_ilike&quot;,
+                        &quot;name&quot;: &quot;does not contain&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_null&quot;,
+                        &quot;name&quot;: &quot;is empty&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_not_null&quot;,
+                        &quot;name&quot;: &quot;is not empty&quot;,
+                        &quot;is_default&quot;: false
+                    }
+                ],
+                &quot;description&quot;: &quot;Automatically added to Google Ads links when auto-tagging is enabled in the Google Ads account.&quot;
+            },
+            {
+                &quot;id&quot;: &quot;yclid&quot;,
+                &quot;name&quot;: &quot;yclid tag&quot;,
+                &quot;format&quot;: &quot;text&quot;,
+                &quot;values&quot;: [],
+                &quot;operators&quot;: [
+                    {
+                        &quot;id&quot;: &quot;=&quot;,
+                        &quot;name&quot;: &quot;equals&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;!=&quot;,
+                        &quot;name&quot;: &quot;does not equal&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;ilike&quot;,
+                        &quot;name&quot;: &quot;contains&quot;,
+                        &quot;is_default&quot;: true
+                    },
+                    {
+                        &quot;id&quot;: &quot;not_ilike&quot;,
+                        &quot;name&quot;: &quot;does not contain&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_null&quot;,
+                        &quot;name&quot;: &quot;is empty&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_not_null&quot;,
+                        &quot;name&quot;: &quot;is not empty&quot;,
+                        &quot;is_default&quot;: false
+                    }
+                ],
+                &quot;description&quot;: &quot;Automatically added to Yandex Direct links when link tagging for Yandex Metrica is enabled in the campaign settings.&quot;
+            },
+            {
+                &quot;id&quot;: &quot;ef_id&quot;,
+                &quot;name&quot;: &quot;ef_id tag&quot;,
+                &quot;format&quot;: &quot;text&quot;,
+                &quot;values&quot;: [],
+                &quot;operators&quot;: [
+                    {
+                        &quot;id&quot;: &quot;=&quot;,
+                        &quot;name&quot;: &quot;equals&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;!=&quot;,
+                        &quot;name&quot;: &quot;does not equal&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;ilike&quot;,
+                        &quot;name&quot;: &quot;contains&quot;,
+                        &quot;is_default&quot;: true
+                    },
+                    {
+                        &quot;id&quot;: &quot;not_ilike&quot;,
+                        &quot;name&quot;: &quot;does not contain&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_null&quot;,
+                        &quot;name&quot;: &quot;is empty&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_not_null&quot;,
+                        &quot;name&quot;: &quot;is not empty&quot;,
+                        &quot;is_default&quot;: false
+                    }
+                ],
+                &quot;description&quot;: &quot;Used to tag links in the AdLense paid-search management platform.&quot;
+            },
+            {
+                &quot;id&quot;: &quot;ymclid&quot;,
+                &quot;name&quot;: &quot;ymclid tag&quot;,
+                &quot;format&quot;: &quot;text&quot;,
+                &quot;values&quot;: [],
+                &quot;operators&quot;: [
+                    {
+                        &quot;id&quot;: &quot;=&quot;,
+                        &quot;name&quot;: &quot;equals&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;!=&quot;,
+                        &quot;name&quot;: &quot;does not equal&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;ilike&quot;,
+                        &quot;name&quot;: &quot;contains&quot;,
+                        &quot;is_default&quot;: true
+                    },
+                    {
+                        &quot;id&quot;: &quot;not_ilike&quot;,
+                        &quot;name&quot;: &quot;does not contain&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_null&quot;,
+                        &quot;name&quot;: &quot;is empty&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_not_null&quot;,
+                        &quot;name&quot;: &quot;is not empty&quot;,
+                        &quot;is_default&quot;: false
+                    }
+                ],
+                &quot;description&quot;: &quot;Automatically added to all Yandex Market product offers.&quot;
+            },
+            {
+                &quot;id&quot;: &quot;cm_id&quot;,
+                &quot;name&quot;: &quot;cm_id tag&quot;,
+                &quot;format&quot;: &quot;text&quot;,
+                &quot;values&quot;: [],
+                &quot;operators&quot;: [
+                    {
+                        &quot;id&quot;: &quot;=&quot;,
+                        &quot;name&quot;: &quot;equals&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;!=&quot;,
+                        &quot;name&quot;: &quot;does not equal&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;ilike&quot;,
+                        &quot;name&quot;: &quot;contains&quot;,
+                        &quot;is_default&quot;: true
+                    },
+                    {
+                        &quot;id&quot;: &quot;not_ilike&quot;,
+                        &quot;name&quot;: &quot;does not contain&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_null&quot;,
+                        &quot;name&quot;: &quot;is empty&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_not_null&quot;,
+                        &quot;name&quot;: &quot;is not empty&quot;,
+                        &quot;is_default&quot;: false
+                    }
+                ],
+                &quot;description&quot;: &quot;Tag added by CallGear to ad URLs for integrated platforms such as Yandex Direct, Google Ads, VK Ads, myTarget Ads, and TikTok Ads.&quot;
+            },
+            {
+                &quot;id&quot;: &quot;visitor_country&quot;,
+                &quot;name&quot;: &quot;Country&quot;,
+                &quot;format&quot;: &quot;text_list&quot;,
+                &quot;values&quot;: [
+                    &quot;Russia&quot;,
+                    &quot;United States&quot;,
+                    &quot;Germany&quot;,
+                    &quot;Netherlands&quot;,
+                    &quot;United Kingdom&quot;,
+                    &quot;Sweden&quot;,
+                    &quot;Romania&quot;,
+                    &quot;France&quot;,
+                    &quot;Italy&quot;,
+                    &quot;Finland&quot;
+                ],
+                &quot;operators&quot;: [
+                    {
+                        &quot;id&quot;: &quot;=&quot;,
+                        &quot;name&quot;: &quot;equals&quot;,
+                        &quot;is_default&quot;: true
+                    },
+                    {
+                        &quot;id&quot;: &quot;!=&quot;,
+                        &quot;name&quot;: &quot;does not equal&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;ilike&quot;,
+                        &quot;name&quot;: &quot;contains&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;not_ilike&quot;,
+                        &quot;name&quot;: &quot;does not contain&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_null&quot;,
+                        &quot;name&quot;: &quot;is empty&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_not_null&quot;,
+                        &quot;name&quot;: &quot;is not empty&quot;,
+                        &quot;is_default&quot;: false
+                    }
+                ],
+                &quot;description&quot;: &quot;Country associated with the visit.&quot;
+            },
+            {
+                &quot;id&quot;: &quot;visitor_region&quot;,
+                &quot;name&quot;: &quot;Region&quot;,
+                &quot;format&quot;: &quot;text_list&quot;,
+                &quot;values&quot;: [
+                    &quot;St Petersburg&quot;,
+                    &quot;Moscow&quot;,
+                    &quot;Kaluga Region&quot;,
+                    &quot;Leningrad Region&quot;,
+                    &quot;Hesse&quot;,
+                    &quot;North Holland&quot;,
+                    &quot;Stockholm&quot;,
+                    &quot;Nizhny Novgorod Region&quot;,
+                    &quot;South Holland&quot;,
+                    &quot;Kursk Region&quot;
+                ],
+                &quot;operators&quot;: [
+                    {
+                        &quot;id&quot;: &quot;=&quot;,
+                        &quot;name&quot;: &quot;equals&quot;,
+                        &quot;is_default&quot;: true
+                    },
+                    {
+                        &quot;id&quot;: &quot;!=&quot;,
+                        &quot;name&quot;: &quot;does not equal&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;ilike&quot;,
+                        &quot;name&quot;: &quot;contains&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;not_ilike&quot;,
+                        &quot;name&quot;: &quot;does not contain&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_null&quot;,
+                        &quot;name&quot;: &quot;is empty&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_not_null&quot;,
+                        &quot;name&quot;: &quot;is not empty&quot;,
+                        &quot;is_default&quot;: false
+                    }
+                ],
+                &quot;description&quot;: &quot;Region associated with the visit.&quot;
+            },
+            {
+                &quot;id&quot;: &quot;visitor_city&quot;,
+                &quot;name&quot;: &quot;City&quot;,
+                &quot;format&quot;: &quot;text_list&quot;,
+                &quot;values&quot;: [
+                    &quot;St Petersburg&quot;,
+                    &quot;Moscow&quot;,
+                    &quot;Obninsk&quot;,
+                    &quot;Frankfurt am Main&quot;,
+                    &quot;Amsterdam&quot;,
+                    &quot;Murino&quot;,
+                    &quot;Stockholm&quot;,
+                    &quot;Naaldwijk&quot;,
+                    &quot;Kursk&quot;,
+                    &quot;Lipetsk&quot;
+                ],
+                &quot;operators&quot;: [
+                    {
+                        &quot;id&quot;: &quot;=&quot;,
+                        &quot;name&quot;: &quot;equals&quot;,
+                        &quot;is_default&quot;: true
+                    },
+                    {
+                        &quot;id&quot;: &quot;!=&quot;,
+                        &quot;name&quot;: &quot;does not equal&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;ilike&quot;,
+                        &quot;name&quot;: &quot;contains&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;not_ilike&quot;,
+                        &quot;name&quot;: &quot;does not contain&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_null&quot;,
+                        &quot;name&quot;: &quot;is empty&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_not_null&quot;,
+                        &quot;name&quot;: &quot;is not empty&quot;,
+                        &quot;is_default&quot;: false
+                    }
+                ],
+                &quot;description&quot;: &quot;City associated with the visit.&quot;
+            },
+            {
+                &quot;id&quot;: &quot;tag_from&quot;,
+                &quot;name&quot;: &quot;from tag&quot;,
+                &quot;format&quot;: &quot;text&quot;,
+                &quot;values&quot;: [],
+                &quot;operators&quot;: [
+                    {
+                        &quot;id&quot;: &quot;=&quot;,
+                        &quot;name&quot;: &quot;equals&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;!=&quot;,
+                        &quot;name&quot;: &quot;does not equal&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;ilike&quot;,
+                        &quot;name&quot;: &quot;contains&quot;,
+                        &quot;is_default&quot;: true
+                    },
+                    {
+                        &quot;id&quot;: &quot;not_ilike&quot;,
+                        &quot;name&quot;: &quot;does not contain&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_null&quot;,
+                        &quot;name&quot;: &quot;is empty&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_not_null&quot;,
+                        &quot;name&quot;: &quot;is not empty&quot;,
+                        &quot;is_default&quot;: false
+                    }
+                ],
+                &quot;description&quot;: &quot;Custom tag.&quot;
+            },
+            {
+                &quot;id&quot;: &quot;is_internal&quot;,
+                &quot;name&quot;: &quot;Internal navigation&quot;,
+                &quot;format&quot;: &quot;system_list&quot;,
+                &quot;values&quot;: [
+                    &quot;Yes&quot;,
+                    &quot;No&quot;
+                ],
+                &quot;operators&quot;: [
+                    {
+                        &quot;id&quot;: &quot;=&quot;,
+                        &quot;name&quot;: &quot;equals&quot;,
+                        &quot;is_default&quot;: true
+                    },
+                    {
+                        &quot;id&quot;: &quot;!=&quot;,
+                        &quot;name&quot;: &quot;does not equal&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_null&quot;,
+                        &quot;name&quot;: &quot;is empty&quot;,
+                        &quot;is_default&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;is_not_null&quot;,
+                        &quot;name&quot;: &quot;is not empty&quot;,
+                        &quot;is_default&quot;: false
+                    }
+                ],
+                &quot;description&quot;: null
+            }
+        ],
+        &quot;metadata&quot;: {
+            &quot;total_items&quot;: 23,
+            &quot;version&quot;: null,
+            &quot;limits&quot;: {}
+        }
+    }
+}
+</code></pre>
+<h3 id="possible-errors">Possible errors</h3>
+<p>See the <a href="../../..#_getErrors">"Errors for get methods"</a> section.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../../../js/init.js"></script>
+      
+    
+  </body>
+</html>

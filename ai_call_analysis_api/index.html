@@ -1,0 +1,2595 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>AI Call Analysis API</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ai-call-analysis-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="AI Call Analysis API" class="md-header__button md-logo" aria-label="AI Call Analysis API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Call Analysis API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AI Call Analysis API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="AI Call Analysis API" class="md-nav__button md-logo" aria-label="AI Call Analysis API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    AI Call Analysis API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          AI Call Analysis API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        AI Call Analysis API
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-information" class="md-nav__link">
+    General Information
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-entities" class="md-nav__link">
+    Core Entities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoint-overview" class="md-nav__link">
+    Endpoint Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-data-format" class="md-nav__link">
+    Response Data Format
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explanation-of-core-paths" class="md-nav__link">
+    Explanation of Core Paths
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenarios" class="md-nav__link">
+    Scenarios
+  </a>
+  
+    <nav class="md-nav" aria-label="Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-list-of-scenarios" class="md-nav__link">
+    Get List of Scenarios
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-scenario" class="md-nav__link">
+    Create Scenario
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-scenario-by-id" class="md-nav__link">
+    Get Scenario by ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-scenario" class="md-nav__link">
+    Update Scenario
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toggle-scenario-state" class="md-nav__link">
+    Toggle Scenario State
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenario-points-and-scores" class="md-nav__link">
+    Scenario Points and Scores
+  </a>
+  
+    <nav class="md-nav" aria-label="Scenario Points and Scores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-scenario-points" class="md-nav__link">
+    Get Scenario Points
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-a-specific-point-in-the-scenario" class="md-nav__link">
+    Get a Specific Point in the Scenario
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-text-points-from-scenario" class="md-nav__link">
+    Get Text Points from Scenario
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-all-points-of-all-scenarios" class="md-nav__link">
+    Get All Points of All Scenarios
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-scenario-score" class="md-nav__link">
+    Get Scenario Score
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-list-of-scenario-scores" class="md-nav__link">
+    Get List of Scenario Scores
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tags" class="md-nav__link">
+    Tags
+  </a>
+  
+    <nav class="md-nav" aria-label="Tags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-list-of-tags" class="md-nav__link">
+    Get List of Tags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-tag" class="md-nav__link">
+    Create Tag
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-tag-by-id" class="md-nav__link">
+    Get Tag by ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-tag" class="md-nav__link">
+    Update Tag
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenario-results" class="md-nav__link">
+    Scenario Results
+  </a>
+  
+    <nav class="md-nav" aria-label="Scenario Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-list-of-results" class="md-nav__link">
+    Get List of Results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-scenario-result" class="md-nav__link">
+    Create Scenario Result
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-scenario-result-by-id" class="md-nav__link">
+    Get Scenario Result by ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-scenario-result" class="md-nav__link">
+    Update Scenario Result
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-scenario-result" class="md-nav__link">
+    Delete Scenario Result
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#result-analysis" class="md-nav__link">
+    Result Analysis
+  </a>
+  
+    <nav class="md-nav" aria-label="Result Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-summary-of-scenario-result" class="md-nav__link">
+    Get Summary of Scenario Result
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-summary-list" class="md-nav__link">
+    Get Summary List
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-successful-points-from-scenario-result" class="md-nav__link">
+    Get Successful Points from Scenario Result
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-successful-points-list" class="md-nav__link">
+    Get Successful Points List
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-tags-from-result" class="md-nav__link">
+    Get Tags from Result
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-list-of-result-tags" class="md-nav__link">
+    Get List of Result Tags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-employee-metrics-from-scenario-result" class="md-nav__link">
+    Get Employee Metrics from Scenario Result
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-employee-metrics-list" class="md-nav__link">
+    Get Employee Metrics List
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transcriptions" class="md-nav__link">
+    Transcriptions
+  </a>
+  
+    <nav class="md-nav" aria-label="Transcriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-list-of-call-transcriptions" class="md-nav__link">
+    Get List of Call Transcriptions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav" aria-label="Tokens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-token-list" class="md-nav__link">
+    Get Token List
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-token" class="md-nav__link">
+    Create Token
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-token" class="md-nav__link">
+    Delete Token
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-rpc" class="md-nav__link">
+    JSON-RPC
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON-RPC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#execute-a-json-rpc-request" class="md-nav__link">
+    Execute a JSON-RPC Request
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notification-conditions" class="md-nav__link">
+    Notification Conditions
+  </a>
+  
+    <nav class="md-nav" aria-label="Notification Conditions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-notification-conditions" class="md-nav__link">
+    Get Notification Conditions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-models" class="md-nav__link">
+    Data Models
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tagschema" class="md-nav__link">
+    TagSchema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenarioformresponse" class="md-nav__link">
+    ScenarioFormResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenariopoint" class="md-nav__link">
+    ScenarioPoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenarioscore" class="md-nav__link">
+    ScenarioScore
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenarioresult" class="md-nav__link">
+    ScenarioResult
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token" class="md-nav__link">
+    Token
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authorization-request" class="md-nav__link">
+    Authorization Request
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-information" class="md-nav__link">
+    General Information
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-entities" class="md-nav__link">
+    Core Entities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoint-overview" class="md-nav__link">
+    Endpoint Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-data-format" class="md-nav__link">
+    Response Data Format
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explanation-of-core-paths" class="md-nav__link">
+    Explanation of Core Paths
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenarios" class="md-nav__link">
+    Scenarios
+  </a>
+  
+    <nav class="md-nav" aria-label="Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-list-of-scenarios" class="md-nav__link">
+    Get List of Scenarios
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-scenario" class="md-nav__link">
+    Create Scenario
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-scenario-by-id" class="md-nav__link">
+    Get Scenario by ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-scenario" class="md-nav__link">
+    Update Scenario
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toggle-scenario-state" class="md-nav__link">
+    Toggle Scenario State
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenario-points-and-scores" class="md-nav__link">
+    Scenario Points and Scores
+  </a>
+  
+    <nav class="md-nav" aria-label="Scenario Points and Scores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-scenario-points" class="md-nav__link">
+    Get Scenario Points
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-a-specific-point-in-the-scenario" class="md-nav__link">
+    Get a Specific Point in the Scenario
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-text-points-from-scenario" class="md-nav__link">
+    Get Text Points from Scenario
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-all-points-of-all-scenarios" class="md-nav__link">
+    Get All Points of All Scenarios
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-scenario-score" class="md-nav__link">
+    Get Scenario Score
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-list-of-scenario-scores" class="md-nav__link">
+    Get List of Scenario Scores
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tags" class="md-nav__link">
+    Tags
+  </a>
+  
+    <nav class="md-nav" aria-label="Tags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-list-of-tags" class="md-nav__link">
+    Get List of Tags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-tag" class="md-nav__link">
+    Create Tag
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-tag-by-id" class="md-nav__link">
+    Get Tag by ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-tag" class="md-nav__link">
+    Update Tag
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenario-results" class="md-nav__link">
+    Scenario Results
+  </a>
+  
+    <nav class="md-nav" aria-label="Scenario Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-list-of-results" class="md-nav__link">
+    Get List of Results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-scenario-result" class="md-nav__link">
+    Create Scenario Result
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-scenario-result-by-id" class="md-nav__link">
+    Get Scenario Result by ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-scenario-result" class="md-nav__link">
+    Update Scenario Result
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-scenario-result" class="md-nav__link">
+    Delete Scenario Result
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#result-analysis" class="md-nav__link">
+    Result Analysis
+  </a>
+  
+    <nav class="md-nav" aria-label="Result Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-summary-of-scenario-result" class="md-nav__link">
+    Get Summary of Scenario Result
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-summary-list" class="md-nav__link">
+    Get Summary List
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-successful-points-from-scenario-result" class="md-nav__link">
+    Get Successful Points from Scenario Result
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-successful-points-list" class="md-nav__link">
+    Get Successful Points List
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-tags-from-result" class="md-nav__link">
+    Get Tags from Result
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-list-of-result-tags" class="md-nav__link">
+    Get List of Result Tags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-employee-metrics-from-scenario-result" class="md-nav__link">
+    Get Employee Metrics from Scenario Result
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-employee-metrics-list" class="md-nav__link">
+    Get Employee Metrics List
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transcriptions" class="md-nav__link">
+    Transcriptions
+  </a>
+  
+    <nav class="md-nav" aria-label="Transcriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-list-of-call-transcriptions" class="md-nav__link">
+    Get List of Call Transcriptions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav" aria-label="Tokens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-token-list" class="md-nav__link">
+    Get Token List
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-token" class="md-nav__link">
+    Create Token
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-token" class="md-nav__link">
+    Delete Token
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-rpc" class="md-nav__link">
+    JSON-RPC
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON-RPC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#execute-a-json-rpc-request" class="md-nav__link">
+    Execute a JSON-RPC Request
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notification-conditions" class="md-nav__link">
+    Notification Conditions
+  </a>
+  
+    <nav class="md-nav" aria-label="Notification Conditions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-notification-conditions" class="md-nav__link">
+    Get Notification Conditions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-models" class="md-nav__link">
+    Data Models
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tagschema" class="md-nav__link">
+    TagSchema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenarioformresponse" class="md-nav__link">
+    ScenarioFormResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenariopoint" class="md-nav__link">
+    ScenarioPoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenarioscore" class="md-nav__link">
+    ScenarioScore
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenarioresult" class="md-nav__link">
+    ScenarioResult
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token" class="md-nav__link">
+    Token
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authorization-request" class="md-nav__link">
+    Authorization Request
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="ai-call-analysis-api">AI Call Analysis API</h1>
+<p>Reference guide to the AI Call Analysis API.</p>
+<ul>
+<li><a href="#general-information">General Information</a></li>
+<li><a href="#scenarios">Scenarios</a></li>
+<li><a href="#scenario-points-and-scores">Scenario Points and Scores</a></li>
+<li><a href="#tags">Tags</a></li>
+<li><a href="#scenario-results">Scenario Results</a></li>
+<li><a href="#result-analysis">Result Analysis</a></li>
+<li><a href="#transcriptions">Transcriptions</a></li>
+<li><a href="#tokens">Tokens</a></li>
+<li><a href="#json-rpc">JSON-RPC</a></li>
+<li><a href="#notification-conditions">Notification Conditions</a></li>
+<li><a href="#data-models">Data Models</a></li>
+<li><a href="#authorization-request">Authorization Request</a></li>
+</ul>
+<h2 id="general-information">General Information</h2>
+<ul>
+<li>API version: <code>1.0</code></li>
+<li>Base URL: <code>https://rl-lat-ca-api.octella.com/api/v1.0/</code></li>
+<li>Data format: JSON</li>
+<li>Authentication: <code>access_token</code> cookie or <code>Authorization: Bearer &lt;token&gt;</code> header</li>
+</ul>
+<h2 id="core-entities">Core Entities</h2>
+<ol>
+<li><strong>Scenarios</strong> - sets of rules and conditions for call analysis.</li>
+<li><strong>Scenario Points</strong> - key moments in a scenario.</li>
+<li><strong>Tags</strong> - labels for categorizing scenarios and results.</li>
+<li><strong>Scenario Results</strong> - data on scenario execution for specific calls.</li>
+<li><strong>Authorization Request</strong> - API access key.</li>
+</ol>
+<h2 id="endpoint-overview">Endpoint Overview</h2>
+<table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>Path</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scenario Management</td>
+<td><code>/scenarios</code></td>
+<td>GET</td>
+<td>Get a list of all scenarios</td>
+</tr>
+<tr>
+<td>Scenario Management</td>
+<td><code>/scenarios</code></td>
+<td>POST</td>
+<td>Create a new scenario</td>
+</tr>
+<tr>
+<td>Scenario Management</td>
+<td><code>/scenarios/{id}</code></td>
+<td>GET</td>
+<td>Get a specific scenario by ID</td>
+</tr>
+<tr>
+<td>Scenario Management</td>
+<td><code>/scenarios/{id}</code></td>
+<td>PUT</td>
+<td>Update an existing scenario</td>
+</tr>
+<tr>
+<td>Scenario Management</td>
+<td><code>/toggle_scenario</code></td>
+<td>POST</td>
+<td>Toggle scenario state (active/inactive)</td>
+</tr>
+<tr>
+<td>Scenario Points</td>
+<td><code>/scenarios/{scenario_id}/points</code></td>
+<td>GET</td>
+<td>Get all points of a specific scenario</td>
+</tr>
+<tr>
+<td>Scenario Points</td>
+<td><code>/scenarios/{scenario_id}/points/{point_id}</code></td>
+<td>GET</td>
+<td>Get a specific scenario point</td>
+</tr>
+<tr>
+<td>Scenario Points</td>
+<td><code>/scenarios/{scenario_id}/text_points</code></td>
+<td>GET</td>
+<td>Get text-based scenario points</td>
+</tr>
+<tr>
+<td>Scenario Points</td>
+<td><code>/scenarios/points</code></td>
+<td>GET</td>
+<td>Get all points across all scenarios</td>
+</tr>
+<tr>
+<td>Scenario Scores</td>
+<td><code>/scenarios/{scenario_id}/scenario_score</code></td>
+<td>GET</td>
+<td>Get the score of a specific scenario</td>
+</tr>
+<tr>
+<td>Scenario Scores</td>
+<td><code>/scenarios/scenario_score</code></td>
+<td>GET</td>
+<td>Get a list of scores for all scenarios</td>
+</tr>
+<tr>
+<td>Tag Management</td>
+<td><code>/tags</code></td>
+<td>GET</td>
+<td>Get a list of all tags</td>
+</tr>
+<tr>
+<td>Tag Management</td>
+<td><code>/tags</code></td>
+<td>POST</td>
+<td>Create a new tag</td>
+</tr>
+<tr>
+<td>Tag Management</td>
+<td><code>/tags/{id}</code></td>
+<td>GET</td>
+<td>Get a tag by ID</td>
+</tr>
+<tr>
+<td>Tag Management</td>
+<td><code>/tags/{id}</code></td>
+<td>PUT</td>
+<td>Update an existing tag</td>
+</tr>
+<tr>
+<td>Scenario Results</td>
+<td><code>/scenario_result</code></td>
+<td>GET</td>
+<td>Get a list of all scenario execution results</td>
+</tr>
+<tr>
+<td>Scenario Results</td>
+<td><code>/scenario_result</code></td>
+<td>POST</td>
+<td>Create a new scenario execution result</td>
+</tr>
+<tr>
+<td>Scenario Results</td>
+<td><code>/scenario_result/{id}</code></td>
+<td>GET</td>
+<td>Get a scenario execution result by ID</td>
+</tr>
+<tr>
+<td>Scenario Results</td>
+<td><code>/scenario_result/{id}</code></td>
+<td>PUT</td>
+<td>Update a scenario execution result</td>
+</tr>
+<tr>
+<td>Scenario Results</td>
+<td><code>/scenario_result/{id}</code></td>
+<td>DELETE</td>
+<td>Delete a scenario execution result</td>
+</tr>
+<tr>
+<td>Result Analysis</td>
+<td><code>/scenario_result/{id}/summary</code></td>
+<td>GET</td>
+<td>Get a summary of a scenario execution result</td>
+</tr>
+<tr>
+<td>Result Analysis</td>
+<td><code>/scenario_result/summary</code></td>
+<td>GET</td>
+<td>Get a list of result summaries</td>
+</tr>
+<tr>
+<td>Result Analysis</td>
+<td><code>/transcription</code></td>
+<td>GET</td>
+<td>Get a list of call transcriptions</td>
+</tr>
+<tr>
+<td>Result Analysis</td>
+<td><code>/scenario_result/{id}/success_points</code></td>
+<td>GET</td>
+<td>Get successful points from a result</td>
+</tr>
+<tr>
+<td>Result Analysis</td>
+<td><code>/scenario_result/success_points</code></td>
+<td>GET</td>
+<td>Get a list of successful points</td>
+</tr>
+<tr>
+<td>Result Analysis</td>
+<td><code>/scenario_result/{id}/tags</code></td>
+<td>GET</td>
+<td>Get tags associated with a result</td>
+</tr>
+<tr>
+<td>Result Analysis</td>
+<td><code>/scenario_result/tags</code></td>
+<td>GET</td>
+<td>Get a list of result tags</td>
+</tr>
+<tr>
+<td>Result Analysis</td>
+<td><code>/scenario_result/{id}/employees_metrics</code></td>
+<td>GET</td>
+<td>Get employee metrics from a result</td>
+</tr>
+<tr>
+<td>Result Analysis</td>
+<td><code>/scenario_result/employees_metrics</code></td>
+<td>GET</td>
+<td>Get a list of employee metrics</td>
+</tr>
+<tr>
+<td>Token Management</td>
+<td><code>/tokens</code></td>
+<td>GET</td>
+<td>Get a list of SSO tokens</td>
+</tr>
+<tr>
+<td>Token Management</td>
+<td><code>/tokens</code></td>
+<td>POST</td>
+<td>Create a new SSO token</td>
+</tr>
+<tr>
+<td>Token Management</td>
+<td><code>/tokens/{id}</code></td>
+<td>DELETE</td>
+<td>Delete an SSO token</td>
+</tr>
+<tr>
+<td>JSON-RPC</td>
+<td><code>/rpc</code></td>
+<td>POST</td>
+<td>Execute a JSON-RPC request (universal method for remote calls)</td>
+</tr>
+<tr>
+<td>Notifications</td>
+<td><code>/notification_conditions</code></td>
+<td>GET</td>
+<td>Get conditions for notification triggers</td>
+</tr>
+<tr>
+<td>Authorization Request</td>
+<td><code>/api-login</code></td>
+<td>POST</td>
+<td>Create a new token</td>
+</tr>
+</tbody>
+</table>
+<h2 id="response-data-format">Response Data Format</h2>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>MIME Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JSON</td>
+<td><code>application/json</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="explanation-of-core-paths">Explanation of Core Paths</h2>
+<ul>
+<li><code>/scenarios</code> - base path for scenario objects (CRUD operations).</li>
+<li><code>/scenario_result</code> - base path for managing scenario execution results.</li>
+<li><code>/tags</code> - base path for tags (labels for data categorization).</li>
+<li><code>/tokens</code> - base path for authentication token management.</li>
+<li><code>/rpc</code> - universal path for JSON-RPC requests.</li>
+<li><code>/notification_conditions</code> - path for retrieving notification condition settings.</li>
+</ul>
+<h2 id="scenarios">Scenarios</h2>
+<h3 id="get-list-of-scenarios">Get List of Scenarios</h3>
+<pre><code class="language-http">GET /scenarios
+</code></pre>
+<p>Parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_sort</code></td>
+<td>string</td>
+<td>Field for sorting. The default is <code>id</code>.</td>
+</tr>
+<tr>
+<td><code>_order</code></td>
+<td>string</td>
+<td>Sort order: <code>asc</code> or <code>desc</code>. The default is <code>asc</code>.</td>
+</tr>
+<tr>
+<td><code>_start</code></td>
+<td>integer</td>
+<td>Starting index for pagination.</td>
+</tr>
+<tr>
+<td><code>_end</code></td>
+<td>integer</td>
+<td>Ending index for pagination.</td>
+</tr>
+<tr>
+<td><code>filters</code></td>
+<td>object</td>
+<td>Filters.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="create-scenario">Create Scenario</h3>
+<pre><code class="language-http">POST /scenarios
+</code></pre>
+<p>Request body:</p>
+<pre><code class="language-text">{
+  &quot;state&quot;: &quot;active|inactive&quot;,
+  &quot;scenario_text&quot;: &quot;string&quot;,
+  &quot;scenario_name&quot;: &quot;string&quot;,
+  &quot;scenario_score&quot;: number,
+  &quot;tags&quot;: [TagSchema],
+  &quot;filters&quot;: [FilterResponse]
+}
+</code></pre>
+<h3 id="get-scenario-by-id">Get Scenario by ID</h3>
+<pre><code class="language-http">GET https://rl-lat-ca-api.octella.com/api/v1.0/scenarios/{id}
+</code></pre>
+<p>Returns information about the scenario by its identifier.</p>
+<p>Request headers:</p>
+<ul>
+<li><code>X-Trace-Id</code> (optional) - identifier for tracing.</li>
+<li><code>Accept: application/json</code> (required).</li>
+</ul>
+<p>Path parameters:</p>
+<ul>
+<li><code>id</code> (required) - scenario identifier.</li>
+</ul>
+<p>Example successful response (<code>200 OK</code>):</p>
+<pre><code class="language-json">{
+  &quot;state&quot;: &quot;inactive&quot;,
+  &quot;scenario_text&quot;: &quot;1. Operator greeted...&quot;,
+  &quot;id&quot;: 130,
+  &quot;scenario_name&quot;: &quot;Reception Script&quot;,
+  &quot;scenario_score&quot;: 70,
+  &quot;tags&quot;: [
+    {
+      &quot;id&quot;: 208,
+      &quot;comagic_tag_id&quot;: 3733,
+      &quot;performer&quot;: &quot;operator&quot;,
+      &quot;condition&quot;: &quot;discuss&quot;,
+      &quot;color&quot;: &quot;special-2&quot;,
+      &quot;description&quot;: &quot;Expressed negative emotions&quot;,
+      &quot;name&quot;: &quot;Negative behavior&quot;
+    }
+  ],
+  &quot;filters&quot;: [
+    [
+      {
+        &quot;id&quot;: 203,
+        &quot;name&quot;: &quot;Call duration&quot;,
+        &quot;operators&quot;: &quot;more than&quot;,
+        &quot;data_type&quot;: &quot;number&quot;,
+        &quot;values&quot;: 5
+      }
+    ]
+  ]
+}
+</code></pre>
+<h3 id="update-scenario">Update Scenario</h3>
+<pre><code class="language-http">PUT https://rl-lat-ca-api.octella.com/api/v1.0/scenarios/{id}
+</code></pre>
+<p>Updates scenario information by its identifier.</p>
+<p>Request headers:</p>
+<ul>
+<li><code>X-Trace-Id</code> (optional).</li>
+<li><code>Content-Type: application/json</code> (required).</li>
+<li><code>Accept: application/json</code> (required).</li>
+</ul>
+<p>Path parameters:</p>
+<ul>
+<li><code>id</code> (required) - scenario identifier.</li>
+</ul>
+<p>Request body example:</p>
+<pre><code class="language-json">{
+  &quot;state&quot;: &quot;active&quot;,
+  &quot;scenario_text&quot;: &quot;&lt;string&gt;&quot;,
+  &quot;scenario_name&quot;: &quot;&quot;,
+  &quot;scenario_score&quot;: &quot;&lt;number&gt;&quot;,
+  &quot;tags&quot;: [
+    {
+      &quot;performer&quot;: &quot;&lt;string&gt;&quot;,
+      &quot;condition&quot;: &quot;&lt;string&gt;&quot;,
+      &quot;color&quot;: &quot;&lt;string&gt;&quot;,
+      &quot;description&quot;: &quot;&lt;string&gt;&quot;,
+      &quot;name&quot;: &quot;&lt;string&gt;&quot;,
+      &quot;id&quot;: &quot;&lt;integer&gt;&quot;,
+      &quot;comagic_tag_id&quot;: &quot;&lt;integer&gt;&quot;
+    }
+  ],
+  &quot;filters&quot;: [
+    {
+      &quot;id&quot;: &quot;&lt;integer&gt;&quot;,
+      &quot;name&quot;: &quot;&lt;string&gt;&quot;,
+      &quot;operators&quot;: &quot;&lt;string&gt;&quot;,
+      &quot;data_type&quot;: &quot;&lt;string&gt;&quot;,
+      &quot;values&quot;: {
+        &quot;title&quot;: &quot;Values&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+<p>The request body is similar to the one used when creating a scenario.</p>
+<h3 id="toggle-scenario-state">Toggle Scenario State</h3>
+<pre><code class="language-http">POST /toggle_scenario
+</code></pre>
+<p>Toggles the scenario state between active and inactive.</p>
+<h2 id="scenario-points-and-scores">Scenario Points and Scores</h2>
+<h3 id="get-scenario-points">Get Scenario Points</h3>
+<pre><code class="language-http">GET https://rl-lat-ca-api.octella.com/api/v1.0/scenarios/{scenario_id}/points
+</code></pre>
+<p>Parameters:</p>
+<ul>
+<li><code>scenario_id</code> (required) - scenario identifier.</li>
+</ul>
+<p>Headers:</p>
+<ul>
+<li><code>Accept: application/json</code>.</li>
+<li><code>access_token: {{apiKey}}</code>.</li>
+</ul>
+<p>Successful response (<code>200 OK</code>):</p>
+<pre><code class="language-json">[
+  {
+    &quot;id&quot;: 1,
+    &quot;point&quot;: &quot;Operator greeted&quot;
+  },
+  {
+    &quot;id&quot;: 2,
+    &quot;point&quot;: &quot;Operator announced his name and position&quot;
+  }
+]
+</code></pre>
+<h3 id="get-a-specific-point-in-the-scenario">Get a Specific Point in the Scenario</h3>
+<pre><code class="language-http">GET https://rl-lat-ca-api.octella.com/api/v1.0/scenarios/{scenario_id}/points/{point_id}
+</code></pre>
+<p>Parameters:</p>
+<ul>
+<li><code>scenario_id</code> (required) - ID of the scenario.</li>
+<li><code>point_id</code> (required) - ID of the point in the scenario.</li>
+</ul>
+<p>Headers:</p>
+<ul>
+<li><code>Accept: application/json</code>.</li>
+<li><code>access_token: {{apiKey}}</code>.</li>
+</ul>
+<p>Successful response (<code>200 OK</code>):</p>
+<pre><code class="language-json">{
+  &quot;id&quot;: 1,
+  &quot;point&quot;: &quot;Operator greeted&quot;
+}
+</code></pre>
+<p>Error response (<code>500 Internal Server Error</code>):</p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;&lt;integer&gt;&quot;,
+  &quot;point&quot;: &quot;&lt;string&gt;&quot;
+}
+</code></pre>
+<h3 id="get-text-points-from-scenario">Get Text Points from Scenario</h3>
+<pre><code class="language-http">GET https://rl-lat-ca-api.octella.com/api/v1.0/scenarios/{scenario_id}/text_points
+</code></pre>
+<p>Parameters:</p>
+<ul>
+<li><code>scenario_id</code> (required) - scenario ID.</li>
+</ul>
+<p>Headers:</p>
+<ul>
+<li><code>Accept: application/json</code>.</li>
+<li><code>access_token: {{apiKey}}</code>.</li>
+</ul>
+<p>Example error response (<code>500 Internal Server Error</code>):</p>
+<pre><code class="language-json">{
+  &quot;text&quot;: &quot;&lt;string&gt;&quot;
+}
+</code></pre>
+<h3 id="get-all-points-of-all-scenarios">Get All Points of All Scenarios</h3>
+<pre><code class="language-http">GET https://rl-lat-ca-api.octella.com/api/v1.0/scenarios/points
+</code></pre>
+<p>Query parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_sort</code></td>
+<td>Sort field. The default is <code>id</code>.</td>
+</tr>
+<tr>
+<td><code>_order</code></td>
+<td>Sort order: <code>asc</code> or <code>desc</code>. The default is <code>asc</code>.</td>
+</tr>
+<tr>
+<td><code>_start</code></td>
+<td>Starting index for pagination.</td>
+</tr>
+<tr>
+<td><code>_end</code></td>
+<td>Ending index for pagination.</td>
+</tr>
+<tr>
+<td><code>id__eq</code></td>
+<td>Filter by scenario ID.</td>
+</tr>
+</tbody>
+</table>
+<p>Example request:</p>
+<pre><code class="language-http">GET https://rl-lat-ca-api.octella.com/api/v1.0/scenarios/points?_sort=id&amp;_order=asc
+</code></pre>
+<p>The <code>200 OK</code> response body is an array of scenarios, where each scenario is an array of objects with the <code>id</code> and <code>point</code> fields:</p>
+<pre><code class="language-json">[
+  {
+    &quot;id&quot;: 1,
+    &quot;point&quot;: &quot;Target purchase&quot;
+  },
+  {
+    &quot;id&quot;: 2,
+    &quot;point&quot;: &quot;Type of property&quot;
+  }
+]
+</code></pre>
+<p>To filter by scenario ID, add <code>id__eq={id}</code>:</p>
+<pre><code class="language-http">GET https://rl-lat-ca-api.octella.com/api/v1.0/scenarios/points?_sort=id&amp;_order=asc&amp;id__eq=130
+</code></pre>
+<p>Errors:</p>
+<ul>
+<li><code>404 Not Found</code> - a scenario with the specified ID was not found.</li>
+<li><code>500 Internal Server Error</code> - an internal server error occurred.</li>
+</ul>
+<h3 id="get-scenario-score">Get Scenario Score</h3>
+<pre><code class="language-http">GET /scenarios/{scenario_id}/scenario_score
+</code></pre>
+<p>Returns the score of a specific scenario.</p>
+<h3 id="get-list-of-scenario-scores">Get List of Scenario Scores</h3>
+<pre><code class="language-http">GET /scenarios/scenario_score
+</code></pre>
+<p>Returns a list of scores for all scenarios.</p>
+<h2 id="tags">Tags</h2>
+<h3 id="get-list-of-tags">Get List of Tags</h3>
+<pre><code class="language-http">GET https://rl-lat-ca-api.octella.com/api/v1.0/tags?_sort=id&amp;_order=asc&amp;_start=1&amp;_end=10
+</code></pre>
+<p>Gets a list of tags with sorting and pagination.</p>
+<p>Query parameters:</p>
+<ul>
+<li><code>_sort</code> - sort field. The default is <code>id</code>.</li>
+<li><code>_order</code> - sort order: <code>asc</code> or <code>desc</code>. The default is <code>asc</code>.</li>
+<li><code>_start</code> - starting index. The default is <code>1</code>.</li>
+<li><code>_end</code> - ending index. The default is <code>10</code>.</li>
+</ul>
+<p>Headers:</p>
+<ul>
+<li><code>X-Trace-Id</code> (optional).</li>
+<li><code>Accept: application/json</code>.</li>
+</ul>
+<p>Example request:</p>
+<pre><code class="language-http">GET https://rl-lat-ca-api.octella.com/api/v1.0/tags?_sort=id&amp;_order=asc&amp;_start=1&amp;_end=10 HTTP/1.1
+Host: rl-lat-ca-api.octella.com
+Authorization: Bearer {{apiKey}}
+</code></pre>
+<p>Example response:</p>
+<pre><code class="language-json">[
+  {
+    &quot;id&quot;: 181,
+    &quot;comagic_tag_id&quot;: 3745,
+    &quot;performer&quot;: &quot;operator&quot;,
+    &quot;condition&quot;: &quot;discuss&quot;,
+    &quot;color&quot;: &quot;special-3&quot;,
+    &quot;description&quot;: &quot;Appointment scheduled&quot;,
+    &quot;name&quot;: &quot;Follow-up&quot;
+  }
+]
+</code></pre>
+<h3 id="create-tag">Create Tag</h3>
+<pre><code class="language-http">POST https://rl-lat-ca-api.octella.com/api/v1.0/tags
+</code></pre>
+<p>Creates a new tag.</p>
+<p>Headers:</p>
+<ul>
+<li><code>X-Trace-Id</code> (optional).</li>
+<li><code>Content-Type: application/json</code>.</li>
+<li><code>Accept: application/json</code>.</li>
+</ul>
+<p>Request body:</p>
+<pre><code class="language-json">{
+  &quot;performer&quot;: &quot;client&quot;,
+  &quot;condition&quot;: &quot;not discuss&quot;,
+  &quot;description&quot;: &quot;&lt;string&gt;&quot;,
+  &quot;name&quot;: &quot;&lt;string&gt;&quot;,
+  &quot;color&quot;: &quot;&lt;string&gt;&quot;,
+  &quot;id&quot;: &quot;&lt;integer&gt;&quot;,
+  &quot;comagic_tag_id&quot;: &quot;&lt;integer&gt;&quot;,
+  &quot;is_active&quot;: true
+}
+</code></pre>
+<p>Example request:</p>
+<pre><code class="language-http">POST https://rl-lat-ca-api.octella.com/api/v1.0/tags HTTP/1.1
+Host: rl-lat-ca-api.octella.com
+Authorization: Bearer {{apiKey}}
+Content-Type: application/json
+</code></pre>
+<pre><code class="language-json">{
+  &quot;performer&quot;: &quot;client&quot;,
+  &quot;condition&quot;: &quot;not discuss&quot;,
+  &quot;description&quot;: &quot;New tag description&quot;,
+  &quot;name&quot;: &quot;New tag name&quot;,
+  &quot;color&quot;: &quot;special-5&quot;,
+  &quot;id&quot;: 208,
+  &quot;comagic_tag_id&quot;: 3746,
+  &quot;is_active&quot;: true
+}
+</code></pre>
+<p>Common status codes: <code>200 OK</code>, <code>401 Unauthorized</code>, <code>403 Forbidden</code>, <code>404 Not Found</code>, and <code>500 Internal Server Error</code>.</p>
+<p>Example error response:</p>
+<pre><code class="language-json">{
+  &quot;error&quot;: &quot;Internal Server Error&quot;,
+  &quot;message&quot;: &quot;An error occurred while processing your request.&quot;
+}
+</code></pre>
+<h3 id="get-tag-by-id">Get Tag by ID</h3>
+<pre><code class="language-http">GET https://rl-lat-ca-api.octella.com/api/v1.0/tags/{id}
+</code></pre>
+<p>Retrieves a specific tag by its identifier.</p>
+<p>Path parameters:</p>
+<ul>
+<li><code>id</code> (required) - the unique identifier of the tag.</li>
+</ul>
+<p>Headers:</p>
+<ul>
+<li><code>X-Trace-Id</code> (optional).</li>
+<li><code>Accept: application/json</code>.</li>
+</ul>
+<p>Example request:</p>
+<pre><code class="language-http">GET https://rl-lat-ca-api.octella.com/api/v1.0/tags/181 HTTP/1.1
+Host: rl-lat-ca-api.octella.com
+Authorization: Bearer {{apiKey}}
+</code></pre>
+<h3 id="update-tag">Update Tag</h3>
+<pre><code class="language-http">PUT https://rl-lat-ca-api.octella.com/api/v1.0/tags/{id}
+</code></pre>
+<p>Updates an existing tag.</p>
+<p>Path parameters:</p>
+<ul>
+<li><code>id</code> (required) - unique identifier of the tag to update.</li>
+</ul>
+<p>Headers:</p>
+<ul>
+<li><code>X-Trace-Id</code> (optional).</li>
+<li><code>Content-Type: application/json</code>.</li>
+<li><code>Accept: application/json</code>.</li>
+</ul>
+<p>The request body uses the same schema as Create Tag.</p>
+<p>Example request:</p>
+<pre><code class="language-http">PUT https://rl-lat-ca-api.octella.com/api/v1.0/tags/181 HTTP/1.1
+Host: rl-lat-ca-api.octella.com
+Authorization: Bearer {{apiKey}}
+Content-Type: application/json
+</code></pre>
+<pre><code class="language-json">{
+  &quot;performer&quot;: &quot;client&quot;,
+  &quot;condition&quot;: &quot;not discuss&quot;,
+  &quot;description&quot;: &quot;Updated description&quot;,
+  &quot;name&quot;: &quot;Updated tag name&quot;,
+  &quot;color&quot;: &quot;special-2&quot;,
+  &quot;id&quot;: 181,
+  &quot;comagic_tag_id&quot;: 3745,
+  &quot;is_active&quot;: true
+}
+</code></pre>
+<h2 id="scenario-results">Scenario Results</h2>
+<h3 id="get-list-of-results">Get List of Results</h3>
+<pre><code class="language-http">GET https://rl-lat-ca-api.octella.com/api/v1.0/scenario_result
+</code></pre>
+<p>Returns a list of all scenario results. Supports sorting, filtering, and pagination.</p>
+<p>Query parameters are optional: <code>_sort</code> (default <code>id</code>), <code>_order</code> (<code>asc</code> or <code>desc</code>), <code>_start</code>, <code>_end</code>, and <code>call_session_id__eq</code> (filter by call session ID).</p>
+<p>Example - results for a specific session:</p>
+<pre><code class="language-http">GET https://rl-lat-ca-api.octella.com/api/v1.0/scenario_result?call_session_id__eq=129742035
+</code></pre>
+<p>Each object includes <code>id</code>, <code>app_id</code>, <code>call_session_id</code>, <code>scenario_id</code>, <code>scenario_name</code>, and <code>result</code>. The <code>result</code> object contains hold data, scenario data (name, evaluation, and timestamps), silences, profanity, a phrase list with emotions and timestamps, audio sources, a dialog summary, and the scenario score as a percentage.</p>
+<p>Example response:</p>
+<pre><code class="language-json">[
+  {
+    &quot;id&quot;: 34612,
+    &quot;app_id&quot;: 64832,
+    &quot;call_session_id&quot;: 129742029,
+    &quot;scenario_id&quot;: 130,
+    &quot;scenario_name&quot;: &quot;Medicine&quot;,
+    &quot;result&quot;: {
+      &quot;hold&quot;: {
+        &quot;data&quot;: [],
+        &quot;active_count&quot;: 0
+      },
+      &quot;scenario&quot;: {
+        &quot;data&quot;: [
+          {
+            &quot;end&quot;: 7.84,
+            &quot;name&quot;: &quot;Operator greeted&quot;,
+            &quot;score&quot;: 1,
+            &quot;start&quot;: 2.72
+          }
+        ],
+        &quot;count&quot;: 3,
+        &quot;is_successful&quot;: false,
+        &quot;scenario_name&quot;: &quot;Medicine&quot;,
+        &quot;percent_completion&quot;: 15
+      },
+      &quot;phrase_list&quot;: [
+        {
+          &quot;end&quot;: 1.32,
+          &quot;start&quot;: 1.04,
+          &quot;phrase&quot;: &quot;All right.&quot;,
+          &quot;channel&quot;: 1,
+          &quot;emotions_result&quot;: &quot;neutral&quot;
+        }
+      ]
+    }
+  }
+]
+</code></pre>
+<p>Errors: <code>400 Bad Request</code> for invalid query parameters and <code>500 Internal Server Error</code> for an internal server error.</p>
+<h3 id="create-scenario-result">Create Scenario Result</h3>
+<pre><code class="language-http">POST https://rl-lat-ca-api.octella.com/api/v1.0/scenario_result
+</code></pre>
+<p>Saves the results of a scenario execution. On success, returns the created scenario result.</p>
+<p>Headers:</p>
+<ul>
+<li><code>X-Trace-Id</code> (optional).</li>
+<li><code>Content-Type: application/json</code> (required).</li>
+<li><code>Accept: application/json</code> (required).</li>
+</ul>
+<p>Request body:</p>
+<pre><code class="language-json">{
+  &quot;call_session_id&quot;: &quot;&lt;integer&gt;&quot;,
+  &quot;scenario_id&quot;: &quot;&lt;integer&gt;&quot;,
+  &quot;scenario_name&quot;: &quot;&lt;string&gt;&quot;,
+  &quot;result&quot;: {},
+  &quot;id&quot;: &quot;&lt;integer&gt;&quot;,
+  &quot;app_id&quot;: &quot;&lt;integer&gt;&quot;
+}
+</code></pre>
+<p>Example request:</p>
+<pre><code class="language-bash">curl -X POST \
+  https://rl-lat-ca-api.octella.com/api/v1.0/scenario_result \
+  -H 'key: {{apiKey}}' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -d '{
+    &quot;call_session_id&quot;: 123,
+    &quot;scenario_id&quot;: 456,
+    &quot;scenario_name&quot;: &quot;Test Scenario&quot;,
+    &quot;result&quot;: {},
+    &quot;id&quot;: 789,
+    &quot;app_id&quot;: 101
+  }'
+</code></pre>
+<p>Mandatory fields: <code>call_session_id</code>, <code>scenario_id</code>, <code>scenario_name</code>, <code>id</code>, and <code>app_id</code>. The <code>result</code> field can be an empty object if data is not required.</p>
+<h3 id="get-scenario-result-by-id">Get Scenario Result by ID</h3>
+<pre><code class="language-http">GET https://rl-lat-ca-api.octella.com/api/v1.0/scenario_result/{id}
+</code></pre>
+<p>Returns the result of a scenario execution by its unique identifier.</p>
+<p>Path parameters:</p>
+<ul>
+<li><code>id</code> (required) - the unique identifier of the scenario result.</li>
+</ul>
+<p>Example response:</p>
+<pre><code class="language-json">{
+  &quot;id&quot;: 34618,
+  &quot;app_id&quot;: 64832,
+  &quot;call_session_id&quot;: 129742035,
+  &quot;scenario_id&quot;: 133,
+  &quot;scenario_name&quot;: &quot;Football&quot;,
+  &quot;result&quot;: {
+    &quot;hold&quot;: {
+      &quot;data&quot;: [],
+      &quot;active_count&quot;: 0
+    },
+    &quot;scenario&quot;: {
+      &quot;data&quot;: [
+        {
+          &quot;end&quot;: 335.25563392,
+          &quot;name&quot;: &quot;Discussed the latest transfers of the club&quot;,
+          &quot;score&quot;: 1,
+          &quot;start&quot;: 322.375647232
+        }
+      ],
+      &quot;count&quot;: 12,
+      &quot;is_successful&quot;: true,
+      &quot;scenario_name&quot;: &quot;Football&quot;,
+      &quot;percent_completion&quot;: 80
+    },
+    &quot;silences&quot;: {
+      &quot;data&quot;: [],
+      &quot;active_count&quot;: 0
+    },
+    &quot;profanity&quot;: {
+      &quot;data&quot;: [
+        {
+          &quot;end&quot;: 18.169,
+          &quot;name&quot;: &quot;profanity&quot;,
+          &quot;start&quot;: 17.849,
+          &quot;state&quot;: &quot;active&quot;,
+          &quot;duration&quot;: 0.32
+        }
+      ],
+      &quot;active_count&quot;: 6
+    },
+    &quot;tag_events&quot;: {
+      &quot;events&quot;: [
+        {
+          &quot;id&quot;: &quot;cbc61a46-bcae-4dea-ae08-26d5381b1e0e&quot;,
+          &quot;end&quot;: 314.08,
+          &quot;score&quot;: 1,
+          &quot;start&quot;: 303.80,
+          &quot;state&quot;: &quot;active&quot;,
+          &quot;tag_id&quot;: 211
+        }
+      ],
+      &quot;active_count&quot;: 2
+    },
+    &quot;phrase_list&quot;: [
+      {
+        &quot;end&quot;: 1.96,
+        &quot;start&quot;: 1.72,
+        &quot;phrase&quot;: &quot;Hello.&quot;,
+        &quot;channel&quot;: 1,
+        &quot;words_list&quot;: [
+          {
+            &quot;end&quot;: 1.96,
+            &quot;word&quot;: &quot;hello&quot;,
+            &quot;start&quot;: 1.72
+          }
+        ],
+        &quot;emotion_state&quot;: &quot;active&quot;,
+        &quot;emotions_result&quot;: &quot;neutral&quot;
+      }
+    ]
+  }
+}
+</code></pre>
+<h3 id="update-scenario-result">Update Scenario Result</h3>
+<pre><code class="language-http">PUT https://rl-lat-ca-api.octella.com/api/v1.0/scenario_result/{id}
+</code></pre>
+<p>Updates a scenario result by its identifier.</p>
+<p>Path parameters:</p>
+<ul>
+<li><code>id</code> (required).</li>
+</ul>
+<p>Request body fields: <code>call_session_id</code>, <code>scenario_id</code>, <code>scenario_name</code>, <code>result</code>, <code>id</code>, and <code>app_id</code>.</p>
+<pre><code class="language-json">{
+  &quot;call_session_id&quot;: 123,
+  &quot;scenario_id&quot;: 456,
+  &quot;scenario_name&quot;: &quot;Test Scenario&quot;,
+  &quot;result&quot;: {},
+  &quot;id&quot;: 789,
+  &quot;app_id&quot;: 101
+}
+</code></pre>
+<p>The response contains the updated scenario result.</p>
+<h3 id="delete-scenario-result">Delete Scenario Result</h3>
+<pre><code class="language-http">DELETE https://rl-lat-ca-api.octella.com/api/v1.0/scenario_result/{id}
+</code></pre>
+<p>Deletes a scenario result by its identifier.</p>
+<p>Path parameters:</p>
+<ul>
+<li><code>id</code> (required) - integer identifier of the scenario result.</li>
+</ul>
+<p>Headers:</p>
+<ul>
+<li><code>Accept: application/json</code>.</li>
+<li><code>X-Trace-Id</code> (optional).</li>
+</ul>
+<p>The response has no body. A successful execution is confirmed by <code>204 No Content</code>.</p>
+<p>Errors: <code>404 Not Found</code> when the result does not exist and <code>400 Bad Request</code> for an invalid identifier.</p>
+<h2 id="result-analysis">Result Analysis</h2>
+<h3 id="get-summary-of-scenario-result">Get Summary of Scenario Result</h3>
+<pre><code class="language-http">GET https://rl-lat-ca-api.octella.com/api/v1.0/scenario_result/{id}/summary
+</code></pre>
+<p>Returns a summary of the scenario result by its identifier. The <code>id</code> parameter is required.</p>
+<p>Example successful response (<code>200 OK</code>):</p>
+<pre><code class="language-json">{
+  &quot;dialog_summary&quot;: &quot;Main topic: Medical appointment\nResult: Request clarification on the appointment\nInteraction Type: Inquiry, not sales-related\nBrief Description: The customer inquires about the possibility of an appointment with Dr. Tarasenko on January 8th. The operator clarifies how to approach the customer to continue the conversation, but the appointment is not confirmed.&quot;
+}
+</code></pre>
+<h3 id="get-summary-list">Get Summary List</h3>
+<pre><code class="language-http">GET https://rl-lat-ca-api.octella.com/api/v1.0/scenario_result/summary
+</code></pre>
+<p>Returns a list of summaries for scenario results. Supports filtering by call session, sorting, and pagination.</p>
+<p>Query parameters: <code>_sort</code> (default <code>id</code>), <code>_order</code> (<code>asc</code> or <code>desc</code>, default <code>asc</code>), <code>call_session_id__eq</code>, <code>_start</code>, and <code>_end</code>. Pagination is disabled in this example.</p>
+<p>Example response:</p>
+<pre><code class="language-json">[
+  {
+    &quot;dialog_summary&quot;: &quot;Main topic: Discussion about the football match...&quot;
+  }
+]
+</code></pre>
+<h3 id="get-successful-points-from-scenario-result">Get Successful Points from Scenario Result</h3>
+<pre><code class="language-http">GET https://rl-lat-ca-api.octella.com/api/v1.0/scenario_result/{id}/success_points
+</code></pre>
+<p>Returns the successful points of the scenario. The <code>id</code> parameter is required.</p>
+<p>Headers:</p>
+<ul>
+<li><code>Accept: application/json</code>.</li>
+<li><code>X-Trace-Id</code> (optional).</li>
+</ul>
+<p>Example successful response (<code>200 OK</code>):</p>
+<pre><code class="language-json">[
+  {
+    &quot;name&quot;: &quot;Operator greeted&quot;,
+    &quot;start&quot;: 2.72,
+    &quot;end&quot;: 7.84
+  },
+  {
+    &quot;name&quot;: &quot;Operator introduced himself, position&quot;,
+    &quot;start&quot;: 2.72,
+    &quot;end&quot;: 7.84
+  },
+  {
+    &quot;name&quot;: &quot;Clarified the client's name&quot;,
+    &quot;start&quot;: 16.749,
+    &quot;end&quot;: 23.749
+  }
+]
+</code></pre>
+<p>Fields: <code>name</code> - name of the success criterion; <code>start</code> and <code>end</code> - execution time in seconds.</p>
+<h3 id="get-successful-points-list">Get Successful Points List</h3>
+<pre><code class="language-http">GET https://rl-lat-ca-api.octella.com/api/v1.0/scenario_result/success_points
+</code></pre>
+<p>Returns a list of success-point scores sorted by <code>id</code> ascending. Query parameters: <code>_sort</code> (default <code>id</code>), <code>_order</code>, <code>_start</code>, and <code>_end</code>.</p>
+<h3 id="get-tags-from-result">Get Tags from Result</h3>
+<pre><code class="language-http">GET https://rl-lat-ca-api.octella.com/api/v1.0/scenario_result/{id}/tags
+</code></pre>
+<p>Returns a list of tags associated with the result of executing a scenario. The <code>id</code> parameter is required.</p>
+<p>Headers:</p>
+<ul>
+<li><code>Accept: application/json</code>.</li>
+<li><code>X-Trace-Id</code> (optional).</li>
+</ul>
+<p>Each tag contains <code>name</code>, <code>start</code>, <code>end</code>, and <code>color</code>.</p>
+<p>Example response:</p>
+<pre><code class="language-json">[
+  {
+    &quot;name&quot;: &quot;failure to register&quot;,
+    &quot;start&quot;: 37.150,
+    &quot;end&quot;: 50.510,
+    &quot;color&quot;: &quot;special-6&quot;
+  },
+  {
+    &quot;name&quot;: &quot;word parasites&quot;,
+    &quot;start&quot;: 15.363,
+    &quot;end&quot;: 33.203,
+    &quot;color&quot;: &quot;special-4&quot;
+  }
+]
+</code></pre>
+<h3 id="get-list-of-result-tags">Get List of Result Tags</h3>
+<pre><code class="language-http">GET https://rl-lat-ca-api.octella.com/api/v1.0/scenario_result/tags
+</code></pre>
+<p>Returns a list of tags associated with scenario metric results, in sorted order.</p>
+<p>Query parameters: <code>_sort</code> (default <code>id</code>), <code>_order</code> (<code>asc</code> or <code>desc</code>), <code>_start</code>, and <code>_end</code>.</p>
+<p>Headers:</p>
+<ul>
+<li><code>Accept: application/json</code>.</li>
+<li><code>X-Trace-Id</code> (optional).</li>
+</ul>
+<h3 id="get-employee-metrics-from-scenario-result">Get Employee Metrics from Scenario Result</h3>
+<pre><code class="language-http">GET https://rl-lat-ca-api.octella.com/api/v1.0/scenario_result/{id}/employees_metrics
+</code></pre>
+<p>Returns the employee metrics for a scenario result. The <code>id</code> parameter is required.</p>
+<p>Headers:</p>
+<ul>
+<li><code>Accept: application/json</code>.</li>
+<li><code>X-Trace-Id</code> (optional).</li>
+</ul>
+<p>Each object contains <code>name</code>, <code>start</code>, and <code>end</code> in seconds.</p>
+<p>Example response:</p>
+<pre><code class="language-json">[
+  {
+    &quot;name&quot;: &quot;profanity&quot;,
+    &quot;start&quot;: 17.849,
+    &quot;end&quot;: 18.169
+  },
+  {
+    &quot;name&quot;: &quot;profanity&quot;,
+    &quot;start&quot;: 49.302,
+    &quot;end&quot;: 49.622
+  }
+]
+</code></pre>
+<h3 id="get-employee-metrics-list">Get Employee Metrics List</h3>
+<pre><code class="language-http">GET https://rl-lat-ca-api.octella.com/api/v1.0/scenario_result/employees_metrics
+</code></pre>
+<p>Returns a list of employee metrics with sorting and pagination.</p>
+<p>All query parameters are optional: <code>_sort</code> (default <code>id</code>), <code>_order</code> (<code>asc</code> or <code>desc</code>, default <code>asc</code>), <code>_start</code>, and <code>_end</code>.</p>
+<p>Headers:</p>
+<ul>
+<li><code>Accept: application/json</code>.</li>
+<li><code>X-Trace-Id</code> (optional).</li>
+</ul>
+<h2 id="transcriptions">Transcriptions</h2>
+<h3 id="get-list-of-call-transcriptions">Get List of Call Transcriptions</h3>
+<pre><code class="language-http">GET https://rl-lat-ca-api.octella.com/api/v1.0/transcription
+</code></pre>
+<p>Returns a list of call transcriptions generated by STT. The endpoint supports sorting, pagination, content search, date filtering, and filtering by call session ID.</p>
+<p>Authentication: <code>access_token</code> cookie or <code>Authorization: Bearer &lt;token&gt;</code> header.</p>
+<p>Query parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_sort</code></td>
+<td>string</td>
+<td>Optional field to sort by. Example: <code>id</code>.</td>
+</tr>
+<tr>
+<td><code>_order</code></td>
+<td>enum</td>
+<td>Optional sort order: <code>asc</code> or <code>desc</code>. Example: <code>asc</code>.</td>
+</tr>
+<tr>
+<td><code>_start</code></td>
+<td>integer</td>
+<td>Optional starting index for pagination. Example: <code>0</code>.</td>
+</tr>
+<tr>
+<td><code>_end</code></td>
+<td>integer</td>
+<td>Optional ending index or page size. Example: <code>100</code>.</td>
+</tr>
+<tr>
+<td><code>_q</code></td>
+<td>string</td>
+<td>Optional search by transcript content.</td>
+</tr>
+<tr>
+<td><code>filters</code></td>
+<td>DataFilters</td>
+<td>Optional search filters.</td>
+</tr>
+<tr>
+<td><code>call_session_id__eq</code></td>
+<td>integer</td>
+<td>Optional filter by a specific call session ID.</td>
+</tr>
+<tr>
+<td><code>date_from</code></td>
+<td>string</td>
+<td>Optional start date in ISO 8601 format.</td>
+</tr>
+<tr>
+<td><code>date_till</code></td>
+<td>string</td>
+<td>Optional end date in ISO 8601 format.</td>
+</tr>
+</tbody>
+</table>
+<p>Headers:</p>
+<ul>
+<li><code>X-Trace-Id</code> (optional).</li>
+<li><code>Accept: application/json</code> (required).</li>
+<li><code>Cookie: access_token=&lt;KEY&gt;</code> or <code>Authorization: Bearer &lt;TOKEN&gt;</code>.</li>
+</ul>
+<p>Example request:</p>
+<pre><code class="language-bash">curl -X GET \
+  https://rl-lat-ca-api.octella.com/api/v1.0/transcription \
+  -H 'Cookie: access_token=&lt;KEY&gt;' \
+  -H 'Authorization: Bearer &lt;TOKEN&gt;' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json'
+</code></pre>
+<p>Example response:</p>
+<pre><code class="language-json">[
+  {
+    &quot;app_id&quot;: 64832,
+    &quot;call_session_id&quot;: 156491350,
+    &quot;result&quot;: {
+      &quot;phrase_list&quot;: [
+        {
+          &quot;end&quot;: 1.06,
+          &quot;start&quot;: 0.56,
+          &quot;phrase&quot;: &quot;Hello.&quot;,
+          &quot;role&quot;: &quot;client&quot;,
+          &quot;words_list&quot;: [
+            {
+              &quot;end&quot;: 1.06,
+              &quot;word&quot;: &quot;Hello.&quot;,
+              &quot;start&quot;: 0.56
+            }
+          ]
+        },
+        {
+          &quot;end&quot;: 2.34,
+          &quot;start&quot;: 1.84,
+          &quot;phrase&quot;: &quot;Hello.&quot;,
+          &quot;role&quot;: &quot;operator&quot;,
+          &quot;words_list&quot;: [
+            {
+              &quot;end&quot;: 2.34,
+              &quot;word&quot;: &quot;Hello.&quot;,
+              &quot;start&quot;: 1.84
+            }
+          ]
+        }
+      ],
+      &quot;call_segments&quot;: []
+    }
+  }
+]
+</code></pre>
+<p>Example filters:</p>
+<pre><code class="language-text">Get a call by ID: /api/v1.0/transcription?call_session_id__eq=123456
+Sorting and pagination: /api/v1.0/transcription?_sort=id&amp;_order=desc&amp;_start=0&amp;_end=50
+Filter by date: /api/v1.0/transcription?date_from=2025-10-13T07:23:08.337Z&amp;date_till=2025-10-14T07:23:08.337Z
+</code></pre>
+<p>To retrieve all transcriptions, call the endpoint without parameters. For specific records, use filters such as <code>call_session_id__eq</code>. For multiple call IDs, use <code>call_session_id__in</code> when supported. A single request should normally contain no more than 50-100 records; remaining records are indicated in the response headers.</p>
+<p>Response fields: <code>app_id</code>, <code>call_session_id</code>, <code>result.phrase_list</code>, and <code>result.call_segments</code>. Each phrase contains <code>start</code>, <code>end</code>, <code>phrase</code>, <code>role</code>, and <code>words_list</code>; each word contains <code>start</code>, <code>end</code>, and <code>word</code>.</p>
+<p>Errors: <code>400 Bad Request</code> for invalid query parameters, <code>404 Not Found</code> when the call session was not found, and <code>500 Internal Server Error</code> for an internal server error.</p>
+<h2 id="tokens">Tokens</h2>
+<h3 id="get-token-list">Get Token List</h3>
+<pre><code class="language-http">GET https://rl-lat-ca-api.octella.com/api/v1.0/tokens
+</code></pre>
+<p>Returns a list of all SSO tokens.</p>
+<p>Example response:</p>
+<pre><code class="language-json">[
+  {
+    &quot;name&quot;: &quot;&lt;string&gt;&quot;,
+    &quot;access_token&quot;: &quot;&lt;access_token&gt;&quot;,
+    &quot;token_type&quot;: &quot;Bearer&quot;,
+    &quot;expires_in&quot;: &quot;&lt;string&gt;&quot;,
+    &quot;id&quot;: &quot;&lt;string&gt;&quot;,
+    &quot;issued_token_type&quot;: &quot;&lt;string&gt;&quot;,
+    &quot;created_at&quot;: &quot;&lt;string&gt;&quot;,
+    &quot;is_active&quot;: true
+  }
+]
+</code></pre>
+<h3 id="create-token">Create Token</h3>
+<pre><code class="language-http">POST https://rl-lat-ca-api.octella.com/api/v1.0/tokens
+</code></pre>
+<p>Creates a new SSO token.</p>
+<p>Request body:</p>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;&lt;string&gt;&quot;
+}
+</code></pre>
+<p>Example response:</p>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;&lt;string&gt;&quot;,
+  &quot;access_token&quot;: &quot;&lt;access_token&gt;&quot;,
+  &quot;token_type&quot;: &quot;Bearer&quot;,
+  &quot;expires_in&quot;: &quot;&lt;string&gt;&quot;,
+  &quot;id&quot;: &quot;&lt;string&gt;&quot;,
+  &quot;issued_token_type&quot;: &quot;&lt;string&gt;&quot;,
+  &quot;created_at&quot;: &quot;&lt;string&gt;&quot;,
+  &quot;is_active&quot;: true
+}
+</code></pre>
+<h3 id="delete-token">Delete Token</h3>
+<pre><code class="language-http">DELETE https://rl-lat-ca-api.octella.com/api/v1.0/tokens/{id}
+</code></pre>
+<p>Deletes an SSO token by the specified identifier.</p>
+<p>Path parameters:</p>
+<ul>
+<li><code>id</code> (string, required) - ID of the token to delete.</li>
+</ul>
+<h2 id="json-rpc">JSON-RPC</h2>
+<h3 id="execute-a-json-rpc-request">Execute a JSON-RPC Request</h3>
+<pre><code class="language-http">POST /rpc
+</code></pre>
+<p>Request body:</p>
+<pre><code class="language-text">{
+  &quot;id&quot;: &quot;string&quot;,
+  &quot;method&quot;: &quot;string&quot;,
+  &quot;params&quot;: object
+}
+</code></pre>
+<h2 id="notification-conditions">Notification Conditions</h2>
+<h3 id="get-notification-conditions">Get Notification Conditions</h3>
+<pre><code class="language-http">GET https://rl-lat-ca-api.octella.com/api/v1.0/notification_conditions
+</code></pre>
+<p>Provides access to notification conditions, which define the criteria for selecting callers based on filters such as visitor segments, call direction, phone numbers, contacts, advertising campaigns, and others.</p>
+<p>Query parameters: none.</p>
+<p>Headers:</p>
+<ul>
+<li><code>X-Trace-Id</code> (optional).</li>
+<li><code>Accept: application/json</code> (required).</li>
+</ul>
+<p>Example response:</p>
+<pre><code class="language-json">[
+  {
+    &quot;id&quot;: 5,
+    &quot;name&quot;: &quot;Segment List&quot;,
+    &quot;operators&quot;: [
+      {
+        &quot;id&quot;: &quot;=&quot;,
+        &quot;name&quot;: &quot;Exactly matches&quot;,
+        &quot;is_default&quot;: true
+      },
+      {
+        &quot;id&quot;: &quot;in&quot;,
+        &quot;name&quot;: &quot;Includes&quot;,
+        &quot;is_default&quot;: false
+      },
+      {
+        &quot;id&quot;: &quot;is_null&quot;,
+        &quot;name&quot;: &quot;Empty&quot;,
+        &quot;is_default&quot;: false
+      },
+      {
+        &quot;id&quot;: &quot;is_not_null&quot;,
+        &quot;name&quot;: &quot;Not empty&quot;,
+        &quot;is_default&quot;: false
+      },
+      {
+        &quot;id&quot;: &quot;intersect&quot;,
+        &quot;name&quot;: &quot;Includes&quot;,
+        &quot;is_default&quot;: false
+      }
+    ],
+    &quot;data_type&quot;: &quot;array&quot;,
+    &quot;values&quot;: [
+      {
+        &quot;id&quot;: 2322,
+        &quot;name&quot;: &quot;hcp.tb.ru&quot;,
+        &quot;data&quot;: [
+          {
+            &quot;id&quot;: 5739,
+            &quot;name&quot;: &quot;PC test&quot;
+          },
+          {
+            &quot;id&quot;: 4995,
+            &quot;name&quot;: &quot;Visitor viewed 5 or more pages&quot;
+          }
+        ]
+      }
+    ]
+  },
+  {
+    &quot;id&quot;: 7,
+    &quot;name&quot;: &quot;Call Direction&quot;,
+    &quot;operators&quot;: [
+      {
+        &quot;id&quot;: &quot;=&quot;,
+        &quot;name&quot;: &quot;Exactly matches&quot;,
+        &quot;is_default&quot;: true
+      }
+    ],
+    &quot;data_type&quot;: &quot;string&quot;,
+    &quot;values&quot;: [
+      {
+        &quot;id&quot;: &quot;in&quot;,
+        &quot;name&quot;: &quot;Incoming call&quot;
+      },
+      {
+        &quot;id&quot;: &quot;out&quot;,
+        &quot;name&quot;: &quot;Outgoing call&quot;
+      }
+    ]
+  }
+]
+</code></pre>
+<p>Response fields: <code>id</code>, <code>name</code>, <code>operators</code> (each with <code>id</code>, <code>name</code>, and <code>is_default</code>), <code>data_type</code> (for example, <code>array</code>, <code>string</code>, or <code>number</code>), and <code>values</code> (may be <code>null</code>).</p>
+<p>Errors: <code>400 Bad Request</code>, <code>401 Unauthorized</code>, and <code>500 Internal Server Error</code>.</p>
+<h2 id="data-models">Data Models</h2>
+<h3 id="tagschema">TagSchema</h3>
+<pre><code class="language-text">{
+  &quot;id&quot;: integer,
+  &quot;comagic_tag_id&quot;: integer,
+  &quot;performer&quot;: &quot;string&quot;,
+  &quot;condition&quot;: &quot;string&quot;,
+  &quot;color&quot;: &quot;string&quot;,
+  &quot;description&quot;: &quot;string&quot;,
+  &quot;name&quot;: &quot;string&quot;
+}
+</code></pre>
+<h3 id="scenarioformresponse">ScenarioFormResponse</h3>
+<pre><code class="language-text">{
+  &quot;state&quot;: &quot;active|inactive&quot;,
+  &quot;scenario_text&quot;: &quot;string&quot;,
+  &quot;id&quot;: integer,
+  &quot;scenario_name&quot;: &quot;string&quot;,
+  &quot;scenario_score&quot;: number,
+  &quot;tags&quot;: [TagSchema],
+  &quot;filters&quot;: [FilterResponse]
+}
+</code></pre>
+<h3 id="scenariopoint">ScenarioPoint</h3>
+<pre><code class="language-text">{
+  &quot;id&quot;: integer,
+  &quot;point&quot;: &quot;string&quot;
+}
+</code></pre>
+<h3 id="scenarioscore">ScenarioScore</h3>
+<pre><code class="language-text">{
+  &quot;scenario_score&quot;: number
+}
+</code></pre>
+<h3 id="scenarioresult">ScenarioResult</h3>
+<pre><code class="language-text">{
+  &quot;id&quot;: integer,
+  &quot;app_id&quot;: integer,
+  &quot;call_session_id&quot;: integer,
+  &quot;scenario_id&quot;: integer,
+  &quot;scenario_name&quot;: &quot;string&quot;,
+  &quot;result&quot;: object
+}
+</code></pre>
+<h3 id="token">Token</h3>
+<pre><code class="language-text">{
+  &quot;name&quot;: &quot;string&quot;,
+  &quot;id&quot;: &quot;string&quot;,
+  &quot;access_token&quot;: &quot;string&quot;,
+  &quot;token_type&quot;: &quot;Bearer&quot;,
+  &quot;issued_token_type&quot;: &quot;string&quot;,
+  &quot;expires_in&quot;: &quot;string&quot;,
+  &quot;created_at&quot;: &quot;string&quot;,
+  &quot;is_active&quot;: boolean
+}
+</code></pre>
+<h2 id="authorization-request">Authorization Request</h2>
+<pre><code class="language-http">POST https://rl-lat-ca-api.octella.com/api/v1.0/api-login
+</code></pre>
+<p>Request body:</p>
+<pre><code class="language-json">{
+  &quot;username&quot;: &quot;&lt;your_username&gt;&quot;,
+  &quot;password&quot;: &quot;&lt;your_password&gt;&quot;
+}
+</code></pre>
+<p>Request headers:</p>
+<ul>
+<li><code>X-Trace-Id</code> (optional).</li>
+<li><code>Content-Type: application/json</code>.</li>
+<li><code>Accept: application/json</code>.</li>
+</ul>
+<p>Successful response example (<code>200 OK</code>):</p>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;&quot;,
+  &quot;id&quot;: &quot;88e1164b-0fca-4266-73c4-69840cc8edf4&quot;,
+  &quot;access_token&quot;: &quot;&lt;access_token&gt;&quot;,
+  &quot;token_type&quot;: &quot;Bearer&quot;,
+  &quot;issued_token_type&quot;: &quot;urn:ietf:params:oauth:token-type:access_token&quot;,
+  &quot;expires_in&quot;: &quot;2025-05-14T10:46:55.182817&quot;,
+  &quot;created_at&quot;: &quot;2025-04-14T10:39:06.568300&quot;,
+  &quot;is_active&quot;: true
+}
+</code></pre>
+<p>Error - <code>401 Unauthorized</code>:</p>
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;HTTPUnauthorized&quot;,
+  &quot;title&quot;: &quot;Unauthorized&quot;,
+  &quot;status&quot;: 401,
+  &quot;detail&quot;: &quot;Incorrect login or password&quot;
+}
+</code></pre>
+<p>Error - <code>500 Internal Server Error</code>:</p>
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;HTTPInternalServerError&quot;,
+  &quot;title&quot;: &quot;Server got itself in trouble&quot;,
+  &quot;status&quot;: 500,
+  &quot;detail&quot;: &quot;Something went wrong. Please try again later.&quot;
+}
+</code></pre>
+<p>Response fields: <code>id</code> (unique session identifier), <code>access_token</code> (API access token), <code>expires_in</code> (token expiry in <code>YYYY-MM-DDTHH:MM:SS</code> format), <code>created_at</code> (token creation date), and <code>is_active</code> (session activity status).</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+    
+  </body>
+</html>

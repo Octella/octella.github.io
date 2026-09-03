@@ -1,0 +1,1267 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Retrieves employees. - DATA API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#retrieves-employees" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DATA API" class="md-header__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DATA API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Retrieves employees.
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DATA API" class="md-nav__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DATA API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        General Information
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/" class="md-nav__link">
+        Permissions and Components
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../account/get_account/" class="md-nav__link">
+        Account
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vn/" class="md-nav__link">
+        Virtual Numbers and Rules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sip/" class="md-nav__link">
+        SIP Lines
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scenario/get_scenarios/" class="md-nav__link">
+        Scenarios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user_media/get_media_files/" class="md-nav__link">
+        Media Files
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaigns/" class="md-nav__link">
+        Ad Campaigns
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/" class="md-nav__link">
+        Sources
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../auto_calls/" class="md-nav__link">
+        Outbound Calls
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sales_funnel_and_deals/" class="md-nav__link">
+        Sales Funnels and Deals
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sites/" class="md-nav__link">
+        Sites
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/" class="md-nav__link">
+        Reports
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../employees/" class="md-nav__link">
+        Employees
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contacts/" class="md-nav__link">
+        Contacts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blacklist/" class="md-nav__link">
+        Blacklist
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schedules/" class="md-nav__link">
+        Schedules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../partners/" class="md-nav__link">
+        Agents' Customers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../communications/" class="md-nav__link">
+        Communications
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../persons/" class="md-nav__link">
+        Person / Visitor
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#retrieves-employees" class="md-nav__link">
+    Retrieves employees
+  </a>
+  
+    <nav class="md-nav" aria-label="Retrieves employees">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters" class="md-nav__link">
+    Request parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters" class="md-nav__link">
+    Response parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-request" class="md-nav__link">
+    Example request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-response" class="md-nav__link">
+    Example response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#possible-errors" class="md-nav__link">
+    Possible errors
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Retrieves employees.</h1>
+                
+                <nav>
+<a href="../../employees">Employees</a> >
+Retrieves employees.
+</nav>
+
+<h2 id="retrieves-employees">Retrieves employees</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;"><code>get.employees</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">API version</td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;">Description</td>
+<td style="text-align: left;">Retrieves employees.</td>
+</tr>
+</tbody>
+</table>
+<p>Available to: Agents and clients</p>
+<h3 id="request-parameters">Request parameters</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: center;">Required</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>access_token</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: left;">Access token used to authenticate the request.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>user_id</code></td>
+<td style="text-align: left;">number</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;">Unique ID of the client user on whose behalf the agent is making the request. Required for agents. To retrieve a list of client users, use <a href="../../partner/get_customer_users/">"get.customer_users"</a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>limit</code></td>
+<td style="text-align: left;">number</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;">Maximum number of records to return. See the "Paging" section.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>offset</code></td>
+<td style="text-align: left;">number</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;">Number of records to skip before returning results. Default: 0. See the "Paging" section.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>filter</code></td>
+<td style="text-align: left;">object</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;">Filtering criteria. See the "Filters" section.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>fields</code></td>
+<td style="text-align: left;">array</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;">Fields to include in the response. See the "Viewing returned data" section.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sort</code></td>
+<td style="text-align: left;">array</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;">Sorting criteria. See the "Data sorting" section.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-parameters">Response parameters</h3>
+<table>
+    <thead>
+        <tr>
+            <th align="left">Name</th>
+            <th align="left">Type</th>
+            <th align="left">Valid values</th>
+            <th align="left">Filtering</th>
+            <th align="left">Sorting</th>
+            <th align="left">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td align="left"><code>id</code></td>
+            <td align="left">number</td>
+            <td align="left"></td>
+            <td align="left">yes</td>
+            <td align="left"></td>
+            <td align="left">Unique employee ID.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>login</code></td>
+            <td align="left">string</td>
+            <td align="left"></td>
+            <td align="left">yes</td>
+            <td align="left">yes</td>
+            <td align="left">Login used to access the CallGear account.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>first_name</code></td>
+            <td align="left">string</td>
+            <td align="left"></td>
+            <td align="left">yes</td>
+            <td align="left">yes</td>
+            <td align="left">Employee's first name.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>last_name</code></td>
+            <td align="left">string</td>
+            <td align="left"></td>
+            <td align="left">yes</td>
+            <td align="left">yes</td>
+            <td align="left">Employee's last name.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>patronymic</code></td>
+            <td align="left">string</td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left">yes</td>
+            <td align="left">Employee's middle name.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>full_name</code></td>
+            <td align="left">string</td>
+            <td align="left"></td>
+            <td align="left">yes</td>
+            <td align="left">yes</td>
+            <td align="left">Employee's full name: last name, first name, and middle name.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>status</code></td>
+            <td align="left">enum</td>
+            <td align="left">
+            available - available; break - on break; do_not_disturb - do not disturb; not_at_workplace - out of the office; not_at_work - not working; auto_out_call - on an outbound call; unknown - unknown
+            </td>
+            <td align="left">yes</td>
+            <td align="left"></td>
+            <td align="left">
+                Deprecated and scheduled for removal. Use status_id instead. Returned only when the employee has a standard status selected.
+            </td>
+        </tr>
+        <tr>
+            <td align="left"><code>status_id</code></td>
+            <td align="left">number</td>
+            <td align="left"></td>
+            <td align="left">yes</td>
+            <td align="left"></td>
+            <td align="left">
+                Unique status ID. Use <a href="../get_statuses"><code>get.statuses</code></a> to retrieve available statuses.
+            </td>
+        </tr>
+        <tr>
+            <td align="left"><code>calls_available</code></td>
+            <td align="left">boolean</td>
+            <td align="left">true, false</td>
+            <td align="left">yes</td>
+            <td align="left">yes</td>
+            <td align="left">
+                Deprecated and scheduled for removal. Use in_external_allowed_call_directions and in_internal_allowed_call_directions instead. Indicates whether the employee is available for calls.
+            </td>
+        </tr>
+        <tr>
+            <td align="left"><code>allowed_in_call_types</code></td>
+            <td align="left">array</td>
+            <td align="left">
+            internal - calls from employees; external - calls from customers
+            </td>
+            <td align="left">yes</td>
+            <td align="left"></td>
+            <td align="left">
+              Deprecated and scheduled for removal. Use in_external_allowed_call_directions and in_internal_allowed_call_directions instead. Types of incoming calls the employee may receive.
+            </td>
+        </tr>
+        <tr>
+            <td align="left"><code>in_external_allowed_call_directions</code></td>
+            <td align="left">array</td>
+            <td align="left">
+                in - inbound; out - outbound
+            </td>
+            <td align="left">yes</td>
+            <td align="left"></td>
+            <td align="left">
+                Allowed directions for incoming external calls.
+            </td>
+        </tr>
+        <tr>
+            <td align="left"><code>in_internal_allowed_call_directions</code></td>
+            <td align="left">array</td>
+            <td align="left">
+            in - inbound; out - outbound
+            </td>
+            <td align="left">yes</td>
+            <td align="left"></td>
+            <td align="left">
+                Allowed directions for incoming internal calls.
+            </td>
+        </tr>
+        <tr>
+            <td align="left"><code>allowed_out_call_types</code></td>
+            <td align="left">array</td>
+            <td align="left">
+            internal - calls to employees; external - calls outside the company
+            </td>
+            <td align="left">yes</td>
+            <td align="left"></td><td align="left">
+                Deprecated and scheduled for removal. Use out_external_allowed_call_directions and out_internal_allowed_call_directions instead. Types of outgoing calls the employee may place.
+            </td>
+        </tr>
+        <tr>
+            <td align="left"><code>out_external_allowed_call_directions</code></td>
+            <td align="left">array</td>
+            <td align="left">
+            in - inbound; out - outbound
+            </td>
+            <td align="left">yes</td>
+            <td align="left"></td>
+            <td align="left">
+                Allowed directions for outgoing external calls.
+            </td>
+        </tr>
+        <tr>
+            <td align="left"><code>out_internal_allowed_call_directions</code></td>
+            <td align="left">array</td>
+            <td align="left">
+            in - inbound; out - outbound
+            </td>
+            <td align="left">yes</td>
+            <td align="left"></td>
+            <td align="left">
+                Allowed directions for outgoing internal calls.
+            </td>
+        </tr>
+        <tr>
+            <td align="left"><code>email</code></td>
+            <td align="left">string</td>
+            <td align="left"></td>
+            <td align="left">yes</td>
+            <td align="left"></td>
+            <td align="left">Employee email address.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>call_recording</code></td>
+            <td align="left">enum</td>
+            <td align="left">
+                all - all calls; in - inbound calls only; out - outbound calls only; off - disabled
+            </td>
+            <td align="left">yes</td>
+            <td align="left"></td>
+            <td align="left">Call-recording mode.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>schedule_id</code></td>
+            <td align="left">number</td>
+            <td align="left"></td>
+            <td align="left">yes</td>
+            <td align="left"></td>
+            <td align="left">Unique ID of the employee's work schedule.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>schedule_name</code></td>
+            <td align="left">string</td>
+            <td align="left"></td>
+            <td align="left">yes</td>
+            <td align="left"></td>
+            <td align="left">Name of the employee's work schedule.</td>
+        </tr>
+        <tr>
+            <td align="left" colspan="6">Coaching</td>
+        </tr>
+        <tr>
+            <td align="left"><code>coach</code></td>
+            <td align="left">object</td>
+            <td align="left"></td>
+            <td align="left">yes</td>
+            <td align="left"></td>
+            <td align="left">Coaching settings for the employee.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>coach_full_name</code></td>
+            <td align="left">string</td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left">Coach's full name.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>coach_id</code></td>
+            <td align="left">number</td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left">Unique ID of the employee assigned as the coach.</td>
+        </tr>
+        <tr><td align="left"><code>coach_always_enabled</code></td>
+            <td align="left">boolean</td>
+            <td align="left">true, false</td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left">Whether all incoming calls to the employee are mirrored to the coach.</td>
+        </tr>
+        <tr>
+            <td align="left" colspan="6">Employee groups</td>
+        </tr>
+        <tr>
+            <td align="left"><code>groups</code></td>
+            <td align="left">array</td>
+            <td align="left"></td>
+            <td align="left">yes</td>
+            <td align="left"></td>
+            <td align="left">Groups the employee belongs to.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>group_id</code></td>
+            <td align="left">number</td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left">Unique employee group ID.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>group_name</code></td>
+            <td align="left">string</td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left">Employee group name.</td>
+        </tr>
+        <tr>
+            <td align="left" colspan="6">Phone numbers</td>
+        </tr>
+        <tr>
+            <td align="left"><code>phone_numbers</code></td>
+            <td align="left">array</td>
+            <td align="left">Maximum: 10 entries</td>
+            <td align="left">yes</td>
+            <td align="left"></td>
+            <td align="left">Employee phone numbers, ordered by dialing priority.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>phone_id</code></td>
+            <td align="left">number</td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left">Unique employee phone number ID.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>phone_number</code></td>
+            <td align="left">string</td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left">
+                Employee phone number. The value may include an extension, for example "74955140578...2345", and therefore does not have to follow E.164. SIP values are stored as PSTN-type phone numbers.
+            </td>
+        </tr>
+        <tr>
+            <td align="left"><code>channels_count</code></td>
+            <td align="left">number</td>
+            <td align="left">1 to 150</td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left">Number of concurrent channels for the phone. Default: 1.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>dial_time</code></td>
+            <td align="left">number</td>
+            <td align="left">1 to 100</td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left">Ringing duration, in seconds. Default: 60.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>status</code></td>
+            <td align="left">enum</td>
+            <td align="left">active, inactive</td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left">Phone number status. Default: active.</td>
+        </tr>
+        <tr>
+            <td align="left" colspan="6">Extension</td>
+        </tr>
+        <tr>
+            <td align="left"><code>extension</code></td>
+            <td align="left">object</td>
+            <td align="left"></td><td align="left">yes</td>
+            <td align="left"></td>
+            <td align="left">Employee extension settings.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>extension_phone_number</code></td>
+            <td align="left">string</td>
+            <td align="left">Maximum length: 5 characters</td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left">Employee extension number.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>extension_voice_mail_enabled</code></td>
+            <td align="left">boolean</td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left">Whether callers are prompted to leave a voicemail when all of the employee's phone numbers are busy.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>extension_queue_enabled</code></td>
+            <td align="left">boolean</td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left">Whether callers wait in a queue until one of the employee's phone numbers becomes available.</td>
+        </tr>
+        <tr>
+            <td align="left" colspan="6">Chat operator settings</td>
+        </tr>
+        <tr>
+            <td align="left"><code>operator</code></td>
+            <td align="left">object</td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left">Chat operator settings.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>operator_display_name</code></td>
+            <td align="left">string</td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left">Display name shown in chats.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>operator_login</code></td>
+            <td align="left">string</td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left">Login used to access the Operator Workspace.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>operator_position_id</code></td>
+            <td align="left">number</td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left">Unique ID of the position shown in the operator signature.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>operator_position_name</code></td>
+            <td align="left">string</td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left">Position name shown in the operator signature.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>operator_offline_message_enabled</code></td>
+            <td align="left">boolean</td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left">Whether the operator may handle offline messages.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>operator_invite_to_chat_enabled</code></td>
+            <td align="left">boolean</td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left">Whether the operator may invite visitors to a chat.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>operator_chat_enabled</code></td>
+            <td align="left">boolean</td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left">Whether the operator may participate in visitor chats.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>operator_chats_available</code></td>
+            <td align="left">boolean</td><td align="left">true, false</td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left">Whether the operator is currently available for chats.</td>
+        </tr>
+        <tr>
+            <td align="left" colspan="6">Sites</td>
+        </tr>
+        <tr>
+            <td align="left"><code>operator_sites</code></td>
+            <td align="left">array</td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left">Sites where the operator is available.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>site_id</code></td>
+            <td align="left">number</td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left">Unique site ID.</td>
+        </tr>
+        <tr>
+            <td align="left"><code>site_domain_name</code></td>
+            <td align="left">string</td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left"></td>
+            <td align="left">Site domain name, without the http:// or https:// protocol.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="example-request">Example request</h3>
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;,
+  &quot;id&quot;:&quot;number&quot;,
+  &quot;method&quot;:&quot;get.employees&quot;,
+  &quot;params&quot;:{
+    &quot;access_token&quot;:&quot;string&quot;,
+    &quot;user_id&quot;:&quot;number&quot;,
+    &quot;offset&quot;:&quot;number&quot;,
+    &quot;limit&quot;:&quot;number&quot;,
+    &quot;filter&quot;:{
+    },
+    &quot;sort&quot;:[
+      {
+        &quot;field&quot;:&quot;string&quot;,
+        &quot;order&quot;:&quot;string&quot;
+      }
+    ],
+    &quot;fields&quot;:[
+      &quot;string&quot;
+    ]
+  }
+}
+</code></pre>
+<h3 id="example-response">Example response</h3>
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;,
+  &quot;id&quot;:&quot;number&quot;,
+  &quot;result&quot;:{
+    &quot;metadata&quot;:{
+    },
+    &quot;data&quot;:[
+      {
+        &quot;id&quot;:&quot;number&quot;,
+        &quot;first_name&quot;:&quot;string&quot;,
+        &quot;login&quot;:&quot;string&quot;,
+        &quot;last_name&quot;:&quot;string&quot;,
+        &quot;patronymic&quot;:&quot;string&quot;,
+        &quot;full_name&quot;:&quot;string&quot;,
+        &quot;email&quot;:&quot;string&quot;,
+        &quot;status&quot;: &quot;enum&quot;,
+        &quot;calls_available&quot;:&quot;boolean&quot;,
+        &quot;allowed_in_call_types&quot;: &quot;array&quot;,
+        &quot;in_external_allowed_call_directions&quot;: &quot;array&quot;,
+        &quot;in_internal_allowed_call_directions&quot;: &quot;array&quot;,
+        &quot;allowed_out_call_types&quot;: &quot;array&quot;,
+        &quot;out_external_allowed_call_directions&quot;: &quot;array&quot;,
+        &quot;out_internal_allowed_call_directions&quot;: &quot;array&quot;,
+        &quot;groups&quot;:[
+          {
+            &quot;group_id&quot;:&quot;number&quot;,
+            &quot;group_name&quot;:&quot;string&quot;
+          }
+        ],
+        &quot;call_recording&quot;:&quot;enum&quot;,
+        &quot;schedule_id&quot;:&quot;number&quot;,
+        &quot;schedule_name&quot;:&quot;string&quot;,
+        &quot;coach&quot;:{
+          &quot;coach_id&quot;:&quot;number&quot;,
+          &quot;coach_full_name&quot;:&quot;string&quot;,
+          &quot;coach_always_enabled&quot;:&quot;boolean&quot;
+        },
+        &quot;phone_numbers&quot;:[
+          {
+            &quot;phone_id&quot;: &quot;integer&quot;,
+            &quot;phone_number&quot;:&quot;string&quot;,
+            &quot;channels_count&quot;:&quot;number&quot;,
+            &quot;dial_time&quot;:&quot;number&quot;,
+            &quot;status&quot;:&quot;enum&quot;
+          }
+        ],
+        &quot;extension&quot;:{
+          &quot;extension_phone_number&quot;:&quot;string&quot;,
+          &quot;extension_voice_mail_enabled&quot;:&quot;boolean&quot;,
+          &quot;extension_queue_enabled&quot;:&quot;boolean&quot;
+        },
+        &quot;operator&quot;:{
+          &quot;operator_login&quot;:&quot;string&quot;,
+          &quot;operator_display_name&quot;: &quot;string&quot;,
+          &quot;operator_position_id&quot;:&quot;number&quot;,
+          &quot;operator_position_name&quot;:&quot;string&quot;,
+          &quot;operator_offline_message_enabled&quot;:&quot;boolean&quot;,
+          &quot;operator_invite_to_chat_enabled&quot;:&quot;boolean&quot;,
+          &quot;operator_chat_enabled&quot;:&quot;boolean&quot;,
+          &quot;operator_chats_available&quot;:&quot;boolean&quot;,
+          &quot;operator_sites&quot;:[
+            {
+              &quot;site_id&quot;:&quot;number&quot;,
+              &quot;site_domain_name&quot;:&quot;string&quot;
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
+</code></pre>
+<h3 id="possible-errors">Possible errors</h3>
+<p>See the <a href="../..#_getErrors">"Errors for get methods"</a> section.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../../js/init.js"></script>
+      
+    
+  </body>
+</html>

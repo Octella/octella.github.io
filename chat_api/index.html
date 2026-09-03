@@ -1,0 +1,2924 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>CHAT API</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chat-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="CHAT API" class="md-header__button md-logo" aria-label="CHAT API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CHAT API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chat API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="CHAT API" class="md-nav__button md-logo" aria-label="CHAT API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    CHAT API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Chat API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        Chat API
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#conventions" class="md-nav__link">
+    Conventions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adapter-management" class="md-nav__link">
+    Adapter Management
+  </a>
+  
+    <nav class="md-nav" aria-label="Adapter Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-of-adapters" class="md-nav__link">
+    List of adapters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-an-adapter" class="md-nav__link">
+    Create an adapter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-an-adapter" class="md-nav__link">
+    Update an adapter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-an-adapter" class="md-nav__link">
+    Delete an adapter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chat-channels" class="md-nav__link">
+    Chat channels
+  </a>
+  
+    <nav class="md-nav" aria-label="Chat channels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-of-channels" class="md-nav__link">
+    List of channels
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adapter-connections" class="md-nav__link">
+    Adapter connections
+  </a>
+  
+    <nav class="md-nav" aria-label="Adapter connections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-of-connections" class="md-nav__link">
+    List of connections
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-connection" class="md-nav__link">
+    Create a connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-a-connection" class="md-nav__link">
+    Update a connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-connection" class="md-nav__link">
+    Delete a connection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chat-api_1" class="md-nav__link">
+    Chat API
+  </a>
+  
+    <nav class="md-nav" aria-label="Chat API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entities" class="md-nav__link">
+    Entities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adapter-authentication-in-chat-api" class="md-nav__link">
+    Adapter authentication in Chat API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chat-api-methods" class="md-nav__link">
+    Chat API Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Chat API Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-chat" class="md-nav__link">
+    Creating a chat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ending-chat" class="md-nav__link">
+    Ending chat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chat-transfer" class="md-nav__link">
+    Chat transfer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sending-message" class="md-nav__link">
+    Sending message
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-resource" class="md-nav__link">
+    Adding resource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieving-resource-data" class="md-nav__link">
+    Retrieving resource data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#webhooks" class="md-nav__link">
+    Webhooks
+  </a>
+  
+    <nav class="md-nav" aria-label="Webhooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#account-created" class="md-nav__link">
+    Account created
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-updated" class="md-nav__link">
+    Account updated
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-deleted" class="md-nav__link">
+    Account deleted
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel-created" class="md-nav__link">
+    Channel created
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel-updated" class="md-nav__link">
+    Channel updated
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel-deleted" class="md-nav__link">
+    Channel deleted
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-chat" class="md-nav__link">
+    New chat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chat-updated" class="md-nav__link">
+    Chat updated
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ending-chat_1" class="md-nav__link">
+    Ending chat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chat-assigned-to-an-operator" class="md-nav__link">
+    Chat assigned to an operator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-message" class="md-nav__link">
+    New message
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-updated" class="md-nav__link">
+    Message updated
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-status-updated" class="md-nav__link">
+    Message status updated
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visitor-information-updated" class="md-nav__link">
+    Visitor information updated
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migration-from-webhook-version-v1-to-v2" class="md-nav__link">
+    Migration from webhook version v1 to v2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-with-the-waba-channel-type" class="md-nav__link">
+    Working with the waba channel type
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with the waba channel type">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sending-a-message-using-a-template" class="md-nav__link">
+    Sending a message using a template
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-up" class="md-nav__link">
+    Setting up
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting up">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#obtaining-authentication-token" class="md-nav__link">
+    Obtaining authentication token
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-the-adapter" class="md-nav__link">
+    Creating the adapter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-a-list-of-chat-channels-connected-to-your-account" class="md-nav__link">
+    Getting a list of chat channels connected to your account
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting-a-channel" class="md-nav__link">
+    Connecting a channel
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-adapter" class="md-nav__link">
+    Using the adapter
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the adapter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#obtaining-an-adapter-token" class="md-nav__link">
+    Obtaining an adapter token
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-chat_1" class="md-nav__link">
+    Creating a chat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sending-a-message-to-a-chat" class="md-nav__link">
+    Sending a message to a chat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-log" class="md-nav__link">
+    Change Log
+  </a>
+  
+    <nav class="md-nav" aria-label="Change Log">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1100-2025-05-15" class="md-nav__link">
+    1.10.0 (2025-05-15)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#190-2025-04-11" class="md-nav__link">
+    1.9.0 (2025-04-11)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#180-2025-03-20" class="md-nav__link">
+    1.8.0 (2025-03-20)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#170-2024-12-09" class="md-nav__link">
+    1.7.0 (2024-12-09)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#160-2024-10-01" class="md-nav__link">
+    1.6.0 (2024-10-01)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#151-2024-09-26" class="md-nav__link">
+    1.5.1 (2024-09-26)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#150-2024-04-11" class="md-nav__link">
+    1.5.0 (2024-04-11)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#140-2023-09-18" class="md-nav__link">
+    1.4.0 (2023-09-18)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#130-2023-09-18" class="md-nav__link">
+    1.3.0 (2023-09-18)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#120-2023-09-14" class="md-nav__link">
+    1.2.0 (2023-09-14)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#110-2023-09-13" class="md-nav__link">
+    1.1.0 (2023-09-13)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#100-2023-09-12" class="md-nav__link">
+    1.0.0 (2023-09-12)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#conventions" class="md-nav__link">
+    Conventions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adapter-management" class="md-nav__link">
+    Adapter Management
+  </a>
+  
+    <nav class="md-nav" aria-label="Adapter Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-of-adapters" class="md-nav__link">
+    List of adapters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-an-adapter" class="md-nav__link">
+    Create an adapter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-an-adapter" class="md-nav__link">
+    Update an adapter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-an-adapter" class="md-nav__link">
+    Delete an adapter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chat-channels" class="md-nav__link">
+    Chat channels
+  </a>
+  
+    <nav class="md-nav" aria-label="Chat channels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-of-channels" class="md-nav__link">
+    List of channels
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adapter-connections" class="md-nav__link">
+    Adapter connections
+  </a>
+  
+    <nav class="md-nav" aria-label="Adapter connections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-of-connections" class="md-nav__link">
+    List of connections
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-connection" class="md-nav__link">
+    Create a connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-a-connection" class="md-nav__link">
+    Update a connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-connection" class="md-nav__link">
+    Delete a connection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chat-api_1" class="md-nav__link">
+    Chat API
+  </a>
+  
+    <nav class="md-nav" aria-label="Chat API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entities" class="md-nav__link">
+    Entities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adapter-authentication-in-chat-api" class="md-nav__link">
+    Adapter authentication in Chat API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chat-api-methods" class="md-nav__link">
+    Chat API Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Chat API Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-chat" class="md-nav__link">
+    Creating a chat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ending-chat" class="md-nav__link">
+    Ending chat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chat-transfer" class="md-nav__link">
+    Chat transfer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sending-message" class="md-nav__link">
+    Sending message
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-resource" class="md-nav__link">
+    Adding resource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieving-resource-data" class="md-nav__link">
+    Retrieving resource data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#webhooks" class="md-nav__link">
+    Webhooks
+  </a>
+  
+    <nav class="md-nav" aria-label="Webhooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#account-created" class="md-nav__link">
+    Account created
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-updated" class="md-nav__link">
+    Account updated
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-deleted" class="md-nav__link">
+    Account deleted
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel-created" class="md-nav__link">
+    Channel created
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel-updated" class="md-nav__link">
+    Channel updated
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel-deleted" class="md-nav__link">
+    Channel deleted
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-chat" class="md-nav__link">
+    New chat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chat-updated" class="md-nav__link">
+    Chat updated
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ending-chat_1" class="md-nav__link">
+    Ending chat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chat-assigned-to-an-operator" class="md-nav__link">
+    Chat assigned to an operator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-message" class="md-nav__link">
+    New message
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-updated" class="md-nav__link">
+    Message updated
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-status-updated" class="md-nav__link">
+    Message status updated
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visitor-information-updated" class="md-nav__link">
+    Visitor information updated
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migration-from-webhook-version-v1-to-v2" class="md-nav__link">
+    Migration from webhook version v1 to v2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-with-the-waba-channel-type" class="md-nav__link">
+    Working with the waba channel type
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with the waba channel type">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sending-a-message-using-a-template" class="md-nav__link">
+    Sending a message using a template
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-up" class="md-nav__link">
+    Setting up
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting up">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#obtaining-authentication-token" class="md-nav__link">
+    Obtaining authentication token
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-the-adapter" class="md-nav__link">
+    Creating the adapter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-a-list-of-chat-channels-connected-to-your-account" class="md-nav__link">
+    Getting a list of chat channels connected to your account
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting-a-channel" class="md-nav__link">
+    Connecting a channel
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-adapter" class="md-nav__link">
+    Using the adapter
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the adapter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#obtaining-an-adapter-token" class="md-nav__link">
+    Obtaining an adapter token
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-chat_1" class="md-nav__link">
+    Creating a chat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sending-a-message-to-a-chat" class="md-nav__link">
+    Sending a message to a chat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-log" class="md-nav__link">
+    Change Log
+  </a>
+  
+    <nav class="md-nav" aria-label="Change Log">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1100-2025-05-15" class="md-nav__link">
+    1.10.0 (2025-05-15)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#190-2025-04-11" class="md-nav__link">
+    1.9.0 (2025-04-11)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#180-2025-03-20" class="md-nav__link">
+    1.8.0 (2025-03-20)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#170-2024-12-09" class="md-nav__link">
+    1.7.0 (2024-12-09)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#160-2024-10-01" class="md-nav__link">
+    1.6.0 (2024-10-01)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#151-2024-09-26" class="md-nav__link">
+    1.5.1 (2024-09-26)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#150-2024-04-11" class="md-nav__link">
+    1.5.0 (2024-04-11)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#140-2023-09-18" class="md-nav__link">
+    1.4.0 (2023-09-18)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#130-2023-09-18" class="md-nav__link">
+    1.3.0 (2023-09-18)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#120-2023-09-14" class="md-nav__link">
+    1.2.0 (2023-09-14)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#110-2023-09-13" class="md-nav__link">
+    1.1.0 (2023-09-13)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#100-2023-09-12" class="md-nav__link">
+    1.0.0 (2023-09-12)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="chat-api">Chat API</h1>
+<p>Brief guide to Chat API.</p>
+<ul>
+<li><a href="#agreements">Conventions</a></li>
+<li><a href="#adapters">Adapter Management</a></li>
+<li><a href="#listAdapters">List of adapters</a></li>
+<li><a href="#createAdapter">Create an adapter</a></li>
+<li><a href="#updateAdapter">Update an adapter</a></li>
+<li><a href="#deleteAdapter">Delete an adapter</a></li>
+<li><a href="#channels">Chat channels</a></li>
+<li><a href="#listChannels">List of channels</a></li>
+<li><a href="#accounts">Adapter connections</a></li>
+<li><a href="#listAccounts">List of connections</a></li>
+<li><a href="#createAccount">Create a connection</a></li>
+<li><a href="#updateAccount">Update a connection</a></li>
+<li><a href="#deleteAccount">Delete a connection</a></li>
+<li><a href="#api">Chat API</a></li>
+<li><a href="#adapterAuth">Adapter Authentication in Chat API</a></li>
+<li><a href="#apiMethods">Chat API Methods</a><ul>
+<li><a href="#apiChat">Create a chat</a> </li>
+<li><a href="#apiChatClose">Close a chat</a></li>
+<li><a href="#apiChatTransfer">Transfer a chat</a></li>
+<li><a href="#apiMessage">Send a message</a> </li>
+<li><a href="#apiUploadResource">Upload a resource</a></li>
+<li><a href="#apiDownloadResource">Get resource data</a></li>
+</ul>
+</li>
+<li><a href="#webhooks">Webhooks</a><ul>
+<li><a href="#webhooksAccount">Account created</a></li>
+<li><a href="#webhooksUpdateAccount">Account updated</a>  </li>
+<li><a href="#webhooksDeleteAccount">Account deleted</a> </li>
+<li><a href="#webhookChannel">Channel created</a></li>
+<li><a href="#webhooksUpdateChannel">Channel updated</a> </li>
+<li><a href="#webhooksDeleteChannel">Channel deleted</a>  </li>
+<li><a href="#webhookChat">New chat</a></li>
+<li><a href="#webhooksChatUpdate">Chat updated</a></li>
+<li><a href="#webhooksChatClose">Chat closed</a></li>
+<li><a href="#webhooksChatOperatorUpdate">Chat assigned to an operator</a></li>
+<li><a href="#webhookMessage">New message</a></li>
+<li><a href="#webhookMessageUpdate">Message updated</a></li>
+<li><a href="#webhooksMessageStatusUpdate">Message status updated</a></li>
+<li><a href="#webhooksVisitorCardUpdate">Visitor information updated</a></li>
+</ul>
+</li>
+<li><a href="#apiChannelWaba">Working with the <code>waba</code> channel type</a></li>
+<li><a href="#examples">Examples</a></li>
+<li><a href="#changelog">Change Log</a></li>
+</ul>
+<h2 id="conventions">Conventions <a name="agreements"></a></h2>
+<ul>
+<li><em>Personal Account</em> is a web application hosted under <code>go.octella.com</code>.</li>
+<li><em>Operator Workspace</em> is an application that allows employees to handle conversations with customers.</li>
+<li><em>Adapter</em> is a custom service that uses Chat API methods and webhooks to implement its own operator workspace.</li>
+<li><em>Chat channel</em> is a connected chat channel in the client account, such as Website Chat, Telegram, or Viber.</li>
+<li><em>Adapter account</em> is an adapter connection created by the client in the Personal Account.</li>
+<li><em>Adapter channel</em> is a chat channel connected within the adapter.</li>
+<li><em>Webhook</em> is an HTTP request that Chat API sends to the adapter when entities change without the adapter directly initiating those changes, for example when a chat is created or a visitor sends a message.</li>
+</ul>
+<h2 id="adapter-management">Adapter Management <a name="adapters"></a></h2>
+<p>To get started, you need to register an integration adapter.
+This can be done through the Personal Account or by sending a request to the main Chat API available at https://chats-rolands-logic.octella.com/.
+Only authorized Personal Account users can access this API.
+To receive an authentication token, you must send a request:</p>
+<pre><code>POST https://go.octella.com/api/auth/json_rpc?method=login
+{
+  "jsonrpc": "2.0",
+  "id": "0",
+  "method": "login",
+  "params": {
+    "login": "username",
+    "password": "password",
+    "project": "usa"
+  }
+}
+</code></pre>
+<p>Requests to the main Chat API are authenticated using a token passed in the header.</p>
+<pre><code>POST https://chats-rolands-logic.octella.com/v1/
+Authorization: Bearer &lt;token&gt;
+</code></pre>
+<p>In the API, the adapter is represented by the <code>Adapter</code> entity.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>int</code></td>
+<td>Adapter ID</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>str</code></td>
+<td>Unique adapter mnemonic, matches the regular expression <code>^[a-z0-9_]+$</code></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>str</code></td>
+<td>Adapter name</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>enum</code></td>
+<td>Adapter status. Valid values: <code>active</code>, <code>disabled</code></td>
+</tr>
+<tr>
+<td><code>supported_channel_types</code></td>
+<td><code>enum</code></td>
+<td>List of channel mnemonics. Valid values: <code>comagic</code>, <code>telegram</code>, <code>auto_ru</code>, <code>avito</code>, <code>realty_yandex</code>, <code>viber</code>, <code>telegram_private</code>, <code>whatsapp</code>, <code>waba</code>, <code>sms</code>, <code>email</code></td>
+</tr>
+<tr>
+<td><code>owner</code></td>
+<td><code>int</code></td>
+<td>ID of the adapter owner. Can be <code>null</code>, in which case the adapter is a system adapter</td>
+</tr>
+<tr>
+<td><code>visibility_status</code></td>
+<td><code>enum</code></td>
+<td>Adapter visibility status; for custom adapters only takes the value <code>private</code></td>
+</tr>
+<tr>
+<td><code>login</code></td>
+<td><code>str</code></td>
+<td>Login for adapter authorization</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td><code>str</code></td>
+<td>Password for adapter authorization</td>
+</tr>
+<tr>
+<td><code>webhook_url</code></td>
+<td><code>str</code></td>
+<td>Address for webhooks from Chat API</td>
+</tr>
+<tr>
+<td><code>webhook_version</code></td>
+<td><code>str</code></td>
+<td>Webhook version. Available versions: <code>v1</code>, <code>v2</code>; the default version is <code>v2</code>.</td>
+</tr>
+<tr>
+<td><code>webhook_token</code></td>
+<td><code>str</code></td>
+<td>Chat API authentication token used for webhooks. May not be used together with <code>webhook_auth</code>.<br/><br/><em>This attribute is obsolete and is not recommended for use.</em></td>
+</tr>
+<tr>
+<td><code>webhook_auth</code></td>
+<td><code>object</code></td>
+<td>Chat API authentication configuration for webhooks. May not be used together with <code>webhook_token</code>.</td>
+</tr>
+<tr>
+<td><code>webhook_kwargs</code></td>
+<td><code>dict[str, Any]</code></td>
+<td>An associative array with additional arguments for webhooks. Valid keys: <code>timeout</code> with a value of type <code>float</code>, to control the waiting time for a response from the adapter; an associative array of additional headers <code>headers</code>, of the form <code>{"name": "value"}</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>webhook_auth</code> object specifies the authentication method for webhooks using a persistent token or login-password pair.</p>
+<p>For persistent token authentication, you must set the value of <code>webhook_auth</code> as follows:</p>
+<pre><code>{
+  &quot;type&quot;: &quot;Bearer&quot;,
+  &quot;token&quot;: &quot;string&quot;
+}
+</code></pre>
+<p>In this case, all webhooks will contain a header <code>Authorization: Bearer &lt;token&gt;</code>.</p>
+<p>To use a login-password pair, the value of <code>webhook_auth</code> is set as follows:</p>
+<pre><code>{
+  &quot;type&quot;: &quot;Basic&quot;,
+  &quot;login&quot;: &quot;string&quot;,
+  &quot;password&quot;: &quot;string&quot;
+}
+</code></pre>
+<p>In this case, all webhooks will contain the header <code>Authorization: Basic &lt;credentials&gt;</code>, where <code>credentials</code> is the Base64-encoded pair <code>&lt;login&gt;:&lt;password&gt;</code>.</p>
+<h3 id="list-of-adapters">List of adapters <a name="listAdapters"></a></h3>
+<pre><code>GET /v1/integration/adapter
+</code></pre>
+<p>Returns a list of <code>Adapter</code> entities, including both user-created adapters and system adapters. System adapters are identified by the <code>owner</code> attribute set to <code>null</code>. System adapters cannot be modified.</p>
+<h3 id="create-an-adapter">Create an adapter <a name="createAdapter"></a></h3>
+<pre><code>POST /v1/integration/adapter
+{
+  "type": "string",             
+  "name": "string",             
+  "login": "string", 
+  "password": "string",
+  "webhook_url": "string",
+  "webhook_version": "string",
+  "webhook_token": "string",
+  "webhook_auth": {
+    "type": "Bearer",
+    "token": "string"
+  },
+  "supported_channel_types": [  
+    "comagic",
+    "telegram",
+    "whatsapp"
+  ]
+}
+</code></pre>
+<p>As a result, the <code>Adapter</code> entity is returned.</p>
+<h3 id="update-an-adapter">Update an adapter <a name="updateAdapter"></a></h3>
+<pre><code>PATCH /v1/integration/adapter/{adapter_id}
+{
+  "name": "string",
+  "login": "string",
+  "password": "string",
+  "status": "active",
+  "webhook_url": "string",
+  "webhook_version": "string",
+  "webhook_token": "string",
+  "webhook_auth": {
+    "type": "Bearer",
+    "token": "string"
+  },
+  "webhook_kwargs": {},
+  "supported_channel_types": [
+    "comagic"
+  ]
+}
+</code></pre>
+<p>The method allows you to change the following entity attributes: <code>name</code>, <code>login</code>, <code>password</code>, <code>status</code>, <code>webhook_url</code>, <code>webhook_version</code>, <code>webhook_token</code>, <code>webhook_auth</code>, <code>supported_channel_types</code>.</p>
+<h3 id="delete-an-adapter">Delete an adapter <a name="deleteAdapter"></a></h3>
+<pre><code>DELETE /v1/integration/adapter/{adapter_id}
+</code></pre>
+<p>The adapter can only be removed when it is not in use.</p>
+<h2 id="chat-channels">Chat channels <a name="channels"></a></h2>
+<p>The <code>Channel</code> entity represents the connected chat channel in the client account.</p>
+<pre><code>{
+  "id": 0,
+  "type": "comagic",
+  "name": "string",
+  "is_removed": true,
+  "status": "string", 
+  "status_reason": "string"
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>int</code></td>
+<td>Channel ID</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>enum</code></td>
+<td>Channel mnemonic</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>str</code></td>
+<td>Channel name</td>
+</tr>
+<tr>
+<td><code>is_removed</code></td>
+<td><code>bool</code></td>
+<td>Logical delete flag</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>enum</code></td>
+<td>Status</td>
+</tr>
+<tr>
+<td><code>status_reason</code></td>
+<td><code>str</code></td>
+<td>Reason for status change</td>
+</tr>
+</tbody>
+</table>
+<h3 id="list-of-channels">List of channels <a name="listChannels"></a></h3>
+<pre><code>GET /v1/integration/channel
+</code></pre>
+<p>Returns a list of entities of type <code>Channel</code>.</p>
+<h2 id="adapter-connections">Adapter connections <a name="accounts"></a></h2>
+<p>The adapter connection is represented by the <code>Account</code> entity.</p>
+<pre><code>{
+  "name": "string",
+  "adapter_id": 0,
+  "channels": [
+    0
+  ],
+  "context": {},
+  "id": 0,
+  "status": "string"
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>int</code></td>
+<td>Account ID</td>
+</tr>
+<tr>
+<td><code>adapter_id</code></td>
+<td><code>int</code></td>
+<td>Adapter ID</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>str</code></td>
+<td>Account name</td>
+</tr>
+<tr>
+<td><code>channels</code></td>
+<td><code>list[int]</code></td>
+<td>List of <a href="#channels">channel</a> IDs</td>
+</tr>
+<tr>
+<td><code>context</code></td>
+<td><code>dict[str, Any]</code></td>
+<td>Associative array with additional parameters. Valid keys: <code>is_chat_integration_scenario_created</code> with a Boolean value, allows you to control the automatic attachment of the "Forwarding to CRM" scenario for connected channels</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>enum</code></td>
+<td>Connection status. Valid values: <code>active</code>, <code>disabled</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="list-of-connections">List of connections <a name="listAccounts"></a></h3>
+<pre><code>GET /v1/integration/account
+</code></pre>
+<p>Returns a list of entities of type <code>Account</code>.</p>
+<h3 id="create-a-connection">Create a connection <a name="createAccount"></a></h3>
+<pre><code>POST /v1/integration/account
+{
+  "name": "string",
+  "adapter_id": 0,
+  "channels": [
+    0
+  ],
+  "context": {}
+}
+</code></pre>
+<h3 id="update-a-connection">Update a connection <a name="updateAccount"></a></h3>
+<pre><code>PATCH /v1/integration/account/{account_id}
+{
+  "name": "string",
+  "channels": [
+    0
+  ],
+  "context": {}
+}
+</code></pre>
+<p>The method allows you to change the following entity attributes: <code>name</code>, <code>channels</code>, <code>context</code>.</p>
+<h3 id="delete-a-connection">Delete a connection <a name="deleteAccount"></a></h3>
+<pre><code>DELETE /v1/integration/account/{account_id}
+</code></pre>
+<h2 id="chat-api_1">Chat API <a name="api"></a></h2>
+<p>The service is available at https://rl-lat-chat-integration.octe.cc/</p>
+<h3 id="entities">Entities</h3>
+<p><code>Account</code> - represents the connection of the adapter by the client.</p>
+<pre><code>{
+  "id": 0,
+  "name": "string",
+  "adapter_id": 0,
+  "client_id": 0,
+  "context": {},
+  "status": "active"
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>int</code></td>
+<td>Unique account identifier</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>str</code></td>
+<td>Account name</td>
+</tr>
+<tr>
+<td><code>adapter_id</code></td>
+<td><code>int</code></td>
+<td>Adapter ID</td>
+</tr>
+<tr>
+<td><code>client_id</code></td>
+<td><code>int</code></td>
+<td>Internal entity identifier, always takes the value <code>1</code></td>
+</tr>
+<tr>
+<td><code>context</code></td>
+<td><code>dict[str, Any]</code></td>
+<td>Additional parameters, always contains the key <code>app_id</code> with the identifier of the client that connected the adapter</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>enum</code></td>
+<td>Account status. Possible values: <code>active</code>, <code>disabled</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>Channel</code> - represents the connection of the chat channel in the account.</p>
+<pre><code>{
+  "id": 0,
+  "name": "string",
+  "type": "comagic",
+  "account_id": 0,
+  "context": {},
+  "status": "active"
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>int</code></td>
+<td>Unique channel identifier</td>
+</tr>
+<tr>
+<td><code>account_id</code></td>
+<td><code>int</code></td>
+<td>Unique account identifier</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>str</code></td>
+<td>Channel name</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>enum</code></td>
+<td>Chat channel mnemonic. Possible values: <code>comagic</code>, <code>telegram</code>, <code>auto_ru</code>, <code>avito</code>, <code>realty_yandex</code>, <code>viber</code>, <code>telegram_private</code>, <code>whatsapp</code>, <code>waba</code>, <code>sms</code>, <code>email</code></td>
+</tr>
+<tr>
+<td><code>context</code></td>
+<td><code>dict[str, Any]</code></td>
+<td>Additional options. Always contains the keys <code>app_id</code> with a unique identifier of the client who made the connection, as well as <code>chat_channel_id</code> - a unique identifier of the connected chat channel</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>enum</code></td>
+<td>Channel status. Possible values: <code>active</code>, <code>disabled</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="adapter-authentication-in-chat-api">Adapter authentication in Chat API <a name="adapterAuth"></a></h3>
+<p>All requests to the Chat API must contain the <code>Authorization</code> header:</p>
+<pre><code>Authorization: Bearer &lt;token&gt;
+</code></pre>
+<p>To obtain a token, the adapter must issue a request:</p>
+<pre><code>POST /v1/adapter/login
+Content-Type: application/x-www-form-urlencoded
+
+username={adapter_login}&amp;password={adapter_password}
+</code></pre>
+<p>The response will contain the token, type and unix timestamp indicating the end of the token's lifetime:</p>
+<pre><code>{
+  "access_token": "string",
+  "token_type": "bearer",
+  "expires_at": 0
+}
+</code></pre>
+<p>Once the token lifetime has expired, the authentication procedure must be repeated.</p>
+<h3 id="chat-api-methods">Chat API Methods <a name="apiMethods"></a></h3>
+<h4 id="creating-a-chat">Creating a chat <a name="apiChat"></a></h4>
+<p>Creating a chat from the adapter is only possible for channels that allow you to start communication first.
+This function is supported by the following channel types: <code>whatsapp</code>, <code>waba</code>, <code>telegram_private</code>, <code>sms</code>, <code>email</code>.</p>
+<pre><code>POST /v1/adapter/chat
+{
+  "account_id": 0,
+  "channel_id": 0,
+  "visitor_phone": "string",
+  "visitor_email": "string",
+  "visitor_username": "string",
+  "operator_id": 0,
+  "initiator": "operator",
+  "created_at": "2023-01-01T00:00:00.000Z"
+}
+</code></pre>
+<p>Description of the <code>Chat</code> entity:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>account_id</code></td>
+<td><code>int</code></td>
+<td>Account ID</td>
+</tr>
+<tr>
+<td><code>channel_id</code></td>
+<td><code>int</code></td>
+<td>Channel ID</td>
+</tr>
+<tr>
+<td><code>operator_id</code></td>
+<td><code>int</code></td>
+<td>Operator ID. The operator must be registered in their Personal Account and have the appropriate privileges</td>
+</tr>
+<tr>
+<td><code>initiator</code></td>
+<td><code>enum</code></td>
+<td>Initiator mnemonic. <br/>Possible values: <code>operator</code>, <code>visitor</code>, <code>autoinvite</code>, <code>chat_channel</code>. <br/>Allowed values: <code>operator</code></td>
+</tr>
+<tr>
+<td><code>visitor_phone</code></td>
+<td><code>Optional[str]</code></td>
+<td>Phone number of the user with whom the conversation will be conducted (used for channels like <code>whatsapp</code>, <code>waba</code>, <code>sms</code>, <code>telegram_private</code>)</td>
+</tr>
+<tr>
+<td><code>visitor_email</code></td>
+<td><code>Optional[str]</code></td>
+<td>Email address of the user with whom the conversation will be conducted (used for channel type <code>email</code>)</td>
+</tr>
+<tr>
+<td><code>visitor_username</code></td>
+<td><code>Optional[str]</code></td>
+<td>Short name of the user with whom the conversation will be conducted, in the format <code>@username</code> (used for channel type <code>telegram_private</code>)</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>str</code></td>
+<td>Date and time in <code>ISO 8601</code> format</td>
+</tr>
+</tbody>
+</table>
+<p>When creating a chat, one of the attributes <code>visitor_phone</code>, <code>visitor_email</code> or <code>visitor_username</code> must be passed, depending on the type of channel in which the communication is initialized.
+The response will return the sent entity with the attributes <code>chat_id</code>, which is the request identifier, and <code>visitor_id</code>, which is the identifier of the user with whom the conversation is being conducted. Both parameters should be used later when sending chat messages.</p>
+<h4 id="ending-chat">Ending chat <a name="apiChatClose"></a></h4>
+<pre><code>POST /v1/adapter/chat/close
+{
+  "context": {},
+  "account_id": 0,
+  "channel_id": 0,
+  "chat_id": 0,
+  "operator_id": 0,
+  "reason": "closed_by_timeout"
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>reason</td>
+<td><code>enum</code></td>
+<td>Reason for termination. <br/>Possible values: <code>closed_by_timeout</code>, <code>invite_rejected</code>, <code>closed_by_operator</code>, <code>closed_by_visitor</code>, <code>visitor_banned</code>, <code>external_window_closed</code>, <code>visitor_disconnected</code>, <code>visitor_session_expired</code>, <code>closed_by_scenario</code>. <br/>Allowed values: <code>closed_by_operator</code></td>
+</tr>
+<tr>
+<td>operator_id</td>
+<td><code>int</code></td>
+<td>Operator ID. The parameter is optional; it must be passed if <code>closed_by_operator</code> is passed in the value of the <code>reason</code> parameter</td>
+</tr>
+</tbody>
+</table>
+<h4 id="chat-transfer">Chat transfer <a name="apiChatTransfer"></a></h4>
+<pre><code>POST /v1/adapter/chat/transfer
+{
+  "context": {},
+  "account_id": 0,
+  "channel_id": 0,
+  "chat_id": 0,
+  "from_operator_id": 0,
+  "to_operator_id": 0
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>from_operator_id</td>
+<td><code>int</code></td>
+<td>Current chat operator ID</td>
+</tr>
+<tr>
+<td>to_operator_id</td>
+<td><code>int</code></td>
+<td>Operator ID to whom the chat will be assigned</td>
+</tr>
+</tbody>
+</table>
+<h4 id="sending-message">Sending message <a name="apiMessage"></a></h4>
+<p>To send a message to a chat, you need the <code>chat_id</code>. You can get it either from the <a href="#apiChat">create-a-chat</a> response or from the <a href="#webhookChat">new-chat webhook</a>.</p>
+<pre><code>POST /v1/adapter/message
+{
+  "account_id": 0,
+  "channel_id": 0,
+  "chat_id": 0,
+  "operator_id": 0,
+  "reply_to_id": 0,
+  "text": "string",
+  "created_at": "2023-01-01T00:00:00.000Z",
+  "source": "system",
+  "resource": {
+    "id": 0,
+    "token": "string",
+    "type": "photo",
+    "name": "string",
+    "size": 0
+  }
+}
+</code></pre>
+<p>Description of the <code>Message</code> entity:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>account_id</code></td>
+<td><code>int</code></td>
+<td>Account ID</td>
+</tr>
+<tr>
+<td><code>channel_id</code></td>
+<td><code>int</code></td>
+<td>Channel ID</td>
+</tr>
+<tr>
+<td><code>chat_id</code></td>
+<td><code>int</code></td>
+<td>Chat ID</td>
+</tr>
+<tr>
+<td><code>operator_id</code></td>
+<td><code>int</code></td>
+<td>Operator ID</td>
+</tr>
+<tr>
+<td><code>reply_to_id</code></td>
+<td><code>int</code></td>
+<td>Optional message ID for quoting</td>
+</tr>
+<tr>
+<td><code>text</code></td>
+<td><code>str</code></td>
+<td>Message text</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>str</code></td>
+<td>Date and time in <code>ISO 8601</code> format</td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td><code>enum</code></td>
+<td>Mnemonic of the message sender. Valid values: <code>operator</code></td>
+</tr>
+<tr>
+<td><code>resource</code></td>
+<td><a href="#messageResource"><code>Resource</code></a></td>
+<td>Object <a href="#messageResource"><code>Resource</code></a> with a description of the resource (file) attached to the message</td>
+</tr>
+<tr>
+<td><code>context</code></td>
+<td><code>Optional[dict[str, Any]]</code></td>
+<td>Optional object with additional information</td>
+</tr>
+</tbody>
+</table>
+<h3 id="adding-resource">Adding resource <a name="apiUploadResource"></a></h3>
+<pre><code>POST /v1/adapter/resource
+Content-Type: multipart/form-data
+
+...
+</code></pre>
+<p>The form must contain the following attributes:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>account_id</code></td>
+<td><code>int</code></td>
+<td>Account ID</td>
+</tr>
+<tr>
+<td><code>channel_id</code></td>
+<td><code>int</code></td>
+<td>Channel ID</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>enum</code></td>
+<td>Resource type. Possible values: <code>photo</code>, <code>video</code>, <code>audio</code>, <code>voice</code>, <code>document</code></td>
+</tr>
+<tr>
+<td><code>file</code></td>
+<td><code>bytes</code></td>
+<td>Transferred file</td>
+</tr>
+</tbody>
+</table>
+<p>The response returns the <code>Resource</code> entity: <a name="messageResource"></a></p>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>int</code></td>
+<td>Resource ID</td>
+</tr>
+<tr>
+<td><code>token</code></td>
+<td><code>str</code></td>
+<td>Resource token</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>enum</code></td>
+<td>Resource type. Possible values: <code>photo</code>, <code>video</code>, <code>audio</code>, <code>voice</code>, <code>document</code></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>str</code></td>
+<td>File name</td>
+</tr>
+<tr>
+<td><code>size</code></td>
+<td><code>int</code></td>
+<td>File size in bytes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="retrieving-resource-data">Retrieving resource data <a name="apiDownloadResource"></a></h3>
+<pre><code>GET /v1/adapter/resource/{account_id}/{channel_id}/{resource_id}/{resource_token}/payload
+</code></pre>
+<h3 id="webhooks">Webhooks <a name="webhooks"></a></h3>
+<p>Webhooks are sent to the <code>webhook_url</code> address specified in the adapter settings. <code>webhook_url</code> is used as the base URL: the final address of each webhook is formed by appending a path specific to the event or entity, for example <code>/account</code> or <code>/chat</code>. Authentication data is passed in the <code>Authorization</code> header:</p>
+<pre><code>Authorization: {Type} {Credentials}
+</code></pre>
+<p>If the <code>webhook_token</code> attribute is specified when creating an adapter, the <code>Authorization</code> header is formed as follows:</p>
+<pre><code>Authorization: Bearer {webhook_token}
+</code></pre>
+<h4 id="account-created">Account created <a name="webhooksAccount"></a></h4>
+<p>Method: <code>POST</code>
+URL: <code>{webhook_url}/account</code></p>
+<blockquote>
+<p>Available in versions: <code>v1</code>, <code>v2</code></p>
+</blockquote>
+<pre><code>{
+  "id": 0,
+  "name": "string",
+  "adapter_id": 0,
+  "client_id": 0,
+  "context": {},
+  "status": "active"
+}
+</code></pre>
+<p>Expected response code: <code>200</code> or <code>204</code>.</p>
+<h4 id="account-updated">Account updated <a name="webhooksUpdateAccount"></a></h4>
+<p>Method: <code>PATCH</code>
+URL: <code>{webhook_url}/account/{account_id}</code></p>
+<blockquote>
+<p>Available in versions: <code>v1</code>, <code>v2</code></p>
+</blockquote>
+<pre><code>{
+  "id": 0,
+  "name": "string",
+  "adapter_id": 0,
+  "client_id": 0,
+  "context": {},
+  "status": "active"
+}
+</code></pre>
+<p>Expected response code: <code>200</code> or <code>204</code>.</p>
+<h4 id="account-deleted">Account deleted <a name="webhooksDeleteAccount"></a></h4>
+<p>Method: <code>DELETE</code>
+URL: <code>{webhook_url}/account/{account_id}</code></p>
+<blockquote>
+<p>Available in versions: <code>v1</code>, <code>v2</code></p>
+</blockquote>
+<pre><code>{
+  "id": 0,
+  "name": "string",
+  "adapter_id": 0,
+  "client_id": 0,
+  "context": {},
+  "status": "active"
+}
+</code></pre>
+<p>Expected response code: <code>200</code> or <code>204</code>.</p>
+<h4 id="channel-created">Channel created <a name="webhookChannel"></a></h4>
+<p>Method: <code>POST</code>
+URL: <code>{webhook_url}/channel</code></p>
+<blockquote>
+<p>Available in versions: <code>v1</code>, <code>v2</code></p>
+</blockquote>
+<pre><code>{
+  "id": 0,
+  "name": "string",
+  "type": "comagic",
+  "account_id": 0,
+  "context": {},
+  "status": "active"
+}
+</code></pre>
+<p>Expected response code: <code>200</code> or <code>204</code>.</p>
+<h4 id="channel-updated">Channel updated <a name="webhooksUpdateChannel"></a></h4>
+<p>Method: <code>PATCH</code>
+URL: <code>{webhook_url}/channel/{channel_id}</code></p>
+<blockquote>
+<p>Available in versions: <code>v1</code>, <code>v2</code></p>
+</blockquote>
+<pre><code>{
+  "id": 0,
+  "name": "string",
+  "type": "comagic",
+  "account_id": 0,
+  "context": {},
+  "status": "active"
+}
+</code></pre>
+<p>Expected response code: <code>200</code> or <code>204</code>.</p>
+<h4 id="channel-deleted">Channel deleted <a name="webhooksDeleteChannel"></a></h4>
+<p>Method: <code>DELETE</code>
+URL: <code>{webhook_url}/channel/{channel_id}</code></p>
+<blockquote>
+<p>Available in versions: <code>v1</code>, <code>v2</code></p>
+</blockquote>
+<pre><code>{
+  "id": 0,
+  "name": "string",
+  "type": "comagic",
+  "account_id": 0,
+  "context": {},
+  "status": "active"
+}
+</code></pre>
+<p>Expected response code: <code>200</code> or <code>204</code>.</p>
+<h4 id="new-chat">New chat <a name="webhookChat"></a></h4>
+<p>Method: <code>POST</code>
+URL: <code>{webhook_url}/chat</code></p>
+<blockquote>
+<p>Available in versions: <code>v1</code>, <code>v2</code></p>
+</blockquote>
+<pre><code>{
+  "context": {},
+  "account_id": 0,
+  "channel_id": 0,
+  "chat_id": 0,
+  "visitor_id": 0,
+  "visitor_phone": "string",
+  "operator_id": 0,
+  "initiator": "operator",
+  "created_at": "2023-01-01T00:00:00.001Z"
+}
+</code></pre>
+<h4 id="chat-updated">Chat updated <a name="webhooksChatUpdate"></a></h4>
+<p>Method: <code>PATCH</code>
+URL: <code>{webhook_url}/chat</code></p>
+<blockquote>
+<p>Available in versions: <code>v2</code></p>
+</blockquote>
+<pre><code>{
+  "context": {},
+  "account_id": 0,
+  "channel_id": 0,
+  "chat_id": 0,
+  "operator_id": 0
+}
+</code></pre>
+<h4 id="ending-chat_1">Ending chat <a name="webhooksChatClose"></a></h4>
+<p>Method: <code>POST</code>
+URL: <code>{webhook_url}/chat/close</code></p>
+<blockquote>
+<p>Available in versions: <code>v1</code>, <code>v2</code></p>
+</blockquote>
+<pre><code>{
+  "context": {},
+  "account_id": 0,
+  "channel_id": 0,
+  "chat_id": 0,
+  "operator_id": 0,
+  "reason": "closed_by_timeout"
+}
+</code></pre>
+<p>Expected response code: <code>200</code> or <code>204</code>. The <code>operator_id</code> parameter is optional.</p>
+<h4 id="chat-assigned-to-an-operator">Chat assigned to an operator <a name="webhooksChatOperatorUpdate"></a></h4>
+<p>Method: <code>POST</code>
+URL: <code>{webhook_url}/chat/operator</code></p>
+<blockquote>
+<p>Available in versions: <code>v1</code></p>
+</blockquote>
+<pre><code>{
+  "context": {},
+  "account_id": 0,
+  "channel_id": 0,
+  "chat_id": 0,
+  "operator_id": 0
+}
+</code></pre>
+<h4 id="new-message">New message <a name="webhookMessage"></a></h4>
+<p>Method: <code>POST</code>
+URL: <code>{webhook_url}/message</code></p>
+<blockquote>
+<p>Available in versions: <code>v1</code>, <code>v2</code></p>
+</blockquote>
+<pre><code>{
+  "context": {},
+  "account_id": 0,
+  "channel_id": 0,
+  "id": 0,
+  "chat_id": 0,
+  "source": "system",
+  "operator_id": 0,
+  "reply_to_id": 0,
+  "text": "string",
+  "created_at": "2023-01-01T00:00:00.001Z",
+  "status": "accepted",
+  "resource": {
+    "id": 0,
+    "token": "string",
+    "type": "photo",
+    "name": "string",
+    "size": 0
+  },
+  "system_message_mnemonic": "string"
+}
+</code></pre>
+<p>The <code>status</code> parameter can take the following values: <code>accepted</code>, <code>delivered</code>, <code>read</code>, <code>sent</code>, <code>error</code>.</p>
+<h4 id="message-updated">Message updated <a name="webhookMessageUpdate"></a></h4>
+<p>Method: <code>POST</code>
+URL: <code>{webhook_url}/message</code></p>
+<blockquote>
+<p>Available in versions: <code>v2</code></p>
+</blockquote>
+<pre><code>{
+  "context": {},
+  "account_id": 0,
+  "channel_id": 0,
+  "id": 0,
+  "chat_id": 0,
+  "text": "string",
+  "resource": {
+    "id": 0,
+    "token": "string",
+    "type": "photo",
+    "name": "string",
+    "size": 0
+  }
+}
+</code></pre>
+<h4 id="message-status-updated">Message status updated <a name="webhooksMessageStatusUpdate"></a></h4>
+<p>Method: <code>POST</code>
+URL: <code>{webhook_url}/message/status</code></p>
+<blockquote>
+<p>Available in versions: <code>v1</code>, <code>v2</code></p>
+</blockquote>
+<pre><code>{
+  "context": {},
+  "account_id": 0,
+  "channel_id": 0,
+  "chat_id": 0,
+  "message_id": 0,
+  "status": "accepted"
+}
+</code></pre>
+<h4 id="visitor-information-updated">Visitor information updated <a name="webhooksVisitorCardUpdate"></a></h4>
+<p>Method: <code>POST</code>
+URL: <code>{webhook_url}/visitor/card</code></p>
+<blockquote>
+<p>Available in versions: <code>v1</code>, <code>v2</code></p>
+</blockquote>
+<pre><code>{
+  "context": {},
+  "account_id": 0,
+  "channel_id": 0,
+  "visitor_id": 0,
+  "visitor_card": {}
+}
+</code></pre>
+<p>Description of the <code>visitor_card</code> object:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>str</code></td>
+<td>Name</td>
+</tr>
+<tr>
+<td><code>company</code></td>
+<td><code>str</code></td>
+<td>Company</td>
+</tr>
+<tr>
+<td><code>comment</code></td>
+<td><code>str</code></td>
+<td>Comment</td>
+</tr>
+<tr>
+<td><code>phones</code></td>
+<td><code>list[str]</code></td>
+<td>List of phone numbers</td>
+</tr>
+<tr>
+<td><code>emails</code></td>
+<td><code>list[str]</code></td>
+<td>Email list</td>
+</tr>
+</tbody>
+</table>
+<h4 id="migration-from-webhook-version-v1-to-v2">Migration from webhook version <code>v1</code> to <code>v2</code></h4>
+<p>The main differences between <code>v2</code> and <code>v1</code> are:
+- instead of the <a href="#webhooksChatOperatorUpdate">chat assigned to an operator</a> webhook, the <a href="#webhooksChatUpdate">chat updated</a> webhook is used;
+- the <a href="#webhookMessageUpdate">message updated</a> webhook was added.</p>
+<h3 id="working-with-the-waba-channel-type">Working with the <code>waba</code> channel type <a name="apiChannelWaba"></a></h3>
+<p>The <code>waba</code> channel type has two key features: outgoing messages can only be initiated through predefined templates, and a conversation can continue only within the time window that opens after the visitor replies to the operator.
+Information about the templates available for use (as well as their changes) is passed in webhooks associated with the channel, in the <code>context["message_templates"]</code> attribute of type <code>list[MessageTemplate]</code>.
+To fully support <code>waba</code> templates, the adapter must implement webhook version <code>v2</code>.</p>
+<p>Structure of the <code>MessageTemplate</code> message template:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>int</code></td>
+<td>Template ID</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>str</code></td>
+<td>Template name</td>
+</tr>
+<tr>
+<td><code>content</code></td>
+<td><code>MessageTemplateContent</code></td>
+<td>Template content</td>
+</tr>
+<tr>
+<td><code>createdAt</code></td>
+<td><code>datetime</code></td>
+<td>Date and time the template was created</td>
+</tr>
+</tbody>
+</table>
+<p>Content structure of template <code>MessageTemplateContent</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text</code></td>
+<td><code>str</code></td>
+<td>Message text</td>
+</tr>
+<tr>
+<td><code>header</code></td>
+<td><code>MessageTemplateContentHeader</code></td>
+<td>Heading</td>
+</tr>
+<tr>
+<td><code>footer</code></td>
+<td><code>MessageTemplateContentFooter</code></td>
+<td>Footnote</td>
+</tr>
+<tr>
+<td><code>keyboard</code></td>
+<td><code>MessageTemplateContentKeyboard</code></td>
+<td>Menu buttons</td>
+</tr>
+</tbody>
+</table>
+<p><code>MessageTemplateContentHeader</code> message header structure:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text</code></td>
+<td><code>Optional[str]</code></td>
+<td>Title text</td>
+</tr>
+<tr>
+<td><code>headerType</code></td>
+<td><code>Optional[enum]</code></td>
+<td>Header type. Valid values: <code>TEXT</code>, <code>VIDEO</code>, <code>IMAGE</code>, <code>DOCUMENT</code></td>
+</tr>
+<tr>
+<td><code>headerExampleMediaUrl</code></td>
+<td><code>Optional[str]</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Footnote structure of message <code>MessageTemplateContentFooter</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text</code></td>
+<td><code>Optional[str]</code></td>
+<td>Footnote text</td>
+</tr>
+</tbody>
+</table>
+<p>Structure of the <code>MessageTemplateContentKeyboard</code> object:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rows</code></td>
+<td><code>list[MessageTemplateContentKeyboardRow]</code></td>
+<td>List of objects of type <code>MessageTemplateContentKeyboardRow</code></td>
+</tr>
+</tbody>
+</table>
+<p>Structure of the <code>MessageTemplateContentKeyboardRow</code> object:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>buttons</code></td>
+<td><code>list[MessageTemplateContentButton]</code></td>
+<td>List of objects of type <code>MessageTemplateContentButton</code></td>
+</tr>
+</tbody>
+</table>
+<p>Structure of the <code>MessageTemplateContentButton</code> object:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text</code></td>
+<td><code>str</code></td>
+<td>Button text</td>
+</tr>
+<tr>
+<td><code>buttonType</code></td>
+<td><code>enum</code></td>
+<td>Button type. Valid values: <code>QUICK_REPLY</code>, <code>URL</code>, <code>PHONE</code></td>
+</tr>
+<tr>
+<td><code>payload</code></td>
+<td><code>str</code></td>
+<td>Answer text. Only applicable for button type <code>QUICK_REPLY</code></td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td><code>str</code></td>
+<td>Link. Only applicable for button type <code>URL</code></td>
+</tr>
+<tr>
+<td><code>phone</code></td>
+<td><code>str</code></td>
+<td>Phone number. Only applicable for button type <code>PHONE</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="sending-a-message-using-a-template">Sending a message using a template</h4>
+<p>To send a message with a template, use the <a href="#apiMessage">sending a message</a> method. The template is passed in the <code>context[template]</code> attribute in the following format:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>int</code></td>
+<td>Template ID</td>
+</tr>
+<tr>
+<td><code>text</code></td>
+<td><code>str</code></td>
+<td>Message text</td>
+</tr>
+<tr>
+<td><code>header</code></td>
+<td><code>MessageTemplateContentHeader</code></td>
+<td>Heading</td>
+</tr>
+<tr>
+<td><code>footer</code></td>
+<td><code>MessageTemplateContentFooter</code></td>
+<td>Footnote</td>
+</tr>
+<tr>
+<td><code>keyboard</code></td>
+<td><code>MessageTemplateContentKeyboard</code></td>
+<td>Menu buttons</td>
+</tr>
+</tbody>
+</table>
+<p>Time window information is passed in the <a href="#webhookMessage">new message</a> and <a href="#webhookMessageUpdate">message updated</a> webhooks in the <code>context["conversation_frame_ts"]</code> attribute of type <code>int</code>.
+The attribute value is a unix timestamp indicating the end time of the time window. If the attribute or its value is missing, then the time window is considered to be closed.</p>
+<h2 id="examples">Examples <a name="examples"></a></h2>
+<p>This example registers an adapter, connects a channel of type <code>whatsapp</code>, creates a chat and sends a message.</p>
+<h3 id="setting-up">Setting up <a name="examplesSetup"></a></h3>
+<h4 id="obtaining-authentication-token">Obtaining authentication token <a name="examplesAuth"></a></h4>
+<p>Request:</p>
+<pre><code>POST https://go.octella.com/api/auth/json_rpc?method=login
+
+{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: &quot;1742467134&quot;,
+  &quot;method&quot;: &quot;login&quot;,
+  &quot;params&quot;: {
+    &quot;login&quot;: &quot;my_login&quot;,
+    &quot;password&quot;: &quot;my_password&quot;,
+    &quot;project&quot;: &quot;usa&quot;
+  }
+}
+</code></pre>
+<p>Answer:</p>
+<pre><code>{
+   &quot;error&quot; : null,
+   &quot;id&quot; : &quot;U7-r8Ld5BUakw2OP337Xy&quot;,
+   &quot;jsonrpc&quot; : &quot;2.0&quot;,
+   &quot;result&quot; : {
+      &quot;is_2fa_enabled&quot; : false,
+      &quot;jwt&quot; : &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c&quot;,
+      &quot;refresh&quot; : &quot;69cc054cf22042d38f39bd06bc4d7707&quot;
+   }
+}
+</code></pre>
+<p>The resulting value <code>result["jwt"]</code> is used as a token.</p>
+<h4 id="creating-the-adapter">Creating the <a name="examplesCreateAdapter"></a> adapter</h4>
+<p>Request:</p>
+<pre><code>POST https://chats-rolands-logic.octella.com/v1/integration/adapter
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+{
+  &quot;type&quot;: &quot;custom_solutions_llc_adapter&quot;,
+  &quot;name&quot;: &quot;Custom Solutions LLC Chat Adapter&quot;,
+  &quot;login&quot;: &quot;my_very_secret_and_unique_login&quot;,
+  &quot;password&quot;: &quot;something_stronger_than_just_1234567890&quot;,
+  &quot;webhook_url&quot;: &quot;https://webhook.my-custom-solutions.com/chat-integration&quot;,
+  &quot;webhook_auth&quot;: {
+    &quot;type&quot;: &quot;Basic&quot;,
+    &quot;login&quot;: &quot;my_webhook_basic_login&quot;,
+    &quot;password&quot;: &quot;my_webhook_basic_password&quot;
+  },
+  &quot;supported_channel_types&quot;: [
+    &quot;comagic&quot;,
+    &quot;whatsapp&quot;
+  ]
+}
+</code></pre>
+<p>Answer:</p>
+<pre><code>{
+  &quot;id&quot;: 322,
+  &quot;type&quot;: &quot;custom_solutions_llc_adapter&quot;,
+  &quot;name&quot;: &quot;Custom Solutions LLC Chat Adapter&quot;,
+  &quot;status&quot;: &quot;active&quot;,
+  &quot;supported_channel_types&quot;: [
+    &quot;comagic&quot;,
+    &quot;whatsapp&quot;
+  ],
+  &quot;owner&quot;: 4735,
+  &quot;visibility_status&quot;: &quot;private&quot;,
+  &quot;login&quot;: &quot;my_very_secret_and_unique_login&quot;,
+  &quot;webhook_url&quot;: &quot;https://webhook.my-custom-solutions.com/chat-integration&quot;,
+  &quot;webhook_kwargs&quot;: {}
+}
+</code></pre>
+<h4 id="getting-a-list-of-chat-channels-connected-to-your-account">Getting a list of chat channels connected to your account <a name="examplesChannelList"></a></h4>
+<p>Request:</p>
+<pre><code>GET https://chats-rolands-logic.octella.com/v1/integration/channel
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+</code></pre>
+<p>Answer:</p>
+<pre><code>[
+  {
+    &quot;id&quot;: 740805,
+    &quot;channel_id&quot;: 28910,
+    &quot;type&quot;: &quot;whatsapp&quot;,
+    &quot;name&quot;: &quot;Main Whatsapp Channel&quot;,
+    &quot;is_active&quot;: true,
+    &quot;is_removed&quot;: false,
+    &quot;status&quot;: &quot;active&quot;,
+    &quot;status_reason&quot;: &quot;&quot;
+  }
+]
+</code></pre>
+<h4 id="connecting-a-channel">Connecting a channel <a name="examplesCreateAccountAndChannel"></a></h4>
+<p>To connect the channel, the availability of the web server specified in <code>webhook_url</code> when creating the adapter is mandatory.
+The value <code>adapter_id</code> is the adapter identifier (<code>id</code>) obtained at the <a href="#examplesCreateAdapter">"creating an adapter"</a> step.
+The list <code>channels</code> indicates the channel identifiers (<code>id</code>) that need to be connected. In the example, the identifier 740805 is used, corresponding to the channel called "Main Whatsapp Channel" from the <a href="#examplesChannelList">previous step</a>.
+Request:</p>
+<pre><code>POST https://chats-rolands-logic.octella.com/v1/integration/account
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+{
+  &quot;name&quot;: &quot;Custom Solutions LLC Chat Adapter Integration&quot;,
+  &quot;adapter_id&quot;: 322,
+  &quot;channels&quot;: [740805],
+  &quot;context&quot;: {}
+}
+</code></pre>
+<p>Answer:</p>
+<pre><code>{
+  &quot;name&quot;: &quot;Custom Solutions LLC Chat Adapter Integration&quot;,
+  &quot;adapter_id&quot;: 322,
+  &quot;channels&quot;: [740805],
+  &quot;context&quot;: {},
+  &quot;id&quot;: 286,
+  &quot;status&quot;: &quot;active&quot;
+}
+</code></pre>
+<p>Webhook (account creation): <a name="examplesAccountWebhook"></a></p>
+<pre><code>POST https://webhook.my-custom-solutions.com/chat-integration/account
+Authorization: Basic bXlfd2ViaG9va19iYXNpY19sb2dpbjpteV93ZWJob29rX2Jhc2ljX3Bhc3N3b3Jk 
+
+{
+    &quot;id&quot;: 286,
+    &quot;name&quot;: &quot;Custom Solutions LLC Chat Adapter Integration&quot;,
+    &quot;adapter_id&quot;: 322,
+    &quot;client_id&quot;: 1,
+    &quot;context&quot;: {&quot;app_id&quot;: 4735},
+    &quot;status&quot;: &quot;active&quot;
+}
+</code></pre>
+<p>Webhook (channel creation): <a name="examplesChannelWebhook"></a></p>
+<pre><code>POST https://webhook.my-custom-solutions.com/chat-integration/channel
+Authorization: Basic bXlfd2ViaG9va19iYXNpY19sb2dpbjpteV93ZWJob29rX2Jhc2ljX3Bhc3N3b3Jk
+
+{
+    &quot;id&quot;: 3580,
+    &quot;name&quot;: &quot;Main Whatsapp Channel&quot;,
+    &quot;type&quot;: &quot;whatsapp&quot;,
+    &quot;account_id&quot;: 286,
+    &quot;context&quot;: {&quot;app_id&quot;: 4735, &quot;chat_channel_id&quot;: 740805},
+    &quot;status&quot;: &quot;active&quot;
+}
+</code></pre>
+<h3 id="using-the-adapter">Using the <a name="examplesUsage"></a> adapter</h3>
+<h4 id="obtaining-an-adapter-token">Obtaining an adapter token <a name="examplesAdapterAuth"></a></h4>
+<p>Request:</p>
+<pre><code>POST https://rl-lat-chat-integration.octe.cc/v1/adapter/login
+Content-Type: application/x-www-form-urlencoded
+
+username=my_very_secret_and_unique_login&amp;password=something_stronger_than_just_1234567890
+</code></pre>
+<p>Answer:</p>
+<pre><code>{
+  &quot;access_token&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...RMagvgqDBSD8xlr18E8M-8vNazAZwN_01YZopaq7-zg&quot;,
+  &quot;token_type&quot;: &quot;bearer&quot;,
+  &quot;expires_at&quot;: 1742541741
+}
+</code></pre>
+<p>For all subsequent Chat API requests, pass the received <code>access_token</code> in the <code>Authorization</code> header.</p>
+<h4 id="creating-a-chat_1">Creating a chat <a name="examplesCreateChat"></a></h4>
+<p>Request:</p>
+<pre><code>POST https://rl-lat-chat-integration.octe.cc/v1/adapter/chat
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+{
+ &quot;account_id&quot;: 286,
+ &quot;channel_id&quot;: 3580,
+ &quot;visitor_phone&quot;: &quot;74959268686&quot;,
+ &quot;operator_id&quot;: 367852,
+ &quot;initiator&quot;: &quot;operator&quot;,
+ &quot;created_at&quot;: &quot;2025-03-21T05:00:00.000+00:00&quot;
+}
+</code></pre>
+<p>In this and subsequent requests, <code>account_id</code> uses the account ID returned by the <a href="#examplesAccountWebhook">account-created webhook</a>, and <code>channel_id</code> uses the channel ID returned by the <a href="#examplesChannelWebhook">channel-created webhook</a>.
+The employee ID (<code>operator_id</code>) was obtained from the Data API using the <code>get.employees</code> method.</p>
+<p>Answer:</p>
+<pre><code>{
+  &quot;context&quot;: {},
+  &quot;account_id&quot;: 286,
+  &quot;channel_id&quot;: 3580,
+  &quot;chat_id&quot;: 199304420,
+  &quot;visitor_id&quot;: 9012381597,
+  &quot;visitor_phone&quot;: &quot;74959268686&quot;,
+  &quot;visitor_email&quot;: null,
+  &quot;visitor_username&quot;: null,
+  &quot;operator_id&quot;: 367852,
+  &quot;initiator&quot;: &quot;operator&quot;,
+  &quot;created_at&quot;: &quot;2025-03-21T05:00:00.248137+00:00&quot;
+}
+</code></pre>
+<p>Webhook with a system message about the start of the chat:</p>
+<pre><code>POST https://webhook.my-custom-solutions.com/chat-integration/message
+Authorization: Basic bXlfd2ViaG9va19iYXNpY19sb2dpbjpteV93ZWJob29rX2Jhc2ljX3Bhc3N3b3Jk
+
+{
+    &quot;context&quot;: {&quot;app_id&quot;: 4735, &quot;chat_channel_id&quot;: 740805},
+    &quot;account_id&quot;: 286,
+    &quot;channel_id&quot;: 3580,
+    &quot;id&quot;: 623010892,
+    &quot;chat_id&quot;: 199304420,
+    &quot;source&quot;: &quot;system&quot;,
+    &quot;operator_id&quot;: null,
+    &quot;reply_to_id&quot;: null,
+    &quot;text&quot;: &quot;Chat started by operator Marina&quot;,
+    &quot;created_at&quot;: &quot;2025-03-21T05:00:00.248137+00:00&quot;,
+    &quot;status&quot;: &quot;sent&quot;,
+    &quot;resource&quot;: null,
+    &quot;system_message_mnemonic&quot;: &quot;chat_started&quot;
+}
+</code></pre>
+<h4 id="sending-a-message-to-a-chat">Sending a message to a chat</h4>
+<p>Request:</p>
+<pre><code>POST https://rl-lat-chat-integration.octe.cc/v1/adapter/message
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+{
+  &quot;account_id&quot;: 286,
+  &quot;channel_id&quot;: 3580,
+  &quot;chat_id&quot;: 199304420,
+  &quot;source&quot;: &quot;operator&quot;,
+  &quot;operator_id&quot;: 367852,
+  &quot;text&quot;: &quot;Message from the operator&quot;,
+  &quot;created_at&quot;: &quot;2025-03-21T05:00:01+00:00&quot;
+}
+</code></pre>
+<p>Use the <code>chat_id</code> returned by the <a href="#examplesCreateChat">create-a-chat request</a>.</p>
+<p>Answer:</p>
+<pre><code>{
+  &quot;context&quot;: null,
+  &quot;account_id&quot;: 286,
+  &quot;channel_id&quot;: 3580,
+  &quot;id&quot;: 623010897,
+  &quot;chat_id&quot;: 199304420,
+  &quot;source&quot;: &quot;operator&quot;,
+  &quot;operator_id&quot;: 367852,
+  &quot;reply_to_id&quot;: null,
+  &quot;text&quot;: &quot;Message from the operator&quot;,
+  &quot;created_at&quot;: &quot;2025-03-21T05:00:01+00:00&quot;,
+  &quot;status&quot;: null,
+  &quot;resource&quot;: null,
+  &quot;system_message_mnemonic&quot;: null
+}
+</code></pre>
+<p>Webhook with message delivery status:</p>
+<pre><code>POST https://webhook.my-custom-solutions.com/chat-integration/message/status
+Authorization: Basic bXlfd2ViaG9va19iYXNpY19sb2dpbjpteV93ZWJob29rX2Jhc2ljX3Bhc3N3b3Jk
+
+{
+    &quot;context&quot;: {&quot;app_id&quot;: 4735, &quot;chat_channel_id&quot;: 740805},
+    &quot;account_id&quot;: 286,
+    &quot;channel_id&quot;: 3580,
+    &quot;chat_id&quot;: 199304420,
+    &quot;message_id&quot;: 623010897,
+    &quot;status&quot;: &quot;delivered&quot;
+}
+</code></pre>
+<h2 id="change-log">Change Log <a name="changelog"></a></h2>
+<h3 id="1100-2025-05-15">1.10.0 (2025-05-15)</h3>
+<ul>
+<li>Information about channels has been clarified, <a href="#apiChat">supporting initialization of communication</a>.</li>
+</ul>
+<h3 id="190-2025-04-11">1.9.0 (2025-04-11)</h3>
+<ul>
+<li>The documentation on creating the adapter has been clarified (indication of <code>webhook_version</code>).</li>
+</ul>
+<h3 id="180-2025-03-20">1.8.0 (2025-03-20)</h3>
+<ul>
+<li>Added section <a href="#examples">"Examples"</a>.</li>
+</ul>
+<h3 id="170-2024-12-09">1.7.0 (2024-12-09)</h3>
+<ul>
+<li>Added information about the new version of webhooks <code>v2</code>.</li>
+<li>The list of channel types that the adapter can use has been expanded.</li>
+<li>Added information about working with channel type <code>waba</code>.</li>
+</ul>
+<h3 id="160-2024-10-01">1.6.0 (2024-10-01)</h3>
+<ul>
+<li>Added information about the new attribute of the <code>webhook_auth</code> adapter.</li>
+</ul>
+<h3 id="151-2024-09-26">1.5.1 (2024-09-26)</h3>
+<ul>
+<li>Added information about webhooks in the <a href="#agreements">Conventions</a> section.</li>
+</ul>
+<h3 id="150-2024-04-11">1.5.0 (2024-04-11)</h3>
+<ul>
+<li>Added information about versioning webhooks.</li>
+<li>Added implementation of the chat end method.</li>
+<li>Added a new method for chat transfer.</li>
+</ul>
+<h3 id="140-2023-09-18">1.4.0 (2023-09-18)</h3>
+<p>Added information about obtaining an authentication token (login to your Personal Account).</p>
+<h3 id="130-2023-09-18">1.3.0 (2023-09-18)</h3>
+<p>The redundant attribute <code>visitor_id</code> has been removed from the new message event.</p>
+<h3 id="120-2023-09-14">1.2.0 (2023-09-14)</h3>
+<p>The redundant attributes <code>app_id</code> and <code>site_id</code> have been removed from all events.</p>
+<h3 id="110-2023-09-13">1.1.0 (2023-09-13)</h3>
+<p>Updated authentication information.</p>
+<h3 id="100-2023-09-12">1.0.0 (2023-09-12)</h3>
+<p>Initial version.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="js/init.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1770 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Retrieves offline messages. - DATA API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#retrieves-offline-messages" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DATA API" class="md-header__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DATA API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Retrieves offline messages.
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DATA API" class="md-nav__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DATA API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        General Information
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/" class="md-nav__link">
+        Permissions and Components
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../account/get_account/" class="md-nav__link">
+        Account
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vn/" class="md-nav__link">
+        Virtual Numbers and Rules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sip/" class="md-nav__link">
+        SIP Lines
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scenario/get_scenarios/" class="md-nav__link">
+        Scenarios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user_media/get_media_files/" class="md-nav__link">
+        Media Files
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaigns/" class="md-nav__link">
+        Ad Campaigns
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/" class="md-nav__link">
+        Sources
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../auto_calls/" class="md-nav__link">
+        Outbound Calls
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sales_funnel_and_deals/" class="md-nav__link">
+        Sales Funnels and Deals
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sites/" class="md-nav__link">
+        Sites
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/" class="md-nav__link">
+        Reports
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../employees/" class="md-nav__link">
+        Employees
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contacts/" class="md-nav__link">
+        Contacts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blacklist/" class="md-nav__link">
+        Blacklist
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schedules/" class="md-nav__link">
+        Schedules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../partners/" class="md-nav__link">
+        Agents' Customers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../communications/" class="md-nav__link">
+        Communications
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../persons/" class="md-nav__link">
+        Person / Visitor
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#retrieves-offline-messages" class="md-nav__link">
+    Retrieves offline messages
+  </a>
+  
+    <nav class="md-nav" aria-label="Retrieves offline messages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters" class="md-nav__link">
+    Request parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters" class="md-nav__link">
+    Response parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-request" class="md-nav__link">
+    Example request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-response" class="md-nav__link">
+    Example response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#possible-errors" class="md-nav__link">
+    Possible errors
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Retrieves offline messages.</h1>
+                
+                <nav>
+<a href="../../reports">Reports</a> >
+Retrieves offline messages.
+</nav>
+
+<h2 id="retrieves-offline-messages">Retrieves offline messages</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;"><code>get.offline_messages_report</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Description</td>
+<td style="text-align: left;">Retrieves offline messages.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Who has access</td>
+<td style="text-align: left;">Partners and clients</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-parameters">Request parameters</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: center;">Required</th>
+<th style="text-align: left;">Valid values</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>access_token</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Authentication session key</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>user_id</code></td>
+<td style="text-align: left;">number</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Unique user identifier of the agent client on behalf of which the request is made (Is required for the agent) To obtain a list of client users, you must use the method "<a href="../../partner/get_customer_users/">"get.customer_users"</a>"</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>limit</code></td>
+<td style="text-align: left;">number</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Number of records returned. See section "Paging"</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>offset</code></td>
+<td style="text-align: left;">number</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Shift determines from which record number to return <code>"limit"</code> records. Default is "0". See section "Paging"</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>filter</code></td>
+<td style="text-align: left;">object</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">See section "Filtering Criteria"</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sort</code></td>
+<td style="text-align: left;">array</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">See section "Sorting data"</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>date_from</code></td>
+<td style="text-align: left;">iso8601</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: left;">YYYY-MM-DD hh:mm:ss</td>
+<td style="text-align: left;">Start date and time of the reporting period.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>date_till</code></td>
+<td style="text-align: left;">iso8601</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: left;">YYYY-MM-DD hh:mm:ss</td>
+<td style="text-align: left;">Sampling end date</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>include_tech_offline_messages</code></td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Include technical requests that are not customer communications</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-parameters">Response parameters</h3>
+<table>
+    <tbody>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Valid values</th>
+            <th>Filtering</th>
+            <th>Sorting</th>
+            <th>Default response</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><code>id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td>yes</td>
+            <td>Unique offline message ID.</td>
+        </tr>
+        <tr>
+            <td><code>date_time</code></td>
+            <td>iso8601</td>
+            <td>YYYY-MM-DD hh:mm:ss</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Date and time of receipt of the application</td>
+        </tr>
+        <tr>
+            <td><code>text</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>yes</td>
+            <td>Application text</td>
+        </tr>
+        <tr>
+            <td><code>communication_number</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>Call number. Calculated within persons.</td>
+        </tr>
+        <tr>
+            <td><code>communication_page_url</code></td>
+            <td>string</td>
+            <td></td>
+            <td>no</td>
+            <td>no</td>
+            <td>no</td>
+            <td>
+                The URL of the page the visitor was on at the time of the call or the page of the visitor's last interaction before the call.
+            </td>
+        </tr>
+        <tr>
+            <td><code>communication_type</code></td>
+            <td>enum</td>
+            <td><code>offline_message</code></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Communication type.</td>
+        </tr><tr>
+            <td><code>communication_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td>yes</td>
+            <td>Unique communication ID.</td>
+        </tr>
+        <tr>
+            <td><code>is_agree_to_process_personal_data</code></td>
+            <td>boolean</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>yes</td>
+            <td>Denotes the client's consent to the processing of his personal data</td>
+        </tr>
+        <tr>
+            <td><code>is_agree_to_mailing</code></td>
+            <td>boolean</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>yes</td>
+            <td>Denotes the client's consent to advertising and information mailings</td>
+        </tr>
+        <tr>
+            <td><code>ua_client_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Unique identifier in Universal Analytics</td>
+        </tr>
+        <tr>
+            <td><code>ym_client_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Unique Yandex.Metrica user identifier</td>
+        </tr>
+        <tr>
+            <td><code>sale_date</code></td>
+            <td>iso8601</td>
+            <td>YYY-MM-DD hh:mm:ss</td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>Trade date</td>
+        </tr>
+        <tr>
+            <td><code>sale_cost</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>Transaction amount</td>
+        </tr>
+        <tr>
+            <td><code>status</code></td>
+            <td>enum</td>
+            <td>
+                <code>processing</code> <code>processed</code> <code>not_processed</code>
+            </td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>Application status</td>
+        </tr>
+        <tr>
+            <td><code>process_time</code></td>
+            <td>iso8601</td>
+            <td>YYYY-MM-DD hh:mm:ss</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Date and time when the application was submitted transferred to the status "Processed" (see parameter <code>"status"</code>)</td>
+        </tr>
+        <tr>
+            <td><code>form_type</code></td>
+            <td>enum</td>
+            <td>Custom, Standard, DataAPI</td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>Type of form used to submit the offline message.</td>
+        </tr>
+        <tr>
+            <td><code>form_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>Name of the application form, if the form_name parameter is filled in when submitting the application to our service: https://www.callgear.com/support/api/javascript-api/</td>
+        </tr>
+        <tr>
+            <td><code>search_query</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Search query</td>
+        </tr>
+        <tr>
+            <td><code>search_engine</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Search engine name</td>
+        </tr>
+        <tr>
+            <td><code>referrer_domain</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Referrer domain</td>
+        </tr>
+        <tr>
+            <td><code>referrer</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Transition source</td>
+        </tr>
+        <tr>
+            <td><code>entrance_page</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Login page</td>
+        </tr>
+        <tr>
+            <td><code>gclid</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Google Click Identifier</td>
+        </tr>
+        <tr>
+            <td><code>yclid</code></td>
+            <td>string</td><td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Yandex Click Identifier</td>
+        </tr>
+        <tr>
+            <td><code>ymclid</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Yandex Market Click Identifier</td>
+        </tr>
+        <tr>
+            <td><code>ef_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Used for markup links in the control system contextual advertising AdLense</td>
+        </tr>
+        <tr>
+            <td><code>channel</code></td>
+            <td>enum</td>
+            <td>
+                <code>display</code> <code>paid</code> <code>affiliate</code> <code>messenger</code> <code>social</code> <code>email</code> <code>organic</code> <code>internal</code> <code>recommendation</code> <code>cashed</code> <code>referral</code> <code>direct</code>
+            </td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Channel.</td>
+        </tr>
+        <tr>
+            <td><code>properties</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>yes</td>
+            <td>Callback forms may have a field with a comment (text). If the user leaves a comment (text) when generating a call back, it will be displayed in this field.</td>
+        </tr>
+        <tr>
+            <td colspan="7">Group selected by the visitor</td>
+        </tr>
+        <tr>
+            <td><code>group_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>Unique identifier group selected by the visitor</td>
+        </tr>
+        <tr>
+            <td><code>group_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>Name of the selected group visitor</td>
+        </tr>
+        <tr>
+            <td colspan="7">Employee</td>
+        </tr>
+        <tr>
+            <td><code>employee_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>Unique identifier employee who processed application</td>
+        </tr>
+        <tr>
+            <td><code>employee_full_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>Last name First name of the Employee, who processed the application</td>
+        </tr>
+        <tr>
+            <td><code>employee_answer_message</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Answer from the employee who was sent to email address visitor email</td>
+        </tr>
+        <tr>
+            <td><code>employee_comment</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Employee's comment when transferring the application to status "Processed" (see field <code>"status"</code>)</td>
+        </tr>
+        <tr>
+            <td colspan="7">Added tags</td>
+        </tr>
+        <tr>
+            <td><code>tags</code></td>
+            <td>array</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Tags, see method <code>"<a href="../../tag/get_tags"><code>get.tags</code></a>"</code></td>
+        </tr>
+        <tr>
+            <td><code>tag_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Unique tag identifier</td>
+        </tr>
+        <tr>
+            <td><code>tag_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Tag name</td>
+        </tr><tr>
+            <td><code>tag_change_time</code></td>
+            <td>iso8601</td>
+            <td>YYYY-MM-DD hh:mm:ss</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Tag insertion time</td>
+        </tr>
+        <tr>
+            <td><code>tag_type</code></td>
+            <td>enum</td>
+            <td><code>auto</code>, <code>manual</code></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Tag type</td>
+        </tr>
+        <tr>
+            <td><code>tag_user_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Unique identifier the user who entered tag</td>
+        </tr>
+        <tr>
+            <td><code>tag_user_login</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Login of the user who added tag</td>
+        </tr>
+        <tr>
+            <td><code>tag_employee_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Unique identifier employee who entered tag</td>
+        </tr>
+        <tr>
+            <td><code>tag_employee_full_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Full name of employee who added tag</td>
+        </tr>
+        <tr>
+            <td colspan="7">Website</td>
+        </tr>
+        <tr>
+            <td><code>site_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>Unique site identifier</td>
+        </tr>
+        <tr>
+            <td><code>site_domain_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>
+                Internet site address. Without protocol instructions - <code>"http://"</code> or <code>"https://"</code>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="7">Advertising campaign</td>
+        </tr>
+        <tr>
+            <td><code>campaign_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>Unique identifier advertising campaign</td>
+        </tr>
+        <tr>
+            <td><code>campaign_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Advertising campaign name</td>
+        </tr>
+        <tr>
+            <td><code>visit_other_campaign</code></td>
+            <td>boolean</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>The flag shows whether you have visited visitor (within person) for other advertising campaigns</td>
+        </tr>
+        <tr>
+            <td colspan="7">Visitor information</td>
+        </tr>
+        <tr>
+            <td><code>visitor_phone_number</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td>yes</td>
+            <td>Visitor phone number left in the application</td>
+        </tr>
+        <tr>
+            <td><code>visitor_email</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td>yes</td>
+            <td>Email address left by the visitor</td>
+        </tr>
+        <tr>
+            <td><code>visitor_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td>yes</td>
+            <td>Name left by the visitor when submitting an application</td>
+        </tr>
+        <tr>
+            <td><code>visitor_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>Unique visitor identifier</td>
+        </tr>
+        <tr>
+            <td><code>person_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>Unique identifier persons</td>
+        </tr>
+        <tr>
+            <td><code>visitor_type</code></td>
+            <td>enum</td>
+            <td>new, returning, unknown</td>
+            <td>yes</td><td>yes</td>
+            <td></td>
+            <td>Visitor type</td>
+        </tr>
+        <tr>
+            <td><code>visitor_session_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td>yes</td>
+            <td>Unique identifier visitor sessions, see <code>"<a href="../get_visitor_sessions_report"><code>get.visitor_sessions_report</code></a>"</code></td>
+        </tr>
+        <tr>
+            <td><code>visits_count</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Total number of visits visitor</td>
+        </tr>
+        <tr>
+            <td><code>visitor_first_campaign_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Unique identifier first advertising campaign.</td>
+        </tr>
+        <tr>
+            <td><code>visitor_first_campaign_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Name of the first advertisement campaigns</td>
+        </tr>
+        <tr>
+            <td><code>visitor_city</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Visitor city</td>
+        </tr>
+        <tr>
+            <td><code>visitor_country</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Visitor country</td>
+        </tr>
+        <tr>
+            <td><code>visitor_region</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Visitor region</td>
+        </tr>
+        <tr>
+            <td><code>visitor_device</code></td>
+            <td>enum</td>
+            <td>
+                <code>desktop</code> <code>mobile</code> <code>tablet</code> <code>other</code>
+            </td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>Visitor device</td>
+        </tr>
+        <tr>
+            <td colspan="7">Visitor properties</td>
+        </tr>
+        <tr>
+            <td><code>visitor_custom_properties</code></td>
+            <td>array</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>
+                Visitor properties that can be asked via personal office or using JavaScript API [method <code>Comagic.setProperty(name, value);</code>]
+            </td>
+        </tr>
+        <tr>
+            <td><code>property_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>The name of the property that should be assigned to the visitor</td>
+        </tr>
+        <tr>
+            <td><code>property_value</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Property value</td>
+        </tr>
+        <tr>
+            <td colspan="7">Segments</td>
+        </tr>
+        <tr>
+            <td><code>segments</code></td>
+            <td>array</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Segments</td>
+        </tr>
+        <tr>
+            <td><code>segment_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Unique identifier segment</td>
+        </tr>
+        <tr>
+            <td><code>segment_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Segment name</td>
+        </tr>
+        <tr>
+            <td colspan="7">UTM tags</td>
+        </tr>
+        <tr>
+            <td><code>utm_source</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Campaign source</td>
+        </tr>
+        <tr>
+            <td><code>utm_medium</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Campaign Channel</td>
+        </tr>
+        <tr>
+            <td><code>utm_term</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Campaign keyword</td>
+        </tr>
+        <tr><td><code>utm_content</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Campaign content</td>
+        </tr>
+        <tr>
+            <td><code>utm_campaign</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Campaign name</td>
+        </tr>
+        <tr>
+            <td colspan="7">OS tags</td>
+        </tr>
+        <tr>
+            <td><code>openstat_ad</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Advertising ID announcements</td>
+        </tr>
+        <tr>
+            <td><code>openstat_campaign</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Advertising ID campaigns</td>
+        </tr>
+        <tr>
+            <td><code>openstat_service</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Service ID, service provider</td>
+        </tr>
+        <tr>
+            <td><code>openstat_source</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Site ID, section, page, place on the page on which it was shown corresponding advertisement</td>
+        </tr>
+        <tr>
+            <td colspan="7">Hit attributes</td>
+        </tr>
+        <tr>
+            <td><code>attributes</code></td>
+            <td>array</td>
+            <td>
+                <code>first</code> - First quality <code>through</code> - End-to-end first quality <code>primary</code> - Primary <code>secondary</code> - Secondary <code>lost</code> - Lost <code>target</code> - Target <code>off-target</code> - Not targeted <code>quality</code> - Quality <code>rest</code> - target repeat requests (requests made during the period of repeated requests configured for the site in the CallGear account).
+            </td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>
+                    Case attributes
+            </td>
+        </tr>
+        <tr>
+            <td colspan="7">Extended UTM tags</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_source</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Extended utm_source</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_medium</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Extended utm_medium</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_term</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Extended utm_term</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_content</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Extended utm_content</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_campaign</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Extended utm_campaign</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_referrer</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Extended utm_referrer</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_expid</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td></td>
+            <td>Extended utm_expid</td>
+        </tr>
+        <tr>
+      <td colspan="7">Source information</td>
+    </tr>
+    <tr>
+      <td><code>source_id</code></td>
+      <td>number</td><td></td>
+      <td>yes</td>
+      <td>yes</td>
+      <td></td>
+      <td>Source ID</td>
+    </tr>
+    <tr>
+      <td><code>source_name</code></td>
+      <td>string</td>
+      <td></td>
+      <td>yes</td>
+      <td>yes</td>
+      <td></td>
+      <td>Source. Source name</td>
+    </tr>
+    <tr>
+      <td><code>source_new</code></td>
+      <td>string</td>
+      <td></td>
+      <td>yes</td>
+      <td>yes</td>
+      <td></td>
+      <td>Source group</td>
+    </tr>
+    <tr>
+      <td><code>channel_new</code></td>
+      <td>string</td>
+      <td></td>
+      <td>yes</td>
+      <td>yes</td>
+      <td></td>
+      <td>Channel(new). Source channel name</td>
+    </tr>
+    <tr>
+      <td><code>channel_code</code></td>
+      <td>string</td>
+      <td></td>
+      <td>yes</td>
+      <td>yes</td>
+      <td></td>
+      <td>Channel mnemonic</td>
+    </tr>
+
+
+        <tr>
+            <td><code>ext_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td></td>
+            <td>Unique request ID in your system.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="example-request">Example request</h3>
+<pre><code class="language-json">{
+&quot;jsonrpc&quot;:&quot;2.0&quot;,
+&quot;id&quot;:&quot;number&quot;,
+&quot;method&quot;:&quot;get.offline_messages_report&quot;,
+&quot;params&quot;:{
+&quot;access_token&quot;:&quot;string&quot;,
+&quot;user_id&quot;:&quot;number&quot;,
+&quot;offset&quot;:&quot;number&quot;,
+&quot;limit&quot;:&quot;number&quot;,
+&quot;date_from&quot;:&quot;iso8601&quot;,
+&quot;date_till&quot;:&quot;iso8601&quot;,
+&quot;filter&quot;:{
+},
+&quot;sort&quot;:[
+{
+&quot;field&quot;:&quot;string&quot;,
+&quot;order&quot;:&quot;string&quot;
+}
+],
+&quot;fields&quot;:[
+&quot;string&quot;
+]
+
+}
+}
+</code></pre>
+<h3 id="example-response">Example response</h3>
+<pre><code class="language-json">{
+&quot;jsonrpc&quot;:&quot;2.0&quot;,
+&quot;id&quot;:&quot;number&quot;,
+&quot;result&quot;:{
+&quot;metadata&quot;:{
+
+},
+&quot;data&quot;:[
+{
+&quot;id&quot;:&quot;number&quot;,
+&quot;date_time&quot;:&quot;iso8601&quot;,
+&quot;text&quot;:&quot;string&quot;,
+&quot;communication_number&quot;:&quot;number&quot;,
+&quot;communication_page_url&quot;: &quot;string&quot;,
+&quot;communication_type&quot;:&quot;enum&quot;,
+&quot;communication_id&quot;:&quot;number&quot;,
+&quot;is_agree_to_process_personal_data&quot;:&quot;boolean&quot;,
+&quot;is_agree_to_mailing&quot;:&quot;boolean&quot;,
+&quot;ua_client_id&quot;:&quot;string&quot;,
+&quot;ym_client_id&quot;: &quot;string&quot;,
+&quot;sale_date&quot;:&quot;iso8601&quot;,
+&quot;sale_cost&quot;:&quot;number&quot;,
+&quot;status&quot;:&quot;enum&quot;,
+&quot;process_time&quot;:&quot;iso8601&quot;,
+&quot;form_type&quot;:&quot;enum&quot;,
+&quot;form_name&quot;:&quot;string&quot;,
+&quot;search_query&quot;:&quot;string&quot;,
+&quot;search_engine&quot;:&quot;string&quot;,
+&quot;referrer_domain&quot;:&quot;string&quot;,
+&quot;referrer&quot;:&quot;string&quot;,
+&quot;entrance_page&quot;:&quot;string&quot;,
+&quot;gclid&quot;:&quot;string&quot;,
+&quot;yclid&quot;:&quot;string&quot;,
+&quot;ymclid&quot;:&quot;string&quot;,
+&quot;ef_id&quot;:&quot;string&quot;,
+&quot;channel&quot;:&quot;enum&quot;,
+&quot;employee_id&quot;:&quot;number&quot;,
+&quot;employee_full_name&quot;:&quot;string&quot;,
+&quot;employee_answer_message&quot;:&quot;string&quot;,
+&quot;employee_comment&quot;:&quot;string&quot;,
+&quot;tags&quot;:[
+{
+&quot;tag_id&quot;:&quot;number&quot;,
+&quot;tag_name&quot;:&quot;string&quot;,
+&quot;tag_type&quot;:&quot;enum&quot;,
+&quot;tag_change_time&quot;:&quot;iso8601&quot;,
+&quot;tag_user_id&quot;:&quot;number&quot;,
+&quot;tag_user_login&quot;:&quot;string&quot;,
+&quot;tag_employee_id&quot;:&quot;number&quot;,
+&quot;tag_employee_full_name&quot;:&quot;string&quot;
+}
+],
+&quot;site_id&quot;:&quot;number&quot;,
+&quot;site_domain_name&quot;:&quot;string&quot;,
+&quot;group_id&quot;:&quot;number&quot;,
+&quot;group_name&quot;:&quot;string&quot;,
+&quot;campaign_id&quot;:&quot;number&quot;,
+&quot;campaign_name&quot;:&quot;string&quot;,
+&quot;visit_other_campaign&quot;:&quot;boolean&quot;,
+&quot;visitor_id&quot;:&quot;number&quot;,
+&quot;visitor_name&quot;:&quot;string&quot;,
+&quot;visitor_phone_number&quot;:&quot;number&quot;,
+&quot;visitor_email&quot;:&quot;string&quot;,
+&quot;person_id&quot;:&quot;number&quot;,
+&quot;visitor_type&quot;:&quot;enum&quot;,
+&quot;visitor_session_id&quot;:&quot;number&quot;,
+&quot;visits_count&quot;:&quot;number&quot;,
+&quot;visitor_first_campaign_id&quot;:&quot;number&quot;,
+&quot;visitor_first_campaign_name&quot;:&quot;string&quot;,
+&quot;visitor_city&quot;:&quot;string&quot;,
+&quot;visitor_region&quot;:&quot;string&quot;,
+&quot;visitor_country&quot;:&quot;string&quot;,
+&quot;visitor_device&quot;:&quot;enum&quot;,
+&quot;visitor_custom_properties&quot;:[
+{
+&quot;property_name&quot;:&quot;string&quot;,
+&quot;property_value&quot;:&quot;string&quot;
+}
+],
+&quot;segments&quot;:[
+{
+&quot;segment_id&quot;:&quot;number&quot;,
+&quot;segment_name&quot;:&quot;string&quot;
+}
+],
+&quot;utm_source&quot;:&quot;string&quot;,
+&quot;utm_medium&quot;:&quot;string&quot;,
+&quot;utm_term&quot;:&quot;string&quot;,
+&quot;utm_content&quot;:&quot;string&quot;,
+&quot;utm_campaign&quot;:&quot;string&quot;,
+&quot;openstat_ad&quot;:&quot;string&quot;,
+&quot;openstat_campaign&quot;:&quot;string&quot;,
+&quot;openstat_service&quot;:&quot;string&quot;,
+&quot;openstat_source&quot;:&quot;string&quot;,
+&quot;eq_utm_source&quot;: &quot;string&quot;,
+&quot;eq_utm_medium&quot;: &quot;string&quot;,
+&quot;eq_utm_term&quot;: &quot;string&quot;,
+&quot;eq_utm_content&quot;: &quot;string&quot;,
+&quot;eq_utm_campaign&quot;: &quot;string&quot;,
+&quot;eq_utm_referrer&quot;: &quot;string&quot;,
+&quot;eq_utm_expid&quot;: &quot;string&quot;,
+&quot;attributes&quot;:[
+
+],
+&quot;source_id&quot;: &quot;number&quot;,
+&quot;source_name&quot;: &quot;string&quot;,
+&quot;source_new&quot;: &quot;string&quot;,
+&quot;channel_new&quot;: &quot;string&quot;,
+&quot;channel_code&quot;: &quot;string&quot;,
+&quot;ext_id&quot;: &quot;string&quot;,
+&quot;properties&quot;: &quot;string&quot;
+}
+]
+}
+}
+</code></pre>
+<h3 id="possible-errors">Possible errors</h3>
+<p>See the <a href="../..#_getErrors">"Errors for get methods"</a> section.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../../js/init.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1359 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Retrieves call detail records (CDRs) for call sessions. - DATA API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#retrieves-call-detail-records-cdrs-for-call-sessions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DATA API" class="md-header__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DATA API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Retrieves call detail records (CDRs) for call sessions.
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DATA API" class="md-nav__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DATA API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        General Information
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/" class="md-nav__link">
+        Permissions and Components
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../account/get_account/" class="md-nav__link">
+        Account
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vn/" class="md-nav__link">
+        Virtual Numbers and Rules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sip/" class="md-nav__link">
+        SIP Lines
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scenario/get_scenarios/" class="md-nav__link">
+        Scenarios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user_media/get_media_files/" class="md-nav__link">
+        Media Files
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaigns/" class="md-nav__link">
+        Ad Campaigns
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/" class="md-nav__link">
+        Sources
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../auto_calls/" class="md-nav__link">
+        Outbound Calls
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sales_funnel_and_deals/" class="md-nav__link">
+        Sales Funnels and Deals
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sites/" class="md-nav__link">
+        Sites
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/" class="md-nav__link">
+        Reports
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../employees/" class="md-nav__link">
+        Employees
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contacts/" class="md-nav__link">
+        Contacts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blacklist/" class="md-nav__link">
+        Blacklist
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schedules/" class="md-nav__link">
+        Schedules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../partners/" class="md-nav__link">
+        Agents' Customers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../communications/" class="md-nav__link">
+        Communications
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../persons/" class="md-nav__link">
+        Person / Visitor
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#retrieves-call-detail-records-cdrs-for-call-sessions" class="md-nav__link">
+    Retrieves call detail records (CDRs) for call sessions
+  </a>
+  
+    <nav class="md-nav" aria-label="Retrieves call detail records (CDRs) for call sessions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters" class="md-nav__link">
+    Request parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters" class="md-nav__link">
+    Response parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call-leg-completion-reasons" class="md-nav__link">
+    Call leg completion reasons
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-request" class="md-nav__link">
+    Example request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-response" class="md-nav__link">
+    Example response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#possible-errors" class="md-nav__link">
+    Possible errors
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Retrieves call detail records (CDRs) for call sessions.</h1>
+                
+                <nav>
+<a href="../../reports">Reports</a> >
+Retrieves call detail records (CDRs) for call sessions.
+</nav>
+
+<h2 id="retrieves-call-detail-records-cdrs-for-call-sessions">Retrieves call detail records (CDRs) for call sessions</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;"><code>get.call_legs_report</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Description</td>
+<td style="text-align: left;">Retrieves call detail records (CDRs) for call sessions.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Who has access</td>
+<td style="text-align: left;">Partners and clients</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-parameters">Request parameters</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: center;">Required</th>
+<th style="text-align: left;">Valid values</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>access_token</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Authentication session key</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>user_id</code></td>
+<td style="text-align: left;">number</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Unique user identifier of the agent client on behalf of which the request is made (Is required for the agent) To obtain a list of client users, you must use the method "<a href="../../partner/get_customer_users/">"get.customer_users"</a>"</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>limit</code></td>
+<td style="text-align: left;">number</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Number of records returned. See section "Paging"</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>offset</code></td>
+<td style="text-align: left;">number</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Shift determines from which record number to return <code>"limit"</code> records. The default is "0". See section "Paging"</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>filter</code></td>
+<td style="text-align: left;">object</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">See section "Filtering Criteria"</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sort</code></td>
+<td style="text-align: left;">array</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">See section "Sorting data"</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>date_from</code></td>
+<td style="text-align: left;">iso8601</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: left;">YYYY-MM-DD hh:mm:ss</td>
+<td style="text-align: left;">Start date and time of the reporting period.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>date_till</code></td>
+<td style="text-align: left;">iso8601</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: left;">YYYY-MM-DD hh:mm:ss</td>
+<td style="text-align: left;">End date and time of the reporting period.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-parameters">Response parameters</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Valid values</th>
+<th style="text-align: left;">Filtering</th>
+<th style="text-align: left;">Sorting</th>
+<th style="text-align: left;">Default response</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Unique CDR identifier</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>call_session_id</code></td>
+<td style="text-align: left;">number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Unique call session identifier (see <a href="../get_calls_report/">"get.calls_report"</a> method)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>call_records</code></td>
+<td style="text-align: left;">array</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">ID used to access the call recording. Open the following URL in a browser: http://app.callgear.com/system/media/talk/{call_session_id}/{recording_link_id}</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>start_time</code></td>
+<td style="text-align: left;">iso8601</td>
+<td style="text-align: left;">YYYY-MM-DD hh:mm:ss</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Leg start date and time</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>connect_time</code></td>
+<td style="text-align: left;">iso8601</td>
+<td style="text-align: left;">YYYY-MM-DD hh:mm:ss</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">On-hook date and time</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>duration</code></td>
+<td style="text-align: left;">number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Duration of the leg from the beginning of picking up the handset. Value in seconds</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>total_duration</code></td>
+<td style="text-align: left;">number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Total length of the leg. Value in seconds</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>finish_reason</code></td>
+<td style="text-align: left;">enum</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Reason for ending the leg</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>finish_reason_description</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">no</td>
+<td style="text-align: left;">Description of the reason for ending the leg</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>virtual_phone_number</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Virtual number</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>calling_phone_number</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Caller ID</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>direction</code></td>
+<td style="text-align: left;">enum</td>
+<td style="text-align: left;"><code>in</code>, <code>out</code></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Leg direction</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>is_transfered</code></td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: left;"><code>true</code>, <code>false</code></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Is this a transfer leg?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>is_operator</code></td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: left;"><code>true</code>, <code>false</code></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Does this leg belong to the operator</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>employee_id</code></td>
+<td style="text-align: left;">number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Unique ID of the employee who was called.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>employee_full_name</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Full name employee who was called</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>employee_phone_number</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Employee phone number</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>employee_rating</code></td>
+<td style="text-align: left;">number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Rating assigned to an employee in post-call processing</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>scenario_id</code></td>
+<td style="text-align: left;">number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Unique Script ID</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>is_coach</code></td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: left;"><code>true</code>, <code>false</code></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Is it a coach's leg?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>release_cause_code</code></td>
+<td style="text-align: left;">number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Cause Code Number (see Q850) (<code>deprecated</code> is obsolete and will be removed soon)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>release_cause_description</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Description cause code (<code>deprecated</code> is outdated and will be removed soon)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>is_failed</code></td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: left;"><code>true</code>, <code>false</code></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Did the operator pick up the phone</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>is_talked</code></td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: left;"><code>true</code>, <code>false</code></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Did the conversation take place</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>contact_id</code></td>
+<td style="text-align: left;">number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Unique Contact ID</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>contact_full_name</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Full name contact</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>contact_phone_number</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">For inbound calls, the contact number that placed the call. For outbound calls, the contact number that was called.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>action_name</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Name of the hit operation in which the call was created</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>group_id</code></td>
+<td style="text-align: left;">number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Unique ID of the employee group associated with the call.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>group_name</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Name of the employee group associated with the call.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="call-leg-completion-reasons">Call leg completion reasons</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Mnemonics</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>caller_disconnects</code></td>
+<td style="text-align: left;">The caller disconnected.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>no_operation</code></td>
+<td style="text-align: left;">No operation to process</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>operator_busy</code></td>
+<td style="text-align: left;">Employee is busy</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>operator_not_responsive</code></td>
+<td style="text-align: left;">Employee not responding</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>operator_disconnects</code></td>
+<td style="text-align: left;">The employee disconnected</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>operator_number_problems</code></td>
+<td style="text-align: left;">Problems with the employee's phone number. Contact technical support.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>scenario_not_found</code></td>
+<td style="text-align: left;">Script not found</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>timeout</code></td>
+<td style="text-align: left;">The call time has expired</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>internal_error</code></td>
+<td style="text-align: left;">Internal error. Contact technical support.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>transfer_disconnects</code></td>
+<td style="text-align: left;">Disabling an employee during a transfer</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>scenario_disconnects</code></td>
+<td style="text-align: left;">Disabling an employee when running a script</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>fax_session_done</code></td>
+<td style="text-align: left;">Fax received</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>another_operator_answer</code></td>
+<td style="text-align: left;">We reached another employee</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>caller_busy</code></td>
+<td style="text-align: left;">The caller is busy.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>caller_not_responsive</code></td>
+<td style="text-align: left;">The caller did not answer.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>caller_number_problems</code></td>
+<td style="text-align: left;">There is a problem with the caller's phone number. Contact technical support.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>operator_answer</code></td>
+<td style="text-align: left;">We reached an employee</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>operator_channels_busy</code></td>
+<td style="text-align: left;">Out of available lines at the forwarding number</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>app_is_inactive</code></td>
+<td style="text-align: left;">Client blocked</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>component_is_inactive</code></td>
+<td style="text-align: left;">Component not active</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>locked_numb</code></td>
+<td style="text-align: left;">Calls to this number are prohibited by security settings</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>incorrect_input</code></td>
+<td style="text-align: left;">Invalid input</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>call_not_allowed_on_tp</code></td>
+<td style="text-align: left;">The call is prohibited according to the tariff plan</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>account_not_found</code></td>
+<td style="text-align: left;">CallGear account not found.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>contract_not_found</code></td>
+<td style="text-align: left;">Contract not found</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>locked_phone</code></td>
+<td style="text-align: left;">Network problems</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>max_in_call_reached</code></td>
+<td style="text-align: left;">Line limit for incoming calls reached</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>max_out_call_reached</code></td>
+<td style="text-align: left;">Line limit for outgoing calls reached</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>employee_busy</code></td>
+<td style="text-align: left;">Employee talking on another call</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>employee_busy_after_call</code></td>
+<td style="text-align: left;">Employee busy after calling</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>phone_group_inactive_by_schedule</code></td>
+<td style="text-align: left;">Group of numbers is inactive according to schedule</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>employee_inactive</code></td>
+<td style="text-align: left;">Employee inactive</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>max_transition_count_exceeded</code></td>
+<td style="text-align: left;">The maximum number of transitions for script operations has been reached</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>phone_protocol_not_allowed_by_status</code></td>
+<td style="text-align: left;">Calls from this type of number are prohibited by status</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>employee_phone_not_found</code></td>
+<td style="text-align: left;">The number has been changed or deleted</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>action_interval_exceeded</code></td>
+<td style="text-align: left;">The interval specified for the operation has been exceeded</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>in_call_not_allowed</code></td>
+<td style="text-align: left;">Incoming calls are prohibited</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>call_enqueued</code></td>
+<td style="text-align: left;">Call queued</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>employee_status_available</code></td>
+<td style="text-align: left;">Employee with "Available" status</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>employee_auto_status_do_not_disturb</code></td>
+<td style="text-align: left;">Employee in automatic Do Not Disturb status</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>employee_status_break</code></td>
+<td style="text-align: left;">Employee in "Break" status</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>employee_status_do_not_disturb</code></td>
+<td style="text-align: left;">Employee in "Do Not Disturb" status</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>employee_status_not_at_workplace</code></td>
+<td style="text-align: left;">Employee with "Away" status</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>employee_status_not_at_work</code></td>
+<td style="text-align: left;">Employee with "Out of Office" status</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>employee_inactive_by_schedule</code></td>
+<td style="text-align: left;">Employee is inactive according to schedule</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>group_phone_inactive</code></td>
+<td style="text-align: left;">Group number unavailable</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>employee_phone_inactive</code></td>
+<td style="text-align: left;">Employee number is inactive</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>employee_phone_inactive_by_schedule</code></td>
+<td style="text-align: left;">Employee number is inactive according to schedule</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>fmc_is_locked</code></td>
+<td style="text-align: left;">FMC line blocked</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sip_trunk_is_locked</code></td>
+<td style="text-align: left;">SIP trunk blocked</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sip_offline</code></td>
+<td style="text-align: left;">SIP line is not registered</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>fmc_is_disabled</code></td>
+<td style="text-align: left;">FMC service disabled</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>employee_status_auto_out_call</code></td>
+<td style="text-align: left;">Employee in the status "Outgoing call"</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>limit_exceeded</code></td>
+<td style="text-align: left;">Financial limit reached</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>no_money</code></td>
+<td style="text-align: left;">Insufficient funds</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>out_call_not_allowed_by_status</code></td>
+<td style="text-align: left;">Outgoing calls are prohibited by status</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>out_call_not_allowed</code></td>
+<td style="text-align: left;">Outgoing calls are prohibited</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>internal_call_not_allowed</code></td>
+<td style="text-align: left;">Internal calls are prohibited</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>external_call_not_allowed</code></td>
+<td style="text-align: left;">External calls are prohibited</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>internal_call_not_allowed_by_status</code></td>
+<td style="text-align: left;">Internal calls are prohibited by status</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>auto_out_calls_not_allowed_by_status</code></td>
+<td style="text-align: left;">Outgoing calling is prohibited by status</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-request">Example request</h3>
+<pre><code class="language-json">{
+&quot;jsonrpc&quot;:&quot;2.0&quot;,
+&quot;id&quot;:&quot;number&quot;,
+&quot;method&quot;:&quot;get.call_legs_report&quot;,
+&quot;params&quot;:{
+&quot;access_token&quot;:&quot;string&quot;,
+&quot;user_id&quot;:&quot;number&quot;,
+&quot;offset&quot;:&quot;number&quot;,
+&quot;limit&quot;:&quot;number&quot;,
+&quot;date_from&quot;:&quot;iso8601&quot;,
+&quot;date_till&quot;:&quot;iso8601&quot;,
+&quot;filter&quot;:{
+},
+&quot;sort&quot;:[
+{
+&quot;field&quot;:&quot;string&quot;,
+&quot;order&quot;:&quot;string&quot;
+}
+],
+&quot;fields&quot;:[
+&quot;string&quot;
+]
+
+}
+}
+</code></pre>
+<h3 id="example-response">Example response</h3>
+<pre><code class="language-json">{
+&quot;jsonrpc&quot;:&quot;2.0&quot;,
+&quot;id&quot;:&quot;number&quot;,
+&quot;result&quot;:{
+&quot;metadata&quot;:{
+
+},
+&quot;data&quot;:[
+{
+&quot;id&quot;:&quot;number&quot;,
+&quot;call_session_id&quot;:&quot;number&quot;,
+&quot;call_records&quot;:[
+
+],
+&quot;start_time&quot;:&quot;iso8601&quot;,
+&quot;connect_time&quot;:&quot;iso8601&quot;,
+&quot;duration&quot;:&quot;number&quot;,
+&quot;total_duration&quot;:&quot;number&quot;,
+&quot;finish_reason&quot;:&quot;enum&quot;,
+&quot;finish_reason_description&quot;:&quot;string&quot;,
+&quot;virtual_phone_number&quot;:&quot;string&quot;,
+&quot;calling_phone_number&quot;:&quot;string&quot;,
+&quot;called_phone_number&quot;:&quot;string&quot;,
+&quot;direction&quot;:&quot;enum&quot;,
+&quot;is_transfered&quot;:&quot;boolean&quot;,
+&quot;is_operator&quot;:&quot;boolean&quot;,
+&quot;employee_id&quot;:&quot;number&quot;,
+&quot;employee_full_name&quot;:&quot;string&quot;,
+&quot;employee_phone_number&quot;:&quot;string&quot;,
+&quot;employee_rating&quot;:&quot;number&quot;,
+&quot;scenario_id&quot;:&quot;number&quot;,
+&quot;scenario_name&quot;:&quot;string&quot;,
+&quot;is_coach&quot;:&quot;boolean&quot;,
+&quot;release_cause_code&quot;:&quot;number&quot;,
+&quot;release_cause_description&quot;:&quot;string&quot;,
+&quot;is_failed&quot;:&quot;boolean&quot;,
+&quot;is_talked&quot;:&quot;boolean&quot;,
+&quot;contact_id&quot;:&quot;number&quot;,
+&quot;contact_full_name&quot;:&quot;string&quot;,
+&quot;contact_phone_number&quot;:&quot;string&quot;,
+&quot;action_id&quot;: &quot;number&quot;,
+&quot;action_name&quot;: &quot;string&quot;,
+&quot;group_id&quot;: &quot;number&quot;,
+&quot;group_name&quot;: &quot;string&quot;
+}
+]
+}
+}
+</code></pre>
+<h3 id="possible-errors">Possible errors</h3>
+<p>See the <a href="../..#_getErrors">"Errors for get methods"</a> section.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../../js/init.js"></script>
+      
+    
+  </body>
+</html>

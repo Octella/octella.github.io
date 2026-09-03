@@ -1,0 +1,2308 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>DATA API</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#data-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="DATA API" class="md-header__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DATA API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              General Information
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="DATA API" class="md-nav__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DATA API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          General Information
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        General Information
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#conventions" class="md-nav__link">
+    Conventions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-ip-addresses-to-the-whitelist" class="md-nav__link">
+    Adding IP addresses to the whitelist
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-users-and-authentication" class="md-nav__link">
+    API users and authentication
+  </a>
+  
+    <nav class="md-nav" aria-label="API users and authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-by-key" class="md-nav__link">
+    Access by key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-by-login-and-password" class="md-nav__link">
+    Access by login and password
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-request-report" class="md-nav__link">
+    API request report
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#base-url-for-accessing-the-api" class="md-nav__link">
+    Base URL for accessing the API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versioning" class="md-nav__link">
+    Versioning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limits-and-restrictions" class="md-nav__link">
+    Limits and restrictions
+  </a>
+  
+    <nav class="md-nav" aria-label="Limits and restrictions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods-and-their-weight-in-points" class="md-nav__link">
+    Methods and their weight in points
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expanding-limits" class="md-nav__link">
+    Expanding limits
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    Error handling
+  </a>
+  
+    <nav class="md-nav" aria-label="Error handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error-message-parameters" class="md-nav__link">
+    Error message parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-error-structure" class="md-nav__link">
+    JSON error structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-code-groups" class="md-nav__link">
+    Error code groups
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-of-errors-common-to-all-methods" class="md-nav__link">
+    List of errors common to all methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-of-errors-for-methods-with-the-get-method" class="md-nav__link">
+    List of errors for methods with the get method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-of-errors-common-to-methods-with-the-delete-method" class="md-nav__link">
+    List of errors common to methods with the delete method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-of-errors-common-to-the-create-update-set-and-unset-methods" class="md-nav__link">
+    List of errors common to the create, update, set, and unset methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-operations" class="md-nav__link">
+    Batch operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method-naming-principles" class="md-nav__link">
+    Method naming principles
+  </a>
+  
+    <nav class="md-nav" aria-label="Method naming principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verbs-used-in-method-names" class="md-nav__link">
+    Verbs used in method names
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filters" class="md-nav__link">
+    Filters
+  </a>
+  
+    <nav class="md-nav" aria-label="Filters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#possible-errors-when-filtering" class="md-nav__link">
+    Possible errors when filtering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-a-simple-filters-json-structure" class="md-nav__link">
+    Example of a simple filter's JSON structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-a-filter-tree-with-one-nesting-level" class="md-nav__link">
+    Example of a filter tree with one nesting level
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-a-filter-tree-with-two-nesting-levels" class="md-nav__link">
+    Example of a filter tree with two nesting levels
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-a-filter-tree-with-three-nesting-levels" class="md-nav__link">
+    Example of a filter tree with three nesting levels
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-operators" class="md-nav__link">
+    Filter operators
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-sorting" class="md-nav__link">
+    Data sorting
+  </a>
+  
+    <nav class="md-nav" aria-label="Data sorting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#possible-errors-when-sorting" class="md-nav__link">
+    Possible errors when sorting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paging" class="md-nav__link">
+    Paging
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meta-parameters" class="md-nav__link">
+    Meta parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewing-returned-data" class="md-nav__link">
+    Viewing returned data
+  </a>
+  
+    <nav class="md-nav" aria-label="Viewing returned data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#selecting-the-returned-columns" class="md-nav__link">
+    Selecting the returned columns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#possible-errors-when-selecting-returned-data" class="md-nav__link">
+    Possible errors when selecting returned data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fields-common-to-all-methods" class="md-nav__link">
+    Fields common to all methods
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="components/" class="md-nav__link">
+        Permissions and Components
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="account/get_account/" class="md-nav__link">
+        Account
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vn/" class="md-nav__link">
+        Virtual Numbers and Rules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sip/" class="md-nav__link">
+        SIP Lines
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="scenario/get_scenarios/" class="md-nav__link">
+        Scenarios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="user_media/get_media_files/" class="md-nav__link">
+        Media Files
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="campaigns/" class="md-nav__link">
+        Ad Campaigns
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sources/" class="md-nav__link">
+        Sources
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="auto_calls/" class="md-nav__link">
+        Outbound Calls
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sales_funnel_and_deals/" class="md-nav__link">
+        Sales Funnels and Deals
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sites/" class="md-nav__link">
+        Sites
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reports/" class="md-nav__link">
+        Reports
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="employees/" class="md-nav__link">
+        Employees
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contacts/" class="md-nav__link">
+        Contacts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="blacklist/" class="md-nav__link">
+        Blacklist
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schedules/" class="md-nav__link">
+        Schedules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="partners/" class="md-nav__link">
+        Agents' Customers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="communications/" class="md-nav__link">
+        Communications
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="persons/" class="md-nav__link">
+        Person / Visitor
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#conventions" class="md-nav__link">
+    Conventions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-ip-addresses-to-the-whitelist" class="md-nav__link">
+    Adding IP addresses to the whitelist
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-users-and-authentication" class="md-nav__link">
+    API users and authentication
+  </a>
+  
+    <nav class="md-nav" aria-label="API users and authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-by-key" class="md-nav__link">
+    Access by key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-by-login-and-password" class="md-nav__link">
+    Access by login and password
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-request-report" class="md-nav__link">
+    API request report
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#base-url-for-accessing-the-api" class="md-nav__link">
+    Base URL for accessing the API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versioning" class="md-nav__link">
+    Versioning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limits-and-restrictions" class="md-nav__link">
+    Limits and restrictions
+  </a>
+  
+    <nav class="md-nav" aria-label="Limits and restrictions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods-and-their-weight-in-points" class="md-nav__link">
+    Methods and their weight in points
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expanding-limits" class="md-nav__link">
+    Expanding limits
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    Error handling
+  </a>
+  
+    <nav class="md-nav" aria-label="Error handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error-message-parameters" class="md-nav__link">
+    Error message parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-error-structure" class="md-nav__link">
+    JSON error structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-code-groups" class="md-nav__link">
+    Error code groups
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-of-errors-common-to-all-methods" class="md-nav__link">
+    List of errors common to all methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-of-errors-for-methods-with-the-get-method" class="md-nav__link">
+    List of errors for methods with the get method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-of-errors-common-to-methods-with-the-delete-method" class="md-nav__link">
+    List of errors common to methods with the delete method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-of-errors-common-to-the-create-update-set-and-unset-methods" class="md-nav__link">
+    List of errors common to the create, update, set, and unset methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-operations" class="md-nav__link">
+    Batch operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method-naming-principles" class="md-nav__link">
+    Method naming principles
+  </a>
+  
+    <nav class="md-nav" aria-label="Method naming principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verbs-used-in-method-names" class="md-nav__link">
+    Verbs used in method names
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filters" class="md-nav__link">
+    Filters
+  </a>
+  
+    <nav class="md-nav" aria-label="Filters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#possible-errors-when-filtering" class="md-nav__link">
+    Possible errors when filtering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-a-simple-filters-json-structure" class="md-nav__link">
+    Example of a simple filter's JSON structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-a-filter-tree-with-one-nesting-level" class="md-nav__link">
+    Example of a filter tree with one nesting level
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-a-filter-tree-with-two-nesting-levels" class="md-nav__link">
+    Example of a filter tree with two nesting levels
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-a-filter-tree-with-three-nesting-levels" class="md-nav__link">
+    Example of a filter tree with three nesting levels
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-operators" class="md-nav__link">
+    Filter operators
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-sorting" class="md-nav__link">
+    Data sorting
+  </a>
+  
+    <nav class="md-nav" aria-label="Data sorting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#possible-errors-when-sorting" class="md-nav__link">
+    Possible errors when sorting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paging" class="md-nav__link">
+    Paging
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meta-parameters" class="md-nav__link">
+    Meta parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewing-returned-data" class="md-nav__link">
+    Viewing returned data
+  </a>
+  
+    <nav class="md-nav" aria-label="Viewing returned data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#selecting-the-returned-columns" class="md-nav__link">
+    Selecting the returned columns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#possible-errors-when-selecting-returned-data" class="md-nav__link">
+    Possible errors when selecting returned data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fields-common-to-all-methods" class="md-nav__link">
+    Fields common to all methods
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="data-api">Data API</h1>
+<h2 id="conventions">Conventions</h2>
+<p>The following conventions apply when using the Data API:</p>
+<ul>
+<li>
+<p>Empty fields are always returned with the value <code>null</code>. For a data array, an empty array is returned; for an object, an empty object is returned.</p>
+</li>
+<li>
+<p>All date and time fields are passed in the format <code>YYYY-MM-DD hh:mm:ss</code>.</p>
+</li>
+<li>
+<p>Requests to the API are always made via the <code>POST</code> method.</p>
+</li>
+<li>
+<p>All parameters in requests and responses, as well as in JSON data structures and method names, use snake_case — words separated by underscores.</p>
+</li>
+<li>
+<p>Data is returned in JSON only, in accordance with RFC 7159. The <code>Accept</code> header is ignored.</p>
+</li>
+<li>
+<p>Data is UTF-8 encoded.</p>
+</li>
+<li>
+<p>The <code>Content-Type</code> header must be <code>application/json; charset=UTF-8</code>.</p>
+</li>
+<li>
+<p>The <code>Content-Length</code> header must contain the correct message length, in accordance with the HTTP/1.1 specification.</p>
+</li>
+</ul>
+<h2 id="adding-ip-addresses-to-the-whitelist">Adding IP addresses to the whitelist</h2>
+<p>By default, access to the API is denied for everyone. To make a request, you need to add the IP address used for the request to the whitelist. You can do this in your client area: Administrator → Account → Rules and security settings, tab "API".</p>
+<p>If you want to allow access from all IP addresses, add <code>0.0.0.0/0</code> to the whitelist.</p>
+<p>If requests are made via an agent, the agent's IP address must be added to the whitelist in the customer's account.</p>
+<p><a id="_auth"></a></p>
+<h2 id="api-users-and-authentication">API users and authentication</h2>
+<p>Access rules similar to the ones in the client area apply to users and access keys.</p>
+<h3 id="access-by-key">Access by key</h3>
+<p>Keys are generated at the user level in the client area. Go to Administrator → User management → click the user you want to grant Data API access to and enable the Data API Basic set component. There are two types of keys:</p>
+<ul>
+<li>
+<p>permanent;</p>
+</li>
+<li>
+<p>temporary.</p>
+</li>
+</ul>
+<p>Permanent keys have an unlimited lifetime. Temporary keys have a specified expiration time.</p>
+<h3 id="access-by-login-and-password">Access by login and password</h3>
+<p>Session-based authentication.</p>
+<p>The session lifetime is 1 hour.</p>
+<h2 id="api-request-report">API request report</h2>
+<p>You can view reports on API requests in the client area: "Reports" → "Service reports" → "Requests to API".</p>
+<h2 id="base-url-for-accessing-the-api">Base URL for accessing the API</h2>
+<p>The base URL for accessing the API follows this template:</p>
+<pre><code class="language-text">&lt;protocol&gt;://&lt;hostname&gt;/&lt;version&gt;
+</code></pre>
+<ul>
+<li>
+<p><code>&lt;protocol&gt;</code> — https;</p>
+</li>
+<li>
+<p><code>&lt;hostname&gt;</code> — <code>dataapi.octella</code>.com;</p>
+</li>
+<li>
+<p><code>&lt;version&gt;</code> — API version (refer to "Versioning").</p>
+</li>
+</ul>
+<pre><code class="language-text">https://dataapi.octella.com/&lt;version&gt;
+</code></pre>
+<h2 id="versioning">Versioning</h2>
+<p>The current Data API version is 2.0.</p>
+<p>The Data API supports versioning. The version is specified in the base URL as <code>vX.Y</code>, where X is the major version number and Y is the minor version number.</p>
+<p>When a new version is released, the previous one is considered deprecated. When you call a deprecated version, the meta parameters (refer to "Meta parameters") include the <code>current_version_deprecated</code> parameter set to <code>true</code>.</p>
+<p>The maximum number of supported versions is 2. The support period for old versions is 2 months.</p>
+<h2 id="limits-and-restrictions">Limits and restrictions</h2>
+<p>Points are deducted only for successful requests — that is, the ones marked as successful in the API request report (refer to "API request report").</p>
+<p>Information about limits is returned in all responses in the meta parameters (refer to "Meta parameters"), except when limits are not applied.</p>
+<p>Limits are based on a points system: each method has a weight. Calling a method reduces the available daily/per-minute points by that method's weight.</p>
+<p>Information about limits in the meta parameters:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter name</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>day_limit</code></td>
+<td style="text-align: left;">Current limit in points per day</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>day_remaining</code></td>
+<td style="text-align: left;">Points remaining until the daily limit is reached</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>day_reset</code></td>
+<td style="text-align: left;">Seconds left until the daily limit is reset</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>minute_limit</code></td>
+<td style="text-align: left;">Current limit in points per minute</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>minute_remaining</code></td>
+<td style="text-align: left;">Points left until the per-minute limit is reached</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>minute_reset</code></td>
+<td style="text-align: left;">Seconds left until the per-minute limit is reset</td>
+</tr>
+</tbody>
+</table>
+<h3 id="methods-and-their-weight-in-points">Methods and their weight in points</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Operation type</th>
+<th style="text-align: left;">Weight in points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">All operations</td>
+<td style="text-align: left;">1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="expanding-limits">Expanding limits</h3>
+<p>You can expand the limits in your client area: "Account" → "Rates and options".</p>
+<h2 id="error-handling">Error handling</h2>
+<h3 id="error-message-parameters">Error message parameters</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: center;">Required</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>error</code></td>
+<td style="text-align: left;">object</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: left;">Object containing the error</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>code</code></td>
+<td style="text-align: left;">number</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: left;">A non-unique error code (refer to "Error code groups")</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>message</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: left;">Error message</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>data</code></td>
+<td style="text-align: left;">object</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: left;">Object containing the details of the error</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>mnemonic</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: left;">Unique text code of the error. It is recommended to use this parameter when handling errors.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>value</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;">Contains the value passed by the user, unchanged. In certain cases it is absent — for example, when a required parameter was not filled in.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>extended_helper</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;">Link to an extended description of the error and possible ways to solve it.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>params</code></td>
+<td style="text-align: left;">object</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;">Map of parameter substitutions for error message templates — that is, it contains dynamically varying values, such as limits. Values stated in this parameter can be used in error messages in a Data API based interface.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>field</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;">Name of the parameter associated with the error. Nested parameters are separated with "." For example: <code>employee.phone_number</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="json-error-structure">JSON error structure</h3>
+<pre><code class="language-json">{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;id&quot;: null,
+    &quot;error&quot;: {
+        &quot;code&quot;: &quot;number&quot;,
+        &quot;message&quot;: &quot;string&quot;,
+        &quot;data&quot;: {
+            &quot;mnemonic&quot;: &quot;string&quot;,
+            &quot;field&quot;: &quot;string&quot;,
+            &quot;value&quot;: &quot;string&quot;,
+            &quot;params&quot;: {
+                &quot;object&quot;: &quot;string&quot;
+            },
+            &quot;extended_helper&quot;: &quot;string&quot;,
+            &quot;metadata&quot;: {}
+        }
+    }
+}
+</code></pre>
+<h3 id="error-code-groups">Error code groups</h3>
+<table>
+<thead>
+<tr>
+<th>Error code</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-32700</td>
+<td>Errors associated with JSON validation</td>
+</tr>
+<tr>
+<td>-32600</td>
+<td>Errors associated with validation of the request parameters <code>id</code> and <code>jsonrpc</code></td>
+</tr>
+<tr>
+<td>-32601</td>
+<td>Errors associated with the method</td>
+</tr>
+<tr>
+<td>-32602</td>
+<td>Errors associated with validation of parameters in a called method</td>
+</tr>
+<tr>
+<td>-32603</td>
+<td>Internal errors of the JSON-RPC server</td>
+</tr>
+<tr>
+<td>-32001</td>
+<td>Authentication errors and errors associated with keys</td>
+</tr>
+<tr>
+<td>-32003</td>
+<td>Errors associated with access rights — the IP address is not on the whitelist, or the user does not have access</td>
+</tr>
+<tr>
+<td>-32004</td>
+<td>Errors associated with the wrong order of called methods</td>
+</tr>
+<tr>
+<td>-32007</td>
+<td>Errors associated with a virtual number</td>
+</tr>
+<tr>
+<td>-32008</td>
+<td>Errors associated with a component</td>
+</tr>
+<tr>
+<td>-32009</td>
+<td>Errors associated with the account</td>
+</tr>
+<tr>
+<td>-32029</td>
+<td>Errors associated with limits</td>
+</tr>
+<tr>
+<td>-32099</td>
+<td>Errors associated with the support of various JSON-RPC 2.0 features — batch operations, notifications</td>
+</tr>
+</tbody>
+</table>
+<p><a id="_commonErrors"></a></p>
+<h3 id="list-of-errors-common-to-all-methods">List of errors common to all methods</h3>
+<table>
+<thead>
+<tr>
+<th>Error text</th>
+<th>Code</th>
+<th>Mnemonic</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Invalid Request The JSON sent is not a valid Request object</td>
+<td>-32600</td>
+<td><code>invalid_request</code></td>
+<td>Errors associated with validation of the request parameters <code>id</code> and <code>jsonrpc</code></td>
+</tr>
+<tr>
+<td>Access token has been expired</td>
+<td>-32001</td>
+<td><code>access_token_expired</code></td>
+<td>Applies only to permanent tokens. Returned when the token's lifetime has expired</td>
+</tr>
+<tr>
+<td>Access token has been blocked</td>
+<td>-32001</td>
+<td><code>access_token_blocked</code></td>
+<td>Returned if a permanent token is blocked</td>
+</tr>
+<tr>
+<td>Access token is invalid</td>
+<td>-32001</td>
+<td><code>access_token_invalid</code></td>
+<td>Returned if a permanent/temporary token is not found</td>
+</tr>
+<tr>
+<td>Limit per {limit_type} has been exceeded. Value of current limit per {limit_type} is {limit_max_value}</td>
+<td>-32029</td>
+<td><code>limit_exceeded</code></td>
+<td>The limit has been exceeded</td>
+</tr>
+<tr>
+<td>You need at least one of the following components to access this method: {components}</td>
+<td>-32008</td>
+<td><code>method_component_disabled</code></td>
+<td>Returned if a component required for the method to work is not enabled</td>
+</tr>
+<tr>
+<td>You need at least one of the following components to access this parameter: {components}</td>
+<td>-32008</td>
+<td><code>parameter_component_disabled</code></td>
+<td>Returned if a component required to fill in a parameter or create an entity is not enabled</td>
+</tr>
+<tr>
+<td>Your IP {ip} is not whitelisted</td>
+<td>-32003</td>
+<td><code>ip_not_whitelisted</code></td>
+<td>The IP address used to make the request is not on the whitelist. If the request is made via an agent, the agent's IP address must be on the whitelist in the client's account</td>
+</tr>
+<tr>
+<td>Login or password is wrong</td>
+<td>-32001</td>
+<td><code>auth_error</code></td>
+<td>Wrong login or password</td>
+</tr>
+<tr>
+<td>Your account has been disabled, contact the support service</td>
+<td>-32009</td>
+<td><code>account_inactive</code></td>
+<td>The account is blocked</td>
+</tr>
+<tr>
+<td>Internal error, contact the support service</td>
+<td>-32603</td>
+<td><code>internal_error</code></td>
+<td>Internal error — contact technical support</td>
+</tr>
+<tr>
+<td>Data supplied is of wrong type</td>
+<td>-32602</td>
+<td><code>data_type_error</code></td>
+<td>For example, a string was expected but an int was passed</td>
+</tr>
+<tr>
+<td>The method does not exist / is not available</td>
+<td>-32601</td>
+<td><code>method_not_found</code></td>
+<td>The method was not found</td>
+</tr>
+<tr>
+<td>Permission denied</td>
+<td>-32003</td>
+<td><code>forbidden</code></td>
+<td>No rights to access the method or the API, or permission to perform the action was denied</td>
+</tr>
+<tr>
+<td>Invalid JSON was received by the server.</td>
+<td>-32700</td>
+<td><code>parse_error</code></td>
+<td>JSON validation error</td>
+</tr>
+<tr>
+<td>Batch operations not supported</td>
+<td>-32099</td>
+<td><code>batch_operations_not_supported</code></td>
+<td>Batch operations are not supported</td>
+</tr>
+<tr>
+<td>Notifications not supported</td>
+<td>-32099</td>
+<td><code>notifications_not_supported</code></td>
+<td>The <code>id</code> parameter is missing from the request. Refer to "Fields common to all methods"</td>
+</tr>
+<tr>
+<td>The required parameter has been missed</td>
+<td>-32602</td>
+<td><code>required_parameter_missed</code></td>
+<td>A required parameter is missing</td>
+</tr>
+<tr>
+<td>Invalid parameter value</td>
+<td>-32602</td>
+<td><code>invalid_parameter_value</code></td>
+<td>Always returned when an invalid parameter value is passed, or when the value does not comply with the required format</td>
+</tr>
+<tr>
+<td>Unexpected method parameter(s)</td>
+<td>-32602</td>
+<td><code>unexpected_parameters</code></td>
+<td>Returned when <code>params</code> contains parameters not provided in the method's JSON structure, or when a filtering, sorting, or selection parameter does not exist</td>
+</tr>
+<tr>
+<td>The combination of parameters is not permitted</td>
+<td>-32602</td>
+<td><code>invalid_parameters_combination</code></td>
+<td>Returned when a combination of parameters in a method is invalid, or when the parameters depend on each other. It is advised to consult the documentation on the method and its parameters.</td>
+</tr>
+<tr>
+<td>{error_message}</td>
+<td>-32602</td>
+<td><code>error</code></td>
+<td>Dynamic errors</td>
+</tr>
+</tbody>
+</table>
+<p><a id="_getErrors"></a></p>
+<h3 id="list-of-errors-for-methods-with-the-get-method">List of errors for methods with the get method</h3>
+<table>
+<thead>
+<tr>
+<th>Error text</th>
+<th>Code</th>
+<th>Mnemonic</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Invalid parameter value</td>
+<td>-32602</td>
+<td><code>invalid_parameter_value</code></td>
+<td>Returned when a filter contains an invalid value for <code>regexp</code>, <code>jsquery</code>, or any other value that does not comply with the documentation</td>
+</tr>
+<tr>
+<td>Sort by parameter is prohibited</td>
+<td>-32602</td>
+<td><code>sort_prohibited</code></td>
+<td>Sorting by the parameter is prohibited or impossible, because the sorting parameter is not among the ones allowed for sorting</td>
+</tr>
+<tr>
+<td>Filter by parameter is prohibited</td>
+<td>-32602</td>
+<td><code>filter_prohibited</code></td>
+<td>Filtering by the parameter is prohibited or impossible, because the filtering parameter is not among the ones allowed for filtering</td>
+</tr>
+<tr>
+<td>Max value of requested date interval is 3 months</td>
+<td>-32602</td>
+<td><code>date_interval_limit_reached</code></td>
+<td>Returned if the time period between <code>date_from</code> and <code>date_till</code> in a request exceeds 3 months. Usually returned only by report methods, and not by all of them.</td>
+</tr>
+</tbody>
+</table>
+<p><a id="_deleteErrors"></a></p>
+<h3 id="list-of-errors-common-to-methods-with-the-delete-method">List of errors common to methods with the delete method</h3>
+<table>
+<thead>
+<tr>
+<th>Error text</th>
+<th>Code</th>
+<th>Mnemonic</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Entity not found</td>
+<td>-32602</td>
+<td><code>entity_not_found</code></td>
+<td>Returned when the specified entity ID is not found</td>
+</tr>
+<tr>
+<td>You have interdependent entities</td>
+<td>-32602</td>
+<td><code>dependency_error</code></td>
+<td>The entity to be deleted is used by other entities. To delete it, you first need to remove it from all fields where it is used</td>
+</tr>
+<tr>
+<td>Permission denied</td>
+<td>-32602</td>
+<td><code>forbidden</code></td>
+<td>You cannot delete the entity, as it belongs to the system — such as "Blacklist" in the address book</td>
+</tr>
+</tbody>
+</table>
+<p><a id="_changeErrors"></a></p>
+<h3 id="list-of-errors-common-to-the-create-update-set-and-unset-methods">List of errors common to the create, update, set, and unset methods</h3>
+<table>
+<thead>
+<tr>
+<th>Error text</th>
+<th>Code</th>
+<th>Mnemonic</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Entity not found</td>
+<td>-32602</td>
+<td><code>entity_not_found</code></td>
+<td>Returned when the specified entity ID is not found</td>
+</tr>
+<tr>
+<td>Duplicate entity</td>
+<td>-32602</td>
+<td><code>duplicate_entity</code></td>
+<td>Returned if the entity already exists</td>
+</tr>
+<tr>
+<td>Campaign is inactive</td>
+<td>-32602</td>
+<td><code>campaign_is_inactive</code></td>
+<td>The advertising campaign is inactive</td>
+</tr>
+<tr>
+<td>Invalid date time</td>
+<td>-32602</td>
+<td><code>invalid_date_time</code></td>
+<td>Invalid date or time — refer to the method's description</td>
+</tr>
+<tr>
+<td>A new data limit has been exceeded</td>
+<td>-32602</td>
+<td><code>data_limit_exceeded</code></td>
+<td>Returned if you exceed the data limit.</td>
+</tr>
+<tr>
+<td>Action is not allowed for your tariff plan. You need to contact the support service or change your tariff plan settings in your account</td>
+<td>-32602</td>
+<td><code>tariff_restrictions</code></td>
+<td>Any service plan limits</td>
+</tr>
+<tr>
+<td>This value is already used by another entity</td>
+<td>-32602</td>
+<td><code>already_in_use</code></td>
+<td>The parameter's value is already in use by another entity. For example, the virtual number is already used in another advertising campaign.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="batch-operations">Batch operations</h2>
+<p>This functionality is not supported.</p>
+<h2 id="method-naming-principles">Method naming principles</h2>
+<p>The name of a JSON-RPC method consists of two parts separated by a dot: a verb and an object name.</p>
+<p>The object name is a plural noun expressing a business entity, such as <code>subscribers</code>.</p>
+<p>The method name begins with a verb expressing an operation.</p>
+<h3 id="verbs-used-in-method-names">Verbs used in method names</h3>
+<table>
+<thead>
+<tr>
+<th>Verb</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>create</code></td>
+<td>Creates an entity</td>
+</tr>
+<tr>
+<td><code>get</code></td>
+<td>Returns a list of sorted and filtered data, using filtering criteria and sorting methods. When making a request, you can set a limit or paging for the amount of data you receive (refer to "Paging"). By applying filtering criteria you can also get a single entry you need, using its unique ID (refer to "Filters"). The total number of entries is returned in a special meta parameter (refer to "Meta parameters"). A special parameter lets you specify which fields should be returned in the response (refer to "Viewing returned data").</td>
+</tr>
+<tr>
+<td><code>update</code></td>
+<td>Updates an entity with the given ID. Partial parameter updates are possible. When you update an array, it is replaced as a whole — all elements that were not passed are deleted. To reset an optional parameter, pass <code>null</code>.</td>
+</tr>
+<tr>
+<td><code>delete</code></td>
+<td>Deletes an entity with the given ID.</td>
+</tr>
+<tr>
+<td><code>add</code></td>
+<td>Connects an object with another one.</td>
+</tr>
+<tr>
+<td><code>enable</code></td>
+<td>Enables an object</td>
+</tr>
+<tr>
+<td><code>disable</code></td>
+<td>Disables an object</td>
+</tr>
+<tr>
+<td><code>set</code></td>
+<td>Sets an aspect on another object, such as tagging an inquiry</td>
+</tr>
+<tr>
+<td><code>unset</code></td>
+<td>Removes an aspect from another object, such as removing a tag from an inquiry</td>
+</tr>
+</tbody>
+</table>
+<p><a id="_filters"></a></p>
+<h2 id="filters">Filters</h2>
+<p>You can only filter data for the get methods (refer to "Verbs used in method names"). To do so, use the optional primitive <code>filter</code>, which may be an object containing:</p>
+<ul>
+<li>
+<p>a simple filter;</p>
+</li>
+<li>
+<p>a filter tree with simple filters and conditions.</p>
+</li>
+</ul>
+<p>A simple filter is an object that contains the following required primitives:</p>
+<ul>
+<li>
+<p><code>field</code> — field of the entity to be filtered (the list of such fields is predetermined for each method);</p>
+</li>
+<li>
+<p><code>operator</code> — filtering operator. The list of all operators is in the section "Filter operators";</p>
+</li>
+<li>
+<p><code>value</code> — value for the filter operator. Optional field. If absent, it is considered empty.</p>
+</li>
+</ul>
+<p>A filter tree contains a special primitive <code>filters</code> that may contain both simple filters and nested filter trees.</p>
+<h3 id="possible-errors-when-filtering">Possible errors when filtering</h3>
+<table>
+<thead>
+<tr>
+<th>Error text</th>
+<th>Code</th>
+<th>Mnemonic</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Filter by parameter is prohibited</td>
+<td>-32602</td>
+<td><code>filter_prohibited</code></td>
+<td>Filtering by the parameter is prohibited or impossible, as the filtering parameter is not on the filtering whitelist</td>
+</tr>
+<tr>
+<td>Unexpected method parameter(s)</td>
+<td>-32602</td>
+<td><code>unexpected_parameters</code></td>
+<td>A wrong parameter was passed, or the parameter does not exist</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-of-a-simple-filters-json-structure">Example of a simple filter's JSON structure</h3>
+<p>Getting a list of entries whose <code>name</code> field is "Bob"</p>
+<pre><code class="language-json">{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;id&quot;: 1,
+    &quot;method&quot;: &quot;get.entity&quot;,
+    &quot;params&quot;: {
+        &quot;filter&quot;: {
+            &quot;field&quot;: &quot;name&quot;,
+            &quot;operator&quot;: &quot;=&quot;,
+            &quot;value&quot;: &quot;Bob&quot;
+        }
+    }
+}
+</code></pre>
+<h3 id="example-of-a-filter-tree-with-one-nesting-level">Example of a filter tree with one nesting level</h3>
+<p>Getting a list of entries whose <code>name</code> field is "Bob" and whose age is 25</p>
+<pre><code class="language-json">{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;id&quot;: 1,
+    &quot;method&quot;: &quot;get.entity&quot;,
+    &quot;params&quot;: {
+        &quot;filter&quot;: {
+            &quot;filters&quot;: [
+                { &quot;field&quot;: &quot;name&quot;, &quot;operator&quot;: &quot;=&quot;, &quot;value&quot;: &quot;Bob&quot; },
+                { &quot;field&quot;: &quot;age&quot;, &quot;operator&quot;: &quot;=&quot;, &quot;value&quot;: 25 }
+            ],
+            &quot;condition&quot;: &quot;and&quot;
+        }
+    }
+}
+</code></pre>
+<h3 id="example-of-a-filter-tree-with-two-nesting-levels">Example of a filter tree with two nesting levels</h3>
+<p>Getting a list of entries whose <code>name</code> is "Bob" and age is 25, or whose <code>name</code> is "Dexter" and age is 2</p>
+<pre><code class="language-json">{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;id&quot;: 1,
+    &quot;method&quot;: &quot;get.entity&quot;,
+    &quot;params&quot;: {
+        &quot;filter&quot;: {
+            &quot;filters&quot;: [
+                {
+                    &quot;filters&quot;: [
+                        { &quot;field&quot;: &quot;name&quot;, &quot;operator&quot;: &quot;=&quot;, &quot;value&quot;: &quot;Bob&quot; },
+                        { &quot;field&quot;: &quot;age&quot;, &quot;operator&quot;: &quot;=&quot;, &quot;value&quot;: 25 }
+                    ],
+                    &quot;condition&quot;: &quot;and&quot;
+                },
+                {
+                    &quot;filters&quot;: [
+                        { &quot;field&quot;: &quot;name&quot;, &quot;operator&quot;: &quot;=&quot;, &quot;value&quot;: &quot;Dexter&quot; },
+                        { &quot;field&quot;: &quot;age&quot;, &quot;operator&quot;: &quot;=&quot;, &quot;value&quot;: 2 }
+                    ],
+                    &quot;condition&quot;: &quot;and&quot;
+                }
+            ],
+            &quot;condition&quot;: &quot;or&quot;
+        }
+    }
+}
+</code></pre>
+<h3 id="example-of-a-filter-tree-with-three-nesting-levels">Example of a filter tree with three nesting levels</h3>
+<p>Request condition: <code>((addv_comp_id = 10 or addv_comp_id = 12) and (tag_id = 1 or tag_id = 5)) or visitor_id = 14 or (date_from = 2015-12-14 and date_till = 2015-12-16)</code></p>
+<pre><code class="language-json">{
+    &quot;filter&quot;: {
+        &quot;filters&quot;: [
+            {
+                &quot;filters&quot;: [
+                    {
+                        &quot;filters&quot;: [
+                            { &quot;field&quot;: &quot;addv_comp_id&quot;, &quot;operator&quot;: &quot;=&quot;, &quot;value&quot;: 10 },
+                            { &quot;field&quot;: &quot;addv_comp_id&quot;, &quot;operator&quot;: &quot;=&quot;, &quot;value&quot;: 12 }
+                        ],
+                        &quot;condition&quot;: &quot;or&quot;
+                    },
+                    {
+                        &quot;filters&quot;: [
+                            { &quot;field&quot;: &quot;tag_id&quot;, &quot;operator&quot;: &quot;=&quot;, &quot;value&quot;: 1 },
+                            { &quot;field&quot;: &quot;tag_id&quot;, &quot;operator&quot;: &quot;=&quot;, &quot;value&quot;: 5 }
+                        ],
+                        &quot;condition&quot;: &quot;or&quot;
+                    }
+                ],
+                &quot;condition&quot;: &quot;and&quot;
+            },
+            { &quot;field&quot;: &quot;visitor_id&quot;, &quot;value&quot;: 14, &quot;operator&quot;: &quot;=&quot; },
+            {
+                &quot;filters&quot;: [
+                    { &quot;field&quot;: &quot;date_from&quot;, &quot;value&quot;: &quot;2015-12-14 12:00:00&quot;, &quot;operator&quot;: &quot;=&quot; },
+                    { &quot;field&quot;: &quot;date_till&quot;, &quot;value&quot;: &quot;2015-12-16 15:00:00&quot;, &quot;operator&quot;: &quot;=&quot; }
+                ],
+                &quot;condition&quot;: &quot;and&quot;
+            }
+        ],
+        &quot;condition&quot;: &quot;or&quot;
+    }
+}
+</code></pre>
+<p><a id="_filterOperators"></a></p>
+<h3 id="filter-operators">Filter operators</h3>
+<p>To filter by null / not null, use <code>=null</code> / <code>!=null</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Case sensitivity (strings)</th>
+<th>Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>=</code></td>
+<td>Equal</td>
+<td>yes</td>
+<td>number, string, null, boolean, iso8601, enum</td>
+</tr>
+<tr>
+<td><code>!=</code></td>
+<td>Not equal</td>
+<td>yes</td>
+<td>number, string, null, boolean, iso8601, enum</td>
+</tr>
+<tr>
+<td><code>&amp;lt;</code></td>
+<td>Less than</td>
+<td>—</td>
+<td>number, iso8601</td>
+</tr>
+<tr>
+<td><code>&amp;gt;</code></td>
+<td>Greater than</td>
+<td>—</td>
+<td>number, iso8601</td>
+</tr>
+<tr>
+<td><code>&amp;lt;=</code></td>
+<td>Less than or equal</td>
+<td>—</td>
+<td>number, iso8601</td>
+</tr>
+<tr>
+<td><code>&amp;gt;=</code></td>
+<td>Greater than or equal</td>
+<td>—</td>
+<td>number, iso8601</td>
+</tr>
+<tr>
+<td><code>like</code></td>
+<td>Begins with / Ends with / Contains. Use "%"</td>
+<td>yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td><code>regexp</code></td>
+<td>POSIX</td>
+<td>yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td><code>jsquery</code></td>
+<td>PostgreSQL jsquery</td>
+<td>yes</td>
+<td>object, array</td>
+</tr>
+<tr>
+<td><code>in</code></td>
+<td>Matches any value in the array (OR logic)</td>
+<td>yes</td>
+<td>number, string, enum</td>
+</tr>
+</tbody>
+</table>
+<p><a id="_sort"></a></p>
+<h2 id="data-sorting">Data sorting</h2>
+<p>You can only sort data for the get methods (refer to "Verbs used in method names"). To do so, use an array of sorting objects with the following primitives:</p>
+<ul>
+<li>
+<p><code>field</code> — field used for sorting;</p>
+</li>
+<li>
+<p><code>order</code> — sorting order. Possible values are <code>asc</code>/<code>desc</code>: <code>asc</code> — ascending, <code>desc</code> — descending. An optional parameter. The default value is <code>asc</code>.</p>
+</li>
+</ul>
+<p>The list of fields that can be used for sorting is defined for each method separately.</p>
+<h3 id="possible-errors-when-sorting">Possible errors when sorting</h3>
+<table>
+<thead>
+<tr>
+<th>Error text</th>
+<th>Code</th>
+<th>Mnemonic</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sort by parameter is prohibited</td>
+<td>-32602</td>
+<td><code>sort_prohibited</code></td>
+<td>Sorting by the parameter is prohibited or impossible, as the sorting parameter is not on the sorting whitelist</td>
+</tr>
+<tr>
+<td>Unexpected method parameter(s)</td>
+<td>-32602</td>
+<td><code>unexpected_parameters</code></td>
+<td>A wrong parameter was passed, or the parameter does not exist</td>
+</tr>
+</tbody>
+</table>
+<p>JSON structure:</p>
+<pre><code class="language-json">{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;id&quot;: &quot;number&quot;,
+    &quot;method&quot;: &quot;string&quot;,
+    &quot;params&quot;: {
+        &quot;sort&quot;: [
+            { &quot;field&quot;: &quot;string&quot;, &quot;order&quot;: &quot;string&quot; }
+        ]
+    }
+}
+</code></pre>
+<p><a id="_paging"></a></p>
+<h2 id="paging">Paging</h2>
+<p>Paging can only be applied to the get methods (refer to "Verbs used in method names"). When paging data, you can use the following parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default value</th>
+<th>Maximum value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>offset</code></td>
+<td>0</td>
+<td>100 000</td>
+<td>Offset defining the record number from which to return <code>limit</code> records</td>
+</tr>
+<tr>
+<td><code>limit</code></td>
+<td>1000</td>
+<td>10 000</td>
+<td>Number of records returned</td>
+</tr>
+</tbody>
+</table>
+<p>JSON structure:</p>
+<pre><code class="language-json">{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;id&quot;: &quot;number&quot;,
+    &quot;method&quot;: &quot;string&quot;,
+    &quot;params&quot;: {
+        &quot;offset&quot;: &quot;number&quot;,
+        &quot;limit&quot;: &quot;number&quot;
+    }
+}
+</code></pre>
+<h2 id="meta-parameters">Meta parameters</h2>
+<p>Returned when using the <code>get method</code> (refer to "Verbs used in method names").</p>
+<p>Returned in both successful and error responses.</p>
+<p>The <code>api_version</code> parameter is returned only for deprecated versions.</p>
+<p>JSON structure:</p>
+<pre><code class="language-json">{
+    &quot;metadata&quot;: {
+        &quot;api_version&quot;: {
+            &quot;current_version_deprecated&quot;: &quot;boolean&quot;,
+            &quot;current_version&quot;: &quot;string&quot;,
+            &quot;latest_version&quot;: &quot;string&quot;
+        },
+        &quot;limits&quot;: {
+            &quot;day_limit&quot;: &quot;number&quot;,
+            &quot;day_remaining&quot;: &quot;number&quot;,
+            &quot;day_reset&quot;: &quot;number&quot;,
+            &quot;minute_limit&quot;: &quot;number&quot;,
+            &quot;minute_remaining&quot;: &quot;number&quot;,
+            &quot;minute_reset&quot;: &quot;number&quot;
+        },
+        &quot;total_items&quot;: &quot;number&quot;
+    }
+}
+</code></pre>
+<p><a id="_views"></a></p>
+<h2 id="viewing-returned-data">Viewing returned data</h2>
+<h3 id="selecting-the-returned-columns">Selecting the returned columns</h3>
+<p>For methods with the data-returning verb <code>get</code> (refer to "Verbs used in method names"), you can specify the optional primitive <code>fields</code> — an array containing the list of fields to include in the output. If <code>fields</code> is not used, all the method's default fields are returned.</p>
+<p>Each method has its own list of fields.</p>
+<p>JSON structure:</p>
+<pre><code class="language-json">{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;id&quot;: &quot;number&quot;,
+    &quot;method&quot;: &quot;string&quot;,
+    &quot;params&quot;: {
+        &quot;fields&quot;: [
+            &quot;string&quot;
+        ]
+    }
+}
+</code></pre>
+<h3 id="possible-errors-when-selecting-returned-data">Possible errors when selecting returned data</h3>
+<table>
+<thead>
+<tr>
+<th>Error text</th>
+<th>Code</th>
+<th>Mnemonic</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unexpected method parameter(s)</td>
+<td>-32602</td>
+<td><code>unexpected_parameters</code></td>
+<td>A wrong parameter was passed, or the parameter does not exist</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fields-common-to-all-methods">Fields common to all methods</h2>
+<table>
+    <tbody>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Valid value</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><code>id</code></td>
+            <td>string or number</td>
+            <td>yes</td>
+            <td></td>
+            <td>Unique ID of the API request, used to match the request with its response. It is recommended to use a unique hash or a random number.</td>
+        </tr>
+        <tr>
+            <td><code>method</code></td>
+            <td>string</td>
+            <td>yes</td>
+            <td></td>
+            <td>The called method</td>
+        </tr>
+        <tr>
+            <td><code>jsonrpc</code></td>
+            <td>string</td>
+            <td>yes</td>
+            <td>2.0</td>
+            <td>JSON-RPC specification number</td>
+        </tr>
+        <tr>
+            <td><code>params</code></td>
+            <td>object</td>
+            <td>yes</td>
+            <td></td>
+            <td>Contains the body of the API request. The request body varies depending on the method.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="authentication">Authentication</h2>
+<p>Full documentation for both methods below is provided in the "Authentication Methods" section of this document.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="authentication/login_user/">"login.user"</a></td>
+<td>Logging in and receiving an authentication session key</td>
+</tr>
+<tr>
+<td><a href="authentication/logout_user/">"logout.user"</a></td>
+<td>Logging out and deleting the authentication session key</td>
+</tr>
+</tbody>
+</table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="changelog/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Changelog" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Changelog
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="components/" class="md-footer__link md-footer__link--next" aria-label="Next: Permissions and Components" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Permissions and Components
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="js/init.js"></script>
+      
+    
+  </body>
+</html>

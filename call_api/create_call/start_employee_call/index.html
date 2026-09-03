@@ -1,0 +1,713 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Start employee call - Call API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#call-to-an-employee" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Call API" class="md-header__button md-logo" aria-label="Call API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Call API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Start employee call
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Call API" class="md-nav__button md-logo" aria-label="Call API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+
+    </a>
+    Call API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Call API
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#call-to-an-employee" class="md-nav__link">
+    Call to an employee
+  </a>
+  
+    <nav class="md-nav" aria-label="Call to an employee">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters" class="md-nav__link">
+    Request parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters" class="md-nav__link">
+    Response parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-request" class="md-nav__link">
+    Example request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-response" class="md-nav__link">
+    Example response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-of-returned-errors" class="md-nav__link">
+    List of returned errors
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Start employee call</h1>
+                
+                <h3 id="call-to-an-employee">Call to an employee</h3>
+<table>
+    <tbody>
+        <tr>
+            <th>Method</th>
+            <th><code>start.employee_call</code></th>
+        </tr>
+        <tr>
+            <td>API version</td>
+            <td>v4.0</td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>The method creates a direct call between a subscriber and an employee without using a scenario.</td>
+        </tr>
+        <tr>
+            <td colspan="2"><a href="../../#_14">Return to list of methods</a></td>
+        </tr>
+    </tbody>
+</table>
+
+<h4 id="request-parameters">Request parameters</h4>
+<table>
+    <tbody>
+        <tr>
+            <th colspan="2">Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Valid values</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td colspan="2">access_token</td>
+            <td>string</td>
+            <td>yes</td>
+            <td></td>
+            <td>Authentication session key</td>
+        </tr>
+        <tr>
+            <td colspan="2">first_call</td>
+            <td>string</td>
+            <td>yes</td>
+            <td>contact, employee</td>
+            <td>
+                <p>Defines the number to call first:</p>
+                <ul>
+                    <li><code>employee</code> - employee;</li>
+                    <li><code>contact</code> - the called party (usually the client);</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">switch_at_once</td>
+            <td>boolean</td>
+            <td>no</td>
+            <td>true, false</td>
+            <td>
+                <p>Default value <code>false</code>.</p>
+                <p>If <code>first_call</code> is <code>employee</code>, and the <code>employee_message</code> and <code>contact_message</code> parameters are specified, then:
+                </p>
+                <ul>
+                    <li>The first call is made to the employee from the <code>employee</code> parameter;</li>
+                    <li>After picking up the phone, the employee listens to the message to the end and only then a call is made to the subscriber specified in the <code>contact</code> parameter;</li>
+                    <li>When dialing <code>contact</code>, <code>employee</code> listens to the message specified in the <code>media_file_id</code> parameter;</li>
+                    <li>After the subscriber from the <code>contact</code> parameter responds, a conversation with the employee from the <code>employee</code> parameter will occur if <code>switch_at_once</code> is set to <code>true</code>;</li>
+                    <li>If <code>switch_at_once</code> has the value <code>false</code>, the subscriber will listen to the message to the end, and then a conversation with the employee will take place.</li>
+                </ul>
+                <p>If <code>first_call</code> is <code>contact</code>, and the <code>contact_message</code> and <code>employee_message</code> parameters are specified, then:
+                </p>
+                <ul>
+                    <li>First, the call is made to the subscriber from the <code>contact</code> parameter;</li>
+                    <li>After picking up the handset, the subscriber begins to listen to the message, and at the same time a call is made to the employee from the <code>employee</code> parameter;</li>
+                    <li>After the employee picks up the phone, playback of the message will be interrupted for the subscriber, and then a conversation will take place if <code>switch_at_once</code> is <code>true</code>;</li>
+                    <li>If <code>switch_at_once</code> is <code>false</code>, the message will be played to the end for both, and then a conversation will take place;</li>
+                    <li>If someone's message has finished playing earlier, that person listens to the message specified in the <code>media_file_id</code> parameter.</li>
+                </ul>
+                <blockquote>Note: if the <code>contact_message.type</code> parameter has the value <code>tts</code>, then <code>switch_at_once=true</code> does not work.</blockquote>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">early_switching</td>
+            <td>boolean</td>
+            <td>no</td>
+            <td>true, false</td>
+            <td>
+                <p>Default value <code>false</code>.</p>
+                <p>If the parameter has the value <code>true</code>, then the employee, when dialing the subscriber, will hear what is happening on the subscriber line.</p>
+                <p>For example, an operator is waiting for a call to reach a subscriber, but the subscriber is unavailable and their voicemail is activated; then, when <code>early_switching = true</code>, the operator will be able to hear the subscriber's voicemail message. If <code>early_switching = false</code>, the operator will hear the music specified in the <code>media_file_id</code> parameter.</p>
+                <blockquote>Note: the parameter can have the value <code>true</code> unless the <code>first_call</code> parameter has the value <code>employee</code> and the <code>switch_at_once</code> parameter has the value <code>true</code>. Otherwise, the error <code>-32602 invalid_parameters_combination - The combination of parameters is not permitted</code> will occur (see the error codes section).</blockquote>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">media_file_id</td>
+            <td>number</td>
+            <td>no</td>
+            <td></td>
+            <td>
+                <p>The default value is the system melody "Forwarding Music" (<code>dialing_music</code>).</p>
+                <p>Sets the audio file ID for the forwarding music. The file can be either system or custom. You can get a list of system or user files using the DATA API - Getting a list of user files, Getting a list of system files.</p>
+                <blockquote>Note: always plays to the call leg for which one of the <code>contact_message</code> or <code>employee_message</code> parameters is set.</blockquote>
+            </td>
+        </tr>
+        <tr><td colspan="2">virtual_phone_number</td>
+            <td>string</td>
+            <td>yes</td>
+            <td></td>
+            <td>
+                <p>Virtual number rented by the client. The number format must comply with the international
+                    E.164 standard (for example, <code>74993720692</code>). Always used as the caller number when calling
+                    the number specified in the <code>contact</code> parameter. Used as the caller number when calling
+                    the number specified in the <code>employee</code> parameter, if the <code>show_virtual_phone_number</code> parameter is set to
+                    <code>true</code>.
+                    Virtual numbers can be obtained using the DATA API method - Getting a list of virtual numbers.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">virtual_phone_usage_rule</td>
+            <td>string</td>
+            <td>no</td>
+            <td></td>
+            <td>
+                <p>
+                    Rules for using a virtual number. Allows you to dynamically change the virtual number when calling. If a suitable number satisfying the selected rule is not found, the number specified in the <code>virtual_phone_number</code> parameter will be used.
+                    Valid parameter values:
+                </p>
+                <ul>
+                    <li><code>fixed</code> - Fixed</li>
+                    <li><code>fixed_for_numa</code> - Fixed for subscriber</li>
+                    <li><code>random</code> - Random</li>
+                    <li><code>regional_random</code> - Regional random</li>
+                    <li><code>regional_fixed_for_numa</code> - Regional fixed line for the subscriber</li>
+                </ul>
+                <p>
+                    Note: the default rule is <code>fixed</code>. Other rules are available when the <code>Automatic number management</code> component is connected.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">show_virtual_phone_number</td>
+            <td>boolean</td>
+            <td>no</td>
+            <td>true, false</td>
+            <td>
+                <p>Default value <code>true</code>.</p>
+                <p>Whether to show the virtual number specified by the <code>virtual_phone_number</code> parameter as the caller number for the employee specified in the <code>employee</code> parameter.</p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">contact</td>
+            <td>string</td>
+            <td>yes</td>
+            <td></td>
+            <td>
+                <p>The number of the subscriber to whom the call is made. The number format must match
+                    the international E.164 standard (for example, <code>79091234567</code>). The employee's SIP number can also be specified as the number.
+                </p>
+                <blockquote>
+                    Note: employee extensions are not supported. <br>
+                    Note: if an employee is specified as a contact, then the status of the number is not taken into account. <br>
+                    Note: searching for a contact name is possible only in the address book, because this method is treated as a call to an external number.
+                </blockquote>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">external_id</td>
+            <td>string</td>
+            <td>no</td>
+            <td></td>
+            <td>A unique identifier that can be used to associate a call event with an external system.</td>
+        </tr>
+        <tr>
+            <td colspan="2">dtmf_string</td>
+            <td>string</td>
+            <td>no</td>
+            <td>0-9, *, #</td>
+            <td>Specifies the DTMF that will be sent to the subscriber specified in the <code>contact</code> parameter. Using the <code>.</code> symbol (= "1 second") you can set a timeout after which the DTMF symbol will be sent. Example: <code>.12.1..4</code> - that is, after 1 second the number 12 will be sent, then after 1 second the number 1, and after 2 seconds the number 4.
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">direction</td>
+            <td>string</td>
+            <td>no</td>
+            <td>in, out</td>
+            <td>The default value is <code>in</code>. <br>
+                Determines the direction of the call: <code>in</code> - Incoming call, <code>out</code> - Outgoing call.
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6" align="center">Employee to whom the subscriber from the <code>contact</code> parameter will be connected</td>
+        </tr>
+        <tr>
+            <td colspan="2">employee</td>
+            <td>object</td>
+            <td>yes</td>
+            <td></td>
+            <td>The employee to whom the subscriber specified in the <code>contact</code> parameter will be connected.</td>
+        </tr>
+        <tr>
+            <td width="15"></td>
+            <td>id</td>
+            <td>number</td>
+            <td>yes</td>
+            <td></td>
+            <td>
+                Unique employee identifier. This identifier can be obtained using the DATA API - Obtaining information about an employee.
+                <blockquote>Note: if the <code>phone_number</code> parameter is not specified, then a sequential call will be made to all active employee numbers.</blockquote>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>phone_number</td>
+            <td>string</td>
+            <td>no</td>
+            <td></td>
+            <td>
+                <p>Specifies the number of the employee with whom the subscriber specified in the <code>contact</code> parameter will be connected.
+                    The number can be a SIP number, an internal number, or a number in E.164 format. The number must
+                    have the status <code>Active</code> in your personal account and belong to the employee specified in the <code>id</code> parameter.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6" align="center">Message to be played to the subscriber specified in the parameter <code>contact</code></td>
+        </tr>
+        <tr>
+            <td colspan="2">contact_message</td>
+            <td>object</td>
+            <td>no</td>
+            <td></td>
+            <td><p>Defines the parameters of the message that needs to be played to the subscriber specified in the <code>contact</code> parameter.</p>
+                <blockquote>Note: after the message has finished playing, the message from the <code>media_file_id</code> parameter will be played on a loop.</blockquote>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>type</td>
+            <td>string</td>
+            <td>yes</td>
+            <td>media, tts</td>
+            <td>
+                <p>Defines the message type: <code>media</code> - file, or <code>tts</code> - text for the Text-to-Speech speech synthesis service.</p>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>value</td>
+            <td>string</td>
+            <td>yes</td>
+            <td></td>
+            <td>
+                <p>If the <code>type</code> field has the value <code>media</code>, then the value is the identifier of the file to play. The file to be played can be system or user. The file identifier can be obtained using the DATA API - Getting a list of user files, Getting a list of system files.</p>
+                <p>If the <code>type</code> field has the value <code>tts</code>, then the value is the text to be synthesized into a voice message.</p>
+                <blockquote>Note: the length of the TTS message is regulated by the tariff plan and the established limit.</blockquote>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6" align="center">Message to be played to the subscriber specified in the parameter <code>employee</code></td>
+        </tr>
+        <tr>
+            <td colspan="2">employee_message</td>
+            <td>object</td>
+            <td>no</td>
+            <td></td>
+            <td>
+                <p>Defines the parameters of the message that needs to be played to the subscriber specified in the <code>employee</code> parameter.</p>
+                <blockquote>Note: after the message has finished playing, the message from the <code>media_file_id</code> parameter will be played on a loop.</blockquote>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>type</td>
+            <td>string</td>
+            <td>yes</td>
+            <td>media, tts</td>
+            <td>
+                <p>Defines the message type: <code>media</code> - file, or <code>tts</code> - text for the Text-to-Speech speech synthesis service.</p>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>value</td>
+            <td>string</td>
+            <td>yes</td>
+            <td></td>
+            <td>
+                <p>If the <code>type</code> field has the value <code>media</code>, then the value is the identifier of the file to play. The file to be played can be system or user. The file identifier can be obtained using the DATA API - Getting a list of user files, Getting a list of system files.</p>
+                <p>If the <code>type</code> field has the value <code>tts</code>, then the value is the text to be synthesized into a voice message.</p>
+                <blockquote>Note: the length of the TTS message is regulated by the tariff plan and the established limit.</blockquote>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h4 id="response-parameters">Response parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>call_session_id</td>
+<td>number</td>
+<td>yes</td>
+<td>Unique call session identifier</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-request">Example request</h4>
+<pre><code class="language-json">{
+  "jsonrpc": "2.0",
+  "method": "start.employee_call",
+  "id": "req1",
+  "params": {
+    "access_token": "2fRN4g217ca0b4224a67988aff3e584f91964a692045415f36fa66146f5a3c1ae1f6093d",
+    "first_call": "employee",
+    "switch_at_once": true,
+    "media_file_id": 2701,
+    "show_virtual_phone_number": false,
+    "virtual_phone_number": "74993720692",
+    "external_id": "334otr01",
+    "dtmf_string": ".1.2.3",
+    "direction": "in",
+    "contact": "79260000000",
+    "employee": {
+      "id": 25,
+      "phone_number": "79260000001"
+    },
+    "contact_message": {
+      "type": "tts",
+      "value": "Hello"
+    },
+    "employee_message": {
+      "type": "media",
+      "value": "2561"
+    }
+  }
+}
+</code></pre>
+<h4 id="example-response">Example response</h4>
+<pre><code class="language-json">{
+  "jsonrpc": "2.0",
+  "id": "req1",
+  "result": {
+    "data": {
+      "call_session_id": 237859081
+    }
+  }
+}
+</code></pre>
+<h4 id="list-of-returned-errors">List of returned errors</h4>
+<table>
+<thead>
+<tr>
+<th>Error text</th>
+<th>Error code</th>
+<th>Mnemonics</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The maximum length of a Text-to-Speech message is {<code>tts_message_max_length</code>}. The length of your message is {<code>sent_tts_message_length</code>}</td>
+<td>-32602</td>
+<td><code>tts_text_exceeded</code></td>
+<td>Message length has exceeded the permissible limit set by the tariff plan</td>
+</tr>
+<tr>
+<td>The media file with id {<code>media_file_id</code>} was not found</td>
+<td>-32602</td>
+<td><code>media_file_not_found</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Virtual phone number {<code>virtual_phone_number</code>} not found. It is not your virtual phone number.</td>
+<td>-32007</td>
+<td><code>virtual_phone_number_not_found</code></td>
+<td>If you use a virtual number that does not belong to the client</td>
+</tr>
+<tr>
+<td>Employee with id {<code>employee_id</code>} not found. It is not your employee.</td>
+<td>-32602</td>
+<td><code>employee_not_found</code></td>
+<td></td>
+</tr>
+<tr>
+<td>The phone number does not exist or is inactive</td>
+<td>-32602</td>
+<td><code>no_active_phone_number</code></td>
+<td>The employee does not have active numbers in the employee settings</td>
+</tr>
+<tr>
+<td>The <code>contact</code> parameter cannot contain your own virtual phone number</td>
+<td>-32602</td>
+<td><code>own_virtual_phone_number_not_allowed</code></td>
+<td>Calling your own virtual number is prohibited</td>
+</tr>
+<tr>
+<td>The contact {<code>contact</code>} has been found in the blacklist</td>
+<td>-32002</td>
+<td><code>contact_in_blacklist</code></td>
+<td></td>
+</tr>
+<tr>
+<td>The character encoding must be UTF-8</td>
+<td>-32602</td>
+<td><code>character_encoding_not_allowed</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>See also the section <a href="../..#_errors">"List of errors common for all methods"</a>.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../../js/init.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

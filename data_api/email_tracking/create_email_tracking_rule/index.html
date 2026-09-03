@@ -1,0 +1,1271 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Creating email tracking rules - DATA API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#request-parameters" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DATA API" class="md-header__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DATA API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Creating email tracking rules
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DATA API" class="md-nav__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DATA API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        General Information
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/" class="md-nav__link">
+        Permissions and Components
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../account/get_account/" class="md-nav__link">
+        Account
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vn/" class="md-nav__link">
+        Virtual Numbers and Rules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sip/" class="md-nav__link">
+        SIP Lines
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scenario/get_scenarios/" class="md-nav__link">
+        Scenarios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user_media/get_media_files/" class="md-nav__link">
+        Media Files
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaigns/" class="md-nav__link">
+        Ad Campaigns
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/" class="md-nav__link">
+        Sources
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../auto_calls/" class="md-nav__link">
+        Outbound Calls
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sales_funnel_and_deals/" class="md-nav__link">
+        Sales Funnels and Deals
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sites/" class="md-nav__link">
+        Sites
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/" class="md-nav__link">
+        Reports
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../employees/" class="md-nav__link">
+        Employees
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contacts/" class="md-nav__link">
+        Contacts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blacklist/" class="md-nav__link">
+        Blacklist
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schedules/" class="md-nav__link">
+        Schedules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../partners/" class="md-nav__link">
+        Agents' Customers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../communications/" class="md-nav__link">
+        Communications
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../persons/" class="md-nav__link">
+        Person / Visitor
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#request-parameters" class="md-nav__link">
+    Request parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-parameters" class="md-nav__link">
+    Response parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-request-structurejson" class="md-nav__link">
+    JSON request structure```json
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON request structure```json">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static-replacement-on-the-site-static_replacement_emails_settingsjson" class="md-nav__link">
+    Static replacement on the site static_replacement_emails_settings```JSON
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-substitution-on-the-site-dynamic_replacement_emails_settings-with-a-manual-mail-pool-substitution_type-manual_pooljson" class="md-nav__link">
+    Dynamic substitution on the site dynamic_replacement_emails_settings with a manual mail pool "substitution_type": "manual_pool"```JSON
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-returned-errors" class="md-nav__link">
+    List of returned errors
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Creating email tracking rules</h1>
+                
+                <table>
+<thead>
+<tr>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;"><code>create.email_tracking_rule</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Description</td>
+<td style="text-align: left;">Creating email tracking rules</td>
+</tr>
+<tr>
+<td style="text-align: left;">Available to</td>
+<td style="text-align: left;">Agent, Client</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-parameters">Request parameters</h3>
+<table>
+  <tbody>
+    <tr>
+      <td>Name</td>
+      <td>Type</td>
+      <td>Required</td>
+      <td>Allowed values</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td><code>access_token</code></td>
+      <td>string</td>
+      <td>yes</td>
+      <td></td>
+      <td>Authentication session key</td>
+    </tr>
+    <tr>
+      <td><code>user_id</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td>Unique user identifier of the agent client on behalf of which the request is made <blockquote>Is required for the agent</blockquote> To obtain a list of client users, you must use the method <a href="../../partner/get_customer_users"> "get.customer_users" </a> </td>
+    </tr>
+    <tr>
+      <td><code>name</code></td>
+      <td>string</td>
+      <td>yes</td>
+      <td></td>
+      <td>Rule name.</td>
+    </tr>
+    <tr>
+      <td><code>description</code></td>
+      <td>string</td>
+      <td>no</td>
+      <td></td>
+      <td>Description of the rule.</td>
+    </tr>
+    <tr>
+      <td><code>rule_type</code></td>
+      <td>string</td>
+      <td>yes</td>
+            <td>
+              <ul>
+                    <li><code>site_emails</code> - Substitution on the site</li>
+                    <li><code>external_area</code> - Email from third-party sites</li>
+                </ul>
+      </td>
+      <td>Rule type</td>
+    </tr>
+    <tr>
+      <td><code>traffic_type</code></td>
+      <td>text</td>
+      <td>yes</td>
+      <td>
+              <ul>
+                    <li><code>all</code> - All traffic</li>
+                    <li><code>custom_sources</code> - Custom traffic settings</li>
+                </ul>
+      </td>
+      <td>Traffic type for email-tracking</td>
+    </tr>
+    <tr>
+      <td><code>tracking_type</code></td>
+      <td>text</td>
+      <td>yes</td>
+      <td>static, dynamic</td>
+      <td>Email tracking type</td>
+    </tr>
+    <tr>
+            <td><code>substitution_type</code></td>
+            <td>string</td>
+      <td>Allowed and required only for tracking_type = dynamic.</td>
+            <td>
+              <ul>
+                    <li><code>auto_generation</code> - Automatic generation of 10,000 mail</li>
+                    <li><code>manual_pool</code> - Manual entry of mail</li>
+                </ul>
+            </td>
+            <td>Method of forming an Email pool for spoofing</td>
+        </tr>
+    <tr>
+      <td><code>state</code></td>
+      <td>text</td>
+      <td>yes</td>
+      <td>
+              <ul>
+                    <li><code>active</code> - Active rule</li>
+                    <li><code>draft</code> - Draft</li>
+                </ul>
+            </td>
+      <td>Email tracking rule status</td>
+    </tr>
+    <tr>
+      <td><code>sources</code></td>
+      <td>array</td>
+      <td>Required tracking_type = dynamic and traffic_type = custom_sources, otherwise absent</td>
+      <td></td>
+      <td>
+        List of sources for which this rule is used.
+      </td>
+    </tr>
+    <tr>
+      <td><code>source_channel_id</code></td>
+      <td>number</td>
+      <td>yes</td>
+      <td></td>
+      <td>Source channel ID. Method for getting a list of existing channels: <a href="../../source/channel/get_sources_channels/"> "get.get_sources_channels" </a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>source_group_id</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td>
+        Source group ID. Method for getting a list of existing groups: <a href="../../source/group/get_sources_groups/"> "get.get_sources_groups" </a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>source_id</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td>
+        Source ID. Method for getting a list of existing Sources: <a href="../../source/source/get_sources/"> "get.get_sources" </a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>external_replacement_emails_settings</code></td>
+      <td>array</td>
+      <td>Can only be present in a request if
+        <code>tracking_type</code> = <code>static</code> AND
+        <code>rule_type</code> = <code>external_area</code></td>
+      <td></td>
+      <td>
+        Setting up static emails on third-party sites.
+      </td>
+    </tr>
+    <tr>
+      <td><code>email_account_id</code></td>
+      <td>number</td>
+      <td>yes</td>
+      <td></td>
+      <td>Email address to display on the site: <a href="../get_email_accounts/"> "get.email_accounts".</td>
+    </tr>
+    <tr>
+      <td><code>child_customer_id</code></td>
+      <td>number</td>
+      <td></td>
+      <td></td>
+      <td>Identifier of the client for whom the mailbox was created. Method for getting a list of clients: <a href="../../partner/get_customers"> "get.customers" </a></td>
+    </tr>
+    <tr>
+      <td><code>source</code></td>
+      <td>object</td>
+      <td>no</td>
+      <td></td>
+      <td>
+        List of sources for which the guarantee is configured. If you need to select All traffic, null is passed to this parameter
+      </td>
+    </tr>
+    <tr>
+      <td><code>source_channel_id</code></td>
+      <td>number</td>
+      <td>yes</td>
+      <td></td>
+      <td>
+        Source channel ID. Method for getting a list of existing channels: <a href="../../source/channel/get_sources_channels/"> "get.get_sources_channels" </a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>source_group_id</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td>
+        Source group ID. Method for getting a list of existing groups: <a href="../../source/group/get_sources_groups/"> "get.get_sources_groups" </a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>source_id</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td>
+        Source ID. Method for getting a list of existing Sources: <a href="../../source/source/get_sources/"> "get.get_sources" </a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>static_replacement_emails_settings</code></td>
+      <td>array</td>
+      <td>Can only be present in a request if
+        <code>tracking_type</code> = <code>static</code> AND
+        <code>rule_type</code> = <code>site_emails</code></td>
+      <td></td>
+      <td>
+        Setting up static email on the website
+      </td>
+    </tr>
+    <tr>
+      <td><code>replacement_emails_groups</code></td>
+      <td>array</td>
+      <td>Required for rule_type = site_emails</td>
+      <td></td>
+      <td>Groups of emails and sites to replace with spoofed emails.
+      </td>
+    </tr>
+    <tr>
+      <td><code>id</code></td>
+      <td>number</td>
+      <td>yes</td>
+      <td></td>
+      <td>
+        Email group ID. Method for getting a list of existing groups: <a href="../get_replacement_emails_groups/"> "get.replacement_emails_groups" </a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>site_id</code></td>
+      <td>number</td>
+      <td>yes</td>
+      <td></td>
+      <td>
+        Site ID.
+      </td>
+    </tr>
+    <tr>
+      <td><code>email_account_id</code></td>
+      <td>number</td>
+      <td>yes</td>
+      <td></td>
+      <td>Email address to display on the site: <a href="../get_email_accounts/"> "get.email_accounts".</td>
+    </tr>
+    <tr>
+      <td><code>source</code></td>
+      <td>object</td>
+      <td>no</td>
+      <td></td>
+      <td>
+        List of sources for which the block is configured. If you need to select All traffic, null is passed to this parameter
+      </td>
+    </tr>
+    <tr>
+      <td><code>source_channel_id</code></td>
+      <td>number</td>
+      <td>yes</td>
+      <td></td>
+      <td>
+        Source channel ID. Method for getting a list of existing channels: <a href="../../source/channel/get_sources_channels/"> "get.get_sources_channels" </a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>source_group_id</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td>
+        Source group ID. Method for getting a list of existing groups: <a href="../../source/group/get_sources_groups/"> "get.get_sources_groups" </a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>source_id</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td>
+        Source ID. Method for getting a list of existing Sources: <a href="../../source/source/get_sources/"> "get.get_sources" </a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>default_source_id</code></td>
+      <td>number</td>
+      <td>Required if rule_type = site_emails</td>
+      <td></td>
+      <td>
+        Source ID to display in the report. Method for getting a list of existing Sources: <a href="../../source/source/get_sources/"> "get.get_sources" </a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>dynamic_replacement_emails_settings</code></td>
+      <td>array</td>
+      <td>Can only be present in a request if
+        <code>tracking_type</code> = <code>dynamic</code></td>
+      <td></td>
+      <td>
+        Setting up dynamic email.
+      </td>
+    </tr>
+    <tr>
+      <td><code>replacement_emails_groups</code></td>
+      <td>array</td>
+      <td>Required for rule_type = site_emails</td>
+      <td></td>
+      <td>
+        Groups of emails and sites to replace with spoofed emails.
+      </td>
+    </tr>
+    <tr>
+      <td><code>id</code></td>
+      <td>number</td>
+      <td>yes</td>
+      <td></td>
+      <td>
+        Email group ID. Method for getting a list of existing groups: <a href="../get_replacement_emails_groups/"> "get.replacement_emails_groups" </a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>site_id</code></td>
+      <td>number</td>
+      <td>yes</td>
+      <td></td>
+      <td>
+        Site ID.
+      </td>
+    </tr>
+    <tr><td><code>email_account_id</code></td>
+      <td>number</td>
+      <td>yes</td>
+      <td></td>
+      <td>Email address to display on the site: <a href="../get_email_accounts/"> "get.email_accounts".</td>
+    </tr>
+    <tr>
+      <td><code>email_accounts</code></td>
+      <td>array</td>
+      <td>Acceptable and required when <code>substitution_type</code> = <code>manual_pool</code></a></td>
+      <td></td>
+      <td>List of emails for replacement in case of manual dialing of emails.</td>
+    </tr>
+</table>
+
+<h3 id="response-parameters">Response parameters</h3>
+<table>
+    <tbody>
+        <tr>
+            <td>Name</td>
+            <td>Type</td>
+            <td>Allowed values</td>
+            <td>Filtering</td>
+            <td>Sorting</td>
+            <td>Description</td>
+        </tr>
+        <tr>
+            <td><code>id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td></td>
+            <td>Unique address identifier for integration</td>
+        </tr>
+</table>
+
+<h3 id="json-request-structurejson">JSON request structure```json</h3>
+<p>{
+    "jsonrpc": "2.0",
+    "id": "number",
+    "method": "create.email_tracking_rule",
+    "params": {
+        "name": "string",
+        "description": "string",
+        "tracking_type": "string",
+        "traffic_type": "string",
+        "rule_type": "string",
+        "state": "string",
+        "substitution_type": "string",
+        "sources": [
+            {
+                "source_id": "number",
+                "source_group_id": "number",
+                "source_channel_id": "number"
+            }
+        ],
+        "external_replacement_emails_settings": [
+            {
+                "id": "number",
+                "email_account_id": "number",
+                "child_customer_id": "number",
+                "source": {
+                    "source_id": "number",
+                    "source_group_id": "number",
+                    "source_channel_id": "number"
+                }
+            }
+        ],
+        "static_replacement_emails_settings": [
+            {
+                "id": "number",
+                "replacement_emails_groups": [
+                    {
+                        "id": "number",
+                        "site_id": "number"
+                    }
+                ],
+                "email_account_id": "number",
+                "source": {
+                    "source_channel_id": "number",
+                    "source_group_id": "number",
+                    "source_id": "number"
+                },
+                "default_source_id": "number"
+            }
+        ],
+        "dynamic_replacement_emails_settings": [
+            {
+                "id": "number",
+                "replacement_emails_groups": [
+                    {
+                        "id": "number",
+                        "site_id": "number"
+                    }
+                ],
+                "email_account_id": "number",
+                "email_accounts": [
+                    "string"
+                ]
+            }
+        ]
+    }
+}</p>
+<pre><code>### JSON Example request
+#### Replacement on third-party sites external_replacement_emails_settings```JSON
+{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;id&quot;: &quot;number&quot;,
+    &quot;method&quot;: &quot;create.email_tracking_rule&quot;,
+    &quot;params&quot;: {
+        &quot;access_token&quot;: &quot;2fRN4g217ef938dbf1e336d0..................................&quot;,
+        &quot;state&quot;: &quot;active&quot;,
+        &quot;name&quot;: &quot;Тестт&quot;,
+        &quot;tracking_type&quot;: &quot;static&quot;,
+        &quot;traffic_type&quot;: &quot;custom_sources&quot;,
+        &quot;rule_type&quot;: &quot;external_area&quot;,
+        &quot;external_replacement_emails_settings&quot;: [
+            {
+                &quot;id&quot;: null,
+                &quot;email_account_id&quot;: 8770747,
+                &quot;child_customer_id&quot;: 11111,
+                &quot;source&quot;: {
+                    &quot;source_channel_id&quot;: -2,
+                    &quot;source_group_id&quot;: -6,
+                    &quot;source_id&quot;: -6
+                }
+            }
+        ]
+    }
+}
+</code></pre>
+<h4 id="static-replacement-on-the-site-static_replacement_emails_settingsjson">Static replacement on the site static_replacement_emails_settings```JSON</h4>
+<p>{
+    "jsonrpc": "2.0",
+    "id": "number",
+    "method": "create.email_tracking_rule",
+    "params": {
+        "access_token": "2fRN4g217ef938dbf1e336d0..................................",
+        "state": "active",
+        "name": "цй",
+        "tracking_type": "static",
+        "traffic_type": "custom_sources",
+        "rule_type": "site_emails",
+        "static_replacement_emails_settings": [
+            {
+                "id": null,
+                "replacement_emails_groups": [
+                    {
+                        "id": 1682,
+                        "site_id": 111448
+                    }
+                ],
+                "email_account_id": 8520512,
+                "source": {
+                    "source_channel_id": -9,
+                    "source_group_id": -89,
+                    "source_id": -104
+                },
+                "default_source_id": -104
+            },
+            {
+                "id": null,
+                "replacement_emails_groups": [
+                    {
+                        "id": 1677,
+                        "site_id": 111448
+                    }
+                ],
+                "email_account_id": 8770747,
+                "source": {
+                    "source_channel_id": -9,
+                    "source_group_id": -89,
+                    "source_id": -104
+                },
+                "default_source_id": -104
+            }
+        ]
+    }
+}</p>
+<pre><code>#### Dynamic substitution on the site dynamic_replacement_emails_settings with an auto-generated mail pool &quot;substitution_type&quot;: &quot;auto_generation&quot;```JSON
+{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;id&quot;: &quot;number&quot;,
+    &quot;method&quot;: &quot;create.email_tracking_rule&quot;,
+    &quot;params&quot;: {
+        &quot;access_token&quot;: &quot;2fRN4g217ef938dbf1e336d0..................................&quot;,
+        &quot;state&quot;: &quot;active&quot;,
+        &quot;name&quot;: &quot;112&quot;,
+        &quot;tracking_type&quot;: &quot;dynamic&quot;,
+        &quot;traffic_type&quot;: &quot;custom_sources&quot;,
+        &quot;rule_type&quot;: &quot;site_emails&quot;,
+        &quot;sources&quot;: [
+            {
+                &quot;source_channel_id&quot;: -12,
+                &quot;source_group_id&quot;: -112
+            },
+            {
+                &quot;source_channel_id&quot;: -12,
+                &quot;source_group_id&quot;: -115,
+                &quot;source_id&quot;: -130
+            }
+        ],
+        &quot;substitution_type&quot;: &quot;auto_generation&quot;,
+        &quot;dynamic_replacement_emails_settings&quot;: [
+            {
+                &quot;id&quot;: null,
+                &quot;replacement_emails_groups&quot;: [
+                    {
+                        &quot;id&quot;: 1682,
+                        &quot;site_id&quot;: 111448
+                    }
+                ],
+                &quot;email_account_id&quot;: 8520512
+            },
+            {
+                &quot;id&quot;: null,
+                &quot;replacement_emails_groups&quot;: [
+                    {
+                        &quot;id&quot;: 1677,
+                        &quot;site_id&quot;: 111448
+                    }
+                ],
+                &quot;email_account_id&quot;: 8770747
+            }
+        ]
+    }
+}
+</code></pre>
+<h4 id="dynamic-substitution-on-the-site-dynamic_replacement_emails_settings-with-a-manual-mail-pool-substitution_type-manual_pooljson">Dynamic substitution on the site dynamic_replacement_emails_settings with a manual mail pool "substitution_type": "manual_pool"```JSON</h4>
+<p>{
+    "jsonrpc": "2.0",
+    "id": "number",
+    "method": "create.email_tracking_rule",
+    "params": {
+        "access_token": "2fRN4g217ef938dbf1e336d0..................................",
+        "state": "active",
+        "name": "112",
+        "tracking_type": "dynamic",
+        "traffic_type": "custom_sources",
+        "rule_type": "site_emails",
+        "sources": [
+            {
+                "source_channel_id": -12,
+                "source_group_id": -112
+            },
+            {
+                "source_channel_id": -12,
+                "source_group_id": -115,
+                "source_id": -130
+            }
+        ],
+        "substitution_type": "manual_pool",
+        "dynamic_replacement_emails_settings": [
+            {
+                "id": null,
+                "replacement_emails_groups": [
+                    {
+                        "id": 1682,
+                        "site_id": 111448
+                    }
+                ],
+                "email_account_id": 8520512,
+                "email_accounts": [
+                    "test3@test.ru",
+                    "test4@test.ru"
+                ]
+            },
+            {
+                "id": null,
+                "replacement_emails_groups": [
+                    {
+                        "id": 1677,
+                        "site_id": 111448
+                    }
+                ],
+                "email_account_id": 8770747,
+                "email_accounts": [
+                    "test1@test.ru",
+                    "test2@test.ru"
+                ]
+            }
+        ]
+    }
+}</p>
+<pre><code>### JSON response structure```json
+{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: &quot;number&quot;,
+  &quot;result&quot;: {
+    &quot;metadata&quot;: {
+
+    },
+    &quot;data&quot;: {
+        &quot;id&quot;: &quot;number&quot;
+    }
+  }
+}
+</code></pre>
+<h3 id="list-of-returned-errors">List of returned errors</h3>
+<p>See the section <a href="../..#_changeErrors">"List of errors for methods with the verb create"</a></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../../js/init.js"></script>
+      
+    
+  </body>
+</html>

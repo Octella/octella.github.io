@@ -1,0 +1,1893 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Receiving all PCTs. - DATA API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#request-parameters" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="DATA API" class="md-header__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DATA API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Receiving all PCTs.
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="DATA API" class="md-nav__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DATA API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        General Information
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/" class="md-nav__link">
+        Permissions and Components
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../account/get_account/" class="md-nav__link">
+        Account
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vn/" class="md-nav__link">
+        Virtual Numbers and Rules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sip/" class="md-nav__link">
+        SIP Lines
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../scenario/get_scenarios/" class="md-nav__link">
+        Scenarios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../user_media/get_media_files/" class="md-nav__link">
+        Media Files
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../campaigns/" class="md-nav__link">
+        Ad Campaigns
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sources/" class="md-nav__link">
+        Sources
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../auto_calls/" class="md-nav__link">
+        Outbound Calls
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sales_funnel_and_deals/" class="md-nav__link">
+        Sales Funnels and Deals
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sites/" class="md-nav__link">
+        Sites
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/" class="md-nav__link">
+        Reports
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../employees/" class="md-nav__link">
+        Employees
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contacts/" class="md-nav__link">
+        Contacts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blacklist/" class="md-nav__link">
+        Blacklist
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../schedules/" class="md-nav__link">
+        Schedules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../partners/" class="md-nav__link">
+        Agents' Customers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../communications/" class="md-nav__link">
+        Communications
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../persons/" class="md-nav__link">
+        Person / Visitor
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#request-parameters" class="md-nav__link">
+    Request parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-parameters" class="md-nav__link">
+    Response parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-request-structurejson" class="md-nav__link">
+    JSON request structure```json
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-returned-errors" class="md-nav__link">
+    List of returned errors
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Receiving all PCTs.</h1>
+                
+                <nav>
+<a href="../../../sites/">Sites </a> >
+Getting all pools of numbers.
+</nav>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;"><code>get.call_tracking_rules</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Description</td>
+<td style="text-align: left;">Receiving all PCTs.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Available to</td>
+<td style="text-align: left;">Agent, Client</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-parameters">Request parameters</h3>
+<table>
+  <tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Required</th>
+      <th>Valid values</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td><code>access_token</code></td>
+      <td>string</td>
+      <td>yes</td>
+      <td></td>
+      <td>Authentication session key</td>
+    </tr>
+    <tr>
+      <td><code>user_id</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td>Unique user identifier of the agent client on behalf of which the request is made <blockquote>Is required for the agent</blockquote> To obtain a list of client users, you must use the method <a href="../../../partner/get_customer_users"> "get.customer_users" </a> </td>
+    </tr>
+    <tr>
+      <td><code>limit</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td>Number of records to return. See <a href="../../../#_paging"> "Paging Output" </a></td>
+    </tr>
+    <tr>
+      <td><code>offset</code></td>
+      <td>number</td>
+      <td>no</td>
+      <td></td>
+      <td>Shift, determines from which record number to return `"limit"` records. Default is "0". See <a href="../../../#_paging"> "Paging Output" </a></td>
+    </tr>
+    <tr>
+      <td><code>search_string</code></td>
+      <td>string</td>
+      <td>no</td>
+      <td></td>
+      <td>Search string that filters data in the response</td>
+    </tr>
+    <tr>
+      <td><code>fields</code></td>
+      <td>array</td>
+      <td>no</td>
+      <td></td>
+      <td>See section ["View of returned data"](../index.md#_views)</td>
+    </tr>
+    <tr>
+      <td colspan="5">Filters used in the report</td>
+    </tr>
+    <td><code>filter</code></td>
+      <td>object</td>
+      <td>no</td>
+      <td>It is permissible to use no more than <code>2 уровней</code> nesting.</td>
+      <td>Filters applied in the report. The construction logic is similar to <a href="../../../#_filters"> "Filtering criteria" </a> </td>
+    </tr>
+    <tr>
+      <td><code>filters</code></td>
+      <td>array</td>
+      <td>yes</td>
+      <td></td>
+      <td>An expression can contain both simple filters and a filter tree. For an available list of filters for a report with their possible values, see section <a href="../../../report_new/filter/get_report_filters/"> "Getting a list of possible filtering conditions for a report" </a>.</td>
+    </tr>
+    <tr>
+      <td><code>field</code></td>
+      <td>string</td>
+      <td></td>
+      <td></td>
+      <td>Field of the entity to which filtering will be applied (the list is predefined for the method)</td>
+    </tr>
+    <tr>
+      <td><code>operator</code></td>
+      <td>enum</td>
+      <td></td>
+      <td></td>
+      <td>Filtering operator. A list of all operators can be obtained in the <a href="../../../#_filterOperators"> "Filtering Operators" section </a></td>
+    </tr>
+    <tr>
+      <td><code>value</code></td>
+      <td>string</td>
+      <td></td>
+      <td></td><td>Value for the filtering operator. Optional field; if it is missing, it is considered empty.</td>
+    </tr>
+    <tr>
+      <td colspan="5">Sorting used in the report</td>
+    </tr>
+    <td><code>sort</code></td>
+      <td>array</td>
+      <td>no</td>
+      <td></td>
+      <td>The sorting used in the report. The construction logic is similar to <a href="../../../#_sort"> "Data sorting" </a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="response-parameters">Response parameters</h3>
+<table>
+    <tbody>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Valid values</th>
+            <th>Filtering</th>
+            <th>Sorting</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><code>id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>PCT unique identifier</td>
+        </tr>
+        <tr>
+            <td><code>name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>PCT name</td>
+        </tr>
+        <tr>
+            <td><code>is_named_by_user</code></td>
+            <td>boolean</td>
+            <td></td>
+            <td>yes</td>
+            <td>yes</td>
+            <td>Indicator that the name was entered manually</td>
+        </tr>
+        <tr>
+            <td><code>priority</code></td>
+            <td>string</td>
+            <td></td>
+            <td>no</td>
+            <td>no</td>
+            <td>Priority</td>
+        </tr>
+        <tr>
+            <td><code>rule_type</code></td>
+            <td>enum</td>
+            <td>site_calls, external_area</td>
+            <td>no</td>
+            <td>no</td>
+            <td>PCT type</td>
+        </tr>
+        <tr>
+            <td><code>reserve_phone_numbers_time</code></td>
+            <td>number</td>
+            <td>yes</td>
+            <td></td>
+            <td>Dynamic number reserve time for a visitor in minutes (from 5 to 10080)</td>
+        </tr>
+        <tr>
+        <tr>
+            <td colspan="6">Conditions for determining PCT.</td>
+        </tr>
+      <td><code>conditions</code></td>
+          <td>array</td>
+          <td>no</td>
+          <td></td>
+          <td>Conditions for determining PCT, valid only for <code>call_tracking_type</code> = dynamic, <code>is_fraffic_type</code> = false, and empty sources</td>
+        </tr>
+        <tr>
+          <td><code>filters</code></td>
+          <td>array</td>
+          <td></td>
+          <td></td>
+          <td>An expression that can contain both simple filters and a filter tree</td>
+        </tr>
+        <tr>
+          <td><code>field</code></td>
+          <td>string</td>
+          <td></td>
+          <td></td>
+          <td>For a list of valid values and possible operators, see table <a href="../get_number_pool_condition_parameters">"List of parameters and their operators</td>
+        </tr>
+        <tr>
+          <td><code>operator</code></td>
+          <td>enum</td>
+          <td></td>
+          <td></td>
+          <td>For a list of valid values and possible operators, see the table <a href="../get_number_pool_condition_parameters">"List of parameters and their operators"</a></td>
+        </tr>
+        <tr><td><code>value</code></td>
+          <td>string</td>
+          <td></td>
+          <td></td>
+          <td>Value for the filtering operator.</td>
+        </tr>
+        <tr>
+            <td><code>call_tracking_type</code></td>
+            <td>enum</td>
+            <td>static, dynamic</td>
+            <td>no</td>
+            <td>no</td>
+            <td>Call tracking type</td>
+        </tr>
+        <tr>
+            <td><code>site_ids</code></td>
+            <td>array</td>
+            <td></td>
+            <td>yes</td>
+            <td>no</td>
+            <td>Identifiers of sites to which the PKT is configured</td>
+        </tr>
+        <tr>
+            <td><code>child_customer_ids</code></td>
+            <td>array</td>
+            <td></td>
+            <td>yes</td>
+            <td>no</td>
+            <td>Agent client identifiers associated with PCT</td>
+        </tr>
+        <tr>
+            <td colspan="6">List of sites related to PCT.</td>
+        </tr>
+        <tr>
+            <td><code>sites</code></td>
+            <td>array</td>
+            <td></td>
+            <td>no</td>
+            <td>no</td>
+            <td>Sites related to PKT</td>
+        </tr>
+        <tr>
+            <td><code>id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>no</td>
+            <td>no</td>
+            <td>Site ID</td>
+        </tr>
+        <tr>
+            <td><code>name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>no</td>
+            <td>no</td>
+            <td>Name</td>
+        </tr>
+        <tr>
+            <td><code>domain</code></td>
+            <td>string</td>
+            <td></td>
+            <td>no</td>
+            <td>no</td>
+            <td>Domain</td>
+        </tr>
+        <tr>
+            <td colspan="6">List of sources for which the PCT is configured.</td>
+        </tr>
+        <tr>
+            <td><code>sources</code></td>
+            <td>string</td>
+            <td></td>
+            <td>no</td>
+            <td>no</td>
+            <td>Sources that are related to PCT</td>
+        </tr>
+        <tr>
+            <td><code>source_channel_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td>no</td>
+            <td>no</td>
+            <td>Channel ID</td>
+        </tr>
+        <tr>
+            <td><code>source_group_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td>no</td>
+            <td>no</td>
+            <td>Group ID</td>
+        </tr>
+        <tr>
+            <td><code>source_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td>no</td>
+            <td>no</td>
+            <td>Source ID</td>
+        </tr>
+        <tr>
+            <td><code>name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>no</td>
+            <td>no</td>
+            <td>Name of source or group or channel</td>
+        </tr>
+        <tr>
+            <td><code>is_available_edit</code></td>
+            <td>boolean</td>
+            <td></td>
+            <td>no</td>
+            <td>no</td>
+            <td>Indicator that it is permissible to edit this PCT by this user</td>
+        </tr><tr>
+            <td><code>is_available_set_priority</code></td>
+            <td>boolean</td>
+            <td></td>
+            <td>no</td>
+            <td>no</td>
+            <td>Indicator that priority editing is acceptable</td>
+        </tr>
+        <tr>
+            <td><code>state</code></td>
+            <td>enum</td>
+            <td>active, draft</td>
+            <td>no</td>
+            <td>no</td>
+            <td>PCT status</td>
+        </tr>
+        <tr>
+            <td><code>is_all_traffic</code></td>
+            <td>boolean</td>
+            <td></td>
+            <td>no</td>
+            <td>no</td>
+            <td>Indicator that PKT is configured for all traffic</td>
+        </tr>
+        <tr>
+            <td><code>coverage</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Minimum actual coverage for all FCT pools</td>
+        </tr>
+        <tr>
+            <td><code>is_multi_redirections</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Indicator of configured redirection to different numbers and VATS rules</td>
+        </tr>
+        <tr>
+            <td><code>redirection_numbers</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>PKT forwarding number, if it is the only one</td>
+        </tr>
+        <tr>
+            <td><code>call_processing_rule_groups</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Group of VATS rules for PCT forwarding, if it is the only one</td>
+        </tr>
+        <tr>
+            <td colspan="6">Forwarding settings for calls from third-party sites.</td>
+        </tr>
+        <tr>
+          <td><code>external_replacement_settings</code></td>
+          <td>array</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            Setting up static numbers. Can only be present in a request if <code>call_tracking_type</code> = static and <code>rule_type</code> = site_calls
+          </td>
+        </tr>
+        <tr>
+          <td><code>id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            Block ID with setting.
+          </td>
+        </tr>
+        <tr>
+          <td><code>replacement_phones_groups</code></td>
+          <td>array</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            Identifier of a group of telephone numbers and sites to replace with call tracking numbers.
+          </td>
+        </tr>
+        <tr>
+          <td><code>id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            Phone number group ID. Method for getting a list of existing groups: <a href="../../replacement_phones_groups/get_replacement_phones_groups/"> "get.replacement_phones_groups" </a>
+          </td>
+        </tr>
+        <tr>
+          <td><code>site_id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            Site ID.
+          </td>
+        </tr>
+        <tr><td><code>source_id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            Source ID. Method for getting a list of existing Sources: <a href="../../../source/source/get_sources/"> "get.get_sources" </a>
+          </td>
+        </tr>
+        <tr>
+          <td><code>static_phone_id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Number for static call tracking.</td>
+        </tr>
+        <tr>
+          <td><code>child_customer_id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Agent Client</td>
+        </tr>
+        <tr>
+            <td colspan="6">Forwarding rules group.</td>
+        </tr>
+        <tr>
+          <td><code>call_processing_rule_group</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Group of call processing rules. The request can contain either custom_redirection_phone or redirection_phone or call_processing_rule_group</td>
+        </tr>
+        <tr>
+          <td><code>id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Group ID</td>
+        </tr>
+        <tr>
+          <td><code>name</code></td>
+          <td>string</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Group name</td>
+        </tr>
+        <tr>
+          <td><code>custom_redirection_phone</code></td>
+          <td>string</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Forwarding number.  the request can be either custom_redirection_phone or redirection_phone or call_processing_rule_group</td>
+        </tr>
+        <tr>
+          <td><code>redirection_phone</code></td>
+          <td>object</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Forwarding number.  the request can be either custom_redirection_phone or redirection_phone or call_processing_rule_group</td>
+        </tr>
+        <tr>
+          <td><code>id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Phone number identifier. Method for getting numbers <a href="../../../vn/get_virtual_numbers/"> "get.virtual_numbers"</td>
+        </tr>
+        <tr>
+          <td><code>child_customer_id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Identifier of the branch to which the number belongs.  Method for getting agent clients comagic-api/agent/agent_app</td>
+        </tr>
+        <tr>
+            <td colspan="6">Settings for static numbers and call forwarding.</td>
+        </tr>
+        <tr>
+          <td><code>static_replacement_phones_settings</code></td>
+          <td>array</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            Setting up static numbers. Can only be present in a request if <code>call_tracking_type</code> = static and <code>rule_type</code> = site_calls
+          </td>
+        </tr>
+        <tr>
+          <td><code>id</code></td>
+          <td>number</td><td></td>
+          <td></td>
+          <td></td>
+          <td>
+            Block ID with setting.
+          </td>
+        </tr>
+        <tr>
+          <td><code>replacement_phones_groups</code></td>
+          <td>array</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            Identifier of a group of telephone numbers and sites to replace with call tracking numbers.
+          </td>
+        </tr>
+        <tr>
+          <td><code>id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            Phone number group ID. Method for getting a list of existing groups: <a href="../../replacement_phones_groups/get_replacement_phones_groups/"> "get.replacement_phones_groups" </a>
+          </td>
+        </tr>
+        <tr>
+          <td><code>site_id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            Site ID.
+          </td>
+        </tr>
+        <tr>
+          <td><code>source</code></td>
+          <td>object</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            The source to which the warranty is configured.
+          </td>
+        </tr>
+        <tr>
+          <td><code>source_channel_id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            Source channel ID. Method for getting a list of existing channels: <a href="../../../source/channel/get_sources_channels/"> "get.get_sources_channels" </a>
+          </td>
+        </tr>
+        <tr>
+          <td><code>source_group_id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            Source group ID. Method for getting a list of existing groups: <a href="../../../source/group/get_sources_groups/"> "get.get_sources_groups" </a>
+          </td>
+        </tr>
+        <tr>
+          <td><code>source_id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            Source ID. Method for getting a list of existing Sources: <a href="../../../source/source/get_sources/"> "get.get_sources" </a>
+          </td>
+        </tr>
+        <tr>
+            <td><code>name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>no</td>
+            <td>no</td>
+            <td>Name of source or group or channel</td>
+        </tr>
+        <tr>
+          <td><code>default_source</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            Source to display in the report. Method for getting a list of existing Sources: <a href="../../../source/source/get_sources/"> "get.get_sources" </a>
+          </td>
+        </tr>
+        <tr>
+            <td><code>source_channel_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td>no</td>
+            <td>no</td>
+            <td>Channel ID</td>
+        </tr>
+        <tr>
+            <td><code>source_group_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td>no</td><td>no</td>
+            <td>Group ID</td>
+        </tr>
+        <tr>
+            <td><code>source_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td>no</td>
+            <td>no</td>
+            <td>Source ID</td>
+        </tr>
+        <tr>
+            <td><code>name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>no</td>
+            <td>no</td>
+            <td>Source name</td>
+        </tr>
+        <tr>
+          <td><code>static_phone_id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Number for static call tracking.</td>
+        </tr>
+        <tr>
+          <td><code>call_processing_rule_group</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Group of call processing rules. The request can contain either custom_redirection_phone or redirection_phone or call_processing_rule_group</td>
+        </tr>
+        <tr>
+          <td><code>id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Group ID</td>
+        </tr>
+        <tr>
+          <td><code>name</code></td>
+          <td>string</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Group name</td>
+        </tr>
+        <tr>
+          <td><code>custom_redirection_phone</code></td>
+          <td>string</td>
+          <td>no</td>
+          <td></td>
+          <td>Forwarding number.  the request can be either custom_redirection_phone or redirection_phone or call_processing_rule_group</td>
+        </tr>
+        <tr>
+          <td><code>redirection_phone</code></td>
+          <td>object</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Forwarding number.  the request can be either custom_redirection_phone or redirection_phone or call_processing_rule_group</td>
+        </tr>
+        <tr>
+          <td><code>id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Phone number identifier. Method for getting numbers <a href="../../../vn/get_virtual_numbers/"> "get.virtual_numbers"</td>
+        </tr>
+        <tr>
+          <td><code>child_customer_id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Identifier of the branch to which the number belongs.  Method for getting agent clients comagic-api/agent/agent_app</td>
+        </tr>
+        <tr>
+            <td colspan="6">Settings for dynamic automatic number selection and call processing rules.</td>
+        </tr>
+        <tr>
+          <td><code>dynamic_replacement_phones_settings</code></td>
+          <td>array</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            Settings for groups of telephone numbers to be replaced with dynamic call tracking numbers. Can only be present in a request if <code>call_tracking_type</code> = dynamic
+          </td>
+        </tr>
+        <tr>
+          <td><code>id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Block ID with setting.
+          </td>
+        </tr>
+        <tr>
+          <td><code>replacement_phones_groups</code></td>
+          <td>array</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            Identifier of a group of telephone numbers and sites to replace with call tracking numbers.
+          </td>
+        </tr>
+        <tr>
+          <td><code>id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            Phone number group ID. Method for getting a list of existing groups: <a href="../../replacement_phones_groups/get_replacement_phones_groups/"> "get.replacement_phones_groups" </a>
+          </td>
+        </tr>
+        <tr>
+          <td><code>site_id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            Site ID.
+          </td>
+        </tr>
+        <tr>
+          <td><code>prefix</code></td>
+          <td>string</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Prefiscation of call tracking numbers. Required and only filled in if is_dynamic = true</td>
+        </tr>
+        <tr>
+          <td><code>virtual_numbers_count</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Total number of call tracking numbers in one block. The required number of rooms will be purchased.</td>
+        </tr>
+        <tr>
+          <td><code>visitors_count</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Number of visits per day. Required and only filled in if is_dynamic = true</td>
+        </tr>
+        <tr>
+          <td><code>call_processing_rule_group</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Group of call processing rules. The request can contain either custom_redirection_phone or redirection_phone or call_processing_rule_group</td>
+        </tr>
+        <tr>
+          <td><code>id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Group ID</td>
+        </tr>
+        <tr>
+          <td><code>name</code></td>
+          <td>string</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Group name</td>
+        </tr>
+        <tr>
+          <td><code>custom_redirection_phone</code></td>
+          <td>string</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Forwarding number.  the request can be either custom_redirection_phone or redirection_phone or call_processing_rule_group</td>
+        </tr>
+        <tr>
+          <td><code>redirection_phone</code></td>
+          <td>object</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Forwarding number.  the request can be either custom_redirection_phone or redirection_phone or call_processing_rule_group</td>
+        </tr>
+        <tr>
+          <td><code>id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td><td>Phone number identifier. Method for getting numbers <a href="../../../vn/get_virtual_numbers/"> "get.virtual_numbers"</td>
+        </tr>
+        <tr>
+          <td><code>child_customer_id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Identifier of the branch to which the number belongs.  Method for getting agent clients comagic-api/agent/agent_app</td>
+        </tr>
+        <tr>
+            <td colspan="6">Source guarantee settings.</td>
+        </tr>
+        <td><code>sources_bundle_settings</code></td>
+          <td>array</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            Source guarantee allows you to preserve the source when calling static numbers. Can only be present in a request if <code>call_tracking_type</code> = dynamic
+          </td>
+        </tr>
+        <tr>
+          <td><code>id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            Block ID with setting.
+          </td>
+        </tr>
+        <tr>
+          <td><code>replacement_phones_groups</code></td>
+          <td>array</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            Identifier of a group of telephone numbers and sites to replace with call tracking numbers.
+          </td>
+        </tr>
+        <tr>
+          <td><code>id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            Phone number group ID. Method for getting a list of existing groups: <a href="../../replacement_phones_groups/get_replacement_phones_groups/"> "get.replacement_phones_groups" </a>
+          </td>
+        </tr>
+        <tr>
+          <td><code>site_id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            Site ID.
+          </td>
+        </tr>
+        <tr>
+          <td><code>source</code></td>
+          <td>object</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            List of sources for which the guarantee is configured.
+          </td>
+        </tr>
+        <tr>
+          <td><code>source_channel_id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            Source channel ID. Method for getting a list of existing channels: <a href="../../../source/channel/get_sources_channels/"> "get.get_sources_channels" </a>
+          </td>
+        </tr>
+        <tr>
+          <td><code>source_group_id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            Source group ID. Method for getting a list of existing groups: <a href="../../../source/group/get_sources_groups/"> "get.get_sources_groups" </a>
+          </td>
+        </tr>
+        <tr>
+          <td><code>source_id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Source ID. Method for getting a list of existing Sources: <a href="../../../source/source/get_sources/"> "get.get_sources" </a>
+          </td>
+        </tr>
+        <tr>
+          <td><code>default_source</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            Source ID to display in the report. Method for getting a list of existing Sources: <a href="../../../source/source/get_sources/"> "get.get_sources" </a>
+          </td>
+        </tr>
+        <tr>
+            <td><code>source_channel_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td>no</td>
+            <td>no</td>
+            <td>Channel ID</td>
+        </tr>
+        <tr>
+            <td><code>source_group_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td>no</td>
+            <td>no</td>
+            <td>Group ID</td>
+        </tr>
+        <tr>
+            <td><code>source_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td>no</td>
+            <td>no</td>
+            <td>Source ID</td>
+        </tr>
+        <tr>
+            <td><code>name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>no</td>
+            <td>no</td>
+            <td>Name of source or group or channel</td>
+        </tr>
+        <tr>
+          <td><code>static_phone_id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Number for static call tracking.</td>
+        </tr>
+        <tr>
+          <td><code>call_processing_rule_group</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Group of call processing rules. The request can contain either custom_redirection_phone or redirection_phone or call_processing_rule_group</td>
+        </tr>
+        <tr>
+          <td><code>id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Group ID</td>
+        </tr>
+        <tr>
+          <td><code>name</code></td>
+          <td>string</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Group name</td>
+        </tr>
+        <tr>
+          <td><code>custom_redirection_phone</code></td>
+          <td>string</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Forwarding number.  the request can be either custom_redirection_phone or redirection_phone or call_processing_rule_group</td>
+        </tr>
+        <tr>
+          <td><code>redirection_phone</code></td>
+          <td>object</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Forwarding number.  the request can be either custom_redirection_phone or redirection_phone or call_processing_rule_group</td>
+        </tr>
+        <tr>
+          <td><code>id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Phone number identifier. Method for getting numbers <a href="../../../vn/get_virtual_numbers/"> "get.virtual_numbers"</td>
+        </tr><tr>
+          <td><code>child_customer_id</code></td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Identifier of the branch to which the number belongs.  Method for getting agent clients comagic-api/agent/agent_app</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="json-request-structurejson">JSON request structure```json</h3>
+<p>{
+  "jsonrpc":"2.0",
+  "id":"number",
+  "method":"get.call_tracking_rules",
+  "params":{
+    "access_token":"string",
+    "user_id":"number",
+    "offset":"number",
+    "limit":"number",
+    "search_string":"string",
+    "site_ids":["number"],
+    "call_tracking_types":["string"],
+    "rule_types":["string"],
+    "is_save_sources":"boolean",
+    "coverage":"number",
+    "filter":{</p>
+<pre><code>},
+"sort":[
+  {
+    "field":"string",
+    "order":"string"
+  }
+],
+"fields":[
+  "string"
+]
+</code></pre>
+<p>}
+}</p>
+<pre><code>### JSON response structure```json
+{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;id&quot;: &quot;number&quot;,
+    &quot;result&quot;: {
+        &quot;metadata&quot;: {
+
+        },
+        &quot;data&quot;: [
+          {
+            &quot;name&quot;: &quot;string&quot;,
+            &quot;is_named_by_user&quot;: &quot;boolean&quot;,
+            &quot;rule_type&quot;: &quot;string&quot;,
+            &quot;call_tracking_type&quot;: &quot;string&quot;,
+            &quot;is_all_traffic&quot;: &quot;boolean&quot;,
+            &quot;state&quot;: &quot;string&quot;,
+            &quot;sites&quot;: [
+              {
+                &quot;id&quot;: &quot;number&quot;,
+                &quot;name&quot;: &quot;string&quot;,
+                &quot;domain&quot;: &quot;string&quot;
+              }
+            ],
+            &quot;site_ids&quot;:[&quot;number&quot;],
+            &quot;child_customer_ids&quot;:[&quot;number&quot;],
+            &quot;sources&quot;: [
+              {
+                &quot;source_id&quot;: &quot;number&quot;,
+                &quot;source_group_id&quot;: &quot;number&quot;,
+                &quot;source_channel_id&quot;: &quot;number&quot;
+              }
+            ],
+            &quot;dynamic_replacement_phones_settings&quot;: [
+              {
+                &quot;id&quot;: &quot;number&quot;,
+                &quot;replacement_phones_groups&quot;: [
+                  {
+                    &quot;id&quot;: &quot;number&quot;,
+                    &quot;site_id&quot;: &quot;number&quot;
+                  },
+                  {
+                    &quot;id&quot;: &quot;number&quot;,
+                    &quot;site_id&quot;: &quot;number&quot;
+                  }
+                ],
+                &quot;custom_redirection_phone&quot;: &quot;string&quot;,
+                &quot;redirection_phone&quot;: {
+                  &quot;id&quot;: &quot;number&quot;,
+                  &quot;child_customer_id&quot;: &quot;number&quot;
+                },
+                &quot;call_processing_rule_group_id&quot;: &quot;number&quot;,
+                &quot;scenario_id&quot;: &quot;number&quot;,
+                &quot;employee_id&quot;: &quot;number&quot;,
+                &quot;sip_id&quot;: &quot;number&quot;,
+                &quot;sip_protocol&quot;: &quot;string&quot;,
+                &quot;prefix&quot;: &quot;string&quot;,
+                &quot;visitors_count&quot;: &quot;number&quot;,
+                &quot;virtual_numbers_count&quot;: &quot;number&quot;,
+                &quot;coverage&quot;: &quot;number&quot;
+              }
+            ],
+            &quot;static_replacement_phones_settings&quot;: [
+              {
+                &quot;id&quot;: &quot;number&quot;,
+                &quot;replacement_phones_groups&quot;: [
+                  {
+                    &quot;id&quot;: &quot;number&quot;,
+                    &quot;site_id&quot;: &quot;number&quot;
+                  }
+                ],
+                &quot;custom_redirection_phone&quot;: &quot;string&quot;,
+                &quot;redirection_phone&quot;: {
+                  &quot;id&quot;: &quot;number&quot;,
+                  &quot;child_customer_id&quot;: &quot;number&quot;
+                },
+                &quot;call_processing_rule_group_id&quot;: &quot;number&quot;,
+                &quot;scenario_id&quot;: &quot;number&quot;,
+                &quot;employee_id&quot;: &quot;number&quot;,
+                &quot;sip_id&quot;: &quot;number&quot;,
+                &quot;sip_protocol&quot;: &quot;string&quot;,
+                &quot;static_phone_id&quot;: &quot;number&quot;,
+                &quot;source&quot;: {
+                  &quot;source_id&quot;: &quot;number&quot;,
+                  &quot;source_group_id&quot;: &quot;number&quot;,
+                  &quot;source_channel_id&quot;: &quot;number&quot;,
+                  &quot;name&quot;: &quot;string&quot;
+                },
+                &quot;default_source&quot;: {
+                  &quot;source_id&quot;: &quot;number&quot;,
+                  &quot;source_group_id&quot;: &quot;number&quot;,
+                  &quot;source_channel_id&quot;: &quot;number&quot;,
+                  &quot;name&quot;: &quot;string&quot;
+                }
+              }
+            ],
+            &quot;external_replacement_settings&quot;: [
+              {
+                &quot;id&quot;: &quot;number&quot;,
+                &quot;replacement_phones_groups&quot;: [
+                  {
+                    &quot;id&quot;: &quot;number&quot;,
+                    &quot;site_id&quot;: &quot;number&quot;
+                  }
+                ],
+                &quot;custom_redirection_phone&quot;: &quot;string&quot;,
+                &quot;redirection_phone&quot;: {
+                  &quot;id&quot;: &quot;number&quot;,
+                  &quot;child_customer_id&quot;: &quot;number&quot;
+                },
+                &quot;call_processing_rule_group_id&quot;: &quot;number&quot;,
+                &quot;scenario_id&quot;: &quot;number&quot;,
+                &quot;employee_id&quot;: &quot;number&quot;,
+                &quot;sip_id&quot;: &quot;number&quot;,
+                &quot;sip_protocol&quot;: &quot;string&quot;,
+                &quot;static_phone_id&quot;: &quot;number&quot;,
+                &quot;child_customer_id&quot;: &quot;number&quot;,
+                &quot;source_id&quot;: &quot;number&quot;
+              }
+            ],
+            &quot;sources_bundle_settings&quot;: [
+              {
+                &quot;id&quot;: &quot;number&quot;,
+                &quot;replacement_phones_groups&quot;: [
+                  {
+                    &quot;id&quot;: &quot;number&quot;,
+                    &quot;site_id&quot;: &quot;number&quot;
+                  }
+                ],
+                &quot;custom_redirection_phone&quot;: &quot;string&quot;,
+                &quot;redirection_phone&quot;: {
+                  &quot;id&quot;: &quot;number&quot;,
+                  &quot;child_customer_id&quot;: &quot;number&quot;
+                },
+                &quot;call_processing_rule_group_id&quot;: &quot;number&quot;,
+                &quot;scenario_id&quot;: &quot;number&quot;,
+                &quot;employee_id&quot;: &quot;number&quot;,
+                &quot;sip_id&quot;: &quot;number&quot;,
+                &quot;sip_protocol&quot;: &quot;string&quot;,
+                &quot;static_phone_id&quot;: &quot;number&quot;,
+                &quot;source&quot;: {
+                  &quot;source_id&quot;: &quot;number&quot;,
+                  &quot;source_group_id&quot;: &quot;number&quot;,
+                  &quot;source_channel_id&quot;: &quot;number&quot;,
+                  &quot;name&quot;: &quot;string&quot;
+                },
+                &quot;default_source&quot;: {
+                  &quot;source_id&quot;: &quot;number&quot;,
+                  &quot;source_group_id&quot;: &quot;number&quot;,
+                  &quot;source_channel_id&quot;: &quot;number&quot;,
+                  &quot;name&quot;: &quot;string&quot;
+                }
+              }
+            ],
+            &quot;reserve_phone_numbers_time&quot;: &quot;number&quot;,
+            &quot;conditions&quot;: {
+            &quot;filters&quot;: [
+              {
+              &quot;filters&quot;: [
+                {
+                &quot;filters&quot;: [
+                  {
+                  &quot;field&quot;: &quot;string&quot;,
+                  &quot;operator&quot;: &quot;string&quot;,
+                  &quot;value&quot;: &quot;string&quot;
+                  }
+                ],
+                &quot;condition&quot;: &quot;string&quot;
+                },
+                {
+                &quot;field&quot;: &quot;string&quot;,
+                &quot;operator&quot;: &quot;string&quot;,
+                &quot;value&quot;: &quot;string&quot;
+                }
+              ],
+              &quot;condition&quot;: &quot;string&quot;
+              },
+              {
+              &quot;field&quot;: &quot;string&quot;,
+              &quot;operator&quot;: &quot;string&quot;,
+              &quot;value&quot;: &quot;string&quot;
+              }
+            ],
+            &quot;condition&quot;: &quot;string&quot;
+            }
+          }
+        ]
+    }
+}
+</code></pre>
+<h3 id="list-of-returned-errors">List of returned errors</h3>
+<p>See the section <a href="../../..#_getErrors">"List of errors for methods with the get verb"</a></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../../../js/init.js"></script>
+      
+    
+  </body>
+</html>
