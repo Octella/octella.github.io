@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Click2call</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">:root {
+--color-primary: hsl(92deg 28% 65%);
+--color-secondary: hsl(193deg 60% 73%);
+--color-tertiary: hsl(40deg 71% 73%);
+--color-text: hsl(218deg 27% 94%);
+--color-text-offset-dark1: hsl(215deg 19% 89%);
+--color-text-offset-dark2: hsl(215deg 19% 85%);
+--color-text-offset-dark3: hsl(215deg 19% 70%);
+--color-border: hsl(220deg 12% 40%);
+--color-border-offset-dark: hsl(220deg 12% 25%);
+--color-background: hsl(220deg 17% 22%);
+--color-background-offset-dark: hsl(220deg 17% 19%);
+--color-background-offset-darker: hsl(220deg 17% 15%);
+--color-background-offset-light: hsl(220deg, 17%, 25%)
+}
+:root {
+--font-family: "Nunito", -apple-system, blinkmacsystemfont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+--font-family-monospace: "JetBrains Mono", "Fira Code", menlo, monaco, consolas, "Andale Mono", "Courier New", monospace
+}
+:root {
+--spacing-none: 0;
+--spacing-xxs: 0.25rem;
+--spacing-xs: 0.5rem;
+--spacing-s: 0.75rem;
+--spacing-m: 1rem;
+--spacing-l: 1.5rem;
+--spacing-xl: 2rem;
+--spacing-xxl: 4rem;
+--spacing-xxxl: 6rem
+}
+:root {
+--font-size-base: clamp(14px, calc(0.7em + 0.75vw), 20px);
+--font-size-xs: 0.8em;
+--font-size-s: 0.9em;
+--font-size-m: 1.2em;
+--font-size-l: 1.44em;
+--font-size-xl: 1.728em;
+--font-size-xxl: 2.074em;
+--font-size-xxxl: 2.488em;
+--font-weight-normal: 400;
+--font-weight-bold: 600;
+--line-height-tight: 1.3;
+--line-height-base: 1.6
+}
+
+*,::before,::after {
+box-sizing: border-box
+}
+html {
+-moz-tab-size: 4;
+tab-size: 4
+}
+html {
+line-height: 1.15;
+-webkit-text-size-adjust: 100%
+}
+body {
+margin: 0
+}
+body {
+font-family: system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"
+}
+hr {
+height: 0;
+color: inherit
+}
+abbr[title] {
+text-decoration: underline dotted
+}
+b,strong {
+font-weight: bolder
+}
+code,kbd,samp,pre {
+font-family: ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",Menlo,monospace;
+font-size: 1em
+}
+small {
+font-size: 80%
+}
+sub,sup {
+font-size: 75%;
+line-height: 0;
+position: relative;
+vertical-align: baseline
+}
+sub {
+bottom: -0.25em
+}
+sup {
+top: -0.5em
+}
+table {
+text-indent: 0;
+border-color: inherit
+}
+button,input,optgroup,select,textarea {
+font-family: inherit;
+font-size: 100%;
+line-height: 1.15;
+margin: 0
+}
+button,select {
+text-transform: none
+}
+button,[type=button],[type=reset],[type=submit] {
+-webkit-appearance: button
+}
+::-moz-focus-inner {
+border-style: none;
+padding: 0
+}
+:-moz-focusring {
+outline: 1px dotted #fff
+}
+:-moz-ui-invalid {
+box-shadow: none
+}
+legend {
+padding: 0
+}
+progress {
+vertical-align: baseline
+}
+::-webkit-inner-spin-button,::-webkit-outer-spin-button {
+height: auto
+}
+[type=search] {
+-webkit-appearance: textfield;
+outline-offset: -2px
+}
+::-webkit-search-decoration {
+-webkit-appearance: none
+}
+::-webkit-file-upload-button {
+-webkit-appearance: button;
+font: inherit
+}
+summary {
+display: list-item
+}
+[role=list] {
+list-style-type: none
+}
+html {
+box-sizing: border-box;
+scroll-behavior: smooth
+}
+*,*::before,*::after {
+box-sizing: inherit
+}
+img,video,iframe {
+border-radius: 8px
+}
+a,button,input,textarea,summary,pre {
+--outline-size: max(2px, 0.08em);
+--outline-style: solid;
+--outline-color: var(--color-secondary);
+--outline-offset: 2px
+}
+:is(a,button,input,textarea,summary,pre):focus {
+outline: var(--outline-size) var(--outline-style) var(--outline-color);
+outline-offset: var(--outline-offset, var(--outline-size))
+}
+:is(a,button,input,textarea,summary,pre):focus-visible {
+outline: var(--outline-size) var(--outline-style) var(--outline-color);
+outline-offset: var(--outline-offset, var(--outline-size))
+}
+:is(a,button,input,textarea,summary,pre):focus:not(:focus-visible) {
+outline: none
+}
+#maincontent {
+max-width: 1180px;
+min-height: 80dvh;
+margin: var(--spacing-m) auto;
+padding-inline:var(--spacing-s)}
+.container {
+max-width: 1180px;
+margin-left: auto;
+margin-right: auto;
+padding-left: 20px;
+padding-right: 20px;
+width: 100%
+}
+.hide-text {
+overflow: hidden;
+padding: 0;
+text-indent: 101%;
+white-space: nowrap
+}
+.visually-hidden {
+border: 0;
+clip: rect(0 0 0 0);
+height: 1px;
+margin: -1px;
+overflow: hidden;
+padding: 0;
+position: absolute;
+width: 1px
+}
+code[class*=language-],pre[class*=language-] {
+background: none;
+color: hsl(60,30%,96%);
+hyphens: none;
+line-height: 1.5;
+tab-size: 4;
+text-align: left;
+text-shadow: 0 1px rgba(0,0,0,.3);
+white-space: pre;
+word-break: normal;
+word-spacing: normal;
+word-wrap: normal
+}
+pre[class*=language-] {
+overflow: auto;
+padding: 1em;
+border-radius: .3em;
+margin: .5em 0
+}
+:not(pre)>code[class*=language-],pre[class*=language-] {
+background: hsl(231,15%,18%)
+}
+:not(pre)>code[class*=language-] {
+padding: .1em;
+border-radius: .3em;
+white-space: normal
+}
+.token.comment,.token.prolog,.token.doctype,.token.cdata {
+color: hsl(225,27%,65%)
+}
+.token.punctuation {
+color: hsl(60,30%,96%)
+}
+.namespace {
+opacity: .7
+}
+.token.property,.token.tag,.token.constant,.token.symbol,.token.deleted {
+color: hsl(326,100%,74%)
+}
+.token.boolean,.token.number {
+color: hsl(265,89%,78%)
+}
+.token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,.token.inserted {
+color: hsl(135,94%,65%)
+}
+.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string,.token.variable {
+color: hsl(60,30%,96%)
+}
+.token.atrule,.token.attr-value,.token.function,.token.class-name {
+color: hsl(65,92%,76%)
+}
+.token.keyword {
+color: hsl(191,97%,77%)
+}
+.token.regex,.token.important {
+color: hsl(31,100%,71%)
+}
+.token.important,.token.bold {
+font-weight: bold
+}
+.token.italic {
+font-style: italic
+}
+.token.entity {
+cursor: help
+}
+::-moz-selection,::selection {
+color: var(--color-background);
+background-color: var(--color-primary)
+}
+::-webkit-scrollbar-track {
+background-color: var(--color-background-offset-dark)
+}
+::-webkit-scrollbar-thumb {
+border-radius: 30px;
+background-color: var(--color-primary)
+}
+::-webkit-scrollbar {
+width: 4px;
+height: 4px
+}
+html {
+scrollbar-width: auto;
+scrollbar-color: var(--color-primary) var(--color-background-offset-dark)
+}
+body {
+background-color: var(--color-background);
+color: var(--color-text-offset-dark2);
+font-family: var(--font-family);
+font-size: var(--font-size-base);
+margin: 0;
+padding: 0
+}
+button {
+background-color: var(--color-background);
+border: 1px solid var(--color-border);
+color: var(--color-text)
+}
+blockquote {
+position: relative;
+display: flex;
+max-width: 700px;
+flex-direction: column;
+padding: var(--spacing-xxl) var(--spacing-xl);
+margin: var(--spacing-xl) auto;
+background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNTAiPgogICA8c3R5bGU+CgkgCXBhdGh7CgkJCSBzdHJva2U6ICNhM2JlOGM7CgkJfQogIDwvc3R5bGU+CiAgPHBhdGggZD0iTTM2Ny45NjQgNi41NjNsMzI0LjMzLjc4YzEuMDU2LjA3IDIuMDUuNTEgMi44MTQgMS4yNGwzOC42MTYgMzcuMDNjNC43MTQgNC41MiAxMi41NTMgMS4yNzQgMTIuNjg5LTUuMjU2aDBsNS41MTQtMzYuNDIiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=),url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNTAiPgogICA8c3R5bGU+CgkgCXBhdGh7CgkJCSBzdHJva2U6ICNhM2JlOGM7CgkJfQogIDwvc3R5bGU+CiAgPHBhdGggZD0iTTMuNjYzIDQ3LjgzMmMtLjI3NS0xOC44NDQgMTcuMTcyLTIwLjQzNiAxNy4xNzItMjAuNDM2IDQuODMxLS40MjkgMzAwLjgyOC0uMTAxIDQ1MS4yMzYgMCIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==);
+background-position: 0% 100%,0 0;
+background-repeat: no-repeat,no-repeat;
+gap: var(--spacing-xl);
+margin-block-end:calc(var(--spacing-xl) + .5rem);padding-block-end: calc(var(--spacing-xxl) + .25rem);
+overflow-wrap: break-word
+}
+blockquote p {
+margin: 0
+}
+blockquote p:last-child {
+margin-bottom: 0
+}
+blockquote cite {
+display: inline-block
+}
+button {
+background-color: var(--color-background);
+border: 1px solid var(--color-border);
+color: var(--color-text)
+}
+h1,h2,h3,h4,h5,h6 {
+margin: 0;
+margin-block-end:var(--spacing-xl);font-weight: bold;
+line-height: var(--line-height-tight)
+}
+h1 a,h2 a,h3 a,h4 a,h5 a,h6 a {
+color: var(--text-color)
+}
+h1 a:hover,h1 a:focus,h2 a:hover,h2 a:focus,h3 a:hover,h3 a:focus,h4 a:hover,h4 a:focus,h5 a:hover,h5 a:focus,h6 a:hover,h6 a:focus {
+text-decoration: none
+}
+.header-anchor::after {
+position: relative;
+bottom: .05em;
+color: var(--color-secondary);
+content: " #";
+content: " #"/"";
+font-size: .8em
+}
+h1 {
+font-size: var(--font-size-xxxl);
+hyphens: auto;
+overflow-wrap: break-word
+}
+h2 {
+font-size: var(--font-size-xxl)
+}
+h3 {
+font-size: var(--font-size-xl)
+}
+h4 {
+font-size: var(--font-size-l)
+}
+h5 {
+font-size: var(--font-size-m)
+}
+h6 {
+font-size: var(--font-size-base)
+}
+hr {
+width: 10rem;
+border: 1px solid var(--color-border);
+margin: 0 auto;
+margin-block-end:var(--spacing-l);border-radius: 4px
+}
+iframe {
+display: block;
+margin-block-end:var(--spacing-xl);border: none;
+width: 100%
+}
+img {
+border-radius: 8px
+}
+a {
+color: var(--color-secondary);
+text-decoration: underline;
+text-decoration-color: var(--color-secondary);
+text-decoration-thickness: 1px;
+text-underline-offset: 5px
+}
+.external-link {
+position: relative
+}
+.external-link::after {
+--size: 1.25em;
+position: relative;
+top: .31em;
+content: "";
+-webkit-mask: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iY3VycmVudENvbG9yIiByb2xlPSJwcmVzZW50YXRpb24iPjxwYXRoIGQ9Ik0xNiAxNi42NjdIOEEuNjY5LjY2OSAwIDAgMSA3LjMzMyAxNlY4YzAtLjM2Ny4zLS42NjcuNjY3LS42NjdoMy4zMzNjLjM2NyAwIC42NjctLjMuNjY3LS42NjZDMTIgNi4zIDExLjcgNiAxMS4zMzMgNmgtNEM2LjU5MyA2IDYgNi42IDYgNy4zMzN2OS4zMzRDNiAxNy40IDYuNiAxOCA3LjMzMyAxOGg5LjMzNEMxNy40IDE4IDE4IDE3LjQgMTggMTYuNjY3di00YzAtLjM2Ny0uMy0uNjY3LS42NjctLjY2Ny0uMzY2IDAtLjY2Ni4zLS42NjYuNjY3VjE2YzAgLjM2Ny0uMy42NjctLjY2Ny42Njd6bS0yLjY2Ny0xMGMwIC4zNjYuMy42NjYuNjY3LjY2NmgxLjcyN0w5LjY0IDEzLjQyYS42NjQuNjY0IDAgMSAwIC45NC45NGw2LjA4Ny02LjA4N1YxMGMwIC4zNjcuMy42NjcuNjY2LjY2Ny4zNjcgMCAuNjY3LS4zLjY2Ny0uNjY3VjZoLTRjLS4zNjcgMC0uNjY3LjMtLjY2Ny42Njd6Ij48L3BhdGg+PC9zdmc+Cg==);
+display: inline-block;
+fill: var(--color-secondary);
+background-color: var(--color-secondary);
+width: var(--size);
+height: var(--size)
+}
+:is(h1,h2,h3,h4,h5,h6) a {
+text-decoration: none
+}
+.footnote-ref a,.footnote-backref {
+text-decoration: none
+}
+ul,ol {
+margin-block-start:0;margin-block-end:var(--spacing-l);line-height: var(--line-height-base)
+}
+nav ul,nav ol,footer ul {
+list-style-type: none;
+background-image: none
+}
+li {
+margin-block-start:var(--spacing-l);padding-inline-start: var(--spacing-m)
+}
+li:first-of-type {
+margin-block-start:0}
+li>img {
+display: block;
+margin: var(--spacing-l) 0
+}
+ul li a {
+padding: 0
+}
+ol li::marker {
+color: var(--color-primary);
+font-weight: bold
+}
+ul li::marker {
+font-size: .5rem
+}
+nav li,footer li {
+margin: 0;
+margin-block-start:0;padding-inline-start:0}
+ul li {
+list-style-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcm9sZT0icHJlc2VudGF0aW9uIiA+CiAgPHBhdGgKICAgICBmaWxsPSIjYTNiZThjIgogICAgIGQ9Ik0gNDkuMjM2NCwyNS43ODEzMDIgQyAzNy44NjMwNTEsMzMuNzMzODIxIDMxLjA4MDg5NCw0Ny43NTUyNzMgMzIuMDM0MjYxLDYxLjYxNDU4MSAxOS4xOTkyMzMsNjcuODY5MTE3IDEwLjM1MTA2Myw4MS4yODI2NTIgOS41LDk1LjUxODI4NiBjIDEyLjYwNTI4NCw2LjgzNjU1NCAyOC45MzE2ODgsNS42NzUwNTQgNDAuNzc4MTM0LC0yLjI3OTYzOSAxMS45MDYwMzMsOC4wMzc1ODMgMjguMTYwNzE0LDguOTc5NDMzIDQwLjkwODM1MSwyLjM1MjM1OCBDIDkwLjA4ODU0OCw4MS4zNjAyNzQgODEuNDY1MTY5LDY3Ljg3MTcyNSA2OC41MjUzODksNjEuNjE0NTgxIDY5LjUzOTIwOSw0Ny4yODQ1OTkgNjIuMjAzNzM5LDMyLjkxNzEwMiA1MC4yNzQ3NTIsMjUuMDAwMDAxIGwgLTAuNjkxODc0LDAuNTIwNTk2IHogbSAxLjA1MzU3MiwxMS4zNzQ1MTcgYyA1LjQ5MDcwNiw1LjYwMzMwMiA4Ljc2NDgyMywxMy4zMTIyNTIgOC45NTc4OTcsMjEuMTU3NjgzIC01Ljg3NjU5MywtMS4zMzk0MTggLTEyLjA2Nzg0NywtMS4zMjU0MTQgLTE3LjkzNjA4NywtMC4wMDUxIDAuMTk0OTQ0LC03Ljg0MzExNiAzLjQ3MjY0MywtMTUuNTg4NzI0IDguOTc4MTksLTIxLjE1MjYxMSB6IG0gMS4yMzI4MzEsMjkuNTI1Mzc4IGMgMi44MTg1NTEsMC4zMTEwMSA4LjYxMjg3MiwtMC4xOTA4NjggNS41NDUyMDQsNC4wMDk2NiAtMS41Mzc3ODMsMy44ODg1NDcgLTMuODU4MDI0LDcuNDY3MzczIC02Ljc4ODE4MiwxMC40NTExNjMgLTMuNjgwNDIsLTMuNzUxNTkzIC02LjQwODc4NiwtOC40Mzk3NDcgLTcuODExMzEzLC0xMy41MDcwMjggMi45NDkzOTEsLTAuNzYxMDY1IDYuMDExOTg4LC0xLjA2NTM4NyA5LjA1NDI5MSwtMC45NTM3OTUgeiBtIC0xNy42MDI5MzYsNS4wNDYzMjEgYyAxLjgwMDU5NCw1LjYwMjE4NyA0Ljg1MjYzLDEwLjc5MzE5MyA4Ljg1MTM1NiwxNS4xMDg1MjUgLTYuODA1MDUyLDMuNzI4NjAyIC0xNS41ODQxOTIsNC45NjQ3MzUgLTIyLjc3OTQ3NCwyLjY3MTk3OSAyLjA0ODY1MywtNy4zOTk1MjYgNy4xMDc3MzYsLTE0LjE2MDM3MyAxMy43OTc5MDIsLTE4LjIwNjY2OCB6IG0gMzMuMTY2Mzc0LC0wLjIzMTY4NCBjIDYuNTczOTE1LDQuMDkxOTg0IDExLjUzMzAxNiwxMC44MjExNDggMTMuNTE4ODY1LDE4LjE2MjY5OCAtNy41OTk4MjEsMS45Nzk3NDIgLTE1LjkzMjAyNSwwLjk1NDYzNiAtMjIuODE4MzcsLTIuODI0MTggNC4xMDA2MTgsLTQuNDIxNTYzIDcuMjA4NTIxLC05Ljc2NzI0OCA4Ljk4MTU3MywtMTUuNTMyOTk4IHoiIC8+Cjwvc3ZnPgo=)
+}
+ul ul li {
+list-style-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcm9sZT0icHJlc2VudGF0aW9uIj4KICA8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNhM2JlOGMiIHN0cm9rZS13aWR0aD0iOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAKCSAgZD0iTTUyLjk1MiA2Mi40MzNjLTUuODMzLTIuNDkxLTYuMjM2LTYuNzMzLTUuMTI0LTEwLjE3NyAxMS42OTUtMTYuMjU0IDI5LjQ4NSAxLjQ5NCAyMy4wNDMgMTcuNTI2LTUuNzkzIDEwLjUxMi0xOS43MDYgMTMuMDgxLTI5LjY4OCA3LjE0OC0xMi4yOC03LjMtMTUuMTg2LTIzLjg2MS03LjgyNC0zNS42OCA4LjcxNy0xMy45OTUgMjcuODQ2LTE3LjIzIDQxLjQyNi04LjQ5OEM5MC40NSA0Mi44MjUgOTQuMDA3IDY0LjQ0NyA4My45NSA3OS43M2MtMTEuMzggMTcuMjk0LTM1LjQzMSAyMS4xNjYtNTIuMzY5IDkuODI0LTkuODA3LTYuNTY3LTE2LjI0NS0xNy40MDMtMTcuNTc0LTI5LjEwNiIgLz4KCTwvc3ZnPgo=)
+}
+ul ul ul li {
+list-style-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcm9sZT0icHJlc2VudGF0aW9uIiA+CiAgPHBhdGgKICAgICBmaWxsPSIjYTNiZThjIgogICAgIGQ9Ik0gNDkuMjM2NCwyNS43ODEzMDIgQyAzNy44NjMwNTEsMzMuNzMzODIxIDMxLjA4MDg5NCw0Ny43NTUyNzMgMzIuMDM0MjYxLDYxLjYxNDU4MSAxOS4xOTkyMzMsNjcuODY5MTE3IDEwLjM1MTA2Myw4MS4yODI2NTIgOS41LDk1LjUxODI4NiBjIDEyLjYwNTI4NCw2LjgzNjU1NCAyOC45MzE2ODgsNS42NzUwNTQgNDAuNzc4MTM0LC0yLjI3OTYzOSAxMS45MDYwMzMsOC4wMzc1ODMgMjguMTYwNzE0LDguOTc5NDMzIDQwLjkwODM1MSwyLjM1MjM1OCBDIDkwLjA4ODU0OCw4MS4zNjAyNzQgODEuNDY1MTY5LDY3Ljg3MTcyNSA2OC41MjUzODksNjEuNjE0NTgxIDY5LjUzOTIwOSw0Ny4yODQ1OTkgNjIuMjAzNzM5LDMyLjkxNzEwMiA1MC4yNzQ3NTIsMjUuMDAwMDAxIGwgLTAuNjkxODc0LDAuNTIwNTk2IHogbSAxLjA1MzU3MiwxMS4zNzQ1MTcgYyA1LjQ5MDcwNiw1LjYwMzMwMiA4Ljc2NDgyMywxMy4zMTIyNTIgOC45NTc4OTcsMjEuMTU3NjgzIC01Ljg3NjU5MywtMS4zMzk0MTggLTEyLjA2Nzg0NywtMS4zMjU0MTQgLTE3LjkzNjA4NywtMC4wMDUxIDAuMTk0OTQ0LC03Ljg0MzExNiAzLjQ3MjY0MywtMTUuNTg4NzI0IDguOTc4MTksLTIxLjE1MjYxMSB6IG0gMS4yMzI4MzEsMjkuNTI1Mzc4IGMgMi44MTg1NTEsMC4zMTEwMSA4LjYxMjg3MiwtMC4xOTA4NjggNS41NDUyMDQsNC4wMDk2NiAtMS41Mzc3ODMsMy44ODg1NDcgLTMuODU4MDI0LDcuNDY3MzczIC02Ljc4ODE4MiwxMC40NTExNjMgLTMuNjgwNDIsLTMuNzUxNTkzIC02LjQwODc4NiwtOC40Mzk3NDcgLTcuODExMzEzLC0xMy41MDcwMjggMi45NDkzOTEsLTAuNzYxMDY1IDYuMDExOTg4LC0xLjA2NTM4NyA5LjA1NDI5MSwtMC45NTM3OTUgeiBtIC0xNy42MDI5MzYsNS4wNDYzMjEgYyAxLjgwMDU5NCw1LjYwMjE4NyA0Ljg1MjYzLDEwLjc5MzE5MyA4Ljg1MTM1NiwxNS4xMDg1MjUgLTYuODA1MDUyLDMuNzI4NjAyIC0xNS41ODQxOTIsNC45NjQ3MzUgLTIyLjc3OTQ3NCwyLjY3MTk3OSAyLjA0ODY1MywtNy4zOTk1MjYgNy4xMDc3MzYsLTE0LjE2MDM3MyAxMy43OTc5MDIsLTE4LjIwNjY2OCB6IG0gMzMuMTY2Mzc0LC0wLjIzMTY4NCBjIDYuNTczOTE1LDQuMDkxOTg0IDExLjUzMzAxNiwxMC44MjExNDggMTMuNTE4ODY1LDE4LjE2MjY5OCAtNy41OTk4MjEsMS45Nzk3NDIgLTE1LjkzMjAyNSwwLjk1NDYzNiAtMjIuODE4MzcsLTIuODI0MTggNC4xMDA2MTgsLTQuNDIxNTYzIDcuMjA4NTIxLC05Ljc2NzI0OCA4Ljk4MTU3MywtMTUuNTMyOTk4IHoiIC8+Cjwvc3ZnPgo=)
+}
+p {
+line-height: var(--line-height-base);
+margin-block-end:var(--spacing-xl);margin-block-start: 0;
+overflow-wrap: break-word
+}
+kbd {
+display: inline-block;
+font-family: var(--font-family);
+margin: 0 .1rem;
+padding: 0 .5rem;
+color: #464646;
+font-weight: var(--font-weight-bold);
+font-size: .8em;
+text-align: left;
+border: 1px solid hsl(0,0%,71%);
+border-radius: 15% 15% 25% 25%;
+background-color: hsl(0,0%,93%);
+box-shadow: 0 0 2px 0 rgba(0,0,0,.3),0 2px 2px rgba(0,0,0,.5),0 4px 0 0 hsla(0,0%,100%,.8) inset
+}
+code {
+font-family: var(--font-family-monospace);
+overflow-wrap: break-word
+}
+:is(h1,h2,h3,h4,h5,h6) code {
+font-family: var(--font-family);
+font-style: italic
+}
+p code {
+font-size: .9em;
+background-color: var(--color-background-offset-light);
+padding: .2em;
+border-radius: 4px;
+border: 1px solid var(--color-border-offset-dark)
+}
+pre code {
+background-color: rgba(0,0,0,0)
+}
+a code {
+padding: 0;
+border: none
+}
+figure {
+margin: 0;
+margin-block-end:var(--spacing-xl)}
+figure img,figure video,figure .comp-imgcompare {
+margin: 0;
+margin-block-end:0}
+figcaption {
+position: relative;
+font-size: var(--font-size-xs);
+line-height: var(--line-height-base);
+margin-block-start:var(--spacing-s);padding-inline-start: 1.25rem;
+width: 100%
+}
+figcaption * {
+margin: 0
+}
+figcaption::before {
+position: absolute;
+display: inline-block;
+height: 1em;
+width: .75rem;
+border-left: 1px solid var(--color-primary);
+border-block-end:1px solid var(--color-primary);margin-block-start: 0;
+left: .1rem;
+top: -0.4em;
+content: ""
+}
+figcaption .credit {
+display: block;
+margin-block-start:var(--spacing-s);margin-block-end: var(--spacing-xl);
+color: var(--color-text-offset-dark3)
+}
+figcaption code {
+font-size: .9em
+}
+table {
+text-indent: 0;
+width: 100%;
+border-radius: 8px;
+margin-block-end:var(--spacing-xl);border-collapse: collapse
+}
+.overflow-container {
+width: 100%;
+overflow-x: auto;
+border-radius: 8px;
+margin-block-end:var(--spacing-l)}
+.overflow-container table {
+margin-block-end: 0
+}
+th {
+background-color: var(--color-background-offset-dark);
+color: var(--color-primary)
+}
+th,td {
+padding: var(--spacing-l) var(--spacing-m)
+}
+td {
+text-align: center;
+border-block-end:1px solid var(--color-border)}
+th {
+vertical-align: top;
+border-block-end:1px solid var(--color-border)}
+th: first-of-type {
+border-top-left-radius:8px
+}
+th:last-of-type {
+border-top-right-radius: 8px
+}
+tr:last-of-type td:first-of-type {
+border-bottom-left-radius: 8px
+}
+tr:last-of-type td:last-of-type {
+border-bottom-right-radius: 8px
+}
+ol[aria-hidden=true] {
+max-height: 0;
+margin-block-start:-0.1rem}
+ol[aria-hidden=true] li {
+transition: all var(--animation-timing);
+visibility: hidden
+}
+.site-header {
+position: relative;
+max-width: 1180px;
+padding-block-start:var(--spacing-l);padding-block-end: var(--spacing-l);
+padding-inline:var(--spacing-s);margin: 0 auto;
+font-size: var(--font-size-l);
+line-height: 100%;
+display: grid;
+grid-template-columns: 1fr;
+justify-items: start;
+align-items: end;
+gap: .5rem;
+row-gap: var(--spacing-xl)
+}
+.site-header .home {
+--size: 2rem;
+color: var(--color-secondary)
+}
+.site-header nav {
+justify-self: start;
+font-size: var(--font-size-base)
+}
+.site-header nav ul {
+display: flex;
+flex-wrap: wrap;
+gap: var(--spacing-s);
+padding: 0;
+margin: 0
+}
+.site-header nav li {
+display: inline-block;
+list-style-type: none;
+line-height: 1
+}
+.site-header a {
+color: var(--color-text);
+text-decoration: none
+}
+@media screen and (min-width: 600px) {
+.site-header {
+grid-template-columns:auto 1fr;
+padding-block-start:var(--spacing-xxl)}
+.site-header nav {
+justify-self: end
+}
+}
+.skiplink {
+position: absolute;
+left: 0;
+top: 0;
+transform: translateY(calc(-100% - var(--spacing-xl)));
+height: 1px;
+overflow: hidden;
+z-index: 99;
+padding: 1rem .25rem;
+color: var(--color-text);
+border: 1px solid var(--color-border);
+border-radius: 0 0 5px 5px;
+background-color: var(--color-background-offset-dark);
+text-decoration: none;
+transition: all .3s
+}
+.skiplink:focus {
+transform: translateY(0%);
+width: auto;
+height: auto
+}
+@media print {
+.skiplink {
+visibility: hidden
+}
+}
+#footer {
+background-color: var(--color-background-offset-dark);
+width: 100%;
+display: grid;
+justify-content: center;
+padding-inline:var(--spacing-s);padding-block-start: var(--spacing-xl)
+}
+#footer .content {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+justify-content: center;
+align-items: start;
+column-gap: 2.5rem;
+max-width: 1180px
+}
+#footer .content .blurb {
+grid-column: 1/span 2
+}
+#footer .content .links li {
+margin: 1rem 0
+}
+#footer .content .links a {
+padding: 1.25rem 0;
+padding-inline-end:1.5rem;text-decoration: none
+}
+@media screen and (max-width: 700px) {
+#footer .content .blurb {
+grid-column:1/-1
+}
+#footer .content .links {
+grid-column: span 2
+}
+}
+#footer h2 {
+font-size: var(---font-size-l);
+font-weight: var(--font-weight-bold)
+}
+#footer h2 a {
+color: var(--color-secondary)
+}
+#footer h3 {
+color: var(--color-primary);
+font-size: var(--font-size-base)
+}
+#footer ul {
+padding: 0
+}
+#footer ul li {
+list-style: none
+}
+#footer .copyright {
+grid-column: 1/-1;
+justify-self: center;
+margin-top: 2rem
+}
+.about {
+padding: 8rem 0
+}
+.about p {
+font-size: var(--font-size-xxl)
+}
+</style>
+  <style type="text/css">code[class*=language-],pre[class*=language-] {
+background: none;
+color: hsl(60,30%,96%);
+hyphens: none;
+line-height: 1.5;
+tab-size: 4;
+text-align: left;
+text-shadow: 0 1px rgba(0,0,0,.3);
+white-space: pre;
+word-break: normal;
+word-spacing: normal;
+word-wrap: normal
+}
+pre[class*=language-] {
+overflow: auto;
+padding: 1em;
+border-radius: .3em;
+margin: .5em 0
+}
+:not(pre)>code[class*=language-],pre[class*=language-] {
+background: hsl(231,15%,18%)
+}
+:not(pre)>code[class*=language-] {
+padding: .1em;
+border-radius: .3em;
+white-space: normal
+}
+</style>
+  <script type="text/javascript">
+
+  function docReady(fn) {
+      // see if DOM is already available
+      if (document.readyState === "complete" || document.readyState === "interactive") {
+          // call on next available tick
+          setTimeout(fn, 1);
+      } else {
+          document.addEventListener("DOMContentLoaded", fn);
+      }
+  }
+
+  docReady(function() {
+
+      let blocks = document.querySelectorAll("pre:has(code)");
+      const copyButtonLabel = "Copy Code";
+
+
+      blocks.forEach((block) => {
+  	// only add button if browser supports Clipboard API
+  	if (navigator.clipboard) {
+  	    let button = document.createElement("button");
+
+  	    button.innerText = copyButtonLabel;
+  	    block.appendChild(button);
+
+  	    button.addEventListener("click", async () => {
+  		await copyCode(block);
+  	    });
+  	}
+      });
+
+  /*
+  let copyButtonLabel = "Copy Code";
+  async function copyCode(block, button) {
+    let code = block.querySelector("code");
+    let text = code.innerText;
+
+    await navigator.clipboard.writeText(text);
+
+    // visual feedback that task is completed
+    button.innerText = "Code Copied";
+
+    setTimeout(() => {
+      button.innerText = copyButtonLabel;
+    }, 700);
+  }
+  */
+
+      async function copyCode(button) {
+  	let figure = button.parentElement.parentElement;
+  	let text = figure.querySelector("code").innerText;
+
+  	await navigator.clipboard.writeText(text);
+
+  	// visual feedback that task is completed
+  	button.innerText = "Code Copied";
+
+  	setTimeout(() => {
+  		button.innerText = copyButtonLabel;
+  	}, 700);
+      }
+
+  /*
+  let buttons = document.querySelectorAll("button.copycode");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => copyCode(button));
+    button.removeAttribute("disabled");
+  });
+  */
+  });
+  </script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Click2call</h1>
+</header>
+<h1 id="example-data-replace-with-your-own">Example data (replace with
+your own)</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">API_KEY</span><span class="op">=</span>0123your-api-key123123412481284798127422</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="va">CALL_TO</span><span class="op">=</span>3712220000</span></code></pre></div>
+<h2 id="data-api-retrieve-the-numeric-id-for-employee-sip-line">Data
+API: Retrieve the numeric ID for employee SIP line</h2>
+<p>You need to obtain ID from <code>result.data[].employee_id</code> and
+SIP number from <code>result.data[].phone_number</code>.</p>
+<h3 id="example-request">Example request</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;jsonrpc&quot;</span><span class="fu">:</span> <span class="st">&quot;2.0&quot;</span><span class="fu">,</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="st">&quot;Your-App-Name&quot;</span><span class="fu">,</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;method&quot;</span><span class="fu">:</span> <span class="st">&quot;get.sip_lines&quot;</span><span class="fu">,</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;params&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;access_token&quot;</span><span class="fu">:</span> <span class="st">&quot;0123your-api-key123123412481284798127422&quot;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<h3 id="example-response">Example response</h3>
+<p>In this example, you would obtain <code>EMPLOYEE_ID=10110</code> and
+<code>EMPLOYEE_SIP=0123456</code></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;jsonrpc&quot;</span><span class="fu">:</span> <span class="st">&quot;2.0&quot;</span><span class="fu">,</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="st">&quot;Your-App-Name&quot;</span><span class="fu">,</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;result&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;data&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">{</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="dv">12312</span><span class="fu">,</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;in_out&quot;</span><span class="fu">,</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;status&quot;</span><span class="fu">:</span> <span class="st">&quot;active&quot;</span><span class="fu">,</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;password&quot;</span><span class="fu">:</span> <span class="st">&quot;aaaaaaaaaa&quot;</span><span class="fu">,</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;dial_time&quot;</span><span class="fu">:</span> <span class="dv">60</span><span class="fu">,</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;employee_id&quot;</span><span class="fu">:</span> <span class="dv">10110</span><span class="fu">,</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;ip_addresses&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>          <span class="fu">{</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;ip&quot;</span><span class="fu">:</span> <span class="st">&quot;10.81.120.12&quot;</span><span class="fu">,</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;date_time&quot;</span><span class="fu">:</span> <span class="st">&quot;2025-03-20T11:21:38&quot;</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>          <span class="fu">}</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;phone_number&quot;</span><span class="fu">:</span> <span class="st">&quot;0123456&quot;</span><span class="fu">,</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;billing_state&quot;</span><span class="fu">:</span> <span class="st">&quot;active&quot;</span><span class="fu">,</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;channels_count&quot;</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;physical_state&quot;</span><span class="fu">:</span> <span class="st">&quot;Registered&quot;</span><span class="fu">,</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;employee_full_name&quot;</span><span class="fu">:</span> <span class="st">&quot;Employee Name&quot;</span><span class="fu">,</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;virtual_phone_number&quot;</span><span class="fu">:</span> <span class="st">&quot;371222333&quot;</span><span class="fu">,</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;virtual_phone_usage_rule&quot;</span><span class="fu">:</span> <span class="st">&quot;fixed&quot;</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;metadata&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;total_items&quot;</span><span class="fu">:</span> <span class="dv">130</span><span class="fu">,</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="kw">null</span><span class="fu">,</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;limits&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;day_limit&quot;</span><span class="fu">:</span> <span class="dv">50000</span><span class="fu">,</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;day_remaining&quot;</span><span class="fu">:</span> <span class="dv">49990</span><span class="fu">,</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;day_reset&quot;</span><span class="fu">:</span> <span class="dv">46737</span><span class="fu">,</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;minute_limit&quot;</span><span class="fu">:</span> <span class="dv">250</span><span class="fu">,</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;minute_remaining&quot;</span><span class="fu">:</span> <span class="dv">249</span><span class="fu">,</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;minute_reset&quot;</span><span class="fu">:</span> <span class="dv">57</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<h3 id="example-script">Example script</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> https://dataapi.octella.com/v2.0 <span class="at">-H</span> <span class="st">&#39;accept: application/json&#39;</span> <span class="at">-H</span> <span class="st">&#39;content-type: application/json&#39;</span> <span class="at">--data-raw</span> <span class="st">&quot;{</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="dt">\&quot;</span><span class="st">jsonrpc</span><span class="dt">\&quot;</span><span class="st">: </span><span class="dt">\&quot;</span><span class="st">2.0</span><span class="dt">\&quot;</span><span class="st">,</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="dt">\&quot;</span><span class="st">id</span><span class="dt">\&quot;</span><span class="st">: </span><span class="dt">\&quot;</span><span class="st">Your-App-Name</span><span class="dt">\&quot;</span><span class="st">,</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="dt">\&quot;</span><span class="st">method</span><span class="dt">\&quot;</span><span class="st">: </span><span class="dt">\&quot;</span><span class="st">get.sip_lines</span><span class="dt">\&quot;</span><span class="st">,</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="dt">\&quot;</span><span class="st">params</span><span class="dt">\&quot;</span><span class="st">: {</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="st">        </span><span class="dt">\&quot;</span><span class="st">access_token</span><span class="dt">\&quot;</span><span class="st">: </span><span class="dt">\&quot;</span><span class="va">$API_KEY</span><span class="dt">\&quot;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="st">    }</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="st">}&quot;</span> <span class="op">&gt;</span> get.sip_lines.json</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="va">EMPLOYEE_ID</span><span class="op">=</span><span class="va">$(</span><span class="fu">cat</span> get.sip_lines.json <span class="kw">|</span> <span class="ex">jq</span> <span class="at">-r</span> <span class="st">&quot;.result.data[] | select (.employee_full_name==</span><span class="dt">\&quot;</span><span class="st">Employee Name</span><span class="dt">\&quot;</span><span class="st">) | .employee_id&quot;</span><span class="va">)</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="va">EMPLOYEE_SIP</span><span class="op">=</span><span class="va">$(</span><span class="fu">cat</span> get.sip_lines.json <span class="kw">|</span> <span class="ex">jq</span> <span class="at">-r</span> <span class="st">&quot;.result.data[] | select (.employee_full_name==</span><span class="dt">\&quot;</span><span class="st">Employee Name</span><span class="dt">\&quot;</span><span class="st">) | .phone_number&quot;</span><span class="va">)</span></span></code></pre></div>
+<h2 id="data-api-retrieve-number-group-id-to-use">Data API: Retrieve
+number group ID to use</h2>
+<h3 id="example-request-1">Example request</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;jsonrpc&quot;</span><span class="fu">:</span> <span class="st">&quot;2.0&quot;</span><span class="fu">,</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="st">&quot;Your-App-Name&quot;</span><span class="fu">,</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;method&quot;</span><span class="fu">:</span> <span class="st">&quot;get.virtual_number_groups&quot;</span><span class="fu">,</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;params&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;access_token&quot;</span><span class="fu">:</span> <span class="st">&quot;0123your-api-key123123412481284798127422&quot;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<h3 id="example-response-1">Example response</h3>
+<p>On app.octella.com the group ID is in format <code>g123</code>, in
+the API you have to use just a number <code>123</code></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;jsonrpc&quot;</span><span class="fu">:</span> <span class="st">&quot;2.0&quot;</span><span class="fu">,</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="st">&quot;Your-App-Name&quot;</span><span class="fu">,</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;result&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;data&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">{</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="dv">2272</span><span class="fu">,</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;C2C Test&quot;</span><span class="fu">,</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;number&quot;</span><span class="fu">:</span> <span class="st">&quot;g123&quot;</span><span class="fu">,</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;employees&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>          <span class="fu">{</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="dv">112233</span><span class="fu">,</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;number&quot;</span><span class="fu">:</span> <span class="st">&quot;371223344&quot;</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>          <span class="fu">}</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>        <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;employee_groups&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>          <span class="fu">{</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="dv">11221</span><span class="fu">,</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;Administrators&quot;</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>          <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>          <span class="fu">{</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="dv">11222</span><span class="fu">,</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;Operators&quot;</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>          <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>          <span class="fu">{</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="dv">11223</span><span class="fu">,</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;Team Lead&quot;</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>          <span class="fu">}</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>        <span class="ot">]</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;metadata&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;total_items&quot;</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="kw">null</span><span class="fu">,</span></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;limits&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;day_limit&quot;</span><span class="fu">:</span> <span class="dv">50000</span><span class="fu">,</span></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;day_remaining&quot;</span><span class="fu">:</span> <span class="dv">49989</span><span class="fu">,</span></span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;day_reset&quot;</span><span class="fu">:</span> <span class="dv">46737</span><span class="fu">,</span></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;minute_limit&quot;</span><span class="fu">:</span> <span class="dv">250</span><span class="fu">,</span></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;minute_remaining&quot;</span><span class="fu">:</span> <span class="dv">248</span><span class="fu">,</span></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;minute_reset&quot;</span><span class="fu">:</span> <span class="dv">57</span></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<h3 id="example-script-1">Example script</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> https://dataapi.octella.com/v2.0 <span class="at">-H</span> <span class="st">&#39;accept: application/json&#39;</span> <span class="at">-H</span> <span class="st">&#39;content-type: application/json&#39;</span> <span class="at">--data-raw</span> <span class="st">&quot;{</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="dt">\&quot;</span><span class="st">jsonrpc</span><span class="dt">\&quot;</span><span class="st">: </span><span class="dt">\&quot;</span><span class="st">2.0</span><span class="dt">\&quot;</span><span class="st">,</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="dt">\&quot;</span><span class="st">id</span><span class="dt">\&quot;</span><span class="st">: </span><span class="dt">\&quot;</span><span class="st">Your-App-Name</span><span class="dt">\&quot;</span><span class="st">,</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="dt">\&quot;</span><span class="st">method</span><span class="dt">\&quot;</span><span class="st">: </span><span class="dt">\&quot;</span><span class="st">get.virtual_number_groups</span><span class="dt">\&quot;</span><span class="st">,</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="dt">\&quot;</span><span class="st">params</span><span class="dt">\&quot;</span><span class="st">: {</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="st">        </span><span class="dt">\&quot;</span><span class="st">access_token</span><span class="dt">\&quot;</span><span class="st">: </span><span class="dt">\&quot;</span><span class="va">$API_KEY</span><span class="dt">\&quot;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="st">    }</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="st">}&quot;</span> <span class="op">&gt;</span> get.virtual_number_groups.json</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="va">NUMBER_GROUP</span><span class="op">=</span><span class="va">$(</span><span class="fu">cat</span> get.virtual_number_groups.json <span class="kw">|</span> <span class="ex">jq</span> <span class="at">-r</span> <span class="st">&quot;.result.data[].number&quot;</span> <span class="kw">|</span> <span class="fu">sed</span> <span class="st">&#39;s#^g##&#39;</span> <span class="kw">|</span> <span class="fu">head</span> <span class="at">-n1</span><span class="va">)</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span></code></pre></div>
+<h2 id="call-api-starting-a-call">Call API: Starting a call</h2>
+<h3 id="example-request-2">Example request:</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;jsonrpc&quot;</span><span class="fu">:</span> <span class="st">&quot;2.0&quot;</span><span class="fu">,</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="st">&quot;Your-App-Name&quot;</span><span class="fu">,</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;method&quot;</span><span class="fu">:</span> <span class="st">&quot;start.employee_call&quot;</span><span class="fu">,</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;params&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;access_token&quot;</span><span class="fu">:</span> <span class="st">&quot;0123your-api-key123123412481284798127422&quot;</span><span class="fu">,</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;contact&quot;</span><span class="fu">:</span> <span class="st">&quot;3712220000&quot;</span><span class="fu">,</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;direction&quot;</span><span class="fu">:</span> <span class="st">&quot;out&quot;</span><span class="fu">,</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;employee&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="dv">10110</span><span class="fu">,</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;phone_number&quot;</span><span class="fu">:</span> <span class="st">&quot;0123456&quot;</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">},</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;first_call&quot;</span><span class="fu">:</span> <span class="st">&quot;employee&quot;</span><span class="fu">,</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;virtual_number_group&quot;</span><span class="fu">:</span> <span class="dv">123</span><span class="fu">,</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;virtual_phone_usage_rule&quot;</span><span class="fu">:</span> <span class="st">&quot;random&quot;</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<h3 id="example-response-2">Example response:</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;jsonrpc&quot;</span><span class="fu">:</span> <span class="st">&quot;2.0&quot;</span><span class="fu">,</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="st">&quot;Your-App-Name&quot;</span><span class="fu">,</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;result&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;data&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;call_session_id&quot;</span><span class="fu">:</span> <span class="dv">73622361</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">},</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;metadata&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;limits&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;day_limit&quot;</span><span class="fu">:</span> <span class="dv">50000</span><span class="fu">,</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;day_remaining&quot;</span><span class="fu">:</span> <span class="dv">49999</span><span class="fu">,</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;day_reset&quot;</span><span class="fu">:</span> <span class="dv">48139</span><span class="fu">,</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;minute_limit&quot;</span><span class="fu">:</span> <span class="dv">250</span><span class="fu">,</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;minute_remaining&quot;</span><span class="fu">:</span> <span class="dv">249</span><span class="fu">,</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;minute_reset&quot;</span><span class="fu">:</span> <span class="dv">19</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<h3 id="example-script-2">Example script:</h3>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> https://callapi.octella.com/v4.0 <span class="at">-H</span> <span class="st">&#39;accept: application/json&#39;</span> <span class="at">-H</span> <span class="st">&#39;content-type: application/json&#39;</span> <span class="at">--data-raw</span> <span class="st">&quot;{</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="dt">\&quot;</span><span class="st">jsonrpc</span><span class="dt">\&quot;</span><span class="st">: </span><span class="dt">\&quot;</span><span class="st">2.0</span><span class="dt">\&quot;</span><span class="st">,</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="dt">\&quot;</span><span class="st">id</span><span class="dt">\&quot;</span><span class="st">: </span><span class="dt">\&quot;</span><span class="st">Your-App-Name</span><span class="dt">\&quot;</span><span class="st">,</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="dt">\&quot;</span><span class="st">method</span><span class="dt">\&quot;</span><span class="st">: </span><span class="dt">\&quot;</span><span class="st">start.employee_call</span><span class="dt">\&quot;</span><span class="st">,</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="dt">\&quot;</span><span class="st">params</span><span class="dt">\&quot;</span><span class="st">: {</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="st">        </span><span class="dt">\&quot;</span><span class="st">access_token</span><span class="dt">\&quot;</span><span class="st">: </span><span class="dt">\&quot;</span><span class="va">$API_KEY</span><span class="dt">\&quot;</span><span class="st">,</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="st">        </span><span class="dt">\&quot;</span><span class="st">contact</span><span class="dt">\&quot;</span><span class="st">: </span><span class="dt">\&quot;</span><span class="va">$CALL_TO</span><span class="dt">\&quot;</span><span class="st">, </span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="st">        </span><span class="dt">\&quot;</span><span class="st">direction</span><span class="dt">\&quot;</span><span class="st">: </span><span class="dt">\&quot;</span><span class="st">out</span><span class="dt">\&quot;</span><span class="st">,</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="st">        </span><span class="dt">\&quot;</span><span class="st">employee</span><span class="dt">\&quot;</span><span class="st">: { </span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="st">          </span><span class="dt">\&quot;</span><span class="st">id</span><span class="dt">\&quot;</span><span class="st">: </span><span class="va">$EMPLOYEE_ID</span><span class="st">, </span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="st">          </span><span class="dt">\&quot;</span><span class="st">phone_number</span><span class="dt">\&quot;</span><span class="st">: </span><span class="dt">\&quot;</span><span class="va">$EMPLOYEE_SIP</span><span class="dt">\&quot;</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="st">        }, </span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="st">        </span><span class="dt">\&quot;</span><span class="st">first_call</span><span class="dt">\&quot;</span><span class="st">: </span><span class="dt">\&quot;</span><span class="st">employee</span><span class="dt">\&quot;</span><span class="st">, </span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="st">        </span><span class="dt">\&quot;</span><span class="st">virtual_number_group</span><span class="dt">\&quot;</span><span class="st">: </span><span class="va">$NUMBER_GROUP</span><span class="st">, </span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="st">        </span><span class="dt">\&quot;</span><span class="st">virtual_phone_usage_rule</span><span class="dt">\&quot;</span><span class="st">: </span><span class="dt">\&quot;</span><span class="st">random</span><span class="dt">\&quot;</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="st">    }</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="st">}&quot;</span> <span class="op">&gt;</span> start.employee_call.json</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="va">CALL_SESSION_ID</span><span class="op">=</span><span class="va">$(</span><span class="fu">cat</span> start.employee_call.json <span class="kw">|</span> <span class="ex">jq</span> <span class="at">-r</span> <span class="st">&quot;.result.data.call_session_id&quot;</span> <span class="va">)</span></span></code></pre></div>
+</body>
+</html>
