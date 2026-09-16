@@ -587,7 +587,7 @@ Getting more information about website visitors;</p>
 <h2 id="working-with-events">Working with events</h2>
 <h3 id="sending-user-events">Sending user events</h3>
 <p>To send user event, use the following method:</p>
-<pre><code>CallGear.trackEvent(category, action, name, value);
+<pre><code>Octella.trackEvent(category, action, name, value);
 </code></pre>
 <p>Parameters:</p>
 <table>
@@ -622,25 +622,25 @@ Getting more information about website visitors;</p>
 </tbody>
 </table>
 <p>Example of usage:</p>
-<pre><code>CallGear.trackEvent('Offer', 'DownloadBook', 'CallTrackingBook', 'value');
+<pre><code>Octella.trackEvent('Offer', 'DownloadBook', 'CallTrackingBook', 'value');
 </code></pre>
 <p><strong>Receiving visitor ID</strong></p>
 <p>To receive visitor ID, use the following method:</p>
-<pre><code>CallGear.getVisitorId();
+<pre><code>Octella.getVisitorId();
 </code></pre>
 <h2 id="working-with-banners">Working with banners</h2>
 <h3 id="checking-operators-who-are-online">Checking operators who are online</h3>
 <p>To check for operators who are online, use the method:</p>
-<pre><code>CallGear.getOperatorStatus();
+<pre><code>Octella.getOperatorStatus();
 </code></pre>
 <p>Method returns <code>true</code>, if there's at least one operator online, otherwise it returns <code>false</code>.</p>
 <h3 id="application-form">Application form</h3>
 <p>To open application form, use the method:</p>
-<pre><code>CallGear.openSiteRequestPanel();
+<pre><code>Octella.openSiteRequestPanel();
 </code></pre>
 <p><strong>User application form</strong></p>
 <p>The data obtained when using a user application form on the website can be sent using the following method:</p>
-<pre><code>CallGear.addOfflineRequest(req, callback);
+<pre><code>Octella.addOfflineRequest(req, callback);
 </code></pre>
 <p>You can use this method only if you send the form in a way that does not reload the page! For other cases, there is an alternative method. </p>
 <p>Parameters:</p>
@@ -674,9 +674,9 @@ Getting more information about website visitors;</p>
 <ol>
 <li>Regular application:</li>
 </ol>
-<pre><code>CallGear.addOfflineRequest({
+<pre><code>Octella.addOfflineRequest({
   name: 'Dmitry',
-  email: 'dmitry@callgear.com',
+  email: 'hello@octella.com',
   phone: '79123456789',
   message: 'Application text...'
 });
@@ -684,9 +684,9 @@ Getting more information about website visitors;</p>
 <ol>
 <li>Application, lead to a sale:</li>
 </ol>
-<pre><code>CallGear.addOfflineRequest({
+<pre><code>Octella.addOfflineRequest({
   name: 'Dmitry',
-  email: 'dmitry@callgear.com',
+  email: 'hello@octella.com',
   phone: '79123456789',
   message: 'Online order...',
   is_sale: true,
@@ -696,21 +696,21 @@ Getting more information about website visitors;</p>
 <ol>
 <li>Example of using the parameter callback:</li>
 </ol>
-<pre><code>CallGear.addOfflineRequest({&quot;name&quot;: &quot;My Name Is&quot;}, function(o) {console.log(o);});
+<pre><code>Octella.addOfflineRequest({&quot;name&quot;: &quot;My Name Is&quot;}, function(o) {console.log(o);});
 </code></pre>
 <p>after you successfully save an application, the result will be displayed in the browser console:</p>
 <pre><code>Object {success: true, result: null}
 </code></pre>
 <p><strong>Alternative way to send user applications</strong></p>
 <ol>
-<li>Before sending an application, you need to get the authentication data of the widget using the method JS API <code>CallGear.getCredentials()</code>. Method returns the object:</li>
+<li>Before sending an application, you need to get the authentication data of the widget using the method JS API <code>Octella.getCredentials()</code>. Method returns the object:</li>
 </ol>
 <pre><code>{
   &quot;site_key&quot;: &quot;VcB4qqpO1WPSopO670cAbXwAH9Ryaw75&quot;,
   &quot;visitor_id&quot;: 17258569,
   &quot;hit_id&quot;: 546833568748,
   &quot;session_id&quot;: 255544855,
-  &quot;consultant_server_url&quot;: &quot;https://server.callgear.com/&quot; // URL base
+  &quot;consultant_server_url&quot;: &quot;https://server.octella.com/&quot; // URL base
 }
 </code></pre>
 <ol>
@@ -722,7 +722,7 @@ Getting more information about website visitors;</p>
 </li>
 </ol>
 <p>The base part of the URL cannot be hard-coded. It must be taken from the data of paragraph 1. It is subject to change.</p>
-<pre><code>POST https://server.callgear.com/api/add_offline_message/
+<pre><code>POST https://server.octella.com/api/add_offline_message/
 Content-Type: application/x-www-form-urlencoded; charset=UTF-8
 Form Data //data formatted for clarity
 site_key=VcB4qqpO1WPSopO670cAbXwAH9Ryaw75
@@ -768,7 +768,7 @@ site_key=VcB4qqpO1WPSopO670cAbXwAH9Ryaw75
 </code></pre>
 <p>In the page code or in a separate JS-file, you need to write the feature <code>formSubmit()</code>, which will be called every time you click the "Send" button:</p>
 <pre><code>function formSubmit() {
-    var credentials = CallGear.getCredentials();
+    var credentials = Octella.getCredentials();
     for (field in credentials) {
         if (credentials.hasOwnProperty(field)){
             $('[name='+field+']').val(credentials[field]);
@@ -793,7 +793,7 @@ site_key=VcB4qqpO1WPSopO670cAbXwAH9Ryaw75
             'text' =&gt; $_POST['text'], //Application text
             'is_sale' =&gt; true, //true, if it's a sale
             'sale_cost' =&gt; 10000 //Sale cost. If you need to send the sale cost, then is_sale must be true );
-    /* If all the fields in the html-markup of the form are called as CallGear requires, you can write &quot;$data = $_POST&quot;.
+    /* If all the fields in the html-markup of the form are called as Octella requires, you can write &quot;$data = $_POST&quot;.
     Otherwise, additional conversions are required. */
     $options = array( 'http' =&gt;
         array(
@@ -861,7 +861,7 @@ site_key=VcB4qqpO1WPSopO670cAbXwAH9Ryaw75
             }
         },
         beforeSend: function(jqXHR, settings) {
-            var credentials = CallGear.getCredentials();
+            var credentials = Octella.getCredentials();
             settings.data += '&amp;' + $.param(credentials);
         }
     })
@@ -887,7 +887,7 @@ site_key=VcB4qqpO1WPSopO670cAbXwAH9Ryaw75
             'is_sale' =&gt; true, //true, if it's a sale
             'sale_cost' =&gt; 10000 //Sale cost. If you need to transfer a sale cost, then is_sale must equal true
         );
-        /* If all the fields in the html-markup of the form are called as CallGear requires, you can write &quot;$data = $_POST&quot;.
+        /* If all the fields in the html-markup of the form are called as Octella requires, you can write &quot;$data = $_POST&quot;.
     Otherwise, additional conversions are required. */
         $options = array(
             'http' =&gt; array(
@@ -911,10 +911,10 @@ site_key=VcB4qqpO1WPSopO670cAbXwAH9Ryaw75
 </code></pre>
 <h3 id="sitephone-form">Sitephone form</h3>
 <p>To open our standard sitephone form, use the method:</p>
-<pre><code>CallGearWidget.openSitePhonePanel();
+<pre><code>OctellaWidget.openSitePhonePanel();
 </code></pre>
 <p><strong>Captcha for sitephone forms</strong></p>
-<pre><code>CallGear.Captcha.get_captcha(callback);
+<pre><code>Octella.Captcha.get_captcha(callback);
 </code></pre>
 <p>Parameters:</p>
 <table>
@@ -934,12 +934,12 @@ site_key=VcB4qqpO1WPSopO670cAbXwAH9Ryaw75
 </tbody>
 </table>
 <p>Example:</p>
-<pre><code>CallGear.Captcha.get_captcha(function(resp){console.log(resp)});
+<pre><code>Octella.Captcha.get_captcha(function(resp){console.log(resp)});
 </code></pre>
 <p><strong>Sitephone user form</strong></p>
 <p>In addition to standard widgets, you can use any form you want for call backs on the site.</p>
 <p>To do so, you need to embed the callback method call into your form using the JS API:</p>
-<pre><code>CallGearWidget.sitePhoneCall({captcha_key: &lt;captcha ID&gt;, captcha_value: &lt;captcha value&gt;, phone:&lt;phone number&gt;, delayed_call_time:&lt;call time&gt;, group_id:&lt;group id&gt;}, callback);
+<pre><code>OctellaWidget.sitePhoneCall({captcha_key: &lt;captcha ID&gt;, captcha_value: &lt;captcha value&gt;, phone:&lt;phone number&gt;, delayed_call_time:&lt;call time&gt;, group_id:&lt;group id&gt;}, callback);
 </code></pre>
 <p>Parameters:</p>
 <table>
@@ -1015,17 +1015,17 @@ site_key=VcB4qqpO1WPSopO670cAbXwAH9Ryaw75
 </tbody>
 </table>
 <p>Example of usage:</p>
-<pre><code>CallGearWidget.sitePhoneCall({captcha_key: 'jwgtGYZDYTA...4pBEWRx', captcha_value: '8315', phone:'79101234567', delayed_call_time: 1508927547000 , group_id: '16587'}, function(resp){console.log(resp)});
+<pre><code>OctellaWidget.sitePhoneCall({captcha_key: 'jwgtGYZDYTA...4pBEWRx', captcha_value: '8315', phone:'79101234567', delayed_call_time: 1508927547000 , group_id: '16587'}, function(resp){console.log(resp)});
 </code></pre>
 <h3 id="chat-form">Chat form</h3>
 <p>When the following method is called, if there are operators online, a chat form opens:</p>
-<pre><code>CallGear.openChatWindow();
+<pre><code>Octella.openChatWindow();
 </code></pre>
 <p>If no operators are online, the application form opens.</p>
 <h2 id="working-with-characteristics">Working with characteristics</h2>
 <h3 id="adding-characteristics-to-visitors">Adding characteristics to visitors</h3>
 <p>The following method is used to assign a characteristic or its value:</p>
-<pre><code>CallGear.setProperty(name, value);
+<pre><code>Octella.setProperty(name, value);
 </code></pre>
 <p>Parameter:</p>
 <table>
@@ -1051,14 +1051,14 @@ site_key=VcB4qqpO1WPSopO670cAbXwAH9Ryaw75
 </table>
 <p>Examples:</p>
 <p>The "visitor type" characteristic with the "potential" value is set as follows:</p>
-<pre><code>CallGear.setProperty('Visitor type', 'Potential');
+<pre><code>Octella.setProperty('Visitor type', 'Potential');
 </code></pre>
 <p>The "active client" characteristic (without value) is set as follows:</p>
-<pre><code>CallGear.setProperty('Active customer');
+<pre><code>Octella.setProperty('Active customer');
 </code></pre>
 <h3 id="checking-whether-or-not-visitor-has-a-characteristic">Checking whether or not visitor has a characteristic</h3>
 <p>To check whether or not visitor has a characteristic, use the method:</p>
-<pre><code>CallGear.hasProperty(name, callback);
+<pre><code>Octella.hasProperty(name, callback);
 </code></pre>
 <p>Parameters:</p>
 <table>
@@ -1083,12 +1083,12 @@ site_key=VcB4qqpO1WPSopO670cAbXwAH9Ryaw75
 </tbody>
 </table>
 <p>Example:</p>
-<pre><code>CallGear.hasProperty('Active customer', callback);
-CallGear.hasProperty('Active customer', function(resp){console.log(resp)});
+<pre><code>Octella.hasProperty('Active customer', callback);
+Octella.hasProperty('Active customer', function(resp){console.log(resp)});
 </code></pre>
 <h3 id="getting-visitor-characteristics-values">Getting visitor characteristics values</h3>
 <p>To get visitor characteristics values use the following method:</p>
-<pre><code>CallGear.getProperty(name, callback);
+<pre><code>Octella.getProperty(name, callback);
 </code></pre>
 <p>Parameters:</p>
 <table>
@@ -1113,12 +1113,12 @@ CallGear.hasProperty('Active customer', function(resp){console.log(resp)});
 </tbody>
 </table>
 <p>Example:</p>
-<pre><code>CallGear.getProperty('Customer type', callback);
-CallGear.getProperty('Current customer', function(resp){console.log(resp)});
+<pre><code>Octella.getProperty('Customer type', callback);
+Octella.getProperty('Current customer', function(resp){console.log(resp)});
 </code></pre>
 <h3 id="deleting-visitor-characteristics">Deleting visitor characteristics</h3>
 <p>To delete visitor characteristic, assigned to a visitor, use the following method:</p>
-<pre><code>CallGear.deleteProperty(name);
+<pre><code>Octella.deleteProperty(name);
 </code></pre>
 <p>Parameters:</p>
 <table>
@@ -1138,7 +1138,7 @@ CallGear.getProperty('Current customer', function(resp){console.log(resp)});
 </tbody>
 </table>
 <p>Example:</p>
-<pre><code>CallGear.deleteProperty('visitor type');
+<pre><code>Octella.deleteProperty('visitor type');
 </code></pre>
 <h2 id="number-substitution">Number substitution</h2>
 <h3 id="number-substitution-in-dynamic-blocks">Number substitution in dynamic blocks</h3>
@@ -1146,7 +1146,7 @@ CallGear.getProperty('Current customer', function(resp){console.log(resp)});
 <pre><code>__cs.push([&quot;setDynamicalReplacement&quot;, true]);
 </code></pre>
 <p>or</p>
-<pre><code>CallGear.push([&quot;setDynamicalReplacement&quot;, true]);
+<pre><code>Octella.push([&quot;setDynamicalReplacement&quot;, true]);
 </code></pre>
 <h3 id="managing-number-substitution">Managing number substitution</h3>
 <p>When a number substitution is necessary only under certain conditions, for example, only for visitors from Moscow, you need to redefine the feature that controls the number substitution, <code>window .__ cs_onReplacePhones (phones)</code>. It works as follows:</p>
@@ -1166,7 +1166,7 @@ CallGear.getProperty('Current customer', function(resp){console.log(resp)});
 <p>This feature allows you to not only manage the substitution, but also perform it yourself. To do this, the phones bulk is passed to the feature:</p>
 <pre><code>[
   {
-    id: &quot;#callgear_phone&quot;, // ID
+    id: &quot;#octella_phone&quot;, // ID
     img: &quot;/path/to/image&quot;, // image address (if image substitution is used)
     text: &quot;+7 (495) 926-86-86&quot;, // number formatted according to user settings
     raw: &quot;74959268686&quot; // number without formatting
@@ -1176,13 +1176,13 @@ CallGear.getProperty('Current customer', function(resp){console.log(resp)});
 </code></pre>
 <h3 id="getting-numbers-given-to-a-visitor">Getting numbers, given to a visitor</h3>
 <p>If a customer needs to get a list of all the numbers issued to a website visitor, you can use the following feature:</p>
-<pre><code>CallGear.getPhones();
+<pre><code>Octella.getPhones();
 </code></pre>
 <p>The reply will return a bulk of objects similar to the phones list in <code>__cs_onReplacePhones</code>.</p>
 <p>Example:</p>
 <pre><code>[
   {
-    id: '#callgear_phone', // element ID
+    id: '#octella_phone', // element ID
     img: null || 'path/to/img', // image address (if image substitution is used)
     text: null || '+7(495)999-99-99', // formatted number
     raw: '74959999999' // number without formatting
@@ -1201,15 +1201,15 @@ CallGear.getProperty('Current customer', function(resp){console.log(resp)});
 <tbody>
 <tr>
 <td>id</td>
-<td>#callgear_phone</td>
+<td>#octella_phone</td>
 </tr>
 <tr>
 <td>class</td>
-<td>.callgear_phone</td>
+<td>.octella_phone</td>
 </tr>
 <tr>
 <td>name</td>
-<td>[name=callgear_phone]</td>
+<td>[name=octella_phone]</td>
 </tr>
 <tr>
 <td>number</td>
@@ -1219,14 +1219,14 @@ CallGear.getProperty('Current customer', function(resp){console.log(resp)});
 </table>
 <h3 id="getting-a-list-of-dynamic-tracking-numbers-reserved-for-a-visitor">Getting a list of dynamic tracking numbers reserved for a visitor</h3>
 <p>If a customer needs to get a list of dynamic tracking numbers reserved for a visitor, you can use the following feature:</p>
-<pre><code>CallGear.getDTPhones();
+<pre><code>Octella.getDTPhones();
 </code></pre>
 <p>This feature will return <code>null</code> in the case no dynamic tracking numbers are reserved for a visitor.</p>
 <p>If there are several reserved numbers, then a bulk of objects will return, similar to the phones list in <code>__cs_onReplacePhones</code>.</p>
 <p>Example:</p>
 <pre><code>[
   {
-    id: '#callgear_phone', // element ID
+    id: '#octella_phone', // element ID
     img: null || 'path/to/img', // image address (if image substitution is used)
     text: null || '+7(495)999-99-99', // formatted number
     raw: '74959999999' // number without formatting
@@ -1245,15 +1245,15 @@ CallGear.getProperty('Current customer', function(resp){console.log(resp)});
 <tbody>
 <tr>
 <td>id</td>
-<td>#callgear_phone</td>
+<td>#octella_phone</td>
 </tr>
 <tr>
 <td>class</td>
-<td>.callgear_phone</td>
+<td>.octella_phone</td>
 </tr>
 <tr>
 <td>name</td>
-<td>[name=callgear_phone]</td>
+<td>[name=octella_phone]</td>
 </tr>
 </tbody>
 </table>

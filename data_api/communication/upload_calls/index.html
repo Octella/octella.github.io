@@ -797,28 +797,28 @@ Uploads calls and call recordings for speech analytics or end-to-end analytics
       <td>number</td>
       <td>no</td>
       <td></td>
-      <td>CallGear visitor session ID. Specify this parameter to associate the call with advertising attribution data.</td>
+      <td>Octella visitor session ID. Specify this parameter to associate the call with advertising attribution data.</td>
    </tr>
    <tr>
       <td><code>campaign_id</code></td>
       <td>number</td>
       <td>no</td>
       <td></td>
-      <td>CallGear advertising campaign ID. Ignored when visitor_session_id is provided.</td>
+      <td>Octella advertising campaign ID. Ignored when visitor_session_id is provided.</td>
    </tr>
            <tr>
             <td><code>source_id</code></td>
             <td>number</td>
             <td>no</td>
             <td></td>
-            <td>CallGear traffic source ID.</td>
+            <td>Octella traffic source ID.</td>
         </tr>
    <tr>
       <td><code>site_id</code></td>
       <td>number</td>
       <td>no</td>
       <td></td>
-      <td>CallGear site ID. Ignored when visitor_session_id is provided or when called_phone_number belongs to a different site.</td>
+      <td>Octella site ID. Ignored when visitor_session_id is provided or when called_phone_number belongs to a different site.</td>
    </tr>
    <tr>
       <td><code>comment</code></td>
@@ -869,14 +869,14 @@ Uploads calls and call recordings for speech analytics or end-to-end analytics
       <td>number</td>
       <td>no</td>
       <td></td>
-      <td>Unique tag identifier in the CallGear system</td>
+      <td>Unique tag identifier in the Octella system</td>
    </tr>
            <tr>
             <td><code>tag_name</code></td>
             <td>string</td>
             <td>yes</td>
             <td></td>
-            <td>Tag name. CallGear searches for an exact, case-sensitive match. If no matching tag exists, it creates one and assigns it to the call. Ignored when tag_id is provided. To assign the Sale tag, use <a href="../../tag/set_tag_sales"><code>set.tag_sales</code></a>.</td>
+            <td>Tag name. Octella searches for an exact, case-sensitive match. If no matching tag exists, it creates one and assigns it to the call. Ignored when tag_id is provided. To assign the Sale tag, use <a href="../../tag/set_tag_sales"><code>set.tag_sales</code></a>.</td>
         </tr>
    <tr>
       <td colspan = 5>WAV recordings for speech analytics</td>
@@ -886,21 +886,21 @@ Uploads calls and call recordings for speech analytics or end-to-end analytics
       <td>array</td>
       <td>no</td>
       <td></td>
-      <td>WAV call recordings for speech analytics. Available only when the Speech Call Analytics component is enabled. CallGear automatically creates MP3 versions for playback in the client account.</td>
+      <td>WAV call recordings for speech analytics. Available only when the Speech Call Analytics component is enabled. Octella automatically creates MP3 versions for playback in the client account.</td>
    </tr>
    <tr>
       <td><code>employee_id</code></td>
       <td>number</td>
       <td>no</td>
       <td></td>
-      <td>Unique employee identifier in the CallGear system</td>
+      <td>Unique employee identifier in the Octella system</td>
    </tr>
            <tr>
             <td><code>employee_name</code></td>
             <td>string</td>
             <td>yes</td>
             <td></td>
-            <td>Employee full name. CallGear performs a case-insensitive search by full name. If no matching employee exists, it creates one and associates it with the call. Ignored when employee_id is provided.</td>
+            <td>Employee full name. Octella performs a case-insensitive search by full name. If no matching employee exists, it creates one and associates it with the call. Ignored when employee_id is provided.</td>
         </tr>
    <tr>
       <td><code>employee_channel</code></td>
@@ -916,7 +916,7 @@ Uploads calls and call recordings for speech analytics or end-to-end analytics
       <td>string</td>
       <td>yes</td>
       <td></td>
-      <td>HTTPS URL from which CallGear can download the recording.</td>
+      <td>HTTPS URL from which Octella can download the recording.</td>
    </tr>
     <tr>
       <td colspan = 5>MP3 recordings for playback</td>
@@ -933,25 +933,25 @@ Uploads calls and call recordings for speech analytics or end-to-end analytics
             <td>string</td>
             <td>no</td>
             <td></td>
-            <td>Employee full name. CallGear performs a case-insensitive search by full name. If no matching employee exists, it creates one and associates it with the call. Ignored when employee_id is provided.</td>
+            <td>Employee full name. Octella performs a case-insensitive search by full name. If no matching employee exists, it creates one and associates it with the call. Ignored when employee_id is provided.</td>
         </tr>
    <tr>
       <td><code>employee_id</code></td>
       <td>number</td>
       <td>no</td>
-      <td></td><td>Unique employee identifier in the CallGear system</td>
+      <td></td><td>Unique employee identifier in the Octella system</td>
    </tr>
    <tr>
       <td><code>record_url</code></td>
       <td>string</td>
       <td>yes</td>
       <td></td>
-      <td>URL from which CallGear can download the recording.</td>
+      <td>URL from which Octella can download the recording.</td>
    </tr>
 </table>
 
 <h3 id="response-parameters">Response parameters</h3>
-<p>The response is returned as soon as the calls have been queued for processing. After processing, CallGear sends a webhook containing the processing status. See "Processing status notifications" below.</p>
+<p>The response is returned as soon as the calls have been queued for processing. After processing, Octella sends a webhook containing the processing status. See "Processing status notifications" below.</p>
 <h3 id="processing-status-notifications">Processing status notifications</h3>
 <table>
    <tr>
@@ -982,7 +982,7 @@ Uploads calls and call recordings for speech analytics or end-to-end analytics
       <td>number</td>
       <td>no</td>
       <td></td>
-      <td>CallGear call session ID. See <a href="../../report/get_calls_report"><code>get.calls_report</code></a>.</td>
+      <td>Octella call session ID. See <a href="../../report/get_calls_report"><code>get.calls_report</code></a>.</td>
    </tr>
    <tr>
       <td><code>timestamp</code></td>
@@ -1097,7 +1097,7 @@ Uploads calls and call recordings for speech analytics or end-to-end analytics
 }
 </code></pre>
 <h3 id="example-response">Example response</h3>
-<p>The response is returned as soon as the calls have been queued for processing. After processing, CallGear sends a webhook containing the processing status.</p>
+<p>The response is returned as soon as the calls have been queued for processing. After processing, Octella sends a webhook containing the processing status.</p>
 <pre><code class="language-json">{
   &quot;jsonrpc&quot;: &quot;2.0&quot;,
   &quot;id&quot;: &quot;number&quot;,
@@ -1313,7 +1313,7 @@ Uploads calls and call recordings for speech analytics or end-to-end analytics
 </tr>
 <tr>
 <td style="text-align: left;"><code>connection_download_error</code></td>
-<td style="text-align: left;">CallGear could not connect to the download server because of a network error.</td>
+<td style="text-align: left;">Octella could not connect to the download server because of a network error.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>http_status_download_error</code></td>

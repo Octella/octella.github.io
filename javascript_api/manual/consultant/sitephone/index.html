@@ -477,14 +477,14 @@
 <p>In order for a consultant to work, you need to register a ViewController with the name <code>consultant</code>.</p>
 <p><strong>Important: ViewController is registered once for all the online consultant forms</strong></p>
 <h2 id="createwidget">CreateWidget</h2>
-<p>To create a callback widget, you need to call the method <code>CallGear.UI.createWidget()</code> with the following parameters:</p>
+<p>To create a callback widget, you need to call the method <code>Octella.UI.createWidget()</code> with the following parameters:</p>
 <ul>
 <li><code>widgetName</code> = 'consultant_sitephone'</li>
 </ul>
 <h2 id="example">Example</h2>
-<pre><code>CallGear.UI.registerViewController('consultant', function (settings, tpls) {
+<pre><code>Octella.UI.registerViewController('consultant', function (settings, tpls) {
     ...
-    var consultantSipehone = CallGear.UI.createWidget('consultant_sitephone', {
+    var consultantSipehone = Octella.UI.createWidget('consultant_sitephone', {
         settings: settings,
         template: tpls['consultant_sitephone'],
         ...

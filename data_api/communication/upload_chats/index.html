@@ -664,7 +664,7 @@ Uploads chats
 <td style="text-align: left;">enum</td>
 <td style="text-align: center;">yes</td>
 <td style="text-align: left;">lost, succeeded, refused</td>
-<td>Chat status. If initiator is visitor and the chat contains no operator or visitor messages, CallGear ignores the supplied value and sets status to lost.</td>
+<td>Chat status. If initiator is visitor and the chat contains no operator or visitor messages, Octella ignores the supplied value and sets status to lost.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>initiator</code></td>
@@ -678,21 +678,21 @@ Uploads chats
 <td style="text-align: left;">number</td>
 <td style="text-align: center;">no</td>
 <td style="text-align: left;"></td>
-<td>CallGear visitor session ID, obtained using Comagic.getSessionId(). The session must have been created no more than 180 days before start_date_time.</td>
+<td>Octella visitor session ID, obtained using Octella.getSessionId(). The session must have been created no more than 180 days before start_date_time.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>campaign_id</code></td>
 <td style="text-align: left;">number</td>
 <td style="text-align: center;">no</td>
 <td style="text-align: left;"></td>
-<td>CallGear advertising campaign ID. Use <a href="../../campaign/get_campaigns/">"get.campaigns"</a> to retrieve campaign IDs. campaign_id cannot be -1.</td>
+<td>Octella advertising campaign ID. Use <a href="../../campaign/get_campaigns/">"get.campaigns"</a> to retrieve campaign IDs. campaign_id cannot be -1.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>source_id</code></td>
 <td style="text-align: left;">number</td>
 <td style="text-align: center;">no</td>
 <td style="text-align: left;"></td>
-<td>CallGear traffic source ID. Only active sources belonging to the client account can be specified. When visitor_session_id is provided, source_id is derived from the session.</td>
+<td>Octella traffic source ID. Only active sources belonging to the client account can be specified. When visitor_session_id is provided, source_id is derived from the session.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>messages</code></td>
@@ -720,7 +720,7 @@ Uploads chats
 <td style="text-align: left;">number</td>
 <td style="text-align: center;">no</td>
 <td style="text-align: left;"></td>
-<td>CallGear employee ID. Required when source is operator. The employee who sent the final operator message is assigned to the chat.</td>
+<td>Octella employee ID. Required when source is operator. The employee who sent the final operator message is assigned to the chat.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>message</code></td>
