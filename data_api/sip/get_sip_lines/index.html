@@ -805,6 +805,30 @@ Getting the list of SIP lines
 <td style="text-align: left;"></td>
 <td style="text-align: left;">SIP line registration password</td>
 </tr>
+<tr>
+<td style="text-align: left;"><code>is_international_allowed</code></td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">International calls availability</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>finance_limit_international</code></td>
+<td style="text-align: left;">number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Financial limit for international calls. The amount is calculated per 1 day.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>is_zone_allowed</code></td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Mobile calls availability</td>
+</tr>
 </tbody>
 </table>
 <h3 id="json-request-structure">JSON request structure</h3>
@@ -850,7 +874,10 @@ Getting the list of SIP lines
                 &quot;date_time&quot;: &quot;iso8601&quot;,
                 &quot;ip&quot;: &quot;string&quot;,
                 &quot;virtual_phone_usage_rule&quot;: &quot;enum&quot;,
-                &quot;password&quot;: &quot;string&quot;
+                &quot;password&quot;: &quot;string&quot;,
+                &quot;is_zone_allowed&quot;: &quot;boolean&quot;,
+                &quot;is_international_allowed&quot;: &quot;boolean&quot;,
+                &quot;finance_limit_international&quot;: &quot;number&quot;
             }
         ]
     }
